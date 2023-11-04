@@ -105,3 +105,9 @@ deploy:
   type: "git"
   repo: "git@github.com:jin-lin0/jin-lin0.github.io.git"
   branch: master
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
