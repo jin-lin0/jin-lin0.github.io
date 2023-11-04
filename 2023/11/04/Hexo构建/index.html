@@ -21,29 +21,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="MY BLOG">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="Hexo搭建站点hexo官方网站 准备 Github新建仓库，命名为&#123;username&#125;.github.io  安装Node.js，安装Stable版本。  安装Hexo-cli，即Hexo的命令行工具。 1npm install -g hexo-cli  初始化 创建项目，进入创建的文件夹 12hexo init &#123;name&#125;cd &#123;name&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo构建">
+<meta property="og:url" content="http://example.com/2023/11/04/Hexo%E6%9E%84%E5%BB%BA/index.html">
 <meta property="og:site_name" content="MY BLOG">
+<meta property="og:description" content="Hexo搭建站点hexo官方网站 准备 Github新建仓库，命名为&#123;username&#125;.github.io  安装Node.js，安装Stable版本。  安装Hexo-cli，即Hexo的命令行工具。 1npm install -g hexo-cli  初始化 创建项目，进入创建的文件夹 12hexo init &#123;name&#125;cd &#123;name&amp;#">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-04T12:01:20.000Z">
+<meta property="article:modified_time" content="2023-11-04T18:34:29.147Z">
 <meta property="article:author" content="HJL">
-<meta property="article:tag" content="Javascript">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2023/11/04/Hexo%E6%9E%84%E5%BB%BA/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>MY BLOG</title>
+  <title>Hexo构建 | MY BLOG</title>
   
 
 
@@ -178,9 +182,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -196,10 +201,9 @@
       <meta itemprop="name" content="MY BLOG">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/11/04/Hexo%E6%9E%84%E5%BB%BA/" class="post-title-link" itemprop="url">Hexo构建</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Hexo构建
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -219,6 +223,13 @@
               </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -229,7 +240,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Hexo搭建站点"><a href="#Hexo搭建站点" class="headerlink" title="Hexo搭建站点"></a>Hexo搭建站点</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/index.html">hexo官方网站</a></p>
+        <h1 id="Hexo搭建站点"><a href="#Hexo搭建站点" class="headerlink" title="Hexo搭建站点"></a>Hexo搭建站点</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/index.html">hexo官方网站</a></p>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
 <li><p>Github新建仓库，命名为<code>&#123;username&#125;.github.io</code></p>
 </li>
@@ -324,21 +335,26 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="comment">#categories: /categories/ || fa fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+
+        
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -391,6 +407,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo%E6%90%AD%E5%BB%BA%E7%AB%99%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">Hexo搭建站点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">1.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E7%AB%99%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">主站配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE-Next"><span class="nav-number">1.4.</span> <span class="nav-text">主题配置-Next</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E5%86%85%E5%AE%B9"><span class="nav-number">1.5.</span> <span class="nav-text">新建内容</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
