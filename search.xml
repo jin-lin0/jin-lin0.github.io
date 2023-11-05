@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hexo中插入图片</title>
-    <url>/2023/11/05/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <url>/posts/62790/</url>
     <content><![CDATA[<h1 id="Hexo中插入图片"><a href="#Hexo中插入图片" class="headerlink" title="Hexo中插入图片"></a>Hexo中插入图片</h1><ol>
 <li><p>安装图片插件<code>hexo-renderer-marked</code></p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
@@ -19,14 +19,14 @@
 </li>
 <li><p>配置Typora</p>
 <p>打开typora的偏好设置，点击图像，更改为如下设置</p>
-<img src="/2023/11/05/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/image-20231105183542790.png" class="" title="image-20231105183542790">
+<img src="/posts/undefined/image-20231105183542790.png" class="" title="image-20231105183542790">
 </li>
 <li><p>图片引入</p>
 <p><strong>注意</strong>：在typora中图片引入的格式：（引入第六步的插件以后，typora图片格式的文字不能显示了）</p>
-<img src="/2023/11/05/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/image-20231105190138006.png" class="" title="image-20231105190138006">
+<img src="/posts/undefined/image-20231105190138006.png" class="" title="image-20231105190138006">
 
 <p>在hexo中图片引入的格式：</p>
-<img src="/2023/11/05/Hexo%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/image-20231105190158984.png" class="" title="image-20231105190158984">
+<img src="/posts/undefined/image-20231105190158984.png" class="" title="image-20231105190158984">
 </li>
 <li><p>安装插件<code>hexo-image-link</code>解决typora与hexo路径不一致问题，这样在typora和hexo都可以显示图片了</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-image-link --save</span><br></pre></td></tr></table></figure></li>
@@ -38,7 +38,7 @@
   </entry>
   <entry>
     <title>Hexo搭建站点</title>
-    <url>/2023/11/04/Hexo%E6%90%AD%E5%BB%BA%E7%AB%99%E7%82%B9/</url>
+    <url>/posts/26676/</url>
     <content><![CDATA[<h1 id="Hexo搭建站点"><a href="#Hexo搭建站点" class="headerlink" title="Hexo搭建站点"></a>Hexo搭建站点</h1><p><a href="https://hexo.io/index.html">hexo官方网站</a></p>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
 <li><p>Github新建仓库，命名为 <code>&#123;username&#125;.github.io</code></p>
@@ -55,7 +55,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
 <p>显示如下界面，浏览器打开 <code>http://localhost:4000/</code>查看博客站点</p>
-<img src="/2023/11/04/Hexo%E6%90%AD%E5%BB%BA%E7%AB%99%E7%82%B9/image-20231105181105552.png" class="" title="image-20231105181105552"></li>
+<img src="/posts/undefined/image-20231105181105552.png" class="" title="image-20231105181105552"></li>
 <li><p>编译部署项目</p>
 <p>修改根目录的 <code>_config.yml</code>文件，修改Deployment部分为新建仓库的地址，修改分支为master</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&quot;git&quot;</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&quot;git@github.com:xxx/xxx.github.io.git&quot;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
@@ -142,6 +142,20 @@
 ]]></content>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实用网站收集</title>
+    <url>/posts/1e5417a7/</url>
+    <content><![CDATA[<h1 id="实用网站收集"><a href="#实用网站收集" class="headerlink" title="实用网站收集"></a>实用网站收集</h1><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="http://三毛机场.live/">三毛机场</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>网站</tag>
       </tags>
   </entry>
 </search>
