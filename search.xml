@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hexo构建</title>
-    <url>/2023/11/04/Hexo%E6%9E%84%E5%BB%BA/</url>
+    <url>/2023/11/04/Hexo%E6%90%AD%E5%BB%BA%E7%AB%99%E7%82%B9/</url>
     <content><![CDATA[<h1 id="Hexo搭建站点"><a href="#Hexo搭建站点" class="headerlink" title="Hexo搭建站点"></a>Hexo搭建站点</h1><p><a href="https://hexo.io/index.html">hexo官方网站</a></p>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
 <li><p>Github新建仓库，命名为 <code>&#123;username&#125;.github.io</code></p>
@@ -19,7 +19,7 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
 <p>显示如下界面，浏览器打开 <code>http://localhost:4000/</code>查看博客站点</p>
-<p>![image-20231105005204288](&#x2F;Users&#x2F;hejinlin&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20231105005204288.png)</p>
+<p><img src="/Hexo%E6%90%AD%E5%BB%BA%E7%AB%99%E7%82%B9/image-20231105181105552.png" alt="image-20231105181105552"></p>
 </li>
 <li><p>编译部署项目</p>
 <p>修改根目录的 <code>_config.yml</code>文件，修改Deployment部分为新建仓库的地址，修改分支为master</p>
