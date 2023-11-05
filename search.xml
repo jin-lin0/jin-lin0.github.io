@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo中插入图片</title>
+    <title>Hexo插件</title>
     <url>/posts/62790/</url>
     <content><![CDATA[<h1 id="Hexo中插入图片"><a href="#Hexo中插入图片" class="headerlink" title="Hexo中插入图片"></a>Hexo中插入图片</h1><ol>
 <li><p>安装图片插件<code>hexo-renderer-marked</code></p>
@@ -9,13 +9,9 @@
 </li>
 <li><p><strong>根目录</strong>的<code>_config.yml</code>文件中配置：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-
 </li>
 <li><p>创建文章，此时会在<code>source/_posts</code>生成同名文件夹，放置文章资源</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;xxx&quot;</span></span><br></pre></td></tr></table></figure>
-
-
 </li>
 <li><p>配置Typora</p>
 <p>打开typora的偏好设置，点击图像，更改为如下设置</p>
@@ -31,9 +27,21 @@
 <li><p>安装插件<code>hexo-image-link</code>解决typora与hexo路径不一致问题，这样在typora和hexo都可以显示图片了</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-image-link --save</span><br></pre></td></tr></table></figure></li>
 </ol>
+<h1 id="Hexo生成唯一永久文章链接"><a href="#Hexo生成唯一永久文章链接" class="headerlink" title="Hexo生成唯一永久文章链接"></a>Hexo生成唯一永久文章链接</h1><p>hexo的文章链接默认的生成规则是：<code>:year/:month/:day/:title</code>，标题如果是中文，会变得特别冗长。同时修改标题后文章链接会发生变化，URL层级深，不利于SEO，因此安装如下插件。</p>
+<ol>
+<li><p>安装<code>hexo-abbrlink</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm i hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改<strong>根目录</strong>的<code>_config.yml</code>配置：(<code>posts/</code>可以舍去)</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清除hexo缓存</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
       <tags>
         <tag>Hexo</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
