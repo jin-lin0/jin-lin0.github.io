@@ -1,5 +1,5 @@
 ---
-title: Hexo构建
+title: Hexo搭建站点
 date: 2023-11-04 20:01:20
 tags: 
 - Hexo
@@ -34,7 +34,7 @@ tags:
 
    显示如下界面，浏览器打开 `http://localhost:4000/`查看博客站点
 
-   ![image-20231105005204288](/Users/hejinlin/Library/Application Support/typora-user-images/image-20231105005204288.png)
+   ![image-20231105181105552](Hexo搭建站点/image-20231105181105552.png)
 3. 编译部署项目
 
    修改根目录的 `_config.yml`文件，修改Deployment部分为新建仓库的地址，修改分支为master

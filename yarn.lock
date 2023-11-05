@@ -683,6 +683,11 @@ hexo-i18n@^2.0.0:
   dependencies:
     sprintf-js "^1.1.2"
 
+hexo-image-link@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.npmmirror.com/hexo-image-link/-/hexo-image-link-0.0.5.tgz"
+  integrity sha512-IakmAA0lPATF6iUfHAzYSuZPA6DYLlMj4LTGnT4LeEtmIHjPWsTDgGssPbMJakA47M1vNv5WwiNS3GCtdH2FQw==
+
 hexo-log@^4.0.1:
   version "4.1.0"
   resolved "https://registry.npmmirror.com/hexo-log/-/hexo-log-4.1.0.tgz"
@@ -712,7 +717,7 @@ hexo-renderer-kramed@^0.1.4:
     object-assign "^4.1.0"
     strip-indent "^1.0.1"
 
-hexo-renderer-marked@^6.0.0:
+hexo-renderer-marked@^6.1.1:
   version "6.1.1"
   resolved "https://registry.npmmirror.com/hexo-renderer-marked/-/hexo-renderer-marked-6.1.1.tgz"
   integrity sha512-vllmRFwl9A1NP/llQW2TbDnyvqaQKgktxXw7c+tK7XVQJmfIUnl32dr8M4jRYqYe5m9972eYm09kBXV8rBtA/A==
