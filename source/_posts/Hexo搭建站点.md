@@ -1,8 +1,9 @@
 ---
 title: Hexo搭建站点
+tags:
+  - Hexo
+abbrlink: 26676
 date: 2023-11-04 20:01:20
-tags: 
-- Hexo
 ---
 # Hexo搭建站点
 
