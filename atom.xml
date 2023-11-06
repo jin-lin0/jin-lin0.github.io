@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-05T18:57:35.153Z</updated>
+  <updated>2023-11-06T06:23:09.601Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>查看Github仓库占用的存储空间</title>
+    <link href="http://example.com/posts/6295/"/>
+    <id>http://example.com/posts/6295/</id>
+    <published>2023-11-06T05:33:29.000Z</published>
+    <updated>2023-11-06T06:23:09.601Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="查看Github仓库占用的存储空间"><a href="#查看Github仓库占用的存储空间" class="headerlink" title="查看Github仓库占用的存储空间"></a>查看Github仓库占用的存储空间</h1><ol><li><p>登录Github首页，点击账户的setting</p><img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213"></li><li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p><img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358"></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;查看Github仓库占用的存储空间&quot;&gt;&lt;a href=&quot;#查看Github仓库占用的存储空间&quot; class=&quot;headerlink&quot; title=&quot;查看Github仓库占用的存储空间&quot;&gt;&lt;/a&gt;查看Github仓库占用的存储空间&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;登</summary>
+      
+    
+    
+    
+    
+    <category term="Github" scheme="http://example.com/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>实用网站收集</title>

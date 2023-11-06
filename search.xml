@@ -166,4 +166,19 @@
         <tag>网站</tag>
       </tags>
   </entry>
+  <entry>
+    <title>查看Github仓库占用的存储空间</title>
+    <url>/posts/6295/</url>
+    <content><![CDATA[<h1 id="查看Github仓库占用的存储空间"><a href="#查看Github仓库占用的存储空间" class="headerlink" title="查看Github仓库占用的存储空间"></a>查看Github仓库占用的存储空间</h1><ol>
+<li><p>登录Github首页，点击账户的setting</p>
+<img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213">
+</li>
+<li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p>
+<img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358"></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Github</tag>
+      </tags>
+  </entry>
 </search>
