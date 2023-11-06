@@ -101,6 +101,13 @@
 <li><p>清除hexo缓存</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li>
 </ol>
+<h2 id="Hexo中插入背景音乐"><a href="#Hexo中插入背景音乐" class="headerlink" title="Hexo中插入背景音乐"></a>Hexo中插入背景音乐</h2><ol>
+<li><p>网易云音乐中点击生成外链链接</p>
+<img src="/posts/62790/image-20231106183321197.png" class="" title="image-20231106183321197">
+</li>
+<li><p>复制外链iframe到<code>/next/layout/macro/sidebar.swig</code>中即可</p>
+<img src="/posts/62790/image-20231106183408365.png" class="" title="image-20231106183408365"></li>
+</ol>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -108,23 +115,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实用网站收集</title>
-    <url>/posts/1e5417a7/</url>
-    <content><![CDATA[<h1 id="实用网站收集"><a href="#实用网站收集" class="headerlink" title="实用网站收集"></a>实用网站收集</h1><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
-<li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li><a href="http://三毛机场.live/">三毛机场</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>网站</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -256,6 +246,23 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实用网站收集</title>
+    <url>/posts/1e5417a7/</url>
+    <content><![CDATA[<h1 id="实用网站收集"><a href="#实用网站收集" class="headerlink" title="实用网站收集"></a>实用网站收集</h1><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="http://三毛机场.live/">三毛机场</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
