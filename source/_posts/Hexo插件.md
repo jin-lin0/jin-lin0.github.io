@@ -1,10 +1,12 @@
 ---
 title: Hexo插件
-tags:
-  - Hexo
-  - 插件
 abbrlink: 62790
 date: 2023-11-05 18:25:21
+tags:
+- Hexo
+- 插件
+categories:
+- Hexo
 ---
 
 ## Hexo中插入图片
@@ -135,3 +137,57 @@ hexo的文章链接默认的生成规则是：`:year/:month/:day/:title`，标�
 
    ![image-20231106152216919](Hexo插件/image-20231106152216919.png)
 
+## Hexo字数统计与阅读时长
+
+1. **根目录**安装插件`hexo-symbols-count-time`
+
+   ```sh
+   npm install hexo-symbols-count-time --save
+   ```
+
+2. **根目录**配置`_config.yml`，如果中文较多`awl`采用2，否则默认即可
+
+   ```yaml
+   symbols_count_time:
+     symbols: true
+     time: true
+     total_symbols: true
+     total_time: true
+     exclude_codeblock: false
+     awl: 2
+     wpm: 300
+     suffix: "mins."
+   ```
+
+   `symbols`：字数统计
+
+   `time`：时间统计
+
+   `total_symbols`：总字数统计
+
+   `total_time`：总时间统计
+
+   `exclude_codeblock`：排除代码块计算
+
+3. **主题**配置`_config.yml`
+
+   ```yaml
+   symbols_count_time:
+     separated_meta: true
+     item_text_post: true
+     item_text_total: true
+   ```
+
+   `separated_meta`：是否和发表时间不在一行
+
+   `item_text_post`：文章前面是否显示文字描述（本文字数，统计时长）
+
+   `item_text_total`：页面底部显示站点总字数，总时长
+
+4. 清除hexo缓存
+
+   ```
+   hexo clean
+   ```
+
+   

@@ -1,9 +1,11 @@
 ---
 title: Hexo搭建站点
-tags:
-  - Hexo
 abbrlink: 26676
 date: 2023-11-04 20:01:20
+tags:
+- Hexo
+categories:
+- Hexo
 ---
 # Hexo搭建站点
 
@@ -261,36 +263,73 @@ date: 2023-11-04 20:01:20
          -Hexo
       ```
    
-   2. 新建标签：新建标签页，生成 `/source/tags/index.md`文件
+   2. 新建分类：
    
+      新建分类页面，生成 `/source/categories/index.md`文件
+      
+      ```
+      hexo new page categories
+      ```
+   
+      Front Matter中添加 `type: categories`
+      
+      ```
+      title: categories
+      date: 2023-11-06 17:21:15
+      type: "categories"
+      comments: false
+      ```
+      
+      创建文章的Front Matter中设置分类
+      
+      - 一级分类
+      
+        ```yaml
+        categories: 
+        - FE
+        ```
+      
+      - 二级分类
+   
+        ```yaml
+        categories: 
+        - FE
+        - CSS
+        ```
+      
+   2. 新建标签
+   
+      新建标签页，生成 `/source/tags/index.md`文件
+      
       ```sh
       hexo new page tags
       ```
    
-      开头信息添加 `type: tags`:
-   
+      Front Matter中添加 `type: tags`:
+      
       ```
       title: tags
       date: 2023-11-04 15:45:29
       type: "tags"
+      comments: false
       ```
-   
-      修改**主题**的 `_config.yml`文件，配置Tags
-   
+      
+      修改**主题**的 `_config.yml`文件，配置Tags和categories
+      
       ```yaml
       menu:
         home: / || fa fa-home
         #about: /about/ || fa fa-user
         tags: /tags/ || fa fa-tags
-        #categories: /categories/ || fa fa-th
+        categories: /categories/ || fa fa-th
         archives: /archives/ || fa fa-archive
         #schedule: /schedule/ || fa fa-calendar
         #sitemap: /sitemap.xml || fa fa-sitemap
         #commonweal: /404/ || fa fa-heartbeat
       ```
-   
+      
       清除无用的标签：
-   
+      
       ```sh
       hexo clean
       ```
