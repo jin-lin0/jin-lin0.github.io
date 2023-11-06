@@ -6,6 +6,8 @@
     <content><![CDATA[<h2 id="Hexo中插入图片"><a href="#Hexo中插入图片" class="headerlink" title="Hexo中插入图片"></a>Hexo中插入图片</h2><ol>
 <li><p>安装图片插件<code>hexo-renderer-marked</code></p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
 </li>
 <li><p><strong>根目录</strong>的<code>_config.yml</code>文件中配置：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
@@ -129,6 +131,8 @@
 <li><p>安装Hexo-cli，即Hexo的命令行工具。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
 </ol>
+<span id="more"></span>
+
 <h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ol>
 <li><p>创建项目，进入创建的文件夹</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init &#123;name&#125;</span><br><span class="line">cd &#123;name&#125;</span><br></pre></td></tr></table></figure></li>
@@ -208,6 +212,12 @@
 
 <p>   文章开头采用如下格式添加信息：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Hexo构建</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-11-04 20:01:20</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="string">-Hexo</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="string">-Hexo</span></span><br></pre></td></tr></table></figure>
+
+<p>检查Next主题的<code>_config.yml</code>中简介设置打开：(默认安装时打开)</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Automatically excerpt description in homepage as preamble text.</span></span><br><span class="line"><span class="attr">excerpt_description:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>在文章中添加截断，只有截断之前的内容才会在列表页展示</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>新建分类：</p>
 <p>新建分类页面，生成 <code>/source/categories/index.md</code>文件</p>
@@ -251,7 +261,9 @@
   <entry>
     <title>background-removal使用教程</title>
     <url>/posts/9583/</url>
-    <content><![CDATA[<h1 id="background-removal使用教程"><a href="#background-removal使用教程" class="headerlink" title="background-removal使用教程"></a>background-removal使用教程</h1><p>该npm包于2023.7发布，能够直接在浏览器中删除图片的背景，无费用与隐私问题。<a href="https://img.ly/showcases/cesdk/background-removal/web?utm_medium=project&utm_source=github&utm_campaign=bg-removal">DEMO</a></p>
+    <content><![CDATA[<p>该npm包于2023.7发布，能够直接在浏览器中删除图片的背景，无费用与隐私问题。<a href="https://img.ly/showcases/cesdk/background-removal/web?utm_medium=project&utm_source=github&utm_campaign=bg-removal">DEMO</a></p>
+<span id="more"></span>
+
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>@imgly/background-removal</code>允许开发人员直接在浏览器中无缝地从图像中删除背景。</p>
 <p><strong>特性：</strong></p>
 <ul>
@@ -312,9 +324,11 @@
   <entry>
     <title>实用网站收集</title>
     <url>/posts/1e5417a7/</url>
-    <content><![CDATA[<h1 id="实用网站收集"><a href="#实用网站收集" class="headerlink" title="实用网站收集"></a>实用网站收集</h1><h2 id="前端工具"><a href="#前端工具" class="headerlink" title="前端工具"></a>前端工具</h2><ul>
+    <content><![CDATA[<h2 id="前端工具"><a href="#前端工具" class="headerlink" title="前端工具"></a>前端工具</h2><ul>
 <li><a href="https://tiny-helpers.dev/">迷你辅助，500+免费在线工具</a></li>
 </ul>
+<span id="more"></span>
+
 <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
 <li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
 </ul>
@@ -336,8 +350,10 @@
   <entry>
     <title>查看Github仓库占用的存储空间</title>
     <url>/posts/6295/</url>
-    <content><![CDATA[<h1 id="查看Github仓库占用的存储空间"><a href="#查看Github仓库占用的存储空间" class="headerlink" title="查看Github仓库占用的存储空间"></a>查看Github仓库占用的存储空间</h1><ol>
+    <content><![CDATA[<ol>
 <li><p>登录Github首页，点击账户的setting</p>
+<span id="more"></span>
+
 <img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213">
 </li>
 <li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p>
