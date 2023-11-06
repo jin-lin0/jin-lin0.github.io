@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#222">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="background-removal使用教程该npm包于2023.7发布，能够直接在浏览器中删除图片的背景，无费用与隐私问题。DEMO 概述@imgly&#x2F;background-removal允许开发人员直接在浏览器中无缝地从图像中删除背景。 特性：  浏览器内执行后台删除。直接在用户浏览器中执行整个后台删除过程，无需额外的服务器成本，利用本地设备计算能力，完成背景的去除。 数据隐私保护。完全浏览器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="background-removal使用教程">
+<meta property="og:url" content="http://example.com/posts/9583/index.html">
+<meta property="og:site_name" content="MY BLOG">
+<meta property="og:description" content="background-removal使用教程该npm包于2023.7发布，能够直接在浏览器中删除图片的背景，无费用与隐私问题。DEMO 概述@imgly&#x2F;background-removal允许开发人员直接在浏览器中无缝地从图像中删除背景。 特性：  浏览器内执行后台删除。直接在用户浏览器中执行整个后台删除过程，无需额外的服务器成本，利用本地设备计算能力，完成背景的去除。 数据隐私保护。完全浏览器">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-06T19:29:07.000Z">
+<meta property="article:modified_time" content="2023-11-06T20:00:30.473Z">
+<meta property="article:author" content="HJL">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="npm">
+<meta property="article:tag" content="抠图">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/posts/9583/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>background-removal使用教程 | MY BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="MY BLOG" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MY BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/jin-lin0" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/9583/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="HJL">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MY BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          background-removal使用教程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-11-07 03:29:07 / 修改时间：04:00:30" itemprop="dateCreated datePublished" datetime="2023-11-07T03:29:07+08:00">2023-11-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/npm/" itemprop="url" rel="index"><span itemprop="name">npm</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="background-removal使用教程"><a href="#background-removal使用教程" class="headerlink" title="background-removal使用教程"></a>background-removal使用教程</h1><p>该npm包于2023.7发布，能够直接在浏览器中删除图片的背景，无费用与隐私问题。<a target="_blank" rel="noopener" href="https://img.ly/showcases/cesdk/background-removal/web?utm_medium=project&utm_source=github&utm_campaign=bg-removal">DEMO</a></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>@imgly/background-removal</code>允许开发人员直接在浏览器中无缝地从图像中删除背景。</p>
+<p><strong>特性：</strong></p>
+<ul>
+<li><strong>浏览器内执行后台删除</strong>。直接在用户浏览器中执行整个后台删除过程，无需额外的服务器成本，利用本地设备计算能力，完成背景的去除。</li>
+<li><strong>数据隐私保护</strong>。完全浏览器运行，无需传输到外部服务器。</li>
+<li><strong>与 IMG.LY 的 CE.SDK 无缝集成</strong>。<code>@imgly/background-removal</code>提供与<a target="_blank" rel="noopener" href="https://img.ly/products/creative-sdk?utm_source=github&utm_medium=project&utm_campaign=bg-removal">IMG.LY 的 CE.SDK </a>的无缝集成，使开发人员能够轻松地将强大的浏览器内图像抠图和背景去除功能合并到他们的项目中。</li>
+</ul>
+<p>使用的神经网络（<a target="_blank" rel="noopener" href="https://onnx.ai/">ONNX 模型</a><code>@imgly/background-removal</code>）和 WASM 文件托管在<a target="_blank" rel="noopener" href="https://www.unpkg.com/">UNPKG</a>上，因此库的所有用户都可以轻松下载。如果您想在自己的服务器上托管数据，请参阅自定义资产服务部分。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @imgly/background-removal</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> imglyRemoveBackground <span class="keyword">from</span> <span class="string">&quot;@imgly/background-removal&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">image_src</span>: <span class="title class_">ImageData</span> | <span class="title class_">ArrayBuffer</span> | <span class="title class_">Uint8Array</span> | <span class="title class_">Blob</span> | <span class="variable constant_">URL</span> | <span class="built_in">string</span> = ...;</span><br><span class="line"></span><br><span class="line"><span class="title function_">imglyRemoveBackground</span>(image_src).<span class="title function_">then</span>(<span class="function">(<span class="params">blob: Blob</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// The result is a blob encoded as PNG. It can be converted to an URL to be used as HTMLImage.src</span></span><br><span class="line">  <span class="keyword">const</span> url = <span class="variable constant_">URL</span>.<span class="title function_">createObjectURL</span>(blob);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>第一次运行获取 wasm 和 onnx 模型文件需要一定的时间。所有文件都由浏览器和附加模型缓存进行缓存。</p>
+<h2 id="高级配置"><a href="#高级配置" class="headerlink" title="高级配置"></a>高级配置</h2><p>该库不需要任何配置即可启动，可选参数可以提供对库的更多控制。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">publicPath</span>: <span class="built_in">string</span>; <span class="comment">// 模型和wasm文件的公共路径</span></span><br><span class="line">  <span class="attr">debug</span>: bool; <span class="comment">// 启用或禁用console输出</span></span><br><span class="line">  <span class="attr">proxyToWorker</span>: bool; <span class="comment">// 是否代理计算给webworker. (Default true)</span></span><br><span class="line">  <span class="attr">model</span>: <span class="string">&#x27;small&#x27;</span> | <span class="string">&#x27;medium&#x27;</span>; <span class="comment">// 使用的模型. (Default &quot;medium&quot;)</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="下载的大小与质量"><a href="#下载的大小与质量" class="headerlink" title="下载的大小与质量"></a>下载的大小与质量</h3><ul>
+<li>small（~40MB）：有时会显示伪影。</li>
+<li>medium（～80MB）：默认模型。</li>
+</ul>
+<h3 id="下载进度监控"><a href="#下载进度监控" class="headerlink" title="下载进度监控"></a>下载进度监控</h3><p>首次运行获取必要的数据并存储在浏览器缓存中。由于下载可能需要一些时间，可以选择查看下载进度。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">progress</span>: <span class="function">(<span class="params">key, current, total</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Downloading <span class="subst">$&#123;key&#125;</span>: <span class="subst">$&#123;current&#125;</span> of <span class="subst">$&#123;total&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><p>性能在很大程度上取决于可用的功能集。最重要的是，请确保 <code>SharedArrayBuffer</code> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer">MDN</a>可用。由于 <code>SharedArrayBuffer</code> 的安全要求，需要设置两个标头来使您的站点与跨源隔离</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;Cross-Origin-Opener-Policy&#x27;</span>: <span class="string">&#x27;same-origin&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Cross-Origin-Embedder-Policy&#x27;</span>: <span class="string">&#x27;require-corp&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="定制资源"><a href="#定制资源" class="headerlink" title="定制资源"></a>定制资源</h3><p>目前，wasm 和 onnx 神经网络通过 unpkg 提供服务。对于生产使用，我们建议您自行托管它们。因此，请将所有 .wasm 和 .onnx 文件复制到您的公共路径 $PUBLIC_PATH，并重新配置库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> node_modules/@imgly/background-removal/dist/*.wasm <span class="variable">$PUBLIC_PATH</span></span><br><span class="line"><span class="built_in">cp</span> node_modules/@imgly/background-removal/dist/*.onnx <span class="variable">$PUBLIC_PATH</span></span><br></pre></td></tr></table></figure>
+
+<p>然后，在代码中可以导入 <code>@imgly/background-removal</code> 库，配置并使用它来移除背景。参考以下示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> imglyRemoveBackground, &#123;<span class="title class_">Config</span>&#125; <span class="keyword">from</span> <span class="string">&quot;@imgly/background-removal&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> public_path = <span class="string">&quot;https://example.com/assets/&quot;</span>; <span class="comment">// assets 被提供的路径</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">publicPath</span>: public_path, <span class="comment">// wasm 文件的路径</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">image_src</span>: <span class="title class_">ImageData</span> | <span class="title class_">ArrayBuffer</span> | <span class="title class_">Uint8Array</span> | <span class="title class_">Blob</span> | <span class="variable constant_">URL</span> | string = ...;</span><br><span class="line"></span><br><span class="line"><span class="title function_">imglyRemoveBackground</span>(image_src, config).<span class="title function_">then</span>(<span class="function">(<span class="params">blob: Blob</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 结果是以 PNG 编码的 Blob。</span></span><br><span class="line">  <span class="comment">// 它可以转换为 URL，用作 HTMLImage.src</span></span><br><span class="line">  <span class="keyword">const</span> url = <span class="variable constant_">URL</span>.<span class="title function_">createObjectURL</span>(blob);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这段代码的作用是将 <code>@imgly/background-removal</code> 库的 wasm 和 onnx 文件从 unpkg 复制到您的公共路径，并配置库以使用这些文件来执行背景移除操作。请确保替换 <code>public_path</code> 变量为您自己的实际公共路径。</p>
+<h3 id="调试输出"><a href="#调试输出" class="headerlink" title="调试输出"></a>调试输出</h3><p>启用调试输出并记录到控制台</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">debug</span>: <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="跨域资源共享（CORS）"><a href="#跨域资源共享（CORS）" class="headerlink" title="跨域资源共享（CORS）"></a>跨域资源共享（CORS）</h3><p>如果您遇到 CORS 问题，您可能需要通过以下方式将其他参数传递给 fetch 函数</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">fetchArgs</span>: &#123;</span><br><span class="line">    <span class="attr">mode</span>: <span class="string">&#x27;no-cors&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="它们给谁用？"><a href="#它们给谁用？" class="headerlink" title="它们给谁用？"></a>它们给谁用？</h2><p><code>@imgly/background-removal</code>适合需要直接在浏览器中高效且经济高效地去除背景的开发人员和项目，包括但不限于：</p>
+<ul>
+<li>需要实时去除产品图像背景的<strong>电子商务应用程序</strong>。</li>
+<li>需要背景去除功能以增强用户体验的<strong>图像编辑应用程序</strong>。</li>
+<li><strong>基于网络的图形设计工具</strong>，旨在通过浏览器内背景删除来简化创作过程。</li>
+</ul>
+<p>无论您是专业开发人员还是业余爱好者，<code>@imgly/background-removal</code>都可以让您轻松交付令人印象深刻的应用程序和服务。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+              <a href="/tags/npm/" rel="tag"># npm</a>
+              <a href="/tags/%E6%8A%A0%E5%9B%BE/" rel="tag"># 抠图</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/6295/" rel="prev" title="查看Github仓库占用的存储空间">
+      <i class="fa fa-chevron-left"></i> 查看Github仓库占用的存储空间
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#background-removal%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">background-removal使用教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">高级配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E7%9A%84%E5%A4%A7%E5%B0%8F%E4%B8%8E%E8%B4%A8%E9%87%8F"><span class="nav-number">1.4.1.</span> <span class="nav-text">下载的大小与质量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E8%BF%9B%E5%BA%A6%E7%9B%91%E6%8E%A7"><span class="nav-number">1.4.2.</span> <span class="nav-text">下载进度监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD"><span class="nav-number">1.4.3.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E5%88%B6%E8%B5%84%E6%BA%90"><span class="nav-number">1.4.4.</span> <span class="nav-text">定制资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E8%BE%93%E5%87%BA"><span class="nav-number">1.4.5.</span> <span class="nav-text">调试输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%EF%BC%88CORS%EF%BC%89"><span class="nav-number">1.4.6.</span> <span class="nav-text">跨域资源共享（CORS）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%83%E4%BB%AC%E7%BB%99%E8%B0%81%E7%94%A8%EF%BC%9F"><span class="nav-number">1.5.</span> <span class="nav-text">它们给谁用？</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="HJL"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">HJL</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=2&id=1910251769&auto=0&height=32"></iframe>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HJL</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">10k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">16 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'cb0ea98061963b47013a',
+      clientSecret: 'de74585857144b26bd22e877cfd82555e75f535d',
+      repo        : 'jin-lin0.github.io',
+      owner       : 'jin-lin0',
+      admin       : ['jin-lin0'],
+      id          : 'bfe5f0617ab781d93eca8c2842a6b142',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>
