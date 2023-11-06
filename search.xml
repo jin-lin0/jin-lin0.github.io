@@ -78,24 +78,33 @@
 <li><p>Github登录后访问文章，即可自动初始化gitalk的issues，成功添加后效果如下：</p>
 <img src="/posts/62790/image-20231106152216919.png" class="" title="image-20231106152216919"></li>
 </ol>
+<h2 id="Hexo字数统计与阅读时长"><a href="#Hexo字数统计与阅读时长" class="headerlink" title="Hexo字数统计与阅读时长"></a>Hexo字数统计与阅读时长</h2><ol>
+<li><p><strong>根目录</strong>安装插件<code>hexo-symbols-count-time</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>根目录</strong>配置<code>_config.yml</code>，如果中文较多<code>awl</code>采用2，否则默认即可</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">300</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>symbols</code>：字数统计</p>
+<p><code>time</code>：时间统计</p>
+<p><code>total_symbols</code>：总字数统计</p>
+<p><code>total_time</code>：总时间统计</p>
+<p><code>exclude_codeblock</code>：排除代码块计算</p>
+</li>
+<li><p><strong>主题</strong>配置<code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><code>separated_meta</code>：是否和发表时间不在一行</p>
+<p><code>item_text_post</code>：文章前面是否显示文字描述（本文字数，统计时长）</p>
+<p><code>item_text_total</code>：页面底部显示站点总字数，总时长</p>
+</li>
+<li><p>清除hexo缓存</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
       <tags>
         <tag>Hexo</tag>
         <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实用网站收集</title>
-    <url>/posts/1e5417a7/</url>
-    <content><![CDATA[<h1 id="实用网站收集"><a href="#实用网站收集" class="headerlink" title="实用网站收集"></a>实用网站收集</h1><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
-<li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li><a href="http://三毛机场.live/">三毛机场</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -222,6 +231,20 @@
 ]]></content>
       <tags>
         <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实用网站收集</title>
+    <url>/posts/1e5417a7/</url>
+    <content><![CDATA[<h1 id="实用网站收集"><a href="#实用网站收集" class="headerlink" title="实用网站收集"></a>实用网站收集</h1><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="http://三毛机场.live/">三毛机场</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>网站</tag>
       </tags>
   </entry>
 </search>
