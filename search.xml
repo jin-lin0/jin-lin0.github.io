@@ -38,6 +38,49 @@
 <li><p>清除hexo缓存</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li>
 </ol>
+<h1 id="Hexo文章添加评论"><a href="#Hexo文章添加评论" class="headerlink" title="Hexo文章添加评论"></a>Hexo文章添加评论</h1><ol>
+<li><p>登录Github，点击右侧头像，点击<strong>Setting</strong>选项</p>
+<img src="/posts/62790/image-20231106144206651.png" class="" title="image-20231106144206651">
+</li>
+<li><p>左侧菜单选择<strong>Developer setting</strong>，进入开发者页面</p>
+<img src="/posts/62790/image-20231106144314768.png" class="" title="image-20231106144314768">
+</li>
+<li><p>选择OAuth创建应用</p>
+<img src="/posts/62790/image-20231106144420271.png" class="" title="image-20231106144420271">
+</li>
+<li><p>设置应用的相关信息</p>
+<ul>
+<li>Application name 应用名称</li>
+<li>Homepage URL 博客主页</li>
+<li>Authorization callback URL 授权回调页面（同 Homepage URL）</li>
+</ul>
+<img src="/posts/62790/image-20231106144714996.png" class="" title="image-20231106144714996">
+
+
+</li>
+<li><p>保存 <strong>Client ID</strong> 和 <strong>Client secrets</strong></p>
+</li>
+<li><p>配置主题<code>_config.yml</code>文件</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="string">jin-lin0</span> <span class="comment"># GitHub repo owner</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">jin-lin0.github.io</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="string">xxx</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="string">xxx</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="string">jin-lin0</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置<code>enable</code>为<code>true</code></li>
+<li><code>github_id</code>填入<code>github</code>帐号</li>
+<li><code>repo</code>填入<code>github</code>仓库名（<strong>仓库名不是仓库地址</strong>），评论以<code>issues</code>形式保存在该仓库下</li>
+<li><code>client_id</code>填入注册生成的值</li>
+<li><code>client_secret</code>填入注册生成的值</li>
+<li><code>admin_user</code>填入<code>github</code>帐号，初始化评论账户</li>
+</ul>
+</li>
+<li><p>隐藏评论功能，在front matter中添加：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>是</p>
+</li>
+<li></li>
+</ol>
 ]]></content>
       <tags>
         <tag>Hexo</tag>
@@ -153,20 +196,6 @@
       </tags>
   </entry>
   <entry>
-    <title>实用网站收集</title>
-    <url>/posts/1e5417a7/</url>
-    <content><![CDATA[<h1 id="实用网站收集"><a href="#实用网站收集" class="headerlink" title="实用网站收集"></a>实用网站收集</h1><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
-<li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li><a href="http://三毛机场.live/">三毛机场</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>查看Github仓库占用的存储空间</title>
     <url>/posts/6295/</url>
     <content><![CDATA[<h1 id="查看Github仓库占用的存储空间"><a href="#查看Github仓库占用的存储空间" class="headerlink" title="查看Github仓库占用的存储空间"></a>查看Github仓库占用的存储空间</h1><ol>
@@ -179,6 +208,20 @@
 ]]></content>
       <tags>
         <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实用网站收集</title>
+    <url>/posts/1e5417a7/</url>
+    <content><![CDATA[<h1 id="实用网站收集"><a href="#实用网站收集" class="headerlink" title="实用网站收集"></a>实用网站收集</h1><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="http://三毛机场.live/">三毛机场</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>网站</tag>
       </tags>
   </entry>
 </search>
