@@ -102,6 +102,9 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
       <tags>
         <tag>Hexo</tag>
         <tag>插件</tag>
@@ -199,14 +202,31 @@
 <p>   文章开头采用如下格式添加信息：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Hexo构建</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-11-04 20:01:20</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line"><span class="string">-Hexo</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="string">-Hexo</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>新建标签：新建标签页，生成 <code>/source/tags/index.md</code>文件</p>
+<li><p>新建分类：</p>
+<p>新建分类页面，生成 <code>/source/categories/index.md</code>文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>Front Matter中添加 <code>type: categories</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: categories</span><br><span class="line">date: 2023-11-06 17:21:15</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure>
+
+<p>创建文章的Front Matter中设置分类</p>
+<ul>
+<li><p>一级分类</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">FE</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>二级分类</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">FE</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">CSS</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>新建标签</p>
+<p>新建标签页，生成 <code>/source/tags/index.md</code>文件</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
 
-<p>开头信息添加 <code>type: tags</code>:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2023-11-04 15:45:29</span><br><span class="line">type: &quot;tags&quot;</span><br></pre></td></tr></table></figure>
+<p>Front Matter中添加 <code>type: tags</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2023-11-04 15:45:29</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure>
 
-<p>修改<strong>主题</strong>的 <code>_config.yml</code>文件，配置Tags</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="comment">#categories: /categories/ || fa fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+<p>修改<strong>主题</strong>的 <code>_config.yml</code>文件，配置Tags和categories</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="comment">#about: /about/ || fa fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
 
 <p>清除无用的标签：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li>
@@ -214,8 +234,28 @@
 </li>
 </ol>
 ]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实用网站收集</title>
+    <url>/posts/1e5417a7/</url>
+    <content><![CDATA[<h1 id="实用网站收集"><a href="#实用网站收集" class="headerlink" title="实用网站收集"></a>实用网站收集</h1><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="http://三毛机场.live/">三毛机场</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -229,22 +269,11 @@
 <img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358"></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>Github</category>
+      </categories>
       <tags>
         <tag>Github</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>实用网站收集</title>
-    <url>/posts/1e5417a7/</url>
-    <content><![CDATA[<h1 id="实用网站收集"><a href="#实用网站收集" class="headerlink" title="实用网站收集"></a>实用网站收集</h1><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
-<li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li><a href="http://三毛机场.live/">三毛机场</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>网站</tag>
       </tags>
   </entry>
 </search>
