@@ -37,13 +37,14 @@
         {{- next_inject('sidebar') }}
       </div>
 
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=2&id=1910251769&auto=0&height=32"></iframe>
+
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
         </div>
       {%- endif %}
-
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
