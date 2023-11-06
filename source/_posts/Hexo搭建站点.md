@@ -222,6 +222,13 @@ date: 2023-11-04 20:01:20
        style: source/_data/styles.styl
      ```
      
+   - powered：去掉footer中Hexo与Next强力驱动文字
+   
+     ```yaml
+       # Powered by Hexo & NexT
+       powered: false
+     ```
+     
    - busuanzi_count：不蒜子访客统计
    
      ```yaml

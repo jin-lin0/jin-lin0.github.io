@@ -7,7 +7,7 @@ abbrlink: 62790
 date: 2023-11-05 18:25:21
 ---
 
-# Hexo中插入图片
+## Hexo中插入图片
 
 1. 安装图片插件`hexo-renderer-marked`
 
@@ -53,7 +53,7 @@ date: 2023-11-05 18:25:21
    ```
 
 
-# Hexo生成唯一永久文章链接
+## Hexo生成唯一永久文章链接
 
 hexo的文章链接默认的生成规则是：`:year/:month/:day/:title`，标题如果是中文，会变得特别冗长。同时修改标题后文章链接会发生变化，URL层级深，不利于SEO，因此安装如下插件。
 
@@ -75,5 +75,63 @@ hexo的文章链接默认的生成规则是：`:year/:month/:day/:title`，标�
    hexo clean
    ```
 
+## Hexo文章添加评论
+
+1. 登录Github，点击右侧头像，点击**Setting**选项
+
+   ![image-20231106144206651](Hexo插件/image-20231106144206651.png)
+
+2. 左侧菜单选择**Developer setting**，进入开发者页面
+
+   ![image-20231106144314768](Hexo插件/image-20231106144314768.png)
+
+3. 选择OAuth创建应用
+
+   ![image-20231106144420271](Hexo插件/image-20231106144420271.png)
+
+4. 设置应用的相关信息
+
+   - Application name 应用名称
+   - Homepage URL 博客主页
+   - Authorization callback URL 授权回调页面（同 Homepage URL）
+
+   ![image-20231106144714996](Hexo插件/image-20231106144714996.png)
+
    
+
+5. 保存 **Client ID** 和 **Client secrets**
+
+6. 配置主题`_config.yml`文件
+
+   ```yaml
+   gitalk:
+     enable: true
+     github_id: jin-lin0 # GitHub repo owner
+     repo: jin-lin0.github.io # Repository name to store issues
+     client_id: xxx # GitHub Application Client ID
+     client_secret: xxx # GitHub Application Client Secret
+     admin_user: jin-lin0 # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+     distraction_free_mode: true # Facebook-like distraction free mode
+     # Gitalk's display language depends on user's browser or system environment
+     # If you want everyone visiting your site to see a uniform language, you can set a force language value
+     # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
+     language: zh-CN
+   ```
+
+   - 设置`enable`为`true`
+   - `github_id`填入`github`帐号
+   - `repo`填入`github`仓库名（**仓库名不是仓库地址**），评论以`issues`形式保存在该仓库下
+   - `client_id`填入注册生成的值
+   - `client_secret`填入注册生成的值
+   - `admin_user`填入`github`帐号，初始化评论账户
+
+7. 隐藏评论功能，在front matter中添加：
+
+   ```yaml
+   comments: false
+   ```
+
+8. Github登录后访问文章，即可自动初始化gitalk的issues，成功添加后效果如下：
+
+   ![image-20231106152216919](Hexo插件/image-20231106152216919.png)
 

@@ -393,6 +393,13 @@ domexception@^4.0.0:
   dependencies:
     webidl-conversions "^7.0.0"
 
+domhandler@^3.0.0:
+  version "3.3.0"
+  resolved "https://registry.npmmirror.com/domhandler/-/domhandler-3.3.0.tgz"
+  integrity sha512-J1C5rIANUbuYK+FuFL98650rihynUOEzRLxW+90bKZRWB6A1X1Tf82GxR1qAWLyfNPRvjqfip3Q5tdYlmAa9lA==
+  dependencies:
+    domelementtype "^2.0.1"
+
 domhandler@^4.2.0, domhandler@^4.2.2:
   version "4.3.1"
   resolved "https://registry.npmmirror.com/domhandler/-/domhandler-4.3.1.tgz"
@@ -412,7 +419,7 @@ dompurify@^3.0.3:
   resolved "https://registry.npmmirror.com/dompurify/-/dompurify-3.0.6.tgz"
   integrity sha512-ilkD8YEnnGh1zJ240uJsW7AzE+2qpbOUYjacomn3AvJ6J4JhKGSZ2nh4wUIXPZrEPppaCLx5jFe8T89Rk8tQ7w==
 
-domutils@^2.8.0:
+domutils@^2.0.0, domutils@^2.8.0:
   version "2.8.0"
   resolved "https://registry.npmmirror.com/domutils/-/domutils-2.8.0.tgz"
   integrity sha512-w96Cjofp72M5IIhpjgobBimYEfoPjx1Vx0BSX9P30WBdZW2WIKU0T1Bd0kz2eNZ9ikjKgHbEyKx8BB6H1L3h3A==
@@ -781,6 +788,13 @@ hexo-server@^3.0.0:
     picocolors "^1.0.0"
     serve-static "^1.14.1"
 
+hexo-symbols-count-time@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.npmmirror.com/hexo-symbols-count-time/-/hexo-symbols-count-time-0.7.1.tgz"
+  integrity sha512-Zw19uxRIT/3VCvMQytG6HfBJc/IvfFJYui8cg6vyFAtDxkPOoZ1UlsPjrBRXYAqO6VjLc/vRi+Jthj38pKNPlw==
+  dependencies:
+    hexo-util "1.9.0"
+
 hexo-theme-landscape@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/hexo-theme-landscape/-/hexo-theme-landscape-1.0.0.tgz"
@@ -838,6 +852,22 @@ hexo-util@^3.1.0:
     prismjs "^1.29.0"
     strip-indent "^3.0.0"
 
+hexo-util@1.9.0:
+  version "1.9.0"
+  resolved "https://registry.npmmirror.com/hexo-util/-/hexo-util-1.9.0.tgz"
+  integrity sha512-WXv8IYd9HFtP6u/y7uoI//Fmg88uhKKDto9KeNNRdWf4HG/bRh/1NcSQZWu81DOZNshWD1rvFU8OKb7bUnX1WA==
+  dependencies:
+    bluebird "^3.5.2"
+    camel-case "^4.0.0"
+    cross-spawn "^7.0.0"
+    deepmerge "^4.2.2"
+    highlight.js "^9.13.1"
+    htmlparser2 "^4.0.0"
+    prismjs "^1.17.1"
+    punycode.js "^2.1.0"
+    strip-indent "^3.0.0"
+    striptags "^3.1.1"
+
 hexo@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npmmirror.com/hexo/-/hexo-7.0.0.tgz"
@@ -873,6 +903,11 @@ highlight.js@^11.0.1, highlight.js@^11.6.0:
   resolved "https://registry.npmmirror.com/highlight.js/-/highlight.js-11.9.0.tgz"
   integrity sha512-fJ7cW7fQGCYAkgv4CPfwFHrfd/cLS4Hau96JuJ+ZTOWhjnhoeN1ub1tFmALm/+lW5z4WCAuAV9bm05AP0mS6Gw==
 
+highlight.js@^9.13.1:
+  version "9.18.5"
+  resolved "https://registry.npmmirror.com/highlight.js/-/highlight.js-9.18.5.tgz"
+  integrity sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==
+
 highlight.js@^9.4.0:
   version "9.18.5"
   resolved "https://registry.npmmirror.com/highlight.js/-/highlight.js-9.18.5.tgz"
@@ -889,6 +924,16 @@ html-entities@^1.2.0:
   version "1.4.0"
   resolved "https://registry.npmmirror.com/html-entities/-/html-entities-1.4.0.tgz"
   integrity sha512-8nxjcBcd8wovbeKx7h3wTji4e6+rhaVuPNpMqwWgnHh+N9ToqsCs6XztWRBPQ+UtzsoMAdKZtUENoVzU/EMtZA==
+
+htmlparser2@^4.0.0:
+  version "4.1.0"
+  resolved "https://registry.npmmirror.com/htmlparser2/-/htmlparser2-4.1.0.tgz"
+  integrity sha512-4zDq1a1zhE4gQso/c5LP1OtrhYTncXNSpvJYtWJBtXAETPlMfi3IFNjGuQbYLuVY4ZR0QMqRVvo4Pdy9KLyP8Q==
+  dependencies:
+    domelementtype "^2.0.1"
+    domhandler "^3.0.0"
+    domutils "^2.0.0"
+    entities "^2.0.0"
 
 htmlparser2@^7.0.0:
   version "7.2.0"
@@ -1374,6 +1419,11 @@ psl@^1.1.33:
   resolved "https://registry.npmmirror.com/psl/-/psl-1.9.0.tgz"
   integrity sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==
 
+punycode.js@^2.1.0:
+  version "2.3.1"
+  resolved "https://registry.npmmirror.com/punycode.js/-/punycode.js-2.3.1.tgz"
+  integrity sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==
+
 punycode@^2.1.1:
   version "2.3.1"
   resolved "https://registry.npmmirror.com/punycode/-/punycode-2.3.1.tgz"
@@ -1559,6 +1609,11 @@ striptags@^2.1.1:
   version "2.2.1"
   resolved "https://registry.npmmirror.com/striptags/-/striptags-2.2.1.tgz"
   integrity sha512-vZTvmFP0IYu/zn8MXV6PrLb6VKbd9WGSEnlm4D5RNXS/+zYYlHrSfJgoBw1w56D6RJCr515er3BittRGQqihLA==
+
+striptags@^3.1.1:
+  version "3.2.0"
+  resolved "https://registry.npmmirror.com/striptags/-/striptags-3.2.0.tgz"
+  integrity sha512-g45ZOGzHDMe2bdYMdIvdAfCQkCTDMGBazSw1ypMowwGIee7ZQ5dU0rBJ8Jqgl+jAKIv4dbeE1jscZq9wid1Tkw==
 
 stylus@*, stylus@^0.59.0:
   version "0.59.0"
