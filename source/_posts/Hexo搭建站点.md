@@ -21,6 +21,8 @@ categories:
    npm install -g hexo-cli
    ```
 
+<!--more-->
+
 ## 初始化
 
 1. 创建项目，进入创建的文件夹
@@ -261,6 +263,19 @@ categories:
          -Hexo
          categories:
          -Hexo
+      ```
+   
+      检查Next主题的`_config.yml`中简介设置打开：(默认安装时打开)
+   
+      ```yaml
+      # Automatically excerpt description in homepage as preamble text.
+      excerpt_description: true
+      ```
+   
+      在文章中添加截断，只有截断之前的内容才会在列表页展示
+   
+      ```markdown
+      <!--more-->
       ```
    
    2. 新建分类：

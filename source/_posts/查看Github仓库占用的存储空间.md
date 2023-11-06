@@ -8,9 +8,9 @@ categories:
 - Github
 ---
 
-# 查看Github仓库占用的存储空间
-
 1. 登录Github首页，点击账户的setting
+
+   <!--more-->
 
    ![image-20231106133638213](查看Github仓库占用的存储空间/image-20231106133638213.png)
 

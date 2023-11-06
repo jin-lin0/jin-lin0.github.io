@@ -17,6 +17,8 @@ categories:
    npm install hexo-renderer-marked --save
    ```
 
+   <!--more-->
+
 2. **根目录**的`_config.yml`文件中配置：
 
    ```yaml
