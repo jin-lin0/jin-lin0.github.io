@@ -1270,7 +1270,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9467ff;
+  background: #f7ffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1513,7 +1513,7 @@ pre .javascript .function {
   width: 100%;
 }
 .with-love {
-  color: #ff0000;
+  color: #ab57f4;
   display: inline-block;
   margin: 0 5px;
 }
@@ -2787,6 +2787,20 @@ mjx-container + br {
     margin: 8px 0 0;
   }
 }
+.headband {
+  display: none;
+}
+.site-brand-container {
+  background: #ab57f4;
+}
 .site-author-image {
   border: none;
+}
+.post-header .post-title-link::before {
+  background: #ab57f4;
+}
+.btn:hover {
+  border-color: rgba(171,87,244,0.8);
+  color: #fff;
+  background: rgba(171,87,244,0.8);
 }
