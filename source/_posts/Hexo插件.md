@@ -7,6 +7,7 @@ tags:
 - 插件
 categories:
 - Hexo
+mathjax: true
 ---
 
 ## Hexo中插入图片
@@ -56,6 +57,90 @@ categories:
    npm install hexo-image-link --save
    ```
 
+
+## Hexo-Next支持数学公式
+
+1. 卸载原有渲染器`hexo-renderer-marked`，安装`hexo-renderer-kramed`
+
+   ```sh
+   npm uninstall hexo-renderer-marked
+   npm install hexo-renderer-kramed
+   ```
+
+2. 配置Next的`_config.yml`文件
+
+   ```yaml
+   math:
+     # Default (true) will load mathjax / katex script on demand.
+     # That is it only render those page which has `mathjax: true` in Front-matter.
+     # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
+     per_page: true
+   
+     # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
+     mathjax:
+       enable: true
+       # See: https://mhchem.github.io/MathJax-mhchem/
+       mhchem: false
+   
+     # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
+     katex:
+       enable: false
+       # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
+       copy_tex: false
+   ```
+
+3. 解决语义冲突
+
+   取消反斜杠`\\`和下划线`_`的转义，`/node_modules/kramed/lib/rules/inline.js`修改如下：
+
+   ```javascript
+   //escape: /^\\([\\`*{}\[\]()#$+\-.!_>])/,
+   escape: /^\\([`*\[\]()#$+\-.!_>])/, //第11行
+     
+   //em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+   em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/, //第20行
+   ```
+
+4. 在需要使用LaTeX渲染的博文中，在文章的Front-matter里打开mathjax开关：
+
+   ```yaml
+   mathjax: true
+   ```
+
+5. 使用
+
+   - 行内公式
+
+     ```latex
+     $lim_{1\to+\infty}P(|\sum_i^nX_i-\mu|<\epsilon)=1, i=1,...,n$
+     ```
+
+     $lim_{1\to+\infty}P(|\sum_i^nX_i-\mu|<\epsilon)=1, i=1,...,n$
+
+   - 行间公式
+
+     ```latex
+     $$lim_{1\to+\infty}P(|\sum_i^nX_i-\mu|<\epsilon)=1, i=1,...,n$$
+     ```
+
+     $$lim_{1\to+\infty}P(|\sum_i^nX_i-\mu|<\epsilon)=1, i=1,...,n$$
+
+   - 公式编号
+
+     ```latex
+     \begin{align}
+     a+b\\
+     b+c\\
+     a+c\\
+     \end{align}
+     \label(52)
+     ```
+
+     \begin{align}
+     a+b\\
+     b+c\\
+     a+c\\
+     \end{align}
 
 ## Hexo生成唯一永久文章链接
 
