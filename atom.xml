@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-12T20:47:08.179Z</updated>
+  <updated>2023-11-12T20:50:01.418Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="http://example.com/posts/30786/"/>
     <id>http://example.com/posts/30786/</id>
     <published>2023-11-12T19:47:56.000Z</published>
-    <updated>2023-11-12T20:47:08.179Z</updated>
+    <updated>2023-11-12T20:50:01.418Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p><p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p><p><code>commond+shift+t</code>：打开被关闭的页面</p><p><code>commond+shift+j</code>：打开下载</p><p><code>commond+shift+n</code>：打开新的无痕页面</p><span id="more"></span><p><code>commond+shift+f</code>：浏览器全屏</p><p><code>commond+shift+d</code>：切换调试控制台位置</p><p><code>commond+shift+p</code>：打开命令commond面板</p><p><code>commond+option+I</code>：打开调试控制台位置</p><p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p><p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p><p><code>command+R</code>：刷新页面</p><p><code>command+L</code>：输入网址</p><p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p><p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p><h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p><p><code>copy</code>：复制任意对象到剪贴板</p><p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p><p><code>点击小眼睛</code>：实时监控表达式的值</p><img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258">]]></content>
+    <content type="html"><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p><p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p><p><code>commond+shift+T</code>：打开被关闭的页面</p><p><code>commond+shift+J</code>：打开下载</p><p><code>commond+shift+N</code>：打开新的无痕页面</p><span id="more"></span><p><code>commond+shift+F</code>：浏览器全屏</p><p><code>commond+shift+D</code>：切换调试控制台位置</p><p><code>commond+shift+P</code>：打开命令commond面板</p><p><code>commond+option+I</code>：打开调试控制台位置</p><p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p><p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p><p><code>command+R</code>：刷新页面</p><p><code>command+L</code>：输入网址</p><p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p><p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p><h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p><p><code>copy</code>：复制任意对象到剪贴板</p><p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p><p><code>点击小眼睛</code>：实时监控表达式的值</p><img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258">]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;快捷键&quot;&gt;&lt;a href=&quot;#快捷键&quot; class=&quot;headerlink&quot; title=&quot;快捷键&quot;&gt;&lt;/a&gt;快捷键&lt;/h2&gt;&lt;p&gt;&lt;code&gt;commond+w&lt;/code&gt;：关闭当前页面&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;commond+1 to 8&lt;/code&gt;： 切换到对应序号的浏览器标签&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;commond+shift+t&lt;/code&gt;：打开被关闭的页面&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;commond+shift+j&lt;/code&gt;：打开下载&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;commond+shift+n&lt;/code&gt;：打开新的无痕页面&lt;/p&gt;</summary>
+&lt;p&gt;&lt;code&gt;commond+shift+T&lt;/code&gt;：打开被关闭的页面&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;commond+shift+J&lt;/code&gt;：打开下载&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;commond+shift+N&lt;/code&gt;：打开新的无痕页面&lt;/p&gt;</summary>
     
     
     
