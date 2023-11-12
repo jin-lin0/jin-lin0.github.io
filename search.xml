@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Chrome调试技巧</title>
+    <url>/posts/30786/</url>
+    <content><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p>
+<p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p>
+<p><code>commond+shift+t</code>：打开被关闭的页面</p>
+<p><code>commond+shift+j</code>：打开下载</p>
+<p><code>commond+shift+n</code>：打开新的无痕页面</p>
+<p><code>commond+shift+f</code>：浏览器全屏</p>
+<p><code>commond+shift+d</code>：切换调试控制台位置</p>
+<p><code>commond+shift+p</code>：打开命令commond面板</p>
+<p><code>commond+option+I</code>：打开调试控制台位置</p>
+<p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p>
+<p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p>
+<p><code>command+R</code>：刷新页面</p>
+<p><code>command+L</code>：输入网址</p>
+<p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p>
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p>
+<p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p>
+<h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p>
+<p><code>copy</code>：复制任意对象到剪贴板</p>
+<p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p>
+<p><code>点击小眼睛</code>：实时监控表达式的值</p>
+<img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258">
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Chrome</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Chrome</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo插件</title>
     <url>/posts/62790/</url>
     <content><![CDATA[<h2 id="Hexo中插入图片"><a href="#Hexo中插入图片" class="headerlink" title="Hexo中插入图片"></a>Hexo中插入图片</h2><ol>
@@ -237,6 +271,26 @@
       </tags>
   </entry>
   <entry>
+    <title>查看Github仓库占用的存储空间</title>
+    <url>/posts/6295/</url>
+    <content><![CDATA[<ol>
+<li><p>登录Github首页，点击账户的setting</p>
+<span id="more"></span>
+<img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213">
+</li>
+<li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p>
+<img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358">
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Github</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo搭建站点</title>
     <url>/posts/26676/</url>
     <content><![CDATA[<h1 id="Hexo搭建站点"><a href="#Hexo搭建站点" class="headerlink" title="Hexo搭建站点"></a>Hexo搭建站点</h1><p><a href="https://hexo.io/index.html">hexo官方网站</a></p>
@@ -364,26 +418,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查看Github仓库占用的存储空间</title>
-    <url>/posts/6295/</url>
-    <content><![CDATA[<ol>
-<li><p>登录Github首页，点击账户的setting</p>
-<span id="more"></span>
-<img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213">
-</li>
-<li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p>
-<img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358">
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Github</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
       </tags>
   </entry>
   <entry>
