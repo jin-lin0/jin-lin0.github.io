@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-06T20:14:06.896Z</updated>
+  <updated>2023-11-10T14:44:17.136Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>爬虫红线</title>
+    <link href="http://example.com/posts/45344/"/>
+    <id>http://example.com/posts/45344/</id>
+    <published>2023-11-10T09:20:28.000Z</published>
+    <updated>2023-11-10T14:44:17.136Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="禁止"><a href="#禁止" class="headerlink" title="禁止"></a>禁止</h2><ol><li>个人隐私数据</li><li>收费的视频文本音乐等并售卖开网站</li><li>同行竞争不遵守robots协议</li><li>国家政府网站</li><li>多线程爬把对方网站爬崩了</li><li>公开破解加密网站（仅供学习可以）</li></ol><h2 id="可以爬取"><a href="#可以爬取" class="headerlink" title="可以爬取"></a>可以爬取</h2><ol><li>遵循robots协议</li><li>网站公开数据和接口返回的无加密数据</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;禁止&quot;&gt;&lt;a href=&quot;#禁止&quot; class=&quot;headerlink&quot; title=&quot;禁止&quot;&gt;&lt;/a&gt;禁止&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;个人隐私数据&lt;/li&gt;
+&lt;li&gt;收费的视频文本音乐等并售卖开网站&lt;/li&gt;
+&lt;li&gt;同行竞争不遵守robots协议&lt;/li&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="爬虫" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB/"/>
+    
+    
+    <category term="爬虫" scheme="http://example.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>background-removal使用教程</title>
