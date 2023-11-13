@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-12T20:50:01.418Z</updated>
+  <updated>2023-11-13T10:38:14.316Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JS逆向</title>
+    <link href="http://example.com/posts/32357/"/>
+    <id>http://example.com/posts/32357/</id>
+    <published>2023-11-13T04:55:36.000Z</published>
+    <updated>2023-11-13T10:38:14.316Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="反爬虫"><a href="#反爬虫" class="headerlink" title="反爬虫"></a>反爬虫</h2><p>限制爬虫程序访问服务器资源和获取数据的行为，包括不限于请求限制、拒绝响应、客户端身份验证、文本混淆、动态渲染。</p><h2 id="浏览器五个组件与三个解释器"><a href="#浏览器五个组件与三个解释器" class="headerlink" title="浏览器五个组件与三个解释器"></a>浏览器五个组件与三个解释器</h2><p>用户界面：包括地址栏、前进、后退、页面主窗口等</p><p>浏览器引擎：用户操作传递给渲染引擎</p><p>渲染引擎：调用解释器解释HTML、CSS、JS代码，重排页面</p><p>数据存储：本地存储体积较小的数据，cookie、storage等</p><p>网络：自动加载HTML文档中需要的其他资源</p><p>解释器：CSS解释器、HTML解释器、Javascript解释器</p><h2 id="PyExecJS"><a href="#PyExecJS" class="headerlink" title="PyExecJS"></a>PyExecJS</h2><p>安装Pyexecjs</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pyexecjs</span><br></pre></td></tr></table></figure><p>检测环境</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> execjs</span><br><span class="line"><span class="built_in">print</span>(execjs.get().name)</span><br><span class="line"><span class="comment"># Node.js (V8)</span></span><br></pre></td></tr></table></figure><p>举个例子</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个简单的 JavaScript 函数</span></span><br><span class="line">js_code = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">function add(a, b) &#123;</span></span><br><span class="line"><span class="string">    return a + b;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 JavaScript 运行时中执行 JavaScript 代码</span></span><br><span class="line">context = execjs.<span class="built_in">compile</span>(js_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用 JavaScript 函数并获取结果</span></span><br><span class="line">result = context.call(<span class="string">&quot;add&quot;</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure><p>特殊编码的输入输出可以用Base64编码</p><h2 id="使用NodeJS与浏览器的问题"><a href="#使用NodeJS与浏览器的问题" class="headerlink" title="使用NodeJS与浏览器的问题"></a>使用NodeJS与浏览器的问题</h2><p>NodeJS没有window对象，需要自己创建空对象，或者指向global</p><p>window.btoa在nodeJS不存在，可以使用Buffer.from(‘xxx’).toString(‘base64’)转化</p><h2 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h2><p>使用hook重新执行函数，寻找到JS加解密入口</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hook</span>(<span class="params">object, attr</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> func = object[attr];</span><br><span class="line">  object[attr] = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;xxx&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> func.<span class="title function_">apply</span>(object, <span class="variable language_">arguments</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//eg:</span></span><br><span class="line"><span class="title function_">hook</span>(<span class="variable language_">window</span>, <span class="string">&#x27;btoa&#x27;</span>)</span><br></pre></td></tr></table></figure><h2 id="无限debugger"><a href="#无限debugger" class="headerlink" title="无限debugger"></a>无限debugger</h2><p>阻止调试分析代码的具体逻辑</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;反爬虫&quot;&gt;&lt;a href=&quot;#反爬虫&quot; class=&quot;headerlink&quot; title=&quot;反爬虫&quot;&gt;&lt;/a&gt;反爬虫&lt;/h2&gt;&lt;p&gt;限制爬虫程序访问服务器资源和获取数据的行为，包括不限于请求限制、拒绝响应、客户端身份验证、文本混淆、动态渲染。&lt;/p&gt;
+&lt;h2 id</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JS" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/JS/"/>
+    
+    
+    <category term="JS" scheme="http://example.com/tags/JS/"/>
+    
+    <category term="逆向" scheme="http://example.com/tags/%E9%80%86%E5%90%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Chrome调试技巧</title>
     <link href="http://example.com/posts/30786/"/>
     <id>http://example.com/posts/30786/</id>
     <published>2023-11-12T19:47:56.000Z</published>
-    <updated>2023-11-12T20:50:01.418Z</updated>
+    <updated>2023-11-13T09:54:07.768Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p><p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p><p><code>commond+shift+T</code>：打开被关闭的页面</p><p><code>commond+shift+J</code>：打开下载</p><p><code>commond+shift+N</code>：打开新的无痕页面</p><span id="more"></span><p><code>commond+shift+F</code>：浏览器全屏</p><p><code>commond+shift+D</code>：切换调试控制台位置</p><p><code>commond+shift+P</code>：打开命令commond面板</p><p><code>commond+option+I</code>：打开调试控制台位置</p><p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p><p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p><p><code>command+R</code>：刷新页面</p><p><code>command+L</code>：输入网址</p><p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p><p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p><h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p><p><code>copy</code>：复制任意对象到剪贴板</p><p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p><p><code>点击小眼睛</code>：实时监控表达式的值</p><img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258">]]></content>
+    <content type="html"><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p><p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p><p><code>commond+shift+T</code>：打开被关闭的页面</p><p><code>commond+shift+J</code>：打开下载</p><p><code>commond+shift+N</code>：打开新的无痕页面</p><span id="more"></span><p><code>commond+shift+F</code>：浏览器全屏</p><p><code>commond+shift+D</code>：切换调试控制台位置</p><p><code>commond+shift+P</code>：打开命令commond面板</p><p><code>commond+option+I</code>：打开调试控制台位置</p><p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p><p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p><p><code>command+R</code>：刷新页面</p><p><code>command+L</code>：输入网址</p><p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p><p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p><h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p><p><code>copy</code>：复制任意对象到剪贴板</p><p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p><p><code>点击小眼睛</code>：实时监控表达式的值</p><p><code>$x</code>：获取xPath的值</p><img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258"><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p><img src="Chrome调试技巧/image-20231113173544952.png" alt="image-20231113173544952" style="zoom:50%;" /></p><p>断点调试的五个按钮：</p><ol><li>恢复执行。运行到下个断点 </li><li>执行下一行的任何操作，并跳转到下一行 </li><li>进入函数内部，如果下一行包含一个函数调用，讲进入该函数，并在该函数第一行暂停。</li><li>跳出函数，执行当前函数剩余部分，在函数调用下一个语句暂停</li><li>暂时禁用所有断点，不删除断点</li></ol><p>三个小圆点：可选源代码全局搜索选项，</p><p>DOM断点在元素面板选中元素右键也可操作。</p><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><img src="/posts/30786/image-20231113151138380.png" class="" title="image-20231113151138380"><ol><li>开始抓取网络请求</li><li>清除抓取记录</li><li>关闭过滤面板</li><li>打开检索面板</li><li>跨页面加载保存请求</li><li>禁用浏览器缓存</li><li>慢速网络模拟</li><li>过滤面板，按住commond可以同时选取多个过滤，过滤器中可以设置多个规则，scheme/set-cookie-domain/status-code等</li></ol><img src="/posts/30786/image-20231113154413153.png" class="" title="image-20231113154413153"><p>在网络请求列表中，点击启动器可以定位到源代码。按住shift可以看到该请求的依赖者</p>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;快捷键&quot;&gt;&lt;a href=&quot;#快捷键&quot; class=&quot;headerlink&quot; title=&quot;快捷键&quot;&gt;&lt;/a&gt;快捷键&lt;/h2&gt;&lt;p&gt;&lt;code&gt;commond+w&lt;/code&gt;：关闭当前页面&lt;/p&gt;
