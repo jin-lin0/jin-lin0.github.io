@@ -1,66 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Chrome调试技巧</title>
-    <url>/posts/30786/</url>
-    <content><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p>
-<p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p>
-<p><code>commond+shift+T</code>：打开被关闭的页面</p>
-<p><code>commond+shift+J</code>：打开下载</p>
-<p><code>commond+shift+N</code>：打开新的无痕页面</p>
-<span id="more"></span>
-<p><code>commond+shift+F</code>：浏览器全屏</p>
-<p><code>commond+shift+D</code>：切换调试控制台位置</p>
-<p><code>commond+shift+P</code>：打开命令commond面板</p>
-<p><code>commond+option+I</code>：打开调试控制台位置</p>
-<p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p>
-<p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p>
-<p><code>command+R</code>：刷新页面</p>
-<p><code>command+L</code>：输入网址</p>
-<p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p>
-<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p>
-<p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p>
-<h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p>
-<p><code>copy</code>：复制任意对象到剪贴板</p>
-<p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p>
-<p><code>点击小眼睛</code>：实时监控表达式的值</p>
-<p><code>$x</code>：获取xPath的值</p>
-<img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258">
-<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p><img src="Chrome调试技巧/image-20231113173544952.png" alt="image-20231113173544952" style="zoom:50%;" /></p>
-<p>断点调试的五个按钮：</p>
-<ol>
-<li>恢复执行。运行到下个断点 </li>
-<li>执行下一行的任何操作，并跳转到下一行 </li>
-<li>进入函数内部，如果下一行包含一个函数调用，讲进入该函数，并在该函数第一行暂停。</li>
-<li>跳出函数，执行当前函数剩余部分，在函数调用下一个语句暂停</li>
-<li>暂时禁用所有断点，不删除断点</li>
-</ol>
-<p>三个小圆点：可选源代码全局搜索选项，</p>
-<p>DOM断点在元素面板选中元素右键也可操作。</p>
-<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><img src="/posts/30786/image-20231113151138380.png" class="" title="image-20231113151138380">
-<ol>
-<li>开始抓取网络请求</li>
-<li>清除抓取记录</li>
-<li>关闭过滤面板</li>
-<li>打开检索面板</li>
-<li>跨页面加载保存请求</li>
-<li>禁用浏览器缓存</li>
-<li>慢速网络模拟</li>
-<li>过滤面板，按住commond可以同时选取多个过滤，过滤器中可以设置多个规则，scheme/set-cookie-domain/status-code等</li>
-</ol>
-<img src="/posts/30786/image-20231113154413153.png" class="" title="image-20231113154413153">
-<p>在网络请求列表中，点击启动器可以定位到源代码。按住shift可以看到该请求的依赖者</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>Chrome</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>Chrome</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo插件</title>
     <url>/posts/62790/</url>
     <content><![CDATA[<h2 id="Hexo中插入图片"><a href="#Hexo中插入图片" class="headerlink" title="Hexo中插入图片"></a>Hexo中插入图片</h2><ol>
@@ -116,6 +56,10 @@
 <p>\begin{align}<br>a+b\\<br>b+c\\<br>a+c\\<br>\end{align}</p>
 </li>
 </ul>
+</li>
+<li><p>搭配typora</p>
+<p><code>偏好设置</code> $\Rightarrow$ <code>MarkDown</code> $\Rightarrow$ <code>内联公式开启</code> $\Rightarrow$ <code>重启Typora</code></p>
+<p>点击段落，公式块可以输入公式</p>
 </li>
 </ol>
 <h2 id="Hexo生成唯一永久文章链接"><a href="#Hexo生成唯一永久文章链接" class="headerlink" title="Hexo生成唯一永久文章链接"></a>Hexo生成唯一永久文章链接</h2><p>hexo的文章链接默认的生成规则是：<code>:year/:month/:day/:title</code>，标题如果是中文，会变得特别冗长。同时修改标题后文章链接会发生变化，URL层级深，不利于SEO，因此安装如下插件。</p>
@@ -213,6 +157,66 @@
       <tags>
         <tag>Hexo</tag>
         <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chrome调试技巧</title>
+    <url>/posts/30786/</url>
+    <content><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p>
+<p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p>
+<p><code>commond+shift+T</code>：打开被关闭的页面</p>
+<p><code>commond+shift+J</code>：打开下载</p>
+<p><code>commond+shift+N</code>：打开新的无痕页面</p>
+<span id="more"></span>
+<p><code>commond+shift+F</code>：浏览器全屏</p>
+<p><code>commond+shift+D</code>：切换调试控制台位置</p>
+<p><code>commond+shift+P</code>：打开命令commond面板</p>
+<p><code>commond+option+I</code>：打开调试控制台位置</p>
+<p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p>
+<p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p>
+<p><code>command+R</code>：刷新页面</p>
+<p><code>command+L</code>：输入网址</p>
+<p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p>
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p>
+<p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p>
+<h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p>
+<p><code>copy</code>：复制任意对象到剪贴板</p>
+<p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p>
+<p><code>点击小眼睛</code>：实时监控表达式的值</p>
+<p><code>$x</code>：获取xPath的值</p>
+<img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258">
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p><img src="Chrome调试技巧/image-20231113173544952.png" alt="image-20231113173544952" style="zoom:50%;" /></p>
+<p>断点调试的五个按钮：</p>
+<ol>
+<li>恢复执行。运行到下个断点 </li>
+<li>执行下一行的任何操作，并跳转到下一行 </li>
+<li>进入函数内部，如果下一行包含一个函数调用，讲进入该函数，并在该函数第一行暂停。</li>
+<li>跳出函数，执行当前函数剩余部分，在函数调用下一个语句暂停</li>
+<li>暂时禁用所有断点，不删除断点</li>
+</ol>
+<p>三个小圆点：可选源代码全局搜索选项，</p>
+<p>DOM断点在元素面板选中元素右键也可操作。</p>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><img src="/posts/30786/image-20231113151138380.png" class="" title="image-20231113151138380">
+<ol>
+<li>开始抓取网络请求</li>
+<li>清除抓取记录</li>
+<li>关闭过滤面板</li>
+<li>打开检索面板</li>
+<li>跨页面加载保存请求</li>
+<li>禁用浏览器缓存</li>
+<li>慢速网络模拟</li>
+<li>过滤面板，按住commond可以同时选取多个过滤，过滤器中可以设置多个规则，scheme/set-cookie-domain/status-code等</li>
+</ol>
+<img src="/posts/30786/image-20231113154413153.png" class="" title="image-20231113154413153">
+<p>在网络请求列表中，点击启动器可以定位到源代码。按住shift可以看到该请求的依赖者</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Chrome</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Chrome</tag>
       </tags>
   </entry>
   <entry>
@@ -346,6 +350,38 @@
       </tags>
   </entry>
   <entry>
+    <title>JS逆向</title>
+    <url>/posts/32357/</url>
+    <content><![CDATA[<h2 id="反爬虫"><a href="#反爬虫" class="headerlink" title="反爬虫"></a>反爬虫</h2><p>限制爬虫程序访问服务器资源和获取数据的行为，包括不限于请求限制、拒绝响应、客户端身份验证、文本混淆、动态渲染。</p>
+<span id="more"></span>
+<h2 id="浏览器五个组件与三个解释器"><a href="#浏览器五个组件与三个解释器" class="headerlink" title="浏览器五个组件与三个解释器"></a>浏览器五个组件与三个解释器</h2><p>用户界面：包括地址栏、前进、后退、页面主窗口等</p>
+<p>浏览器引擎：用户操作传递给渲染引擎</p>
+<p>渲染引擎：调用解释器解释HTML、CSS、JS代码，重排页面</p>
+<p>数据存储：本地存储体积较小的数据，cookie、storage等</p>
+<p>网络：自动加载HTML文档中需要的其他资源</p>
+<p>解释器：CSS解释器、HTML解释器、Javascript解释器</p>
+<h2 id="PyExecJS"><a href="#PyExecJS" class="headerlink" title="PyExecJS"></a>PyExecJS</h2><p>安装Pyexecjs</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyexecjs</span><br></pre></td></tr></table></figure>
+<p>检测环境</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> execjs</span><br><span class="line"><span class="built_in">print</span>(execjs.get().name)</span><br><span class="line"><span class="comment"># Node.js (V8)</span></span><br></pre></td></tr></table></figure>
+<p>举个例子</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一个简单的 JavaScript 函数</span></span><br><span class="line">js_code = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">function add(a, b) &#123;</span></span><br><span class="line"><span class="string">    return a + b;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 JavaScript 运行时中执行 JavaScript 代码</span></span><br><span class="line">context = execjs.<span class="built_in">compile</span>(js_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用 JavaScript 函数并获取结果</span></span><br><span class="line">result = context.call(<span class="string">&quot;add&quot;</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+<p>特殊编码的输入输出可以用Base64编码</p>
+<h2 id="使用NodeJS与浏览器的问题"><a href="#使用NodeJS与浏览器的问题" class="headerlink" title="使用NodeJS与浏览器的问题"></a>使用NodeJS与浏览器的问题</h2><p>NodeJS没有window对象，需要自己创建空对象，或者指向global</p>
+<p>window.btoa在nodeJS不存在，可以使用Buffer.from(‘xxx’).toString(‘base64’)转化</p>
+<h2 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h2><p>使用hook重新执行函数，寻找到JS加解密入口</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hook</span>(<span class="params">object, attr</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> func = object[attr];</span><br><span class="line">  object[attr] = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;xxx&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> func.<span class="title function_">apply</span>(object, <span class="variable language_">arguments</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//eg:</span></span><br><span class="line"><span class="title function_">hook</span>(<span class="variable language_">window</span>, <span class="string">&#x27;btoa&#x27;</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>逆向</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>background-removal使用教程</title>
     <url>/posts/9583/</url>
     <content><![CDATA[<p>该npm包于2023.7发布，能够直接在浏览器中删除图片的背景，无费用与隐私问题。<a href="https://img.ly/showcases/cesdk/background-removal/web?utm_medium=project&amp;utm_source=github&amp;utm_campaign=bg-removal">DEMO</a></p>
@@ -399,39 +435,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JS逆向</title>
-    <url>/posts/32357/</url>
-    <content><![CDATA[<h2 id="反爬虫"><a href="#反爬虫" class="headerlink" title="反爬虫"></a>反爬虫</h2><p>限制爬虫程序访问服务器资源和获取数据的行为，包括不限于请求限制、拒绝响应、客户端身份验证、文本混淆、动态渲染。</p>
-<span id="more"></span>
-<h2 id="浏览器五个组件与三个解释器"><a href="#浏览器五个组件与三个解释器" class="headerlink" title="浏览器五个组件与三个解释器"></a>浏览器五个组件与三个解释器</h2><p>用户界面：包括地址栏、前进、后退、页面主窗口等</p>
-<p>浏览器引擎：用户操作传递给渲染引擎</p>
-<p>渲染引擎：调用解释器解释HTML、CSS、JS代码，重排页面</p>
-<p>数据存储：本地存储体积较小的数据，cookie、storage等</p>
-<p>网络：自动加载HTML文档中需要的其他资源</p>
-<p>解释器：CSS解释器、HTML解释器、Javascript解释器</p>
-<h2 id="PyExecJS"><a href="#PyExecJS" class="headerlink" title="PyExecJS"></a>PyExecJS</h2><p>安装Pyexecjs</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyexecjs</span><br></pre></td></tr></table></figure>
-<p>检测环境</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> execjs</span><br><span class="line"><span class="built_in">print</span>(execjs.get().name)</span><br><span class="line"><span class="comment"># Node.js (V8)</span></span><br></pre></td></tr></table></figure>
-<p>举个例子</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一个简单的 JavaScript 函数</span></span><br><span class="line">js_code = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">function add(a, b) &#123;</span></span><br><span class="line"><span class="string">    return a + b;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 JavaScript 运行时中执行 JavaScript 代码</span></span><br><span class="line">context = execjs.<span class="built_in">compile</span>(js_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用 JavaScript 函数并获取结果</span></span><br><span class="line">result = context.call(<span class="string">&quot;add&quot;</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-<p>特殊编码的输入输出可以用Base64编码</p>
-<h2 id="使用NodeJS与浏览器的问题"><a href="#使用NodeJS与浏览器的问题" class="headerlink" title="使用NodeJS与浏览器的问题"></a>使用NodeJS与浏览器的问题</h2><p>NodeJS没有window对象，需要自己创建空对象，或者指向global</p>
-<p>window.btoa在nodeJS不存在，可以使用Buffer.from(‘xxx’).toString(‘base64’)转化</p>
-<h2 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h2><p>使用hook重新执行函数，寻找到JS加解密入口</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hook</span>(<span class="params">object, attr</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> func = object[attr];</span><br><span class="line">  object[attr] = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;xxx&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> func.<span class="title function_">apply</span>(object, <span class="variable language_">arguments</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//eg:</span></span><br><span class="line"><span class="title function_">hook</span>(<span class="variable language_">window</span>, <span class="string">&#x27;btoa&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="无限debugger"><a href="#无限debugger" class="headerlink" title="无限debugger"></a>无限debugger</h2><p>阻止调试分析代码的具体逻辑</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>逆向</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>实用网站收集</title>
     <url>/posts/1e5417a7/</url>
     <content><![CDATA[<h2 id="前端工具"><a href="#前端工具" class="headerlink" title="前端工具"></a>前端工具</h2><ul>
@@ -448,6 +451,9 @@
 <li><a href="https://github.com/josdejong/lossless-json">无损JSON</a></li>
 <li><a href="https://www.npmjs.com/package/@imgly/background-removal">图片背景去除 2023.7开源</a></li>
 </ul>
+<h2 id="Latex"><a href="#Latex" class="headerlink" title="Latex"></a>Latex</h2><ul>
+<li><a href="https://simpletex.cn/ai/latex_ocr">latex图片识别</a></li>
+</ul>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li><a href="http://xn--ehqx7tcnnope.live">三毛机场</a></li>
 </ul>
@@ -457,6 +463,29 @@
       </categories>
       <tags>
         <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>格密码基础</title>
+    <url>/posts/46633/</url>
+    <content><![CDATA[<h2 id="格"><a href="#格" class="headerlink" title="格"></a>格</h2><p>给定 $b_1,b_2,\dots,b_n\in \mathbb{R}^m$ 是$n$个线性无关的列向量，由它们生成的格被定义为：</p>
+<script type="math/tex; mode=display">
+\mathcal L(b_1,b_2,...,b_n)=\left\{\sum{x_ib_i}|x_i∈\mathbb Z\right\}</script><p>其中$b_1,b_2,…,b_n$称作格的基。如果我们定义矩阵$B$是$m\times n$的矩阵，其列为$b_1,b_2,\dots,b_n$，则由矩阵$B$生成的格为：</p>
+<script type="math/tex; mode=display">
+\mathcal L(B)=\mathcal L(b_1,b_2,...,b_n)=\left\{Bx|x∈\mathbb Z^n\right\}</script><p>其中格的秩为$n$，维数为$m$，如果$n=m$，此时我们称该格为满秩格。</p>
+<span id="more"></span>
+<h2 id="格的行列式"><a href="#格的行列式" class="headerlink" title="格的行列式"></a>格的行列式</h2><p>令$B=(b_1,b_2,\dots,b_n)$为格$\Lambda$的一组格基，则格$\Lambda=\mathcal L(B)$的行列式被定义为：</p>
+<script type="math/tex; mode=display">
+det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="模格"><a href="#模格" class="headerlink" title="模格"></a>模格</h2><p>对于素数$s$、矩阵$A\in \mathbb Z_q^{n\times m}$、和向量$u\in \mathbb Z_q^n$，模格定义如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}\Lambda_q(A)&=\{y\in\mathbb{Z}^ms.t.\exists s\in\mathbb{Z}_q^n,A^T s=y({\mathrm{mod}}q)\}\\\\\Lambda_q^\bot(A)&=\{y\in\mathbb{Z}^mst.Ay=0({\mathrm{mod}}q)\}\\\\\Lambda_q^u(A)&=\{y\in\mathbb{Z}^ms.t.Ay=u({\mathrm{mod}}q)\}\end{aligned}</script><h2 id="对偶格"><a href="#对偶格" class="headerlink" title="对偶格"></a>对偶格</h2>]]></content>
+      <categories>
+        <category>密码学</category>
+        <category>格</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+        <tag>格</tag>
       </tags>
   </entry>
   <entry>
