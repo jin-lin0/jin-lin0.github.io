@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Chrome调试技巧</title>
+    <url>/posts/30786/</url>
+    <content><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p>
+<p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p>
+<p><code>commond+shift+T</code>：打开被关闭的页面</p>
+<p><code>commond+shift+J</code>：打开下载</p>
+<p><code>commond+shift+N</code>：打开新的无痕页面</p>
+<span id="more"></span>
+<p><code>commond+shift+F</code>：浏览器全屏</p>
+<p><code>commond+shift+D</code>：切换调试控制台位置</p>
+<p><code>commond+shift+P</code>：打开命令commond面板</p>
+<p><code>commond+option+I</code>：打开调试控制台位置</p>
+<p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p>
+<p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p>
+<p><code>command+R</code>：刷新页面</p>
+<p><code>command+L</code>：输入网址</p>
+<p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p>
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p>
+<p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p>
+<h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p>
+<p><code>copy</code>：复制任意对象到剪贴板</p>
+<p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p>
+<p><code>点击小眼睛</code>：实时监控表达式的值</p>
+<p><code>$x</code>：获取xPath的值</p>
+<img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258">
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p><img src="Chrome调试技巧/image-20231113173544952.png" alt="image-20231113173544952" style="zoom:50%;" /></p>
+<p>断点调试的五个按钮：</p>
+<ol>
+<li>恢复执行。运行到下个断点 </li>
+<li>执行下一行的任何操作，并跳转到下一行 </li>
+<li>进入函数内部，如果下一行包含一个函数调用，讲进入该函数，并在该函数第一行暂停。</li>
+<li>跳出函数，执行当前函数剩余部分，在函数调用下一个语句暂停</li>
+<li>暂时禁用所有断点，不删除断点</li>
+</ol>
+<p>三个小圆点：可选源代码全局搜索选项，</p>
+<p>DOM断点在元素面板选中元素右键也可操作。</p>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><img src="/posts/30786/image-20231113151138380.png" class="" title="image-20231113151138380">
+<ol>
+<li>开始抓取网络请求</li>
+<li>清除抓取记录</li>
+<li>关闭过滤面板</li>
+<li>打开检索面板</li>
+<li>跨页面加载保存请求</li>
+<li>禁用浏览器缓存</li>
+<li>慢速网络模拟</li>
+<li>过滤面板，按住commond可以同时选取多个过滤，过滤器中可以设置多个规则，scheme/set-cookie-domain/status-code等</li>
+</ol>
+<img src="/posts/30786/image-20231113154413153.png" class="" title="image-20231113154413153">
+<p>在网络请求列表中，点击启动器可以定位到源代码。按住shift可以看到该请求的依赖者</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Chrome</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Chrome</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS逆向</title>
+    <url>/posts/32357/</url>
+    <content><![CDATA[<h2 id="反爬虫"><a href="#反爬虫" class="headerlink" title="反爬虫"></a>反爬虫</h2><p>限制爬虫程序访问服务器资源和获取数据的行为，包括不限于请求限制、拒绝响应、客户端身份验证、文本混淆、动态渲染。</p>
+<span id="more"></span>
+<h2 id="浏览器五个组件与三个解释器"><a href="#浏览器五个组件与三个解释器" class="headerlink" title="浏览器五个组件与三个解释器"></a>浏览器五个组件与三个解释器</h2><p>用户界面：包括地址栏、前进、后退、页面主窗口等</p>
+<p>浏览器引擎：用户操作传递给渲染引擎</p>
+<p>渲染引擎：调用解释器解释HTML、CSS、JS代码，重排页面</p>
+<p>数据存储：本地存储体积较小的数据，cookie、storage等</p>
+<p>网络：自动加载HTML文档中需要的其他资源</p>
+<p>解释器：CSS解释器、HTML解释器、Javascript解释器</p>
+<h2 id="PyExecJS"><a href="#PyExecJS" class="headerlink" title="PyExecJS"></a>PyExecJS</h2><p>安装Pyexecjs</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyexecjs</span><br></pre></td></tr></table></figure>
+<p>检测环境</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> execjs</span><br><span class="line"><span class="built_in">print</span>(execjs.get().name)</span><br><span class="line"><span class="comment"># Node.js (V8)</span></span><br></pre></td></tr></table></figure>
+<p>举个例子</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一个简单的 JavaScript 函数</span></span><br><span class="line">js_code = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">function add(a, b) &#123;</span></span><br><span class="line"><span class="string">    return a + b;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 JavaScript 运行时中执行 JavaScript 代码</span></span><br><span class="line">context = execjs.<span class="built_in">compile</span>(js_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用 JavaScript 函数并获取结果</span></span><br><span class="line">result = context.call(<span class="string">&quot;add&quot;</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+<p>特殊编码的输入输出可以用Base64编码</p>
+<h2 id="使用NodeJS与浏览器的问题"><a href="#使用NodeJS与浏览器的问题" class="headerlink" title="使用NodeJS与浏览器的问题"></a>使用NodeJS与浏览器的问题</h2><p>NodeJS没有window对象，需要自己创建空对象，或者指向global</p>
+<p>window.btoa在nodeJS不存在，可以使用Buffer.from(‘xxx’).toString(‘base64’)转化</p>
+<h2 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h2><p>使用hook重新执行函数，寻找到JS加解密入口</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hook</span>(<span class="params">object, attr</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> func = object[attr];</span><br><span class="line">  object[attr] = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;xxx&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> func.<span class="title function_">apply</span>(object, <span class="variable language_">arguments</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//eg:</span></span><br><span class="line"><span class="title function_">hook</span>(<span class="variable language_">window</span>, <span class="string">&#x27;btoa&#x27;</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>逆向</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo插件</title>
     <url>/posts/62790/</url>
     <content><![CDATA[<h2 id="Hexo中插入图片"><a href="#Hexo中插入图片" class="headerlink" title="Hexo中插入图片"></a>Hexo中插入图片</h2><ol>
@@ -160,63 +252,56 @@
       </tags>
   </entry>
   <entry>
-    <title>Chrome调试技巧</title>
-    <url>/posts/30786/</url>
-    <content><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p>
-<p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p>
-<p><code>commond+shift+T</code>：打开被关闭的页面</p>
-<p><code>commond+shift+J</code>：打开下载</p>
-<p><code>commond+shift+N</code>：打开新的无痕页面</p>
+    <title>background-removal使用教程</title>
+    <url>/posts/9583/</url>
+    <content><![CDATA[<p>该npm包于2023.7发布，能够直接在浏览器中删除图片的背景，无费用与隐私问题。<a href="https://img.ly/showcases/cesdk/background-removal/web?utm_medium=project&amp;utm_source=github&amp;utm_campaign=bg-removal">DEMO</a></p>
 <span id="more"></span>
-<p><code>commond+shift+F</code>：浏览器全屏</p>
-<p><code>commond+shift+D</code>：切换调试控制台位置</p>
-<p><code>commond+shift+P</code>：打开命令commond面板</p>
-<p><code>commond+option+I</code>：打开调试控制台位置</p>
-<p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p>
-<p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p>
-<p><code>command+R</code>：刷新页面</p>
-<p><code>command+L</code>：输入网址</p>
-<p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p>
-<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p>
-<p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p>
-<h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p>
-<p><code>copy</code>：复制任意对象到剪贴板</p>
-<p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p>
-<p><code>点击小眼睛</code>：实时监控表达式的值</p>
-<p><code>$x</code>：获取xPath的值</p>
-<img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258">
-<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p><img src="Chrome调试技巧/image-20231113173544952.png" alt="image-20231113173544952" style="zoom:50%;" /></p>
-<p>断点调试的五个按钮：</p>
-<ol>
-<li>恢复执行。运行到下个断点 </li>
-<li>执行下一行的任何操作，并跳转到下一行 </li>
-<li>进入函数内部，如果下一行包含一个函数调用，讲进入该函数，并在该函数第一行暂停。</li>
-<li>跳出函数，执行当前函数剩余部分，在函数调用下一个语句暂停</li>
-<li>暂时禁用所有断点，不删除断点</li>
-</ol>
-<p>三个小圆点：可选源代码全局搜索选项，</p>
-<p>DOM断点在元素面板选中元素右键也可操作。</p>
-<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><img src="/posts/30786/image-20231113151138380.png" class="" title="image-20231113151138380">
-<ol>
-<li>开始抓取网络请求</li>
-<li>清除抓取记录</li>
-<li>关闭过滤面板</li>
-<li>打开检索面板</li>
-<li>跨页面加载保存请求</li>
-<li>禁用浏览器缓存</li>
-<li>慢速网络模拟</li>
-<li>过滤面板，按住commond可以同时选取多个过滤，过滤器中可以设置多个规则，scheme/set-cookie-domain/status-code等</li>
-</ol>
-<img src="/posts/30786/image-20231113154413153.png" class="" title="image-20231113154413153">
-<p>在网络请求列表中，点击启动器可以定位到源代码。按住shift可以看到该请求的依赖者</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>@imgly/background-removal</code>允许开发人员直接在浏览器中无缝地从图像中删除背景。</p>
+<p><strong>特性：</strong></p>
+<ul>
+<li><strong>浏览器内执行后台删除</strong>。直接在用户浏览器中执行整个后台删除过程，无需额外的服务器成本，利用本地设备计算能力，完成背景的去除。</li>
+<li><strong>数据隐私保护</strong>。完全浏览器运行，无需传输到外部服务器。</li>
+<li><strong>与 IMG.LY 的 CE.SDK 无缝集成</strong>。<code>@imgly/background-removal</code>提供与<a href="https://img.ly/products/creative-sdk?utm_source=github&amp;utm_medium=project&amp;utm_campaign=bg-removal">IMG.LY 的 CE.SDK </a>的无缝集成，使开发人员能够轻松地将强大的浏览器内图像抠图和背景去除功能合并到他们的项目中。</li>
+</ul>
+<p>使用的神经网络（<a href="https://onnx.ai/">ONNX 模型</a><code>@imgly/background-removal</code>）和 WASM 文件托管在<a href="https://www.unpkg.com/">UNPKG</a>上，因此库的所有用户都可以轻松下载。如果您想在自己的服务器上托管数据，请参阅自定义资产服务部分。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install @imgly/background-removal</span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> imglyRemoveBackground <span class="keyword">from</span> <span class="string">&quot;@imgly/background-removal&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">image_src</span>: <span class="title class_">ImageData</span> | <span class="title class_">ArrayBuffer</span> | <span class="title class_">Uint8Array</span> | <span class="title class_">Blob</span> | <span class="variable constant_">URL</span> | <span class="built_in">string</span> = ...;</span><br><span class="line"></span><br><span class="line"><span class="title function_">imglyRemoveBackground</span>(image_src).<span class="title function_">then</span>(<span class="function">(<span class="params">blob: Blob</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// The result is a blob encoded as PNG. It can be converted to an URL to be used as HTMLImage.src</span></span><br><span class="line">  <span class="keyword">const</span> url = <span class="variable constant_">URL</span>.<span class="title function_">createObjectURL</span>(blob);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>第一次运行获取 wasm 和 onnx 模型文件需要一定的时间。所有文件都由浏览器和附加模型缓存进行缓存。</p>
+<h2 id="高级配置"><a href="#高级配置" class="headerlink" title="高级配置"></a>高级配置</h2><p>该库不需要任何配置即可启动，可选参数可以提供对库的更多控制。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">publicPath</span>: <span class="built_in">string</span>; <span class="comment">// 模型和wasm文件的公共路径</span></span><br><span class="line">  <span class="attr">debug</span>: bool; <span class="comment">// 启用或禁用console输出</span></span><br><span class="line">  <span class="attr">proxyToWorker</span>: bool; <span class="comment">// 是否代理计算给webworker. (Default true)</span></span><br><span class="line">  <span class="attr">model</span>: <span class="string">&#x27;small&#x27;</span> | <span class="string">&#x27;medium&#x27;</span>; <span class="comment">// 使用的模型. (Default &quot;medium&quot;)</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="下载的大小与质量"><a href="#下载的大小与质量" class="headerlink" title="下载的大小与质量"></a>下载的大小与质量</h3><ul>
+<li>small（~40MB）：有时会显示伪影。</li>
+<li>medium（～80MB）：默认模型。</li>
+</ul>
+<h3 id="下载进度监控"><a href="#下载进度监控" class="headerlink" title="下载进度监控"></a>下载进度监控</h3><p>首次运行获取必要的数据并存储在浏览器缓存中。由于下载可能需要一些时间，可以选择查看下载进度。</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">progress</span>: <span class="function">(<span class="params">key, current, total</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Downloading <span class="subst">$&#123;key&#125;</span>: <span class="subst">$&#123;current&#125;</span> of <span class="subst">$&#123;total&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><p>性能在很大程度上取决于可用的功能集。最重要的是，请确保 <code>SharedArrayBuffer</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer">MDN</a>可用。由于 <code>SharedArrayBuffer</code> 的安全要求，需要设置两个标头来使您的站点与跨源隔离</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;Cross-Origin-Opener-Policy&#x27;</span>: <span class="string">&#x27;same-origin&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Cross-Origin-Embedder-Policy&#x27;</span>: <span class="string">&#x27;require-corp&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="定制资源"><a href="#定制资源" class="headerlink" title="定制资源"></a>定制资源</h3><p>目前，wasm 和 onnx 神经网络通过 unpkg 提供服务。对于生产使用，我们建议您自行托管它们。因此，请将所有 .wasm 和 .onnx 文件复制到您的公共路径 $PUBLIC_PATH，并重新配置库。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> node_modules/@imgly/background-removal/dist/*.wasm <span class="variable">$PUBLIC_PATH</span></span><br><span class="line"><span class="built_in">cp</span> node_modules/@imgly/background-removal/dist/*.onnx <span class="variable">$PUBLIC_PATH</span></span><br></pre></td></tr></table></figure>
+<p>然后，在代码中可以导入 <code>@imgly/background-removal</code> 库，配置并使用它来移除背景。参考以下示例：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> imglyRemoveBackground, &#123;<span class="title class_">Config</span>&#125; <span class="keyword">from</span> <span class="string">&quot;@imgly/background-removal&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> public_path = <span class="string">&quot;https://example.com/assets/&quot;</span>; <span class="comment">// assets 被提供的路径</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">publicPath</span>: public_path, <span class="comment">// wasm 文件的路径</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">image_src</span>: <span class="title class_">ImageData</span> | <span class="title class_">ArrayBuffer</span> | <span class="title class_">Uint8Array</span> | <span class="title class_">Blob</span> | <span class="variable constant_">URL</span> | string = ...;</span><br><span class="line"></span><br><span class="line"><span class="title function_">imglyRemoveBackground</span>(image_src, config).<span class="title function_">then</span>(<span class="function">(<span class="params">blob: Blob</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 结果是以 PNG 编码的 Blob。</span></span><br><span class="line">  <span class="comment">// 它可以转换为 URL，用作 HTMLImage.src</span></span><br><span class="line">  <span class="keyword">const</span> url = <span class="variable constant_">URL</span>.<span class="title function_">createObjectURL</span>(blob);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这段代码的作用是将 <code>@imgly/background-removal</code> 库的 wasm 和 onnx 文件从 unpkg 复制到您的公共路径，并配置库以使用这些文件来执行背景移除操作。请确保替换 <code>public_path</code> 变量为您自己的实际公共路径。</p>
+<h3 id="调试输出"><a href="#调试输出" class="headerlink" title="调试输出"></a>调试输出</h3><p>启用调试输出并记录到控制台</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">debug</span>: <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="跨域资源共享（CORS）"><a href="#跨域资源共享（CORS）" class="headerlink" title="跨域资源共享（CORS）"></a>跨域资源共享（CORS）</h3><p>如果您遇到 CORS 问题，您可能需要通过以下方式将其他参数传递给 fetch 函数</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">fetchArgs</span>: &#123;</span><br><span class="line">    <span class="attr">mode</span>: <span class="string">&#x27;no-cors&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="它们给谁用？"><a href="#它们给谁用？" class="headerlink" title="它们给谁用？"></a>它们给谁用？</h2><p><code>@imgly/background-removal</code>适合需要直接在浏览器中高效且经济高效地去除背景的开发人员和项目，包括但不限于：</p>
+<ul>
+<li>需要实时去除产品图像背景的<strong>电子商务应用程序</strong>。</li>
+<li>需要背景去除功能以增强用户体验的<strong>图像编辑应用程序</strong>。</li>
+<li><strong>基于网络的图形设计工具</strong>，旨在通过浏览器内背景删除来简化创作过程。</li>
+</ul>
+<p>无论您是专业开发人员还是业余爱好者，<code>@imgly/background-removal</code>都可以让您轻松交付令人印象深刻的应用程序和服务。</p>
 ]]></content>
       <categories>
         <category>前端</category>
-        <category>Chrome</category>
+        <category>npm</category>
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>Chrome</tag>
+        <tag>npm</tag>
+        <tag>抠图</tag>
       </tags>
   </entry>
   <entry>
@@ -254,6 +339,9 @@
 <h2 id="主站配置"><a href="#主站配置" class="headerlink" title="主站配置"></a>主站配置</h2><ol>
 <li><p>修改 <code>_config.yml</code>文件</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">MY</span> <span class="string">BLOG</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">Javascript</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">HJL</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>延迟发布，手动指定日期晚于当前时间不会生成</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">future:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="主题配置-Next"><a href="#主题配置-Next" class="headerlink" title="主题配置-Next"></a>主题配置-Next</h2><ol>
@@ -350,88 +438,18 @@
       </tags>
   </entry>
   <entry>
-    <title>JS逆向</title>
-    <url>/posts/32357/</url>
-    <content><![CDATA[<h2 id="反爬虫"><a href="#反爬虫" class="headerlink" title="反爬虫"></a>反爬虫</h2><p>限制爬虫程序访问服务器资源和获取数据的行为，包括不限于请求限制、拒绝响应、客户端身份验证、文本混淆、动态渲染。</p>
+    <title>typora添加参考文献</title>
+    <url>/posts/29479/</url>
+    <content><![CDATA[<p>MarkDown兼容HTML的语法，根据HTML中参考文献引用的方法，实现如下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">This is a test sentence.<span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#ref1&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line">……</span><br><span class="line">Reference</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;ref1&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;black&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-<h2 id="浏览器五个组件与三个解释器"><a href="#浏览器五个组件与三个解释器" class="headerlink" title="浏览器五个组件与三个解释器"></a>浏览器五个组件与三个解释器</h2><p>用户界面：包括地址栏、前进、后退、页面主窗口等</p>
-<p>浏览器引擎：用户操作传递给渲染引擎</p>
-<p>渲染引擎：调用解释器解释HTML、CSS、JS代码，重排页面</p>
-<p>数据存储：本地存储体积较小的数据，cookie、storage等</p>
-<p>网络：自动加载HTML文档中需要的其他资源</p>
-<p>解释器：CSS解释器、HTML解释器、Javascript解释器</p>
-<h2 id="PyExecJS"><a href="#PyExecJS" class="headerlink" title="PyExecJS"></a>PyExecJS</h2><p>安装Pyexecjs</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyexecjs</span><br></pre></td></tr></table></figure>
-<p>检测环境</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> execjs</span><br><span class="line"><span class="built_in">print</span>(execjs.get().name)</span><br><span class="line"><span class="comment"># Node.js (V8)</span></span><br></pre></td></tr></table></figure>
-<p>举个例子</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一个简单的 JavaScript 函数</span></span><br><span class="line">js_code = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">function add(a, b) &#123;</span></span><br><span class="line"><span class="string">    return a + b;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 JavaScript 运行时中执行 JavaScript 代码</span></span><br><span class="line">context = execjs.<span class="built_in">compile</span>(js_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用 JavaScript 函数并获取结果</span></span><br><span class="line">result = context.call(<span class="string">&quot;add&quot;</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-<p>特殊编码的输入输出可以用Base64编码</p>
-<h2 id="使用NodeJS与浏览器的问题"><a href="#使用NodeJS与浏览器的问题" class="headerlink" title="使用NodeJS与浏览器的问题"></a>使用NodeJS与浏览器的问题</h2><p>NodeJS没有window对象，需要自己创建空对象，或者指向global</p>
-<p>window.btoa在nodeJS不存在，可以使用Buffer.from(‘xxx’).toString(‘base64’)转化</p>
-<h2 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h2><p>使用hook重新执行函数，寻找到JS加解密入口</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hook</span>(<span class="params">object, attr</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> func = object[attr];</span><br><span class="line">  object[attr] = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;xxx&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> func.<span class="title function_">apply</span>(object, <span class="variable language_">arguments</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//eg:</span></span><br><span class="line"><span class="title function_">hook</span>(<span class="variable language_">window</span>, <span class="string">&#x27;btoa&#x27;</span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>前端</category>
-        <category>JS</category>
+        <category>Typora</category>
       </categories>
       <tags>
-        <tag>JS</tag>
-        <tag>逆向</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>background-removal使用教程</title>
-    <url>/posts/9583/</url>
-    <content><![CDATA[<p>该npm包于2023.7发布，能够直接在浏览器中删除图片的背景，无费用与隐私问题。<a href="https://img.ly/showcases/cesdk/background-removal/web?utm_medium=project&amp;utm_source=github&amp;utm_campaign=bg-removal">DEMO</a></p>
-<span id="more"></span>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>@imgly/background-removal</code>允许开发人员直接在浏览器中无缝地从图像中删除背景。</p>
-<p><strong>特性：</strong></p>
-<ul>
-<li><strong>浏览器内执行后台删除</strong>。直接在用户浏览器中执行整个后台删除过程，无需额外的服务器成本，利用本地设备计算能力，完成背景的去除。</li>
-<li><strong>数据隐私保护</strong>。完全浏览器运行，无需传输到外部服务器。</li>
-<li><strong>与 IMG.LY 的 CE.SDK 无缝集成</strong>。<code>@imgly/background-removal</code>提供与<a href="https://img.ly/products/creative-sdk?utm_source=github&amp;utm_medium=project&amp;utm_campaign=bg-removal">IMG.LY 的 CE.SDK </a>的无缝集成，使开发人员能够轻松地将强大的浏览器内图像抠图和背景去除功能合并到他们的项目中。</li>
-</ul>
-<p>使用的神经网络（<a href="https://onnx.ai/">ONNX 模型</a><code>@imgly/background-removal</code>）和 WASM 文件托管在<a href="https://www.unpkg.com/">UNPKG</a>上，因此库的所有用户都可以轻松下载。如果您想在自己的服务器上托管数据，请参阅自定义资产服务部分。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install @imgly/background-removal</span><br></pre></td></tr></table></figure>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> imglyRemoveBackground <span class="keyword">from</span> <span class="string">&quot;@imgly/background-removal&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">image_src</span>: <span class="title class_">ImageData</span> | <span class="title class_">ArrayBuffer</span> | <span class="title class_">Uint8Array</span> | <span class="title class_">Blob</span> | <span class="variable constant_">URL</span> | <span class="built_in">string</span> = ...;</span><br><span class="line"></span><br><span class="line"><span class="title function_">imglyRemoveBackground</span>(image_src).<span class="title function_">then</span>(<span class="function">(<span class="params">blob: Blob</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// The result is a blob encoded as PNG. It can be converted to an URL to be used as HTMLImage.src</span></span><br><span class="line">  <span class="keyword">const</span> url = <span class="variable constant_">URL</span>.<span class="title function_">createObjectURL</span>(blob);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>第一次运行获取 wasm 和 onnx 模型文件需要一定的时间。所有文件都由浏览器和附加模型缓存进行缓存。</p>
-<h2 id="高级配置"><a href="#高级配置" class="headerlink" title="高级配置"></a>高级配置</h2><p>该库不需要任何配置即可启动，可选参数可以提供对库的更多控制。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">publicPath</span>: <span class="built_in">string</span>; <span class="comment">// 模型和wasm文件的公共路径</span></span><br><span class="line">  <span class="attr">debug</span>: bool; <span class="comment">// 启用或禁用console输出</span></span><br><span class="line">  <span class="attr">proxyToWorker</span>: bool; <span class="comment">// 是否代理计算给webworker. (Default true)</span></span><br><span class="line">  <span class="attr">model</span>: <span class="string">&#x27;small&#x27;</span> | <span class="string">&#x27;medium&#x27;</span>; <span class="comment">// 使用的模型. (Default &quot;medium&quot;)</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="下载的大小与质量"><a href="#下载的大小与质量" class="headerlink" title="下载的大小与质量"></a>下载的大小与质量</h3><ul>
-<li>small（~40MB）：有时会显示伪影。</li>
-<li>medium（～80MB）：默认模型。</li>
-</ul>
-<h3 id="下载进度监控"><a href="#下载进度监控" class="headerlink" title="下载进度监控"></a>下载进度监控</h3><p>首次运行获取必要的数据并存储在浏览器缓存中。由于下载可能需要一些时间，可以选择查看下载进度。</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">progress</span>: <span class="function">(<span class="params">key, current, total</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Downloading <span class="subst">$&#123;key&#125;</span>: <span class="subst">$&#123;current&#125;</span> of <span class="subst">$&#123;total&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><p>性能在很大程度上取决于可用的功能集。最重要的是，请确保 <code>SharedArrayBuffer</code> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer">MDN</a>可用。由于 <code>SharedArrayBuffer</code> 的安全要求，需要设置两个标头来使您的站点与跨源隔离</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;Cross-Origin-Opener-Policy&#x27;</span>: <span class="string">&#x27;same-origin&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Cross-Origin-Embedder-Policy&#x27;</span>: <span class="string">&#x27;require-corp&#x27;</span></span><br></pre></td></tr></table></figure>
-<h3 id="定制资源"><a href="#定制资源" class="headerlink" title="定制资源"></a>定制资源</h3><p>目前，wasm 和 onnx 神经网络通过 unpkg 提供服务。对于生产使用，我们建议您自行托管它们。因此，请将所有 .wasm 和 .onnx 文件复制到您的公共路径 $PUBLIC_PATH，并重新配置库。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> node_modules/@imgly/background-removal/dist/*.wasm <span class="variable">$PUBLIC_PATH</span></span><br><span class="line"><span class="built_in">cp</span> node_modules/@imgly/background-removal/dist/*.onnx <span class="variable">$PUBLIC_PATH</span></span><br></pre></td></tr></table></figure>
-<p>然后，在代码中可以导入 <code>@imgly/background-removal</code> 库，配置并使用它来移除背景。参考以下示例：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> imglyRemoveBackground, &#123;<span class="title class_">Config</span>&#125; <span class="keyword">from</span> <span class="string">&quot;@imgly/background-removal&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> public_path = <span class="string">&quot;https://example.com/assets/&quot;</span>; <span class="comment">// assets 被提供的路径</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">publicPath</span>: public_path, <span class="comment">// wasm 文件的路径</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">image_src</span>: <span class="title class_">ImageData</span> | <span class="title class_">ArrayBuffer</span> | <span class="title class_">Uint8Array</span> | <span class="title class_">Blob</span> | <span class="variable constant_">URL</span> | string = ...;</span><br><span class="line"></span><br><span class="line"><span class="title function_">imglyRemoveBackground</span>(image_src, config).<span class="title function_">then</span>(<span class="function">(<span class="params">blob: Blob</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 结果是以 PNG 编码的 Blob。</span></span><br><span class="line">  <span class="comment">// 它可以转换为 URL，用作 HTMLImage.src</span></span><br><span class="line">  <span class="keyword">const</span> url = <span class="variable constant_">URL</span>.<span class="title function_">createObjectURL</span>(blob);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>这段代码的作用是将 <code>@imgly/background-removal</code> 库的 wasm 和 onnx 文件从 unpkg 复制到您的公共路径，并配置库以使用这些文件来执行背景移除操作。请确保替换 <code>public_path</code> 变量为您自己的实际公共路径。</p>
-<h3 id="调试输出"><a href="#调试输出" class="headerlink" title="调试输出"></a>调试输出</h3><p>启用调试输出并记录到控制台</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">debug</span>: <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="跨域资源共享（CORS）"><a href="#跨域资源共享（CORS）" class="headerlink" title="跨域资源共享（CORS）"></a>跨域资源共享（CORS）</h3><p>如果您遇到 CORS 问题，您可能需要通过以下方式将其他参数传递给 fetch 函数</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">config</span>: <span class="title class_">Config</span> = &#123;</span><br><span class="line">  <span class="attr">fetchArgs</span>: &#123;</span><br><span class="line">    <span class="attr">mode</span>: <span class="string">&#x27;no-cors&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="它们给谁用？"><a href="#它们给谁用？" class="headerlink" title="它们给谁用？"></a>它们给谁用？</h2><p><code>@imgly/background-removal</code>适合需要直接在浏览器中高效且经济高效地去除背景的开发人员和项目，包括但不限于：</p>
-<ul>
-<li>需要实时去除产品图像背景的<strong>电子商务应用程序</strong>。</li>
-<li>需要背景去除功能以增强用户体验的<strong>图像编辑应用程序</strong>。</li>
-<li><strong>基于网络的图形设计工具</strong>，旨在通过浏览器内背景删除来简化创作过程。</li>
-</ul>
-<p>无论您是专业开发人员还是业余爱好者，<code>@imgly/background-removal</code>都可以让您轻松交付令人印象深刻的应用程序和服务。</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>npm</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>npm</tag>
-        <tag>抠图</tag>
+        <tag>Typora</tag>
+        <tag>参考文献</tag>
       </tags>
   </entry>
   <entry>
@@ -442,17 +460,21 @@
 </ul>
 <span id="more"></span>
 <h2 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h2><ul>
-<li><a href="https://www.remove.bg/zh">AI自动清除背景</a></li>
+<li><a href="https://www.remove.bg/zh">removebg-AI自动清除背景</a></li>
 </ul>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><ul>
 <li><a href="https://tinypng.com/">熊猫图片压缩</a></li>
+<li><a href="https://octave-online.net/">Octave在线-制作matlab图表</a></li>
 </ul>
 <h2 id="NPM包"><a href="#NPM包" class="headerlink" title="NPM包"></a>NPM包</h2><ul>
 <li><a href="https://github.com/josdejong/lossless-json">无损JSON</a></li>
 <li><a href="https://www.npmjs.com/package/@imgly/background-removal">图片背景去除 2023.7开源</a></li>
 </ul>
 <h2 id="Latex"><a href="#Latex" class="headerlink" title="Latex"></a>Latex</h2><ul>
-<li><a href="https://simpletex.cn/ai/latex_ocr">latex图片识别</a></li>
+<li><a href="https://simpletex.cn/ai/latex_ocr">simpletex-latex图片识别</a></li>
+</ul>
+<h2 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h2><ul>
+<li><a href="https://www.yizz.cn/">AI导航-易之网</a></li>
 </ul>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li><a href="http://xn--ehqx7tcnnope.live">三毛机场</a></li>
@@ -463,29 +485,6 @@
       </categories>
       <tags>
         <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>格密码基础</title>
-    <url>/posts/46633/</url>
-    <content><![CDATA[<h2 id="格"><a href="#格" class="headerlink" title="格"></a>格</h2><p>给定 $b_1,b_2,\dots,b_n\in \mathbb{R}^m$ 是$n$个线性无关的列向量，由它们生成的格被定义为：</p>
-<script type="math/tex; mode=display">
-\mathcal L(b_1,b_2,...,b_n)=\left\{\sum{x_ib_i}|x_i∈\mathbb Z\right\}</script><p>其中$b_1,b_2,…,b_n$称作格的基。如果我们定义矩阵$B$是$m\times n$的矩阵，其列为$b_1,b_2,\dots,b_n$，则由矩阵$B$生成的格为：</p>
-<script type="math/tex; mode=display">
-\mathcal L(B)=\mathcal L(b_1,b_2,...,b_n)=\left\{Bx|x∈\mathbb Z^n\right\}</script><p>其中格的秩为$n$，维数为$m$，如果$n=m$，此时我们称该格为满秩格。</p>
-<span id="more"></span>
-<h2 id="格的行列式"><a href="#格的行列式" class="headerlink" title="格的行列式"></a>格的行列式</h2><p>令$B=(b_1,b_2,\dots,b_n)$为格$\Lambda$的一组格基，则格$\Lambda=\mathcal L(B)$的行列式被定义为：</p>
-<script type="math/tex; mode=display">
-det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="模格"><a href="#模格" class="headerlink" title="模格"></a>模格</h2><p>对于素数$s$、矩阵$A\in \mathbb Z_q^{n\times m}$、和向量$u\in \mathbb Z_q^n$，模格定义如下：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}\Lambda_q(A)&=\{y\in\mathbb{Z}^ms.t.\exists s\in\mathbb{Z}_q^n,A^T s=y({\mathrm{mod}}q)\}\\\\\Lambda_q^\bot(A)&=\{y\in\mathbb{Z}^mst.Ay=0({\mathrm{mod}}q)\}\\\\\Lambda_q^u(A)&=\{y\in\mathbb{Z}^ms.t.Ay=u({\mathrm{mod}}q)\}\end{aligned}</script><h2 id="对偶格"><a href="#对偶格" class="headerlink" title="对偶格"></a>对偶格</h2>]]></content>
-      <categories>
-        <category>密码学</category>
-        <category>格</category>
-      </categories>
-      <tags>
-        <tag>密码学</tag>
-        <tag>格</tag>
       </tags>
   </entry>
   <entry>
