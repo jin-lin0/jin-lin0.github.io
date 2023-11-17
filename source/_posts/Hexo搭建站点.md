@@ -93,6 +93,14 @@ categories:
    language: zh-CN
    timezone: ""
    ```
+   
+1. 延迟发布，手动指定日期晚于当前时间不会生成
+
+   ```yaml
+   future: false
+   ```
+   
+   
 
 ## 主题配置-Next
 
@@ -281,6 +289,8 @@ categories:
       点击“阅读全文”按钮跳转后，会自动定位到`more`标签的位置，如果想要取消定位，
    
       在`themes/next/layout/_macro/post.swig`中去除`#more`即可
+   
+      **隐藏文章**：在Font-Matter中添加`published: false`即可
    
    2. 新建分类：
    

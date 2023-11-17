@@ -141,6 +141,12 @@ mathjax: true
      b+c\\
      a+c\\
      \end{align}
+   
+5. 搭配typora
+
+   `偏好设置` $\Rightarrow$ `MarkDown` $\Rightarrow$ `内联公式开启` $\Rightarrow$ `重启Typora`
+
+   点击段落，公式块可以输入公式
 
 ## Hexo生成唯一永久文章链接
 
