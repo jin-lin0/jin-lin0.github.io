@@ -303,5 +303,44 @@ hexo的文章链接默认的生成规则是：`:year/:month/:day/:title`，标�
 
    ![image-20231109041357565](Hexo插件/image-20231109041357565.png)
 
+
+## Hexo中隐藏文章
+
+1. **根目录**安装插件`hexo-hide-posts`
+
+   ```bash
+   npm install hexo-hide-posts --save
+   ```
+
+2. **根目录**添加配置
+
+   ```yaml
+   # hexo-hide-posts
+   hide_posts:
+   	# font-matter中的过滤关键字
+     filter: hidden
+     # 指定你想要传递隐藏文章的位置，比如让所有隐藏文章在存档页面可见
+     # 常见的位置有：index, tag, category, archive, sitemap, feed, etc.
+     # 留空则默认全部隐藏
+     public_generators: []
+     # 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录
+     noindex: true
    
+   ```
+
+3. 文章的`Font-Matter`中添加`hidden: true`即可隐藏，但仍可通过链接访问
+
+4. 控制台输入`hexo hidden:list`可以查看隐藏的文章列表
+
+   ```bash
+   source: _posts/实用网站收集.md
+   slug: 实用网站收集
+   title: 实用网站收集
+   date: Mon Nov 06 2023 01:56:45 GMT+0800
+   updated: Sun Nov 19 2023 00:51:06 GMT+0800
+   ```
+
+   
+
+
 
