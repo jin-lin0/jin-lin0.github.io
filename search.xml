@@ -266,6 +266,19 @@
 <img src="/posts/62790/image-20231109041357565.png" class="" title="image-20231109041357565">
 </li>
 </ol>
+<h2 id="Hexo中隐藏文章"><a href="#Hexo中隐藏文章" class="headerlink" title="Hexo中隐藏文章"></a>Hexo中隐藏文章</h2><ol>
+<li><p><strong>根目录</strong>安装插件<code>hexo-hide-posts</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-hide-posts --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>根目录</strong>添加配置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo-hide-posts</span></span><br><span class="line"><span class="attr">hide_posts:</span></span><br><span class="line">	<span class="comment"># font-matter中的过滤关键字</span></span><br><span class="line">  <span class="attr">filter:</span> <span class="string">hidden</span></span><br><span class="line">  <span class="comment"># 指定你想要传递隐藏文章的位置，比如让所有隐藏文章在存档页面可见</span></span><br><span class="line">  <span class="comment"># 常见的位置有：index, tag, category, archive, sitemap, feed, etc.</span></span><br><span class="line">  <span class="comment"># 留空则默认全部隐藏</span></span><br><span class="line">  <span class="attr">public_generators:</span> []</span><br><span class="line">  <span class="comment"># 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录</span></span><br><span class="line">  <span class="attr">noindex:</span> <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文章的<code>Font-Matter</code>中添加<code>hidden: true</code>即可隐藏，但仍可通过链接访问</p>
+</li>
+<li><p>控制台输入<code>hexo hidden:list</code>可以查看隐藏的文章列表</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span>: _posts/实用网站收集.md</span><br><span class="line">slug: 实用网站收集</span><br><span class="line">title: 实用网站收集</span><br><span class="line"><span class="built_in">date</span>: Mon Nov 06 2023 01:56:45 GMT+0800</span><br><span class="line">updated: Sun Nov 19 2023 00:51:06 GMT+0800</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -495,44 +508,18 @@
       </tags>
   </entry>
   <entry>
-    <title>实用网站收集</title>
-    <url>/posts/1e5417a7/</url>
-    <content><![CDATA[<h2 id="前端工具"><a href="#前端工具" class="headerlink" title="前端工具"></a>前端工具</h2><ul>
-<li><a href="https://tiny-helpers.dev/">迷你辅助，500+免费在线工具</a></li>
-</ul>
+    <title>typora添加参考文献</title>
+    <url>/posts/29479/</url>
+    <content><![CDATA[<p>MarkDown兼容HTML的语法，根据HTML中参考文献引用的方法，实现如下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">This is a test sentence.<span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#ref1&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line">……</span><br><span class="line">Reference</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;ref1&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;black&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-<h2 id="素材制作"><a href="#素材制作" class="headerlink" title="素材制作"></a>素材制作</h2><ul>
-<li><p><a href="https://www.remove.bg/zh">removebg-AI自动清除背景</a></p>
-</li>
-<li><p><a href="https://tinypng.com/">熊猫图片压缩</a></p>
-</li>
-</ul>
-<h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><ul>
-<li><a href="https://octave-online.net/">Octave在线-制作matlab图表</a></li>
-<li><a href="https://matlab.mathworks.com/">在线Matlab</a></li>
-</ul>
-<h2 id="NPM包"><a href="#NPM包" class="headerlink" title="NPM包"></a>NPM包</h2><ul>
-<li><a href="https://github.com/josdejong/lossless-json">无损JSON</a></li>
-<li><a href="https://www.npmjs.com/package/@imgly/background-removal">图片背景去除 2023.7开源</a></li>
-</ul>
-<h2 id="Latex"><a href="#Latex" class="headerlink" title="Latex"></a>Latex</h2><ul>
-<li><a href="https://simpletex.cn/ai/latex_ocr">simpletex-latex图片识别</a></li>
-</ul>
-<h2 id="AI"><a href="#AI" class="headerlink" title="AI"></a>AI</h2><ul>
-<li><a href="https://www.yizz.cn/">AI导航-易之网</a></li>
-<li><a href="https://www.yeschat.ai/zh-CN/yeschat">yeschatAI</a></li>
-<li><a href="https://forefront.ai/app/chat/new">ForeFront-GPT-3.5 100/3h Claude 100/ 3h</a></li>
-<li><a href="https://chat-shared2.zhile.io/shared.html">chatShared</a></li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li><a href="http://xn--ehqx7tcnnope.live">三毛机场</a></li>
-</ul>
 ]]></content>
       <categories>
-        <category>网站</category>
+        <category>Typora</category>
       </categories>
       <tags>
-        <tag>网站</tag>
+        <tag>Typora</tag>
+        <tag>参考文献</tag>
       </tags>
   </entry>
   <entry>
@@ -556,6 +543,32 @@
       </tags>
   </entry>
   <entry>
+    <title>格密码基础</title>
+    <url>/posts/46633/</url>
+    <content><![CDATA[<h2 id="格"><a href="#格" class="headerlink" title="格"></a>格</h2><p>给定 $b_1,b_2,\dots,b_n\in \mathbb{R}^m$ 是$n$个线性无关的列向量，由它们生成的格被定义为：</p>
+<script type="math/tex; mode=display">
+\mathcal L(b_1,b_2,...,b_n)=\left\{\sum{x_ib_i}|x_i∈\mathbb Z\right\}</script><p>其中$b_1,b_2,…,b_n$称作格的基。如果我们定义矩阵$B$是$m\times n$的矩阵，其列为$b_1,b_2,\dots,b_n$，则由矩阵$B$生成的格为：</p>
+<script type="math/tex; mode=display">
+\mathcal L(B)=\mathcal L(b_1,b_2,...,b_n)=\left\{Bx|x∈\mathbb Z^n\right\}</script><p>其中格的秩为$n$，维数为$m$，如果$n=m$，此时我们称该格为满秩格。</p>
+<span id="more"></span>
+<h2 id="格的行列式"><a href="#格的行列式" class="headerlink" title="格的行列式"></a>格的行列式</h2><p>令$B=(b_1,b_2,\dots,b_n)$为格$\Lambda$的一组格基，则格$\Lambda=\mathcal L(B)$的行列式被定义为：</p>
+<script type="math/tex; mode=display">
+det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="模格"><a href="#模格" class="headerlink" title="模格"></a>模格</h2><p>对于素数$s$、矩阵$A\in \mathbb Z_q^{n\times m}$、和向量$u\in \mathbb Z_q^n$，模格定义如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}\Lambda_q(A)&=\{y\in\mathbb{Z}^ms.t.\exists s\in\mathbb{Z}_q^n,A^T s=y({\mathrm{mod}}q)\}\\\\\Lambda_q^\bot(A)&=\{y\in\mathbb{Z}^mst.Ay=0({\mathrm{mod}}q)\}\\\\\Lambda_q^u(A)&=\{y\in\mathbb{Z}^ms.t.Ay=u({\mathrm{mod}}q)\}\end{aligned}</script><h2 id="对偶格"><a href="#对偶格" class="headerlink" title="对偶格"></a>对偶格</h2><p>给定$m$维的格$\Lambda=\mathcal L(B)\subset \mathbb R^m$，对偶格$\Lambda^*$的定义为：</p>
+<script type="math/tex; mode=display">
+\Lambda^*=\{y\in\mathbb R^m|\forall x\in\Lambda,\langle x,y\rangle\in\mathbb Z\}</script><p>对偶格满足$\Lambda^<em>=\mathcal L((B^{-1})^T)$$\Lambda^</em>=\mathcal L((B^{-1})^T)$，且$det(\Lambda^*)=\frac{1}{det(\Lambda)}$</p>
+]]></content>
+      <categories>
+        <category>密码学</category>
+        <category>格</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+        <tag>格</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>爬虫红线</title>
     <url>/posts/45344/</url>
     <content><![CDATA[<h2 id="禁止"><a href="#禁止" class="headerlink" title="禁止"></a>禁止</h2><ol>
@@ -576,21 +589,6 @@
       </categories>
       <tags>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>typora添加参考文献</title>
-    <url>/posts/29479/</url>
-    <content><![CDATA[<p>MarkDown兼容HTML的语法，根据HTML中参考文献引用的方法，实现如下：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">This is a test sentence.<span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#ref1&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line">……</span><br><span class="line">Reference</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;ref1&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;black&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>Typora</category>
-      </categories>
-      <tags>
-        <tag>Typora</tag>
-        <tag>参考文献</tag>
       </tags>
   </entry>
 </search>
