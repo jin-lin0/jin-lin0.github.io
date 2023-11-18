@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#222">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Canvas是HTML5提供的一种绘图API，它可以通过JavaScript在网页上绘制图形、图像和动画。 Canvas提供了一个类似画布的区域，可以在其中动态绘制图形。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Canvas学习">
+<meta property="og:url" content="http://example.com/posts/30460/index.html">
+<meta property="og:site_name" content="MY BLOG">
+<meta property="og:description" content="Canvas是HTML5提供的一种绘图API，它可以通过JavaScript在网页上绘制图形、图像和动画。 Canvas提供了一个类似画布的区域，可以在其中动态绘制图形。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/posts/30460/image-20231118191540055.png">
+<meta property="article:published_time" content="2023-11-17T09:06:30.000Z">
+<meta property="article:modified_time" content="2023-11-18T11:15:43.581Z">
+<meta property="article:author" content="HJL">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="HTML5">
+<meta property="article:tag" content="Canvas">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/posts/30460/image-20231118191540055.png">
+
+<link rel="canonical" href="http://example.com/posts/30460/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Canvas学习 | MY BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="MY BLOG" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MY BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/jin-lin0" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/30460/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="HJL">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MY BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Canvas学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-11-17 17:06:30" itemprop="dateCreated datePublished" datetime="2023-11-17T17:06:30+08:00">2023-11-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-11-18 19:15:43" itemprop="dateModified" datetime="2023-11-18T19:15:43+08:00">2023-11-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Canvas是HTML5提供的一种绘图API，它可以通过JavaScript在网页上绘制图形、图像和动画。</p>
+<p>Canvas提供了一个类似画布的区域，可以在其中动态绘制图形。</p>
+<span id="more"></span>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="CanvasRenderingContext2D-arc"><a href="#CanvasRenderingContext2D-arc" class="headerlink" title="CanvasRenderingContext2D.arc()"></a>CanvasRenderingContext2D.arc()</h3><p>绘制圆弧路径的方法</p>
+<p><code>void ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);</code></p>
+<p><strong>参数</strong></p>
+<p><em>x</em>：圆弧中心的x坐标</p>
+<p><em>y</em>：圆弧中心的y坐标</p>
+<p>radius：圆弧的半径</p>
+<p>startAngle：圆弧的起始点，单位弧度</p>
+<p>endAngle：圆弧的终点，单位弧度</p>
+<p>anticlockwise：true为逆时针，false为顺时针</p>
+<p><strong>示例</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;canvas&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">ctx.<span class="title function_">beginPath</span>();</span><br><span class="line">ctx.<span class="title function_">arc</span>(<span class="number">100</span>, <span class="number">75</span>, <span class="number">50</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="title class_">Math</span>.<span class="property">PI</span>);</span><br><span class="line">ctx.<span class="title function_">stroke</span>();</span><br></pre></td></tr></table></figure>
+<h3 id="CanvasRenderingContext2D-createLinearGradient"><a href="#CanvasRenderingContext2D-createLinearGradient" class="headerlink" title="CanvasRenderingContext2D.createLinearGradient()"></a>CanvasRenderingContext2D.createLinearGradient()</h3><p>创建线性的渐变对象，渐变可用于填充矩形、圆形、线条、文本等。</p>
+<p><code>CanvasGradient ctx.createLinearGradient(x0, y0, x1, y1);</code></p>
+<p><strong>参数</strong></p>
+<p><em>x0</em>： 渐变开始点的 x 坐标</p>
+<p><em>y0</em>：渐变开始点的 y 坐标</p>
+<p><em>x1</em>：渐变结束点的 x 坐标</p>
+<p><em>y1</em>：渐变结束点的 y 坐标</p>
+<p><strong>返回值</strong></p>
+<p>CanvasGradient，据指定线路初始化的线性 <code>CanvasGradient</code> 对象。</p>
+<h3 id="CanvasRenderingContext2D-createRadialGradient"><a href="#CanvasRenderingContext2D-createRadialGradient" class="headerlink" title="CanvasRenderingContext2D.createRadialGradient()"></a>CanvasRenderingContext2D.createRadialGradient()</h3><p>创建放射性渐变对象。</p>
+<p><code>CanvasGradient ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);</code></p>
+<p><strong>参数</strong></p>
+<p><em>x0</em>：开始圆形的 x 轴坐标。</p>
+<p><em>y0</em>：开始圆形的 y 轴坐标。</p>
+<p><em>r0</em>：开始圆形的半径。</p>
+<p><em>x1</em>：结束圆形的 x 轴坐标。</p>
+<p><em>y1</em>：结束圆形的 y 轴坐标。</p>
+<p><em>r1</em>：结束圆形的半径</p>
+<h3 id="CanvasGradient"><a href="#CanvasGradient" class="headerlink" title="CanvasGradient"></a>CanvasGradient</h3><p>描述渐变的不透明对象，通过<code>CanvasRenderingContext2D.createLinearGradient()</code>或<code>CanvasRenderingContext2D.createRadialGradient()</code> 的返回值得到。</p>
+<p><strong>方法</strong></p>
+<p><strong><code>CanvasGradient.addColorStop(offset,color)</code></strong></p>
+<p>指定到偏移的渐变色。</p>
+<p><strong>参数</strong></p>
+<p><em>offset</em>：<code>0</code>到<code>1</code>之间的值，超出范围将抛出<code>INDEX_SIZE_ERR</code>错误</p>
+<p><em>color</em>：CSS 颜色值，若颜色值不能被解析为有效的 CSS 颜色值，将抛出<code>SYNTAX_ERR</code>错误。</p>
+<h2 id="Canvas创建渐变色星空背景"><a href="#Canvas创建渐变色星空背景" class="headerlink" title="Canvas创建渐变色星空背景"></a>Canvas创建渐变色星空背景</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRef, useEffect &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">CanvasStar</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> canvasRef = useRef&lt;<span class="title class_">HTMLCanvasElement</span> | <span class="literal">null</span>&gt;(<span class="literal">null</span>);</span><br><span class="line">  <span class="comment">// x：星星的x坐标 y：星星的y坐标 alpha：透明度</span></span><br><span class="line">  <span class="keyword">const</span> starsRef = useRef&lt;&#123; <span class="attr">x</span>: <span class="built_in">number</span>; <span class="attr">y</span>: <span class="built_in">number</span>; <span class="attr">alpha</span>: <span class="built_in">number</span> &#125;[]&gt;([]);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> canvas = canvasRef.<span class="property">current</span>;</span><br><span class="line">    <span class="keyword">if</span> (!canvas) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> context = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (!context) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">		<span class="comment">// 制作渐变色背景</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">drawBackground</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="comment">// 从(canvas.width / 2, 0)到(canvas.width / 2, canvas.height)的线性渐变对象</span></span><br><span class="line">      <span class="keyword">const</span> gradient = context.<span class="title function_">createLinearGradient</span>(</span><br><span class="line">        canvas.<span class="property">width</span> / <span class="number">2</span>,</span><br><span class="line">        <span class="number">0</span>,</span><br><span class="line">        canvas.<span class="property">width</span> / <span class="number">2</span>,</span><br><span class="line">        canvas.<span class="property">height</span></span><br><span class="line">      );</span><br><span class="line">      <span class="comment">// 为渐变颜色对象添加百分比颜色渐变断点</span></span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.1</span>, <span class="string">&quot;#1b2947&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.6</span>, <span class="string">&quot;#75517d&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">1</span>, <span class="string">&quot;#e96f92&quot;</span>);</span><br><span class="line">			<span class="comment">// 填充canvas</span></span><br><span class="line">      context.<span class="property">fillStyle</span> = gradient;</span><br><span class="line">      context.<span class="title function_">fillRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 制作一个星星</span></span><br><span class="line">    <span class="keyword">const</span> drawShootingStar = (<span class="attr">x</span>: <span class="built_in">number</span>, <span class="attr">y</span>: <span class="built_in">number</span>, <span class="attr">alpha</span>: <span class="built_in">number</span>): <span class="function"><span class="params">void</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 生成放射渐变对象，(x,y)半径为0的圆至(x,y)半径为10的圆渐变</span></span><br><span class="line">      <span class="keyword">let</span> gradient = context.<span class="title function_">createRadialGradient</span>(x, y, <span class="number">0</span>, x, y, <span class="number">10</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0</span>, <span class="string">&quot;#fff&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.3</span>, <span class="string">&quot;transparent&quot;</span>);</span><br><span class="line">      context.<span class="property">fillStyle</span> = gradient;</span><br><span class="line">      <span class="comment">// 设置透明度</span></span><br><span class="line">      context.<span class="property">globalAlpha</span> = alpha;</span><br><span class="line">      context.<span class="title function_">beginPath</span>();</span><br><span class="line">      <span class="comment">// 画圆填充</span></span><br><span class="line">      context.<span class="title function_">arc</span>(x, y, <span class="number">10</span>, <span class="number">0</span>, <span class="title class_">Math</span>.<span class="property">PI</span> * <span class="number">2</span>);</span><br><span class="line">      context.<span class="title function_">fill</span>();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 生成num个星星的数组</span></span><br><span class="line">    <span class="keyword">const</span> generateRandomStars = (</span><br><span class="line">      <span class="attr">num</span>: <span class="built_in">number</span></span><br><span class="line">    ): &#123;</span><br><span class="line">      <span class="attr">x</span>: <span class="built_in">number</span>;</span><br><span class="line">      <span class="attr">y</span>: <span class="built_in">number</span>;</span><br><span class="line">      <span class="attr">alpha</span>: <span class="built_in">number</span>;</span><br><span class="line">    &#125;[] =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> stars = [];</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> x = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">width</span>;</span><br><span class="line">        <span class="comment">// 0.6对应制作背景的渐变色</span></span><br><span class="line">        <span class="keyword">const</span> y = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">height</span> * <span class="number">0.6</span>;</span><br><span class="line">        <span class="keyword">const</span> alpha = <span class="title class_">Math</span>.<span class="title function_">random</span>();</span><br><span class="line">        stars.<span class="title function_">push</span>(&#123; x, y, alpha &#125;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> stars;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">		<span class="comment">// 视窗更新，重新生成stars数组</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">updateCanvasSize</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">      canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line">      starsRef.<span class="property">current</span> = <span class="title function_">generateRandomStars</span>(<span class="title class_">Math</span>.<span class="title function_">max</span>(canvas.<span class="property">width</span> / <span class="number">10</span>, <span class="number">20</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 动画渲染函数</span></span><br><span class="line">    <span class="keyword">const</span> animateStars = (): <span class="function"><span class="params">void</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 清空canvas</span></span><br><span class="line">      context.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line">      context.<span class="property">globalAlpha</span> = <span class="number">1</span>;</span><br><span class="line">      <span class="title function_">drawBackground</span>();</span><br><span class="line"></span><br><span class="line">      starsRef.<span class="property">current</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params">star</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">drawShootingStar</span>(star.<span class="property">x</span>, star.<span class="property">y</span>, star.<span class="property">alpha</span>);</span><br><span class="line">        <span class="comment">// 闪烁效果</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &lt; <span class="number">0.1</span> &amp;&amp; star.<span class="property">alpha</span> &lt; <span class="number">0.9</span>) &#123;</span><br><span class="line">          star.<span class="property">alpha</span> += <span class="number">0.1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &gt; <span class="number">0.9</span> &amp;&amp; star.<span class="property">alpha</span> &gt; <span class="number">0.1</span>) &#123;</span><br><span class="line">          star.<span class="property">alpha</span> -= <span class="number">0.1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      </span><br><span class="line">			<span class="comment">// 动画API</span></span><br><span class="line">      <span class="title function_">requestAnimationFrame</span>(animateStars);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">updateCanvasSize</span>();</span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, updateCanvasSize);</span><br><span class="line"></span><br><span class="line">    <span class="title function_">animateStars</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;resize&quot;</span>, updateCanvasSize);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">canvas</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">ref</span>=<span class="string">&#123;canvasRef&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">width</span>=<span class="string">&#123;window.innerWidth&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">height</span>=<span class="string">&#123;window.innerHeight&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">			// <span class="attr">背景沉底</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">position:</span> &quot;<span class="attr">absolute</span>&quot;, <span class="attr">zIndex:</span> <span class="attr">-2</span> &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    /&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">CanvasStar</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>渐变星空背景的效果图如下：</p>
+<img src="/posts/30460/image-20231118191540055.png" class="" title="image-20231118191540055">
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+              <a href="/tags/HTML5/" rel="tag"># HTML5</a>
+              <a href="/tags/Canvas/" rel="tag"># Canvas</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/29479/" rel="prev" title="typora添加参考文献">
+      <i class="fa fa-chevron-left"></i> typora添加参考文献
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-number">1.</span> <span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CanvasRenderingContext2D-arc"><span class="nav-number">1.1.</span> <span class="nav-text">CanvasRenderingContext2D.arc()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CanvasRenderingContext2D-createLinearGradient"><span class="nav-number">1.2.</span> <span class="nav-text">CanvasRenderingContext2D.createLinearGradient()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CanvasRenderingContext2D-createRadialGradient"><span class="nav-number">1.3.</span> <span class="nav-text">CanvasRenderingContext2D.createRadialGradient()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CanvasGradient"><span class="nav-number">1.4.</span> <span class="nav-text">CanvasGradient</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas%E5%88%9B%E5%BB%BA%E6%B8%90%E5%8F%98%E8%89%B2%E6%98%9F%E7%A9%BA%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">Canvas创建渐变色星空背景</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="HJL"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">HJL</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=8849928185&auto=0&height=32"></iframe>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HJL</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">16k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">26 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'cb0ea98061963b47013a',
+      clientSecret: 'de74585857144b26bd22e877cfd82555e75f535d',
+      repo        : 'jin-lin0.github.io',
+      owner       : 'jin-lin0',
+      admin       : ['jin-lin0'],
+      id          : 'd31a6fb0ad7fc1f80d30a264d9ef1c97',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>
