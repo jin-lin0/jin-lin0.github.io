@@ -175,7 +175,7 @@ const CanvasStar = () => {
       return stars;
     };
     
-		// 视窗更新，重新生成stars数组
+    // 视窗更新，重新生成stars数组
     const updateCanvasSize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -198,8 +198,7 @@ const CanvasStar = () => {
           star.alpha -= 0.1;
         }
       });
-      
-			// 动画API
+      // 动画API
       requestAnimationFrame(animateStars);
     };
     updateCanvasSize();
@@ -216,7 +215,7 @@ const CanvasStar = () => {
       ref={canvasRef}
       width={window.innerWidth}
       height={window.innerHeight}
-			// 背景沉底
+      // 背景沉底
       style={{ position: "absolute", zIndex: -2 }}
     />
   );

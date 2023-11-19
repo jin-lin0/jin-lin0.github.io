@@ -254,6 +254,32 @@ categories:
        post_views_icon: fa fa-eye
      ```
    
+   - Reward：打赏功能，将图片放到source/images中即可
+   
+     ```yaml
+     reward_settings:
+       # If true, reward will be displayed in every article by default.
+       enable: true
+       animation: false
+       # comment: Donate comment here.
+     
+     reward:
+       wechatpay: /images/wechatpay.jpg
+       #alipay: /images/alipay.png
+       #paypal: /images/paypal.png
+       #bitcoin: /images/bitcoin.png
+     ```
+   
+   - fancybox：点击图片时放大该图片，并且可以快速浏览当前文章的所有图片
+   
+     ```yaml
+     # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
+     # For more information: https://fancyapps.com/fancybox
+     fancybox: true
+     ```
+   
+     
+   
    ## 新建内容
    
    1. 新建文章：创建的文章在目录 `source/_posts`文件夹下，MarkDown格式
