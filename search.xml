@@ -366,6 +366,9 @@
 <li><p>延迟发布，手动指定日期晚于当前时间不会生成</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">future:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 </li>
+<li><p>归档页面删除分页效果</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <h2 id="主题配置-Next"><a href="#主题配置-Next" class="headerlink" title="主题配置-Next"></a>主题配置-Next</h2><ol>
 <li><p>下载Next源码到Themes文件夹中</p>
@@ -468,6 +471,38 @@
       </tags>
   </entry>
   <entry>
+    <title>JS逆向</title>
+    <url>/posts/32357/</url>
+    <content><![CDATA[<h2 id="反爬虫"><a href="#反爬虫" class="headerlink" title="反爬虫"></a>反爬虫</h2><p>限制爬虫程序访问服务器资源和获取数据的行为，包括不限于请求限制、拒绝响应、客户端身份验证、文本混淆、动态渲染。</p>
+<span id="more"></span>
+<h2 id="浏览器五个组件与三个解释器"><a href="#浏览器五个组件与三个解释器" class="headerlink" title="浏览器五个组件与三个解释器"></a>浏览器五个组件与三个解释器</h2><p>用户界面：包括地址栏、前进、后退、页面主窗口等</p>
+<p>浏览器引擎：用户操作传递给渲染引擎</p>
+<p>渲染引擎：调用解释器解释HTML、CSS、JS代码，重排页面</p>
+<p>数据存储：本地存储体积较小的数据，cookie、storage等</p>
+<p>网络：自动加载HTML文档中需要的其他资源</p>
+<p>解释器：CSS解释器、HTML解释器、Javascript解释器</p>
+<h2 id="PyExecJS"><a href="#PyExecJS" class="headerlink" title="PyExecJS"></a>PyExecJS</h2><p>安装Pyexecjs</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyexecjs</span><br></pre></td></tr></table></figure>
+<p>检测环境</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> execjs</span><br><span class="line"><span class="built_in">print</span>(execjs.get().name)</span><br><span class="line"><span class="comment"># Node.js (V8)</span></span><br></pre></td></tr></table></figure>
+<p>举个例子</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一个简单的 JavaScript 函数</span></span><br><span class="line">js_code = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">function add(a, b) &#123;</span></span><br><span class="line"><span class="string">    return a + b;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 JavaScript 运行时中执行 JavaScript 代码</span></span><br><span class="line">context = execjs.<span class="built_in">compile</span>(js_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用 JavaScript 函数并获取结果</span></span><br><span class="line">result = context.call(<span class="string">&quot;add&quot;</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+<p>特殊编码的输入输出可以用Base64编码</p>
+<h2 id="使用NodeJS与浏览器的问题"><a href="#使用NodeJS与浏览器的问题" class="headerlink" title="使用NodeJS与浏览器的问题"></a>使用NodeJS与浏览器的问题</h2><p>NodeJS没有window对象，需要自己创建空对象，或者指向global</p>
+<p>window.btoa在nodeJS不存在，可以使用Buffer.from(‘xxx’).toString(‘base64’)转化</p>
+<h2 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h2><p>使用hook重新执行函数，寻找到JS加解密入口</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hook</span>(<span class="params">object, attr</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> func = object[attr];</span><br><span class="line">  object[attr] = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;xxx&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> func.<span class="title function_">apply</span>(object, <span class="variable language_">arguments</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//eg:</span></span><br><span class="line"><span class="title function_">hook</span>(<span class="variable language_">window</span>, <span class="string">&#x27;btoa&#x27;</span>)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>逆向</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>background-removal使用教程</title>
     <url>/posts/9583/</url>
     <content><![CDATA[<p>该npm包于2023.7发布，能够直接在浏览器中删除图片的背景，无费用与隐私问题。<a href="https://img.ly/showcases/cesdk/background-removal/web?utm_medium=project&amp;utm_source=github&amp;utm_campaign=bg-removal">DEMO</a></p>
@@ -518,38 +553,6 @@
         <tag>前端</tag>
         <tag>npm</tag>
         <tag>抠图</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JS逆向</title>
-    <url>/posts/32357/</url>
-    <content><![CDATA[<h2 id="反爬虫"><a href="#反爬虫" class="headerlink" title="反爬虫"></a>反爬虫</h2><p>限制爬虫程序访问服务器资源和获取数据的行为，包括不限于请求限制、拒绝响应、客户端身份验证、文本混淆、动态渲染。</p>
-<span id="more"></span>
-<h2 id="浏览器五个组件与三个解释器"><a href="#浏览器五个组件与三个解释器" class="headerlink" title="浏览器五个组件与三个解释器"></a>浏览器五个组件与三个解释器</h2><p>用户界面：包括地址栏、前进、后退、页面主窗口等</p>
-<p>浏览器引擎：用户操作传递给渲染引擎</p>
-<p>渲染引擎：调用解释器解释HTML、CSS、JS代码，重排页面</p>
-<p>数据存储：本地存储体积较小的数据，cookie、storage等</p>
-<p>网络：自动加载HTML文档中需要的其他资源</p>
-<p>解释器：CSS解释器、HTML解释器、Javascript解释器</p>
-<h2 id="PyExecJS"><a href="#PyExecJS" class="headerlink" title="PyExecJS"></a>PyExecJS</h2><p>安装Pyexecjs</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install pyexecjs</span><br></pre></td></tr></table></figure>
-<p>检测环境</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> execjs</span><br><span class="line"><span class="built_in">print</span>(execjs.get().name)</span><br><span class="line"><span class="comment"># Node.js (V8)</span></span><br></pre></td></tr></table></figure>
-<p>举个例子</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 定义一个简单的 JavaScript 函数</span></span><br><span class="line">js_code = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">function add(a, b) &#123;</span></span><br><span class="line"><span class="string">    return a + b;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 JavaScript 运行时中执行 JavaScript 代码</span></span><br><span class="line">context = execjs.<span class="built_in">compile</span>(js_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用 JavaScript 函数并获取结果</span></span><br><span class="line">result = context.call(<span class="string">&quot;add&quot;</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-<p>特殊编码的输入输出可以用Base64编码</p>
-<h2 id="使用NodeJS与浏览器的问题"><a href="#使用NodeJS与浏览器的问题" class="headerlink" title="使用NodeJS与浏览器的问题"></a>使用NodeJS与浏览器的问题</h2><p>NodeJS没有window对象，需要自己创建空对象，或者指向global</p>
-<p>window.btoa在nodeJS不存在，可以使用Buffer.from(‘xxx’).toString(‘base64’)转化</p>
-<h2 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h2><p>使用hook重新执行函数，寻找到JS加解密入口</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hook</span>(<span class="params">object, attr</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> func = object[attr];</span><br><span class="line">  object[attr] = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;xxx&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> func.<span class="title function_">apply</span>(object, <span class="variable language_">arguments</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//eg:</span></span><br><span class="line"><span class="title function_">hook</span>(<span class="variable language_">window</span>, <span class="string">&#x27;btoa&#x27;</span>)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>逆向</tag>
       </tags>
   </entry>
   <entry>
