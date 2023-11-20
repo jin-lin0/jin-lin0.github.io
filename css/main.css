@@ -1270,7 +1270,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f63729;
+  background: #33dfed;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2368,7 +2368,6 @@ mjx-container + br {
 }
 .highlight-container {
   position: relative;
-  background-color: highlight-background;
 }
 .highlight-container.on .highlight-footer {
   display: none;
@@ -2388,8 +2387,6 @@ mjx-container + br {
   width: 100%;
   left: 0;
   bottom: 0;
-  height: 60px;
-  background-image: linear-gradient(-180deg, rgba(255,255,255,0) 0%, highlight-background 65%);
   text-align: center;
 }
 .highlight-container .show-btn {
@@ -2409,18 +2406,16 @@ mjx-container + br {
   text-decoration: none;
 }
 .highlight-container .hide-btn {
+  display: none;
   color: #fff;
   font-size: 12px;
   width: 22px;
   position: absolute;
   left: -21px;
-  top: 0;
   line-height: 1em;
   text-decoration: none;
   text-align: center;
-  display: none;
   flex-direction: column;
-  background-color: highlight-background;
   border-radius: 4px 0 0 4px;
   padding: 0.1em 0 0.6em;
   transition: top ease 0.35s;
@@ -2441,10 +2436,6 @@ mjx-container + br {
 .highlight-container .js_retract_code_btn {
   background: rgba(0,0,0,0.5);
   border-bottom: none !important;
-}
-.highlight-container .js_unfold_code_btn:hover,
-.highlight-container .js_retract_code_btn:hover {
-  border-bottom-color: none !important;
 }
 .header {
   margin: 0 auto;

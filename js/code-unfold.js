@@ -90,7 +90,7 @@ function codeUnfold() {
     var height = $(this).outerHeight();
     if (height > CODE_MAX_HEIGHT) {
       // 添加展开&收起容器
-      var $container = addCodeWrap($this, height);
+      var $container = addCodeWrap($this);
       containers.push({
         $container,
         height,
