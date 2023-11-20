@@ -165,7 +165,7 @@
 <img src="/posts/29809/image-20231121011515612.png" class="" title="image-20231121011515612">
 <p>修改HTML文件，添加以下代码后保存上传</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sh deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -389,6 +389,9 @@
 <li><p>归档页面删除分页效果</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
 </li>
+<li><p>指定文件夹跳过渲染，在根目录source中创建html文件夹即可放置html文件</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;html/**&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 <h2 id="主题配置-Next"><a href="#主题配置-Next" class="headerlink" title="主题配置-Next"></a>主题配置-Next</h2><ol>
 <li><p>下载Next源码到Themes文件夹中</p>
@@ -611,29 +614,6 @@
       </tags>
   </entry>
   <entry>
-    <title>爬虫红线</title>
-    <url>/posts/45344/</url>
-    <content><![CDATA[<h2 id="禁止"><a href="#禁止" class="headerlink" title="禁止"></a>禁止</h2><ol>
-<li>个人隐私数据</li>
-<li>收费的视频文本音乐等并售卖开网站</li>
-<li>同行竞争不遵守robots协议</li>
-<li>国家政府网站</li>
-<li>多线程爬把对方网站爬崩了</li>
-<li>公开破解加密网站（仅供学习可以）</li>
-</ol>
-<h2 id="可以爬取"><a href="#可以爬取" class="headerlink" title="可以爬取"></a>可以爬取</h2><ol>
-<li>遵循robots协议</li>
-<li>网站公开数据和接口返回的无加密数据</li>
-</ol>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>格密码基础</title>
     <url>/posts/46633/</url>
     <content><![CDATA[<h2 id="格"><a href="#格" class="headerlink" title="格"></a>格</h2><p>给定 $b_1,b_2,\dots,b_n\in \mathbb{R}^m$ 是$n$个线性无关的列向量，由它们生成的格被定义为：</p>
@@ -657,6 +637,29 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="模格"><a href="#模格" cl
       <tags>
         <tag>密码学</tag>
         <tag>格</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫红线</title>
+    <url>/posts/45344/</url>
+    <content><![CDATA[<h2 id="禁止"><a href="#禁止" class="headerlink" title="禁止"></a>禁止</h2><ol>
+<li>个人隐私数据</li>
+<li>收费的视频文本音乐等并售卖开网站</li>
+<li>同行竞争不遵守robots协议</li>
+<li>国家政府网站</li>
+<li>多线程爬把对方网站爬崩了</li>
+<li>公开破解加密网站（仅供学习可以）</li>
+</ol>
+<h2 id="可以爬取"><a href="#可以爬取" class="headerlink" title="可以爬取"></a>可以爬取</h2><ol>
+<li>遵循robots协议</li>
+<li>网站公开数据和接口返回的无加密数据</li>
+</ol>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
       </tags>
   </entry>
 </search>
