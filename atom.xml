@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-20T15:33:15.890Z</updated>
+  <updated>2023-11-20T17:24:54.346Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="http://example.com/posts/29809/"/>
     <id>http://example.com/posts/29809/</id>
     <published>2023-11-20T15:32:23.000Z</published>
-    <updated>2023-11-20T15:33:15.890Z</updated>
+    <updated>2023-11-20T17:24:54.346Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span><p><img src="Hexo博客增加Google收录/image-20231120233248208.png" alt="image-20231120233248208" style="zoom:50%;" /></p><p><img src="Hexo博客增加Google收录/image-20231120233307455.png" alt="image-20231120233307455" style="zoom:30%;" /></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="查看是否收录"><a href="#查看是否收录" class="headerlink" title="查看是否收录"></a>查看是否收录</h2><p>在Google的搜索栏中搜索：<code>site:https://xxxx.github.io</code>，如果是尝试使用Google Search Console，则未收录。</p><span id="more"></span><h2 id="提交申请"><a href="#提交申请" class="headerlink" title="提交申请"></a>提交申请</h2><p>使用Google账号登入<a href="https://search.google.com/search-console/about?hl=zh-CN">Search Console</a>，点击网址前缀添加：</p><img src="/posts/29809/image-20231121011634101.png" class="" title="image-20231121011634101"><p>下载HTML文件，放置到根目录source目录中</p><img src="/posts/29809/image-20231121011515612.png" class="" title="image-20231121011515612"><p>修改HTML文件，添加以下代码后保存上传</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh deploy</span><br></pre></td></tr></table></figure>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-&lt;p&gt;&lt;img src=&quot;Hexo博客增加Google收录/image-20231120233248208.png&quot; alt=&quot;image-20231120233248208&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
-&lt;p</summary>
-      
+    <summary type="html">&lt;h2 id=&quot;查看是否收录&quot;&gt;&lt;a href=&quot;#查看是否收录&quot; class=&quot;headerlink&quot; title=&quot;查看是否收录&quot;&gt;&lt;/a&gt;查看是否收录&lt;/h2&gt;&lt;p&gt;在Google的搜索栏中搜索：&lt;code&gt;site:https://xxxx.github.io&lt;/code&gt;，如果是尝试使用Google Search Console，则未收录。&lt;/p&gt;</summary>
     
     
     
@@ -177,9 +172,9 @@
     <link href="http://example.com/posts/30786/"/>
     <id>http://example.com/posts/30786/</id>
     <published>2023-11-12T19:47:56.000Z</published>
-    <updated>2023-11-13T09:54:07.768Z</updated>
+    <updated>2023-11-20T17:06:41.928Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p><p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p><p><code>commond+shift+T</code>：打开被关闭的页面</p><p><code>commond+shift+J</code>：打开下载</p><p><code>commond+shift+N</code>：打开新的无痕页面</p><span id="more"></span><p><code>commond+shift+F</code>：浏览器全屏</p><p><code>commond+shift+D</code>：切换调试控制台位置</p><p><code>commond+shift+P</code>：打开命令commond面板</p><p><code>commond+option+I</code>：打开调试控制台位置</p><p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p><p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p><p><code>command+R</code>：刷新页面</p><p><code>command+L</code>：输入网址</p><p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p><p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p><h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p><p><code>copy</code>：复制任意对象到剪贴板</p><p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p><p><code>点击小眼睛</code>：实时监控表达式的值</p><p><code>$x</code>：获取xPath的值</p><img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258"><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p><img src="Chrome调试技巧/image-20231113173544952.png" alt="image-20231113173544952" style="zoom:50%;" /></p><p>断点调试的五个按钮：</p><ol><li>恢复执行。运行到下个断点 </li><li>执行下一行的任何操作，并跳转到下一行 </li><li>进入函数内部，如果下一行包含一个函数调用，讲进入该函数，并在该函数第一行暂停。</li><li>跳出函数，执行当前函数剩余部分，在函数调用下一个语句暂停</li><li>暂时禁用所有断点，不删除断点</li></ol><p>三个小圆点：可选源代码全局搜索选项，</p><p>DOM断点在元素面板选中元素右键也可操作。</p><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><img src="/posts/30786/image-20231113151138380.png" class="" title="image-20231113151138380"><ol><li>开始抓取网络请求</li><li>清除抓取记录</li><li>关闭过滤面板</li><li>打开检索面板</li><li>跨页面加载保存请求</li><li>禁用浏览器缓存</li><li>慢速网络模拟</li><li>过滤面板，按住commond可以同时选取多个过滤，过滤器中可以设置多个规则，scheme/set-cookie-domain/status-code等</li></ol><img src="/posts/30786/image-20231113154413153.png" class="" title="image-20231113154413153"><p>在网络请求列表中，点击启动器可以定位到源代码。按住shift可以看到该请求的依赖者</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p><p><code>commond+1 to 8</code>： 切换到对应序号的浏览器标签</p><p><code>commond+shift+T</code>：打开被关闭的页面</p><p><code>commond+shift+J</code>：打开下载</p><p><code>commond+shift+N</code>：打开新的无痕页面</p><span id="more"></span><p><code>commond+shift+F</code>：浏览器全屏</p><p><code>commond+shift+D</code>：切换调试控制台位置</p><p><code>commond+shift+P</code>：打开命令commond面板</p><p><code>commond+option+I</code>：打开调试控制台位置</p><p><code>commond+option+（左右键）</code>：跳到左边/右边分页</p><p><code>commond+[</code> <code>commond+]</code>：左右切换调试工具面板</p><p><code>command+R</code>：刷新页面</p><p><code>command+L</code>：输入网址</p><p><code>space</code> <code>shift+space</code>：向下滚动、向上滚动</p><h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><code>选中元素，按h</code>：快速隐藏元素</p><p><code>选中元素，commond+⬆</code> <code>commond+⬇</code>：上下移动DOM</p><h2 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h2><p><code>$0</code> <code>$1</code> <code>$2</code> <code>$3</code> <code>$4</code>：元素面板选中元素/上1、2、3、4个</p><p><code>copy</code>：复制任意对象到剪贴板</p><p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p><p><code>点击小眼睛</code>：实时监控表达式的值</p><p><code>$x</code>：获取xPath的值</p><img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258"><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><img src="/posts/30786/image-20231121010637995.png" class="" title="image-20231121010637995"><p>断点调试的五个按钮：</p><ol><li>恢复执行。运行到下个断点 </li><li>执行下一行的任何操作，并跳转到下一行 </li><li>进入函数内部，如果下一行包含一个函数调用，讲进入该函数，并在该函数第一行暂停。</li><li>跳出函数，执行当前函数剩余部分，在函数调用下一个语句暂停</li><li>暂时禁用所有断点，不删除断点</li></ol><p>三个小圆点：可选源代码全局搜索选项，</p><p>DOM断点在元素面板选中元素右键也可操作。</p><h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><img src="/posts/30786/image-20231113151138380.png" class="" title="image-20231113151138380"><ol><li>开始抓取网络请求</li><li>清除抓取记录</li><li>关闭过滤面板</li><li>打开检索面板</li><li>跨页面加载保存请求</li><li>禁用浏览器缓存</li><li>慢速网络模拟</li><li>过滤面板，按住commond可以同时选取多个过滤，过滤器中可以设置多个规则，scheme/set-cookie-domain/status-code等</li></ol><img src="/posts/30786/image-20231113154413153.png" class="" title="image-20231113154413153"><p>在网络请求列表中，点击启动器可以定位到源代码。按住shift可以看到该请求的依赖者</p>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;快捷键&quot;&gt;&lt;a href=&quot;#快捷键&quot; class=&quot;headerlink&quot; title=&quot;快捷键&quot;&gt;&lt;/a&gt;快捷键&lt;/h2&gt;&lt;p&gt;&lt;code&gt;commond+w&lt;/code&gt;：关闭当前页面&lt;/p&gt;

@@ -82,7 +82,7 @@
 <p><code>点击小眼睛</code>：实时监控表达式的值</p>
 <p><code>$x</code>：获取xPath的值</p>
 <img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258">
-<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p><img src="Chrome调试技巧/image-20231113173544952.png" alt="image-20231113173544952" style="zoom:50%;" /></p>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><img src="/posts/30786/image-20231121010637995.png" class="" title="image-20231121010637995">
 <p>断点调试的五个按钮：</p>
 <ol>
 <li>恢复执行。运行到下个断点 </li>
@@ -146,6 +146,26 @@
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 添加</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&#x27;highlight&#x27;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客增加Google收录</title>
+    <url>/posts/29809/</url>
+    <content><![CDATA[<h2 id="查看是否收录"><a href="#查看是否收录" class="headerlink" title="查看是否收录"></a>查看是否收录</h2><p>在Google的搜索栏中搜索：<code>site:https://xxxx.github.io</code>，如果是尝试使用Google Search Console，则未收录。</p>
+<span id="more"></span>
+<h2 id="提交申请"><a href="#提交申请" class="headerlink" title="提交申请"></a>提交申请</h2><p>使用Google账号登入<a href="https://search.google.com/search-console/about?hl=zh-CN">Search Console</a>，点击网址前缀添加：</p>
+<img src="/posts/29809/image-20231121011634101.png" class="" title="image-20231121011634101">
+<p>下载HTML文件，放置到根目录source目录中</p>
+<img src="/posts/29809/image-20231121011515612.png" class="" title="image-20231121011515612">
+<p>修改HTML文件，添加以下代码后保存上传</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sh deploy</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -503,21 +523,6 @@
       </tags>
   </entry>
   <entry>
-    <title>typora添加参考文献</title>
-    <url>/posts/29479/</url>
-    <content><![CDATA[<p>MarkDown兼容HTML的语法，根据HTML中参考文献引用的方法，实现如下：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">This is a test sentence.<span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#ref1&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line">……</span><br><span class="line">Reference</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;ref1&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;black&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>Typora</category>
-      </categories>
-      <tags>
-        <tag>Typora</tag>
-        <tag>参考文献</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>background-removal使用教程</title>
     <url>/posts/9583/</url>
     <content><![CDATA[<p>该npm包于2023.7发布，能够直接在浏览器中删除图片的背景，无费用与隐私问题。<a href="https://img.ly/showcases/cesdk/background-removal/web?utm_medium=project&amp;utm_source=github&amp;utm_campaign=bg-removal">DEMO</a></p>
@@ -571,17 +576,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo博客增加Google收录</title>
-    <url>/posts/29809/</url>
-    <content><![CDATA[<span id="more"></span>
-<p><img src="Hexo博客增加Google收录/image-20231120233248208.png" alt="image-20231120233248208" style="zoom:50%;" /></p>
-<p><img src="Hexo博客增加Google收录/image-20231120233307455.png" alt="image-20231120233307455" style="zoom:30%;" /></p>
+    <title>typora添加参考文献</title>
+    <url>/posts/29479/</url>
+    <content><![CDATA[<p>MarkDown兼容HTML的语法，根据HTML中参考文献引用的方法，实现如下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">This is a test sentence.<span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#ref1&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line">……</span><br><span class="line">Reference</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;ref1&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;black&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>Typora</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>Typora</tag>
+        <tag>参考文献</tag>
       </tags>
   </entry>
   <entry>
@@ -602,6 +608,29 @@
       </categories>
       <tags>
         <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫红线</title>
+    <url>/posts/45344/</url>
+    <content><![CDATA[<h2 id="禁止"><a href="#禁止" class="headerlink" title="禁止"></a>禁止</h2><ol>
+<li>个人隐私数据</li>
+<li>收费的视频文本音乐等并售卖开网站</li>
+<li>同行竞争不遵守robots协议</li>
+<li>国家政府网站</li>
+<li>多线程爬把对方网站爬崩了</li>
+<li>公开破解加密网站（仅供学习可以）</li>
+</ol>
+<h2 id="可以爬取"><a href="#可以爬取" class="headerlink" title="可以爬取"></a>可以爬取</h2><ol>
+<li>遵循robots协议</li>
+<li>网站公开数据和接口返回的无加密数据</li>
+</ol>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -628,29 +657,6 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="模格"><a href="#模格" cl
       <tags>
         <tag>密码学</tag>
         <tag>格</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫红线</title>
-    <url>/posts/45344/</url>
-    <content><![CDATA[<h2 id="禁止"><a href="#禁止" class="headerlink" title="禁止"></a>禁止</h2><ol>
-<li>个人隐私数据</li>
-<li>收费的视频文本音乐等并售卖开网站</li>
-<li>同行竞争不遵守robots协议</li>
-<li>国家政府网站</li>
-<li>多线程爬把对方网站爬崩了</li>
-<li>公开破解加密网站（仅供学习可以）</li>
-</ol>
-<h2 id="可以爬取"><a href="#可以爬取" class="headerlink" title="可以爬取"></a>可以爬取</h2><ol>
-<li>遵循robots协议</li>
-<li>网站公开数据和接口返回的无加密数据</li>
-</ol>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
       </tags>
   </entry>
 </search>
