@@ -7,7 +7,7 @@ tags:
 categories:
 - Hexo
 ---
-Hexo博客中超过指定长度的代码，增加代码自动折叠功能，优化体验。
+Hexo博客中超过指定高度的代码，增加代码自动折叠功能，优化体验。
 
 调研了多篇hexo代码自动折叠功能的实现后，笔者认为该篇的实现效果目前最好，但是代码的风格和源代码风格应该还存在不是完美契合的地方。
 
@@ -114,7 +114,7 @@ Hexo博客中超过指定长度的代码，增加代码自动折叠功能，优�
        var height = $(this).outerHeight();
        if (height > CODE_MAX_HEIGHT) {
          // 添加展开&收起容器
-         var $container = addCodeWrap($this, height);
+         var $container = addCodeWrap($this);
          containers.push({
            $container,
            height,
@@ -129,7 +129,7 @@ Hexo博客中超过指定长度的代码，增加代码自动折叠功能，优�
 
 2. 开启`jquery`支持
 
-   Next的主题配置文件：
+   Next的主题配置文件开启fancybox引用的`jquery`：
 
    ```yaml
    fancybox: true
@@ -159,7 +159,6 @@ Hexo博客中超过指定长度的代码，增加代码自动折叠功能，优�
    // 展开收起效果
    .highlight-container
      position: relative
-     background-color: highlight-background
      &.on
        .highlight-footer
          display: none
@@ -175,8 +174,6 @@ Hexo博客中超过指定长度的代码，增加代码自动折叠功能，优�
        width: 100%
        left: 0
        bottom: 0
-       height: 60px
-       background-image: 'linear-gradient(-180deg, rgba(255,255,255,0) 0%, %s 65%)' % highlight-background;
        text-align: center
      .show-btn
        font-size: 12px
@@ -193,18 +190,16 @@ Hexo博客中超过指定长度的代码，增加代码自动折叠功能，优�
        &:hover
          text-decoration: none
      .hide-btn
+       display: none
        color: #fff
        font-size: 12px
        width: 22px
        position: absolute
        left: -21px
-       top: 0
        line-height: 1em
        text-decoration: none
        text-align: center
-       display: none
        flex-direction: column
-       background-color: highlight-background
        border-radius: 4px 0 0 4px
        padding: 0.1em 0 0.6em
        transition: top ease 0.35s
@@ -220,9 +215,6 @@ Hexo博客中超过指定长度的代码，增加代码自动折叠功能，优�
      .js_unfold_code_btn, .js_retract_code_btn
        background: rgba(0,0,0,0.5)
        border-bottom: none !important
-       &:hover
-         border-bottom-color: none !important
-   
    ```
 
 5. 引用`highlight.styl`

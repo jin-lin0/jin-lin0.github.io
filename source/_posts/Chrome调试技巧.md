@@ -64,9 +64,7 @@ categories:
 
 ## 源代码
 
-<img src="Chrome调试技巧/image-20231113173544952.png" alt="image-20231113173544952" style="zoom:50%;" />
-
-
+![image-20231121010637995](Chrome调试技巧/image-20231121010637995.png)
 
 断点调试的五个按钮：
 

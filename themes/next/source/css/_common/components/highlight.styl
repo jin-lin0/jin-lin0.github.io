@@ -1,7 +1,6 @@
 // 展开收起效果
 .highlight-container
   position: relative
-  background-color: highlight-background
   &.on
     .highlight-footer
       display: none
@@ -17,8 +16,6 @@
     width: 100%
     left: 0
     bottom: 0
-    height: 60px
-    background-image: 'linear-gradient(-180deg, rgba(255,255,255,0) 0%, %s 65%)' % highlight-background;
     text-align: center
   .show-btn
     font-size: 12px
@@ -35,18 +32,16 @@
     &:hover
       text-decoration: none
   .hide-btn
+    display: none
     color: #fff
     font-size: 12px
     width: 22px
     position: absolute
     left: -21px
-    top: 0
     line-height: 1em
     text-decoration: none
     text-align: center
-    display: none
     flex-direction: column
-    background-color: highlight-background
     border-radius: 4px 0 0 4px
     padding: 0.1em 0 0.6em
     transition: top ease 0.35s
@@ -62,5 +57,3 @@
   .js_unfold_code_btn, .js_retract_code_btn
     background: rgba(0,0,0,0.5)
     border-bottom: none !important
-    &:hover
-      border-bottom-color: none !important

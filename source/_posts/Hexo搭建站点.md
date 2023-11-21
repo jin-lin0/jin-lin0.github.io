@@ -100,7 +100,19 @@ categories:
    future: false
    ```
    
-   
+3. 归档页面删除分页效果
+
+   ```yaml
+   archive_generator:
+     per_page: 0
+   ```
+
+4. 指定文件夹跳过渲染，在根目录source中创建html文件夹即可放置html文件
+
+   ```yaml
+   skip_render:
+     - "html/**"
+   ```
 
 ## 主题配置-Next
 

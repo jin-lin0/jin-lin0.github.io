@@ -101,6 +101,8 @@ mathjax: true
    em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/, //第20行
    ```
 
+   **注意**：em中对下划线进行了转义，但是对latex中的`*`没有处理，所以latex中`*`需要全部用`\ast`代替。
+
 4. 在需要使用LaTeX渲染的博文中，在文章的Front-matter里打开mathjax开关：
 
    ```yaml
@@ -340,7 +342,35 @@ hexo的文章链接默认的生成规则是：`:year/:month/:day/:title`，标�
    updated: Sun Nov 19 2023 00:51:06 GMT+0800
    ```
 
+## Hexo配置canvas-nest背景
+
+1. 在`hexo/source/_data`目录下新建文件`footer.swig`
+
+   ```html
+   {%- if theme.canvas_nest %}
+       <script type="text/javascript" color="0,0,255" opacity='0.5' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+   {%- endif %}
+   ```
+
+2. 主题配置文件开启自定义footer.swig，同时配置`canvas_nest`开启
+
+   ```yaml
+   custom_file_path:
+     #head: source/_data/head.swig
+     #header: source/_data/header.swig
+     #sidebar: source/_data/sidebar.swig
+     #postMeta: source/_data/post-meta.swig
+     #postBodyEnd: source/_data/post-body-end.swig
+     footer: source/_data/footer.swig
+     #bodyEnd: source/_data/body-end.swig
+     #variable: source/_data/variables.styl
+     #mixin: source/_data/mixins.styl
+     style: source/_data/styles.styl
+   ```
+
+   ```yaml
+   canvas_nest: true
+   ```
+
    
-
-
 
