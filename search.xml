@@ -603,6 +603,26 @@
       </tags>
   </entry>
   <entry>
+    <title>查看Github仓库占用的存储空间</title>
+    <url>/posts/6295/</url>
+    <content><![CDATA[<ol>
+<li><p>登录Github首页，点击账户的setting</p>
+<span id="more"></span>
+<img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213">
+</li>
+<li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p>
+<img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358">
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>格密码基础</title>
     <url>/posts/46633/</url>
     <content><![CDATA[<h2 id="格"><a href="#格" class="headerlink" title="格"></a>格</h2><p>给定 $b_1,b_2,\dots,b_n\in \mathbb{R}^m$ 是$n$个线性无关的列向量，由它们生成的格被定义为：</p>
@@ -626,26 +646,6 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="模格"><a href="#模格" cl
       <tags>
         <tag>密码学</tag>
         <tag>格</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查看Github仓库占用的存储空间</title>
-    <url>/posts/6295/</url>
-    <content><![CDATA[<ol>
-<li><p>登录Github首页，点击账户的setting</p>
-<span id="more"></span>
-<img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213">
-</li>
-<li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p>
-<img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358">
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Github</category>
-      </categories>
-      <tags>
-        <tag>Github</tag>
       </tags>
   </entry>
   <entry>

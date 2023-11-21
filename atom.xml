@@ -256,7 +256,7 @@
     <link href="http://example.com/posts/6295/"/>
     <id>http://example.com/posts/6295/</id>
     <published>2023-11-06T05:33:29.000Z</published>
-    <updated>2023-11-06T20:16:52.993Z</updated>
+    <updated>2023-11-21T09:29:14.476Z</updated>
     
     <content type="html"><![CDATA[<ol><li><p>登录Github首页，点击账户的setting</p><span id="more"></span><img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213"></li><li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p><img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358"></li></ol>]]></content>
     
@@ -266,10 +266,10 @@
     
     
     
-    <category term="Github" scheme="http://example.com/categories/Github/"/>
+    <category term="git" scheme="http://example.com/categories/git/"/>
     
     
-    <category term="Github" scheme="http://example.com/tags/Github/"/>
+    <category term="git" scheme="http://example.com/tags/git/"/>
     
   </entry>
   

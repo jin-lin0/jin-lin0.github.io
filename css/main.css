@@ -1199,7 +1199,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #58b163;
+  background: #08ffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2792,7 +2792,7 @@ mjx-container + br {
   display: none;
 }
 .site-brand-container {
-  background: linear-gradient(45deg, #ec50fb, #516fff);
+  background-image: linear-gradient(45deg, #ed50fb 0%, #e355fc 17%, #d95afc 25%, #d15afc 31%, #c55efd 37%, #bd63fd 42%, #b363fd 47%, #a968fd 53%, #9c68fd 58%, #8d68fd 63%, #826cfe 69%, #736cfe 75%, #6670ff 83%, #526fff 100%);
 }
 .site-author-image {
   border: none;
