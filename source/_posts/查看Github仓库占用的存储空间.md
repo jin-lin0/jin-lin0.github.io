@@ -3,9 +3,9 @@ title: 查看Github仓库占用的存储空间
 abbrlink: 6295
 date: 2023-11-06 13:33:29
 tags:
-- Github
+- git
 categories:
-- Github
+- git
 ---
 
 1. 登录Github首页，点击账户的setting
