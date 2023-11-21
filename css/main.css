@@ -1199,7 +1199,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #08ffff;
+  background: #ffff9c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2798,10 +2798,10 @@ mjx-container + br {
   border: none;
 }
 .post-header .post-title-link::before {
-  background: $purple;
+  background: #a84bfe;
 }
 .btn:hover {
-  border-color: $purple-light;
+  border-color: rgba(168,75,254,0.8);
   color: #fff;
-  background: $purple-light;
+  background: rgba(168,75,254,0.8);
 }
