@@ -30,7 +30,7 @@
 <meta property="og:description" content="格给定 $b_1,b_2,\dots,b_n\in \mathbb{R}^m$ 是$n$个线性无关的列向量，由它们生成的格被定义为：  \mathcal L(b_1,b_2,...,b_n)&#x3D;\left\{\sum{x_ib_i}|x_i∈\mathbb Z\right\}其中$b_1,b_2,…,b_n$称作格的基。如果我们定义矩阵$B$是$m\times n$的矩阵，其列为$b_1,b_2,\">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-13T17:30:53.000Z">
-<meta property="article:modified_time" content="2023-11-27T12:45:20.464Z">
+<meta property="article:modified_time" content="2023-11-30T19:12:00.022Z">
 <meta property="article:author" content="HJL">
 <meta property="article:tag" content="密码学">
 <meta property="article:tag" content="格">
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-27 20:45:20" itemprop="dateModified" datetime="2023-11-27T20:45:20+08:00">2023-11-27</time>
+                <time title="修改时间：2023-12-01 03:12:00" itemprop="dateModified" datetime="2023-12-01T03:12:00+08:00">2023-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,14 +258,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.3k</span>
+              <span>4.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -285,14 +285,14 @@
 <span id="more"></span>
 <h2 id="格的行列式"><a href="#格的行列式" class="headerlink" title="格的行列式"></a>格的行列式</h2><p>令$B=(b_1,b_2,\dots,b_n)$为格$\Lambda$的一组格基，则格$\Lambda=\mathcal L(B)$的行列式被定义为：</p>
 <script type="math/tex; mode=display">
-det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="整数格（q模格）"><a href="#整数格（q模格）" class="headerlink" title="整数格（q模格）"></a>整数格（q模格）</h2><p>对于素数$s$、矩阵$A\in \mathbb Z_q^{n\times m}$、和向量$u\in \mathbb Z_q^n$，整数格定义如下：</p>
+det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="q模格"><a href="#q模格" class="headerlink" title="q模格"></a>q模格</h2><p>对于素数$s$、矩阵$A\in \mathbb Z_q^{n\times m}$、和向量$u\in \mathbb Z_q^n$，q模格定义如下：</p>
 <script type="math/tex; mode=display">
 \begin{aligned}\Lambda_q(A)&=\{y\in\mathbb{Z}^ms.t.\exists s\in\mathbb{Z}_q^n,A^T s=y({\mathrm{mod}}q)\}\\\\\Lambda_q^\bot(A)&=\{y\in\mathbb{Z}^mst.Ay=0({\mathrm{mod}}q)\}\\\\\Lambda_q^u(A)&=\{y\in\mathbb{Z}^ms.t.Ay=u({\mathrm{mod}}q)\}\end{aligned}</script><h2 id="对偶格"><a href="#对偶格" class="headerlink" title="对偶格"></a>对偶格</h2><p>给定$m$维的格$\Lambda=\mathcal L(B)\subset \mathbb R^m$，对偶格$\Lambda^*$的定义为：</p>
 <script type="math/tex; mode=display">
 \Lambda^*=\{y\in\mathbb R^m|\forall x\in\Lambda,\langle x,y\rangle\in\mathbb Z\}</script><p>对偶格满足$\Lambda^\ast=\mathcal L((B^{-1})^T)$并且$det(\Lambda^\ast)=\frac{1}{det(\Lambda)}$</p>
 <h2 id="格上离散高斯分布"><a href="#格上离散高斯分布" class="headerlink" title="格上离散高斯分布"></a>格上离散高斯分布</h2><p>对于任意$\sigma &gt;0$和向量$c\in\mathbb R^m$，其中$\sigma$是高斯分布的标准差，$c$是高斯分布的中心。定义m维的高斯分布$\rho_{\sigma,c}(x)=\exp(-\pi\frac{|x-c|^2}{\sigma^2})$和$\rho_{\sigma,\epsilon}(\Lambda)=\sum_{x\in\Lambda}\rho_{\sigma,\epsilon}(x)$，则对于在格$\Lambda$上对于任意的$y\in\Lambda$，以$c$为中心，以$\sigma$为参数的高斯分布为：</p>
 <script type="math/tex; mode=display">
-\mathcal{D}_{\Lambda,\sigma,c}\left(y\right)=\frac{\rho_{\sigma,c}(y)}{\rho_{\sigma,c}(\Lambda)}=\frac{\rho_{\sigma,c}(y)}{\sum_{x\in\Lambda}\rho_{\sigma,c}(x)}</script><h2 id="拒绝采样定理-1"><a href="#拒绝采样定理-1" class="headerlink" title="拒绝采样定理[1]"></a>拒绝采样定理<sup><a href="#Lattice Signatures without Trapdoors">[1]</a></sup></h2><p>假设$V$是$\mathbb Z^m$的子集，并且其中所有元素的范数小于常数$T$，$\sigma$是$\mathbb R$上的元素并且满足$\sigma=w(T\sqrt{\log m})$，$h:V\rightarrow \mathbb R$是一个概率分布。存在常数$M=O(1)$使得算法$\mathcal A$的分布</p>
+\mathcal{D}_{\Lambda,\sigma,c}\left(y\right)=\frac{\rho_{\sigma,c}(y)}{\rho_{\sigma,c}(\Lambda)}=\frac{\rho_{\sigma,c}(y)}{\sum_{x\in\Lambda}\rho_{\sigma,c}(x)}</script><h2 id="拒绝采样定理-Lyu12"><a href="#拒绝采样定理-Lyu12" class="headerlink" title="拒绝采样定理[Lyu12]"></a>拒绝采样定理<sup><a href="#Lattice Signatures without Trapdoors">[Lyu12]</a></sup></h2><p>假设$V$是$\mathbb Z^m$的子集，并且其中所有元素的范数小于常数$T$，$\sigma$是$\mathbb R$上的元素并且满足$\sigma=w(T\sqrt{\log m})$，$h:V\rightarrow \mathbb R$是一个概率分布。存在常数$M=O(1)$使得算法$\mathcal A$的分布</p>
 <script type="math/tex; mode=display">
 \begin{flalign}
 &\mathcal A: \nonumber \\
@@ -306,11 +306,16 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="整数格（q模格）"><a h
 &1{:\mathbf{v}}\stackrel{\$}\leftarrow h& \nonumber \\
 &2:\mathbf{z}\stackrel{\$}{\leftarrow}D_{\sigma}^m& \nonumber \\
 &3:output\textit{ }(\mathbf{z},\mathbf{v})\textit{ with probability }\frac{1}{M}& \nonumber
-\end{flalign}</script><p>如果$\sigma=\alpha T$且$\alpha$是正数的时候，则$M=e^{12/\alpha+1/(2\alpha^2)}$，算法$\mathcal A$与算法$\mathcal F$的统计距离不会超过$\frac{2^{-100}}{M}$，算法$\mathcal A$输出结果的概率至少为$\frac{1-2^{-100}}{M}$</p>
+\end{flalign}</script><p>如果$\sigma=\alpha T$且$\alpha$是正数的时候，则$M=e^{12/\alpha+1/(2\alpha^2)}$，算法$\mathcal A$与算法$\mathcal F$的统计距离不会超过$\frac{2^{-100}}{M}$，算法$\mathcal A$输出结果的概率至少为$\frac{1-2^{-100}}{M}$，通常情况下，拒绝采样使得输出签名的分布与密钥无关增强安全性</p>
 <h2 id="格上困难问题"><a href="#格上困难问题" class="headerlink" title="格上困难问题"></a>格上困难问题</h2><h3 id="最短向量问题（SVP）"><a href="#最短向量问题（SVP）" class="headerlink" title="最短向量问题（SVP）"></a>最短向量问题（SVP）</h3><p>给定格基$B$，找到一个非零格向量$v\in\mathcal L(B)$，满足对于任意的非零向量$u\in\mathcal L(B)$，$\lVert v\rVert\leq \lVert u\rVert$</p>
 <h3 id="最近向量问题（CVP）"><a href="#最近向量问题（CVP）" class="headerlink" title="最近向量问题（CVP）"></a>最近向量问题（CVP）</h3><p>给定格基$B\in\mathbb Z^{m\times n}$和目标向量$t\in\mathbb R^m$，找到一个非零格向量$v\in\mathcal L(B)$，满足对于任意的非零向量$u\in\mathcal L(B)$，$\lVert v-t\rVert\leq \lVert u-t\rVert$</p>
 <h3 id="小整数解问题（SIS）"><a href="#小整数解问题（SIS）" class="headerlink" title="小整数解问题（SIS）"></a>小整数解问题（SIS）</h3><p>给定整数 $m、n、q$，$\mathbb{Z}_q$ 表示模 $q$ 的剩余类群，随机选择矩阵 $A\in\mathbb{Z}_q^{n\times m}$ 和一个阈值参数 $\beta$, 求解一个非零整数向量 $z\in\mathbb{Z}^m\backslash\{0\}$，满足 $Az= 0 $ mod $q$ 且 $|z|\leq\beta.$</p>
+<h3 id="双边小整数解问题（Bi-SIS）"><a href="#双边小整数解问题（Bi-SIS）" class="headerlink" title="双边小整数解问题（Bi-SIS）"></a>双边小整数解问题（Bi-SIS）</h3><p>给定一个矩阵$A\in\mathbb Z_q^{m\times m}$，寻找两个非零整数向量$z,y\in \mathbb Z^m$，且$|z|,|y|\leq\beta$，满足$Az=0\in\mathbb Z_q^m$和$y^TA=0^T\in\mathbb Z_q^{1\times m}$，其中$\beta$表示一个正实数</p>
 <h3 id="非齐次小整数解问题（ISIS）"><a href="#非齐次小整数解问题（ISIS）" class="headerlink" title="非齐次小整数解问题（ISIS）"></a>非齐次小整数解问题（ISIS）</h3><p>给定整数 $m、n、q$，$\mathbb{Z}_q$ 表示模 $q$ 的剩余类群，随机选择矩阵 $A\in\mathbb{Z}_q^{n\times m}$ 向量$u\in\mathbb Z_q^n$和一个阈值参数 $\beta$, 求解一个非零整数向量 $z\in\mathbb{Z}^m\backslash\{0\}$，满足 $Az=u $ mod $q$ 且 $|z|\leq\beta.$</p>
+<h3 id="双边非齐次小整数解问题（Bi-ISIS）"><a href="#双边非齐次小整数解问题（Bi-ISIS）" class="headerlink" title="双边非齐次小整数解问题（Bi-ISIS）"></a>双边非齐次小整数解问题（Bi-ISIS）</h3><p>给定一个矩阵$A\in\mathbb Z_q^{m\times m}$，选取两个随机向量$u_1,u_2\in\mathbb Z_q^m$，寻找两个非零整数向量$z,y\in \mathbb Z^m$，且$|z|,|y|\leq\beta$，满足$Az=u_1\in\mathbb Z_q^m$和$y^TA={u_2}^T\in\mathbb Z_q^{1\times m}$，其中$\beta$表示一个正实数</p>
+<h3 id="计算型双边非齐次小整数解问题（CBi-ISIS）"><a href="#计算型双边非齐次小整数解问题（CBi-ISIS）" class="headerlink" title="计算型双边非齐次小整数解问题（CBi-ISIS）"></a>计算型双边非齐次小整数解问题（CBi-ISIS）</h3><p>给定元组$(A\in\mathbb Z_q^{m\times m},Az,y^TA)$，其中向量$z,y\in\mathbb Z^m$且$|z|,|y|\leq\beta$，$\beta$表示一个正实数，计算$y^TAz$</p>
+<h3 id="环小整数解问题（RSIS）"><a href="#环小整数解问题（RSIS）" class="headerlink" title="环小整数解问题（RSIS）"></a>环小整数解问题（RSIS）</h3><p>给定整数 $m$、$n$、$q,\mathcal{R}$ 表示多项式环，$R_{q}$ 表示系数模 $q$ 的多项式环，随机选择矩阵 $A\in\mathbb{R}_q^{n\times m}$ 和一个阈值参数 $\beta$, 求解一个非零向量 $z\in\mathbb{R}^m$, 满足 $Az= 0$ mod $q$ 且$|z|\leq\beta.$</p>
+<h2 id="格上抽样算法"><a href="#格上抽样算法" class="headerlink" title="格上抽样算法"></a>格上抽样算法</h2><p><strong>定理</strong>: 给定任意素数$q=poly(n)$，和任意$m\geq 5n\lg q $，存在概率性多项式算法$TrapGen(1^n)$，输入$1^n$，输出一对矩阵$(A\in\mathbb Z_q^{n\times m},B\in\mathbb Z^{m\times m})$，其中$A$在$Z_q^{n\times m}$是均匀分布的，$B$是$\Lambda_q^{\perp}(A)$的一个格基同时以极大的概率满足$|B| \leq O(n\log q)$和$|\tilde{B}| \leq O(\sqrt{n\log q})$</p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a name="Lattice Signatures without Trapdoors"><font color="black">[1] </font></a>Lyubashevsky V.Lattice Signatures without Trapdoors[C].In Proceedings of 31st Annual Inter-<br>national Conference on the Theory and Applications of Cryptographic Techniques,April 15-19, 2012,Cambridge,UK,Berlin,Heidelberg,2012:738–755.</p>
 
     </div>
@@ -412,7 +417,7 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="整数格（q模格）"><a h
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC"><span class="nav-number">1.</span> <span class="nav-text">格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">格的行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E6%A0%BC%EF%BC%88q%E6%A8%A1%E6%A0%BC%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">整数格（q模格）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E6%A0%BC"><span class="nav-number">4.</span> <span class="nav-text">对偶格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E7%A6%BB%E6%95%A3%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83"><span class="nav-number">5.</span> <span class="nav-text">格上离散高斯分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%92%E7%BB%9D%E9%87%87%E6%A0%B7%E5%AE%9A%E7%90%86-1"><span class="nav-number">6.</span> <span class="nav-text">拒绝采样定理[1]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E5%9B%B0%E9%9A%BE%E9%97%AE%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text">格上困难问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E7%9F%AD%E5%90%91%E9%87%8F%E9%97%AE%E9%A2%98%EF%BC%88SVP%EF%BC%89"><span class="nav-number">7.1.</span> <span class="nav-text">最短向量问题（SVP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E8%BF%91%E5%90%91%E9%87%8F%E9%97%AE%E9%A2%98%EF%BC%88CVP%EF%BC%89"><span class="nav-number">7.2.</span> <span class="nav-text">最近向量问题（CVP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88SIS%EF%BC%89"><span class="nav-number">7.3.</span> <span class="nav-text">小整数解问题（SIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88ISIS%EF%BC%89"><span class="nav-number">7.4.</span> <span class="nav-text">非齐次小整数解问题（ISIS）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">8.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC"><span class="nav-number">1.</span> <span class="nav-text">格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">格的行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q%E6%A8%A1%E6%A0%BC"><span class="nav-number">3.</span> <span class="nav-text">q模格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E6%A0%BC"><span class="nav-number">4.</span> <span class="nav-text">对偶格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E7%A6%BB%E6%95%A3%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83"><span class="nav-number">5.</span> <span class="nav-text">格上离散高斯分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%92%E7%BB%9D%E9%87%87%E6%A0%B7%E5%AE%9A%E7%90%86-Lyu12"><span class="nav-number">6.</span> <span class="nav-text">拒绝采样定理[Lyu12]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E5%9B%B0%E9%9A%BE%E9%97%AE%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text">格上困难问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E7%9F%AD%E5%90%91%E9%87%8F%E9%97%AE%E9%A2%98%EF%BC%88SVP%EF%BC%89"><span class="nav-number">7.1.</span> <span class="nav-text">最短向量问题（SVP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E8%BF%91%E5%90%91%E9%87%8F%E9%97%AE%E9%A2%98%EF%BC%88CVP%EF%BC%89"><span class="nav-number">7.2.</span> <span class="nav-text">最近向量问题（CVP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88SIS%EF%BC%89"><span class="nav-number">7.3.</span> <span class="nav-text">小整数解问题（SIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E8%BE%B9%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88Bi-SIS%EF%BC%89"><span class="nav-number">7.4.</span> <span class="nav-text">双边小整数解问题（Bi-SIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88ISIS%EF%BC%89"><span class="nav-number">7.5.</span> <span class="nav-text">非齐次小整数解问题（ISIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E8%BE%B9%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88Bi-ISIS%EF%BC%89"><span class="nav-number">7.6.</span> <span class="nav-text">双边非齐次小整数解问题（Bi-ISIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%9E%8B%E5%8F%8C%E8%BE%B9%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88CBi-ISIS%EF%BC%89"><span class="nav-number">7.7.</span> <span class="nav-text">计算型双边非齐次小整数解问题（CBi-ISIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88RSIS%EF%BC%89"><span class="nav-number">7.8.</span> <span class="nav-text">环小整数解问题（RSIS）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E6%8A%BD%E6%A0%B7%E7%AE%97%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">格上抽样算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">9.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -428,7 +433,7 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="整数格（q模格）"><a h
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -441,7 +446,7 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="整数格（q模格）"><a h
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -479,13 +484,13 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="整数格（q模格）"><a h
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">24k</span>
+    <span title="站点总字数">27k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">41 分钟</span>
+    <span title="站点阅读时长">44 分钟</span>
 </div>
     <script type="text/javascript" color="0,0,255" opacity='0.5' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
