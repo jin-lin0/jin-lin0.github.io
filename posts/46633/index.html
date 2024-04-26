@@ -30,7 +30,7 @@
 <meta property="og:description" content="格给定 $b_1,b_2,\dots,b_n\in \mathbb{R}^m$ 是$n$个线性无关的列向量，由它们生成的格被定义为：  \mathcal L(b_1,b_2,...,b_n)&#x3D;\left\{\sum{x_ib_i}|x_i∈\mathbb Z\right\}其中$b_1,b_2,…,b_n$称作格的基。如果我们定义矩阵$B$是$m\times n$的矩阵，其列为$b_1,b_2,\">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-13T17:30:53.000Z">
-<meta property="article:modified_time" content="2024-01-11T09:46:00.467Z">
+<meta property="article:modified_time" content="2024-04-17T08:43:32.633Z">
 <meta property="article:author" content="HJL">
 <meta property="article:tag" content="密码学">
 <meta property="article:tag" content="格">
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-01-11 17:46:00" itemprop="dateModified" datetime="2024-01-11T17:46:00+08:00">2024-01-11</time>
+                <time title="修改时间：2024-04-17 16:43:32" itemprop="dateModified" datetime="2024-04-17T16:43:32+08:00">2024-04-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,14 +258,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.8k</span>
+              <span>9.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>11 分钟</span>
+              <span>16 分钟</span>
             </span>
 
         </div>
@@ -285,7 +285,9 @@
 <span id="more"></span>
 <h2 id="格的行列式"><a href="#格的行列式" class="headerlink" title="格的行列式"></a>格的行列式</h2><p>令$B=(b_1,b_2,\dots,b_n)$为格$\Lambda$的一组格基，则格$\Lambda=\mathcal L(B)$的行列式被定义为：</p>
 <script type="math/tex; mode=display">
-det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="逐次最小距离常量"><a href="#逐次最小距离常量" class="headerlink" title="逐次最小距离常量"></a>逐次最小距离常量</h2><p>给定一个格$\mathcal L$，使用$\lambda_i$表示格$\mathcal L$的第$i$个逐次最小长度。即$\lambda_i$定义为$\mathcal L$中以原点为中心，包含$i$个线性无关格向量的最小球的半径。</p>
+det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="格的基本域"><a href="#格的基本域" class="headerlink" title="格的基本域"></a>格的基本域</h2><p>给定格基$B=(b_1,b_2,\dots,b_n)\in \mathbb R^{n\times m}$，格的基本域定义为：</p>
+<script type="math/tex; mode=display">
+\mathcal{P}(B)=\{\Sigma_{i=1}^nx_ib_i|x_i\in [0,1)\}</script><h2 id="逐次最小距离常量"><a href="#逐次最小距离常量" class="headerlink" title="逐次最小距离常量"></a>逐次最小距离常量</h2><p>给定一个格$\mathcal L$，使用$\lambda_i$表示格$\mathcal L$的第$i$个逐次最小长度。即$\lambda_i$定义为$\mathcal L$中以原点为中心，包含$i$个线性无关格向量的最小球的半径。</p>
 <h2 id="q模格"><a href="#q模格" class="headerlink" title="q模格"></a>q模格</h2><p>q模格满足$(q\mathbb Z)^m\subseteq\Lambda\subseteq\mathbb Z^m$。对于素数$s$、矩阵$A\in \mathbb Z_q^{n\times m}$、和向量$u\in \mathbb Z_q^n$，q模格定义如下：</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -296,15 +298,15 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="逐次最小距离常量"><a
 <h2 id="对偶格"><a href="#对偶格" class="headerlink" title="对偶格"></a>对偶格</h2><p>给定$m$维的格$\Lambda=\mathcal L(B)\subset \mathbb R^m$，对偶格$\Lambda^*$的定义为：</p>
 <script type="math/tex; mode=display">
 \Lambda^*=\{y\in\mathbb R^m|\forall x\in\Lambda,\langle x,y\rangle\in\mathbb Z\}</script><p>对偶格满足$\Lambda^\ast=\mathcal L((B^{-1})^T)$并且$det(\Lambda^\ast)=\frac{1}{det(\Lambda)}$</p>
-<h2 id="格上离散高斯分布"><a href="#格上离散高斯分布" class="headerlink" title="格上离散高斯分布"></a>格上离散高斯分布</h2><p>对于任意$\sigma &gt;0$和向量$c\in\mathbb R^m$，其中$\sigma$是高斯分布的标准差，$c$是高斯分布的中心。</p>
+<h2 id="格上离散高斯分布-GPV08"><a href="#格上离散高斯分布-GPV08" class="headerlink" title="格上离散高斯分布[GPV08]"></a>格上离散高斯分布<sup><a href="#GPV08">[GPV08]</a></sup></h2><p>对于任意$\sigma &gt;0$和向量$c\in\mathbb R^m$，其中$\sigma$是高斯分布的标准差，$c$是高斯分布的中心。</p>
 <p>定义m维的高斯分布$\rho_{\sigma,c}(x)=\exp(-\pi\frac{|x-c|^2}{\sigma^2})$和$\rho_{\sigma,\epsilon}(\Lambda)=\sum_{x\in\Lambda}\rho_{\sigma,\epsilon}(x)$，则</p>
 <p>对于在格$\Lambda$上对于任意的$y\in\Lambda$，以$c$为中心，以$\sigma$为参数的高斯分布为：</p>
 <script type="math/tex; mode=display">
 \mathcal{D}_{\Lambda,\sigma,c}\left(y\right)=\frac{\rho_{\sigma,c}(y)}{\rho_{\sigma,c}(\Lambda)}=\frac{\rho_{\sigma,c}(y)}{\sum_{x\in\Lambda}\rho_{\sigma,c}(x)}</script><h2 id="统计距离"><a href="#统计距离" class="headerlink" title="统计距离"></a><strong>统计距离</strong></h2><p>对于同一集合$S$上的任意两个随机变量X与Y，它们之间的统计距离标记为:</p>
 <script type="math/tex; mode=display">
-\Delta(X,Y)=\frac 1 2 (\sum_{k\in S}|P(X=k)-Q(Y=k)|)</script><h2 id="平滑参数-MR07"><a href="#平滑参数-MR07" class="headerlink" title="平滑参数[MR07]"></a>平滑参数<sup><a href="#Worst-case to average-case reductions based on Gaussian measures">[MR07]</a></sup></h2><p>设n维格$\Lambda$，定义平滑参数为：</p>
+\Delta(X,Y)=\frac 1 2 (\sum_{k\in S}|P(X=k)-Q(Y=k)|)</script><h2 id="平滑参数-MR07"><a href="#平滑参数-MR07" class="headerlink" title="平滑参数[MR07]"></a>平滑参数<sup><a href="#MR07">[MR07]</a></sup></h2><p>设n维格$\Lambda$，定义平滑参数为：</p>
 <p>使得$\rho_{1/s}(\Lambda^*\{0\})\leq \varepsilon$成立的最小的s的值，记为$\eta_\varepsilon(\Lambda)$，其中$\varepsilon&gt;0$。</p>
-<h2 id="拒绝采样定理-Lyu12"><a href="#拒绝采样定理-Lyu12" class="headerlink" title="拒绝采样定理[Lyu12]"></a>拒绝采样定理<sup><a href="#Lattice Signatures without Trapdoors">[Lyu12]</a></sup></h2><p>假设$V$是$\mathbb Z^m$的子集，并且其中所有元素的范数小于常数$T$，$\sigma$是$\mathbb R$上的元素并且满足$\sigma=w(T\sqrt{\log m})$，$h:V\rightarrow \mathbb R$是一个概率分布。存在常数$M=O(1)$使得算法$\mathcal A$的分布</p>
+<h2 id="拒绝采样定理-Lyu12"><a href="#拒绝采样定理-Lyu12" class="headerlink" title="拒绝采样定理[Lyu12]"></a>拒绝采样定理<sup><a href="#Lyu12">[Lyu12]</a></sup></h2><p>假设$V$是$\mathbb Z^m$的子集，并且其中所有元素的范数小于常数$T$，$\sigma$是$\mathbb R$上的元素并且满足$\sigma=w(T\sqrt{\log m})$，$h:V\rightarrow \mathbb R$是一个概率分布。存在常数$M=O(1)$使得算法$\mathcal A$的分布</p>
 <script type="math/tex; mode=display">
 \begin{flalign}
 &\mathcal A: \nonumber \\
@@ -318,9 +320,10 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="逐次最小距离常量"><a
 &1{:\mathbf{v}}\stackrel{\$}\leftarrow h& \nonumber \\
 &2:\mathbf{z}\stackrel{\$}{\leftarrow}D_{\sigma}^m& \nonumber \\
 &3:output\textit{ }(\mathbf{z},\mathbf{v})\textit{ with probability }\frac{1}{M}& \nonumber
-\end{flalign}</script><p>如果$\sigma=\alpha T$且$\alpha$是正数的时候，则$M=e^{12/\alpha+1/(2\alpha^2)}$，算法$\mathcal A$与算法$\mathcal F$的统计距离不会超过$\frac{2^{-100}}{M}$，算法$\mathcal A$输出结果的概率至少为$\frac{1-2^{-100}}{M}$</p>
+\end{flalign}</script><p>第一个算法输出内容的概率至少为$\frac{1-2^{-\omega(\log m)}}{M}$</p>
+<p>如果$\sigma=\alpha T$且$\alpha$是正数的时候，则$M=e^{12/\alpha+1/(2\alpha^2)}$，算法$\mathcal A$与算法$\mathcal F$的统计距离不会超过$\frac{2^{-100}}{M}$，算法$\mathcal A$输出结果的概率至少为$\frac{1-2^{-100}}{M}$</p>
 <p>形如<code>z=Sc+y</code>的签名，z直接输出会导致密钥泄漏，因为z的分布与S的分布产生关联。拒绝采样技术可以使得输出签名的分布与密钥无关增强安全性</p>
-<h2 id="分叉引理-PS00"><a href="#分叉引理-PS00" class="headerlink" title="分叉引理[PS00]"></a>分叉引理<sup><a href="#Security arguments for digital signatures and blind signatures">[PS00]</a></sup></h2><p>2000年，Pointcheval和Stern为了证明随机预言机下签名算法的安全性，引入了分叉引理。安全性证明中，挑战者为了利用敌手破解困难问题，需要执行两次挑战过程，使得第二次挑战过程中的输出结果与第一次输出过程的开始一段时间相同，某处发生改变，挑战者据此可以解决困难问题。</p>
+<h2 id="分叉引理-PS00"><a href="#分叉引理-PS00" class="headerlink" title="分叉引理[PS00]"></a>分叉引理<sup><a href="#PS00">[PS00]</a></sup></h2><p>2000年，Pointcheval和Stern为了证明随机预言机下签名算法的安全性，引入了分叉引理。安全性证明中，挑战者为了利用敌手破解困难问题，需要执行两次挑战过程，使得第二次挑战过程中的输出结果与第一次输出过程的开始一段时间相同，某处发生改变，挑战者据此可以解决困难问题。分叉引理用于许多签名体制的不可伪造性。</p>
 <blockquote>
 <p>引理（一般分叉引理）．设q是一个正整数，H是一个具有h＞2个元素的集合。令$\mathcal I\mathcal G$是参数生成算法，$\mathcal B$是一个随机算法，算法$\mathcal B$的输入是$\{x,h_1,\dots,h_q\}$，输出是$(J，\sigma)$，其中$x\in \{0,\dots,q\},h_i\in H(i\in [q])$</p>
 <p>令算法B的接受概率acc为试验$EXP＝[x\leftarrow\mathcal I\mathcal G; h_1,\dots,h_q\leftarrow H;(J,\sigma)\leftarrow \mathcal B(x,h_1,\dots,h_q)]$中$J≥1$的概率。</p>
@@ -354,13 +357,25 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="逐次最小距离常量"><a
 <h3 id="双边非齐次小整数解问题（Bi-ISIS）"><a href="#双边非齐次小整数解问题（Bi-ISIS）" class="headerlink" title="双边非齐次小整数解问题（Bi-ISIS）"></a>双边非齐次小整数解问题（Bi-ISIS）</h3><p>给定一个矩阵$A\in\mathbb Z_q^{m\times m}$，选取两个随机向量$u_1,u_2\in\mathbb Z_q^m$，寻找两个非零整数向量$z,y\in \mathbb Z^m$，且$|z|,|y|\leq\beta$，满足$Az=u_1\in\mathbb Z_q^m$和$y^TA={u_2}^T\in\mathbb Z_q^{1\times m}$，其中$\beta$表示一个正实数</p>
 <h3 id="计算型双边非齐次小整数解问题（CBi-ISIS）"><a href="#计算型双边非齐次小整数解问题（CBi-ISIS）" class="headerlink" title="计算型双边非齐次小整数解问题（CBi-ISIS）"></a>计算型双边非齐次小整数解问题（CBi-ISIS）</h3><p>给定元组$(A\in\mathbb Z_q^{m\times m},Az,y^TA)$，其中向量$z,y\in\mathbb Z^m$且$|z|,|y|\leq\beta$，$\beta$表示一个正实数，计算$y^TAz$</p>
 <h3 id="环小整数解问题（RSIS）"><a href="#环小整数解问题（RSIS）" class="headerlink" title="环小整数解问题（RSIS）"></a>环小整数解问题（RSIS）</h3><p>给定整数 $m$、$n$、$q,\mathcal{R}$ 表示多项式环，$R_{q}$ 表示系数模 $q$ 的多项式环，随机选择矩阵 $A\in\mathbb{R}_q^{n\times m}$ 和一个阈值参数 $\beta$, 求解一个非零向量 $z\in\mathbb{R}^m$, 满足 $Az= 0$ mod $q$ 且$|z|\leq\beta.$</p>
-<h2 id="格上抽样算法"><a href="#格上抽样算法" class="headerlink" title="格上抽样算法"></a>格上抽样算法</h2><p><strong>TrapGen(1^n)</strong>: 给定任意素数$q=poly(n)$，和任意$m\geq 5n\lg q $，存在概率性多项式算法$TrapGen(1^n)$，输入$1^n$，输出一对矩阵$(A\in\mathbb Z_q^{n\times m},B\in\mathbb Z^{m\times m})$，其中$A$在$Z_q^{n\times m}$是均匀分布的，$B$是$\Lambda_q^{\perp}(A)$的一个格基同时以极大的概率满足$|B| \leq O(n\log q)$和$|\tilde{B}| \leq O(\sqrt{n\log q})$</p>
+<h2 id="格上抽样算法"><a href="#格上抽样算法" class="headerlink" title="格上抽样算法"></a>格上抽样算法</h2><p><strong>TrapGen(1^n)<sup><a href="#Aja99">[Aja99,AP11]</a></sup></strong>: 给定任意素数$q=poly(n)$，和任意$m\geq 6n\lg q $，存在概率性多项式算法$TrapGen(1^n)$，输入$1^n$，输出一对矩阵$(A\in\mathbb Z_q^{n\times m},B\in\mathbb Z^{m\times m})$，其中$A$在$Z_q^{n\times m}$是均匀分布的，$B$是$\Lambda_q^{\perp}(A)$的一个格基同时以极大的概率满足$|B| \leq O(n\log q)$和$|\tilde{B}| \leq O(\sqrt{n\log q})$</p>
+<p><strong>SamplePre(A,T,u,s)</strong>:输入矩阵$A\in\mathbb Z_q^{n\times m}$,$\Lambda_q^{\perp}(A)$的短陷门基$T$，目标值$u\in\mathbb Z_q^n$和高斯参数$s\geq ||\tilde T||\omega\sqrt{\log m}$，输出向量$e\in\mathbb Z_q^n$其统计分布接近于$D_{\Lambda_{q}^{u}(A),s}$</p>
+<p><strong>SampleMat(A,T,s,U)</strong>：给定矩阵$A\in\mathbb Z_q^{n\times m}$，,$\Lambda_q^{\perp}(A)$的短陷门基$T$，$U\in\mathbb Z_q^n$是一个随机矩阵，高斯参数s，存在多项式时间算法输出矩阵$S\in\mathbb Z^{m\times k}$满足$AS=U\ mod\ q$并且$||S||\leq s\sqrt m$</p>
+<p><strong>SampleD(A,\sigma)</strong>：给定矩阵$A\in \mathbb Z_q^{n\times m}$，整数$\sigma\geq||\tilde B||\omega (\sqrt{n\lg q})$，输出采样$e\in D_{\mathbb Z^m,\sigma}$，使得$Ae$均匀分布于$\mathbb Z_q^n$。</p>
+<p><strong>SampleR(1^m)</strong><sup><a href="#HKR16">[HKR16]</a></sup>：从$\mathbb Z^m$中抽取出一个可逆矩阵$R$，使得$R$的分布与$D^{m\times m}$的统计距离是可以忽略的</p>
+<p><strong>SampleLeft(A,B,R,T_A,u,s)</strong><sup><a href="#ABB10">[ABB10]</a></sup>：输入秩为n的矩阵$A\in\mathbb Z_q^{n\times m}$，矩阵$B\in\mathbb Z_q^{n \times m_1}$，$A_{q}^{\perp}(A)$的一组基$T_{A}\in \mathbb Z_q^{m\times m}$，向量$u\in\mathbb Z_q^n$且高斯参数$s&gt;\left|\tilde{T}_{A}\right|\cdot\omega(\sqrt{\log(m+m_1)})$ ，输出向量$e\in\mathbb Z^{m+m_1}$且$e$的分布接近于$D_{\Lambda_{q}^{u}(A|B),s}$</p>
+<p><strong>SampleRight(A,B,R,T_B,u,s)</strong><sup><a href="#ABB10">[ABB10]</a></sup>：输入矩阵$A, B\in \mathbb{Z} _{q}^{n\times m}( B$的秩为$n) $，随机矩阵$R\in\{-1,1\}^{m\times m},A_{q}^{\perp}(B)$的一组基$T_{B}$和向量$u\in\mathbb{Z}_q^n$ 以及高斯参数 $s&gt;\left|\tilde{T}_{B}\right|\cdot\sqrt{m}\cdot\omega(\sqrt{\log m})$ 的情况下，存在概率多项式时间算法$SampleRight\left(A,B,R,T_B,u,s\right)$，令矩阵 $F_2=\left(A|AR+B\right)\in\mathbb{Z}_q^{n\times2n},$算法输出向量 $e\in\mathbb{Z}^{2n}$且 $e$的分布接近于 $D_{\Lambda_{q}^{u}(F_{2}),s}$</p>
 <h2 id="格基委派算法"><a href="#格基委派算法" class="headerlink" title="格基委派算法"></a>格基委派算法</h2><h3 id="盆景树算法"><a href="#盆景树算法" class="headerlink" title="盆景树算法"></a>盆景树算法</h3><p>盆景树算法将某个格的基作为根节点，运行算法，生成更大维数的格和一组基。</p>
-<p><strong>ExtBasis(A,B,T)</strong>：输入矩阵$A\in\mathbb Z_q^{n\times m}$，T是格$\Lambda_q^\perp(A)$上的一组基，$m&gt;0$为任意的整数，$B\in \mathbb Z_q^{n\times m’}$为任意的矩阵，$A_1=(A|B\in Z_q^{n\times (m+m’)})$，存在该算法可以输出格$\Lambda^\perp(A_1)$的一组基$T_1$，且$|T|=|\widetilde T_1|$</p>
-<p><strong>RandBasis(A,T,s)</strong>：输入矩阵$A\in\mathbb Z_q^{n\times m}$，T是格$\Lambda_q^\perp(A)$上的一组基，$s&gt;|\widetilde T|w(\sqrt{\log n})$，存在该算法可以输出$\Lambda^\perp(A)$的另一组基$T_1$，满足$|T_1|\leq s\sqrt m$</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a name="Lattice Signatures without Trapdoors"><font color="black">[1] </font></a>Lyubashevsky V.Lattice Signatures without Trapdoors[C].In Proceedings of 31st Annual Inter-<br>national Conference on the Theory and Applications of Cryptographic Techniques,April 15-19, 2012,Cambridge,UK,Berlin,Heidelberg,2012:738–755.</p>
-<p><a name="Security arguments for digital signatures and blind signatures"><font color="black">[2] </font></a>Pointcheval D, Stern J. Security arguments for digital signatures and blind signatures[J]. Journal of cryptology, 2000, 13: 361-396.</p>
-<p><a name="Worst-case to average-case reductions based on Gaussian measures"><font color="black">[3] </font></a>Micciancio D, Regev O. Worst-case to average-case reductions based on Gaussian measures[J]. SIAM Journal on Computing, 2007, 37(1): 267-302.</p>
+<p><strong>ExtBasis(A,B,T)</strong><sup><a href="#CHKP12">[CHKP12]</a></sup>：输入矩阵$A\in\mathbb Z_q^{n\times m}$，T是格$\Lambda_q^\perp(A)$上的一组基，$m&gt;0$为任意的整数，$B\in \mathbb Z_q^{n\times m’}$为任意的矩阵，$A_1=(A|B\in Z_q^{n\times (m+m’)})$，存在该算法可以输出格$\Lambda^\perp(A_1)$的一组基$T_1$，且$|T|=|\widetilde T_1|$</p>
+<p><strong>RandBasis(A,T,s)</strong><sup><a href="#CHKP12">[CHKP12]</a></sup>：输入矩阵$A\in\mathbb Z_q^{n\times m}$，T是格$\Lambda_q^\perp(A)$上的一组基，$s&gt;|\widetilde T|w(\sqrt{\log n})$，存在该算法可以输出$\Lambda^\perp(A)$的另一组基$T_1$，满足$|T_1|\leq s\sqrt m$</p>
+<p><strong>BasisDel(A,R,T_A,s)</strong><sup><a href="#HKR16">[HKR16]</a></sup>：输入矩阵$A\in\mathbb{Z}_q^{n\times m}$，可逆矩阵$R\in\mathbb{Z}^{m\times m}$，$\Lambda_q^\perp(A)$的一组基 $T_A$和高斯参数 $s\in\mathbb{R}&gt;0$，存在概率多项式时间的算法输出$\Lambda_q^\perp(B)$的一组基 $T_B$，其中$B=AR^{-1}\in\mathbb{Z}_q^{n\times m}$</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a name="Lyu12"><font color="black">[Lyu12] </font></a>Lyubashevsky V.Lattice Signatures without Trapdoors[C].In Proceedings of 31st Annual Inter-<br>national Conference on the Theory and Applications of Cryptographic Techniques,April 15-19, 2012,Cambridge,UK,Berlin,Heidelberg,2012:738–755.</p>
+<p><a name="PS00"><font color="black">[PS00] </font></a>Pointcheval D, Stern J. Security arguments for digital signatures and blind signatures[J]. Journal of cryptology, 2000, 13: 361-396.</p>
+<p><a name="MR07"><font color="black">[MR07] </font></a>Micciancio D, Regev O. Worst-case to average-case reductions based on Gaussian measures[J]. SIAM Journal on Computing, 2007, 37(1): 267-302.</p>
+<p><a name="HKR16"><font color="black">[HKR16] </font></a>Howe J, Khalid A, Rafferty C, et al. On practical discrete Gaussian samplers for lattice-based cryptography[J]. IEEE Transactions on Computers, 2016, 67(3): 322-334.</p>
+<p> <a name="GPV08"><font color="black">[GPV08] </font></a>Gentry C, Peikert C, Vaikuntanathan V. Trapdoors for hard lattices and new cryptographic constructions[C]//Proceedings of the fortieth annual ACM symposium on Theory of computing. 2008: 197-206.</p>
+<p> <a name="ABB10"><font color="black">[ABB10] </font></a>AGRAWAL S, BONEH D, BOYEN X. Efficient Lattice (<br>H)IBE in the Standard Model[C]//IACR. 29th Annual International Conference on the Theory and Applications of Cryptographic Techniques, May 30-June 3, 2010, French Riviera. Heidelberg, Springer, 2010: 553-572.</p>
+<p> <a name="Aja99"><font color="black">[Aja99] </font></a>M. Ajtai, Generating hard instances of the short basis problem, in: J. Wiedermann, P. van Emde Boas, M. Nielsen (Eds.), Automata, Languages and Programming, in: Lecture Notes in Computer Science, vol. 1644, Springer, Berlin, Heidelberg, 1999, pp. 1–9.<br> <a name="AP11"><font color="black">[AP11] </font></a> J. Alwen, C. Peikert, Generating shorter bases for hard random lattices, Theory Comput. Syst. 48 (2011) 535–553, <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s00224-010-9278-3">https://doi.org/10.1007/s00224-010-9278-3</a>.</p>
+<p> <a name="CHKP12"><font color="black">[CHKP12] </font></a>Cash D, Hofheinz D, Kiltz E, et al. Bonsai trees, or how to delegate a lattice basis[J]. Journal of cryptology, 2012, 25: 601-639.</p>
 
     </div>
 
@@ -461,7 +476,7 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="逐次最小距离常量"><a
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC"><span class="nav-number">1.</span> <span class="nav-text">格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">格的行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%90%E6%AC%A1%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB%E5%B8%B8%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">逐次最小距离常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q%E6%A8%A1%E6%A0%BC"><span class="nav-number">4.</span> <span class="nav-text">q模格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E6%A0%BC"><span class="nav-number">5.</span> <span class="nav-text">对偶格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E7%A6%BB%E6%95%A3%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83"><span class="nav-number">6.</span> <span class="nav-text">格上离散高斯分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E8%B7%9D%E7%A6%BB"><span class="nav-number">7.</span> <span class="nav-text">统计距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E6%BB%91%E5%8F%82%E6%95%B0-MR07"><span class="nav-number">8.</span> <span class="nav-text">平滑参数[MR07]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%92%E7%BB%9D%E9%87%87%E6%A0%B7%E5%AE%9A%E7%90%86-Lyu12"><span class="nav-number">9.</span> <span class="nav-text">拒绝采样定理[Lyu12]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%8F%89%E5%BC%95%E7%90%86-PS00"><span class="nav-number">10.</span> <span class="nav-text">分叉引理[PS00]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E5%9B%B0%E9%9A%BE%E9%97%AE%E9%A2%98"><span class="nav-number">11.</span> <span class="nav-text">格上困难问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E7%9F%AD%E5%90%91%E9%87%8F%E9%97%AE%E9%A2%98%EF%BC%88SVP%EF%BC%89"><span class="nav-number">11.1.</span> <span class="nav-text">最短向量问题（SVP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E8%BF%91%E5%90%91%E9%87%8F%E9%97%AE%E9%A2%98%EF%BC%88CVP%EF%BC%89"><span class="nav-number">11.2.</span> <span class="nav-text">最近向量问题（CVP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E7%95%8C%E8%B7%9D%E7%A6%BB%E8%A7%A3%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-number">11.3.</span> <span class="nav-text">有界距离解码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88SIS%EF%BC%89"><span class="nav-number">11.4.</span> <span class="nav-text">小整数解问题（SIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E8%BE%B9%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88Bi-SIS%EF%BC%89"><span class="nav-number">11.5.</span> <span class="nav-text">双边小整数解问题（Bi-SIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88ISIS%EF%BC%89"><span class="nav-number">11.6.</span> <span class="nav-text">非齐次小整数解问题（ISIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E8%BE%B9%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88Bi-ISIS%EF%BC%89"><span class="nav-number">11.7.</span> <span class="nav-text">双边非齐次小整数解问题（Bi-ISIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%9E%8B%E5%8F%8C%E8%BE%B9%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88CBi-ISIS%EF%BC%89"><span class="nav-number">11.8.</span> <span class="nav-text">计算型双边非齐次小整数解问题（CBi-ISIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88RSIS%EF%BC%89"><span class="nav-number">11.9.</span> <span class="nav-text">环小整数解问题（RSIS）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E6%8A%BD%E6%A0%B7%E7%AE%97%E6%B3%95"><span class="nav-number">12.</span> <span class="nav-text">格上抽样算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%9F%BA%E5%A7%94%E6%B4%BE%E7%AE%97%E6%B3%95"><span class="nav-number">13.</span> <span class="nav-text">格基委派算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%86%E6%99%AF%E6%A0%91%E7%AE%97%E6%B3%95"><span class="nav-number">13.1.</span> <span class="nav-text">盆景树算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">14.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC"><span class="nav-number">1.</span> <span class="nav-text">格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">格的行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%9F%9F"><span class="nav-number">3.</span> <span class="nav-text">格的基本域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%90%E6%AC%A1%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB%E5%B8%B8%E9%87%8F"><span class="nav-number">4.</span> <span class="nav-text">逐次最小距离常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#q%E6%A8%A1%E6%A0%BC"><span class="nav-number">5.</span> <span class="nav-text">q模格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E6%A0%BC"><span class="nav-number">6.</span> <span class="nav-text">对偶格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E7%A6%BB%E6%95%A3%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83-GPV08"><span class="nav-number">7.</span> <span class="nav-text">格上离散高斯分布[GPV08]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E8%B7%9D%E7%A6%BB"><span class="nav-number">8.</span> <span class="nav-text">统计距离</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E6%BB%91%E5%8F%82%E6%95%B0-MR07"><span class="nav-number">9.</span> <span class="nav-text">平滑参数[MR07]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%92%E7%BB%9D%E9%87%87%E6%A0%B7%E5%AE%9A%E7%90%86-Lyu12"><span class="nav-number">10.</span> <span class="nav-text">拒绝采样定理[Lyu12]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%8F%89%E5%BC%95%E7%90%86-PS00"><span class="nav-number">11.</span> <span class="nav-text">分叉引理[PS00]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E5%9B%B0%E9%9A%BE%E9%97%AE%E9%A2%98"><span class="nav-number">12.</span> <span class="nav-text">格上困难问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E7%9F%AD%E5%90%91%E9%87%8F%E9%97%AE%E9%A2%98%EF%BC%88SVP%EF%BC%89"><span class="nav-number">12.1.</span> <span class="nav-text">最短向量问题（SVP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E8%BF%91%E5%90%91%E9%87%8F%E9%97%AE%E9%A2%98%EF%BC%88CVP%EF%BC%89"><span class="nav-number">12.2.</span> <span class="nav-text">最近向量问题（CVP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E7%95%8C%E8%B7%9D%E7%A6%BB%E8%A7%A3%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-number">12.3.</span> <span class="nav-text">有界距离解码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88SIS%EF%BC%89"><span class="nav-number">12.4.</span> <span class="nav-text">小整数解问题（SIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E8%BE%B9%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88Bi-SIS%EF%BC%89"><span class="nav-number">12.5.</span> <span class="nav-text">双边小整数解问题（Bi-SIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88ISIS%EF%BC%89"><span class="nav-number">12.6.</span> <span class="nav-text">非齐次小整数解问题（ISIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E8%BE%B9%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88Bi-ISIS%EF%BC%89"><span class="nav-number">12.7.</span> <span class="nav-text">双边非齐次小整数解问题（Bi-ISIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%9E%8B%E5%8F%8C%E8%BE%B9%E9%9D%9E%E9%BD%90%E6%AC%A1%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88CBi-ISIS%EF%BC%89"><span class="nav-number">12.8.</span> <span class="nav-text">计算型双边非齐次小整数解问题（CBi-ISIS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%B0%8F%E6%95%B4%E6%95%B0%E8%A7%A3%E9%97%AE%E9%A2%98%EF%BC%88RSIS%EF%BC%89"><span class="nav-number">12.9.</span> <span class="nav-text">环小整数解问题（RSIS）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E4%B8%8A%E6%8A%BD%E6%A0%B7%E7%AE%97%E6%B3%95"><span class="nav-number">13.</span> <span class="nav-text">格上抽样算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%9F%BA%E5%A7%94%E6%B4%BE%E7%AE%97%E6%B3%95"><span class="nav-number">14.</span> <span class="nav-text">格基委派算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%86%E6%99%AF%E6%A0%91%E7%AE%97%E6%B3%95"><span class="nav-number">14.1.</span> <span class="nav-text">盆景树算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">15.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -477,20 +492,20 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="逐次最小距离常量"><a
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -528,13 +543,13 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="逐次最小距离常量"><a
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">31k</span>
+    <span title="站点总字数">35k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">51 分钟</span>
+    <span title="站点阅读时长">59 分钟</span>
 </div>
     <script type="text/javascript" color="0,0,255" opacity='0.5' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
