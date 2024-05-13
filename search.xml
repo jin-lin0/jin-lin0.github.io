@@ -1,62 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Canvas学习</title>
-    <url>/posts/30460/</url>
-    <content><![CDATA[<p>Canvas是HTML5提供的一种绘图API，它可以通过JavaScript在网页上绘制图形、图像和动画。</p>
-<p>Canvas提供了一个类似画布的区域，可以在其中动态绘制图形。</p>
-<span id="more"></span>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="CanvasRenderingContext2D-arc"><a href="#CanvasRenderingContext2D-arc" class="headerlink" title="CanvasRenderingContext2D.arc()"></a>CanvasRenderingContext2D.arc()</h3><p>绘制圆弧路径的方法</p>
-<p><code>void ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);</code></p>
-<p><strong>参数</strong></p>
-<p><em>x</em>：圆弧中心的x坐标</p>
-<p><em>y</em>：圆弧中心的y坐标</p>
-<p>radius：圆弧的半径</p>
-<p>startAngle：圆弧的起始点，单位弧度</p>
-<p>endAngle：圆弧的终点，单位弧度</p>
-<p>anticlockwise：true为逆时针，false为顺时针</p>
-<p><strong>示例</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;canvas&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">ctx.<span class="title function_">beginPath</span>();</span><br><span class="line">ctx.<span class="title function_">arc</span>(<span class="number">100</span>, <span class="number">75</span>, <span class="number">50</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="title class_">Math</span>.<span class="property">PI</span>);</span><br><span class="line">ctx.<span class="title function_">stroke</span>();</span><br></pre></td></tr></table></figure>
-<h3 id="CanvasRenderingContext2D-createLinearGradient"><a href="#CanvasRenderingContext2D-createLinearGradient" class="headerlink" title="CanvasRenderingContext2D.createLinearGradient()"></a>CanvasRenderingContext2D.createLinearGradient()</h3><p>创建线性的渐变对象，渐变可用于填充矩形、圆形、线条、文本等。</p>
-<p><code>CanvasGradient ctx.createLinearGradient(x0, y0, x1, y1);</code></p>
-<p><strong>参数</strong></p>
-<p><em>x0</em>： 渐变开始点的 x 坐标</p>
-<p><em>y0</em>：渐变开始点的 y 坐标</p>
-<p><em>x1</em>：渐变结束点的 x 坐标</p>
-<p><em>y1</em>：渐变结束点的 y 坐标</p>
-<p><strong>返回值</strong></p>
-<p>CanvasGradient，据指定线路初始化的线性 <code>CanvasGradient</code> 对象。</p>
-<h3 id="CanvasRenderingContext2D-createRadialGradient"><a href="#CanvasRenderingContext2D-createRadialGradient" class="headerlink" title="CanvasRenderingContext2D.createRadialGradient()"></a>CanvasRenderingContext2D.createRadialGradient()</h3><p>创建放射性渐变对象。</p>
-<p><code>CanvasGradient ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);</code></p>
-<p><strong>参数</strong></p>
-<p><em>x0</em>：开始圆形的 x 轴坐标。</p>
-<p><em>y0</em>：开始圆形的 y 轴坐标。</p>
-<p><em>r0</em>：开始圆形的半径。</p>
-<p><em>x1</em>：结束圆形的 x 轴坐标。</p>
-<p><em>y1</em>：结束圆形的 y 轴坐标。</p>
-<p><em>r1</em>：结束圆形的半径</p>
-<h3 id="CanvasGradient"><a href="#CanvasGradient" class="headerlink" title="CanvasGradient"></a>CanvasGradient</h3><p>描述渐变的不透明对象，通过<code>CanvasRenderingContext2D.createLinearGradient()</code>或<code>CanvasRenderingContext2D.createRadialGradient()</code> 的返回值得到。</p>
-<p><strong>方法</strong></p>
-<p><strong><code>CanvasGradient.addColorStop(offset,color)</code></strong></p>
-<p>指定到偏移的渐变色。</p>
-<p><strong>参数</strong></p>
-<p><em>offset</em>：<code>0</code>到<code>1</code>之间的值，超出范围将抛出<code>INDEX_SIZE_ERR</code>错误</p>
-<p><em>color</em>：CSS 颜色值，若颜色值不能被解析为有效的 CSS 颜色值，将抛出<code>SYNTAX_ERR</code>错误。</p>
-<h2 id="Canvas创建渐变色星空背景"><a href="#Canvas创建渐变色星空背景" class="headerlink" title="Canvas创建渐变色星空背景"></a>Canvas创建渐变色星空背景</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRef, useEffect &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">CanvasStar</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> canvasRef = useRef&lt;<span class="title class_">HTMLCanvasElement</span> | <span class="literal">null</span>&gt;(<span class="literal">null</span>);</span><br><span class="line">  <span class="comment">// x：星星的x坐标 y：星星的y坐标 alpha：透明度</span></span><br><span class="line">  <span class="keyword">const</span> starsRef = useRef&lt;&#123; <span class="attr">x</span>: <span class="built_in">number</span>; <span class="attr">y</span>: <span class="built_in">number</span>; <span class="attr">alpha</span>: <span class="built_in">number</span> &#125;[]&gt;([]);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> canvas = canvasRef.<span class="property">current</span>;</span><br><span class="line">    <span class="keyword">if</span> (!canvas) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> context = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (!context) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">		<span class="comment">// 制作渐变色背景</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">drawBackground</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="comment">// 从(canvas.width / 2, 0)到(canvas.width / 2, canvas.height)的线性渐变对象</span></span><br><span class="line">      <span class="keyword">const</span> gradient = context.<span class="title function_">createLinearGradient</span>(</span><br><span class="line">        canvas.<span class="property">width</span> / <span class="number">2</span>,</span><br><span class="line">        <span class="number">0</span>,</span><br><span class="line">        canvas.<span class="property">width</span> / <span class="number">2</span>,</span><br><span class="line">        canvas.<span class="property">height</span></span><br><span class="line">      );</span><br><span class="line">      <span class="comment">// 为渐变颜色对象添加百分比颜色渐变断点</span></span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.1</span>, <span class="string">&quot;#1b2947&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.6</span>, <span class="string">&quot;#75517d&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">1</span>, <span class="string">&quot;#e96f92&quot;</span>);</span><br><span class="line">			<span class="comment">// 填充canvas</span></span><br><span class="line">      context.<span class="property">fillStyle</span> = gradient;</span><br><span class="line">      context.<span class="title function_">fillRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 制作一个星星</span></span><br><span class="line">    <span class="keyword">const</span> drawShootingStar = (<span class="attr">x</span>: <span class="built_in">number</span>, <span class="attr">y</span>: <span class="built_in">number</span>, <span class="attr">alpha</span>: <span class="built_in">number</span>): <span class="function"><span class="params">void</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 生成放射渐变对象，(x,y)半径为0的圆至(x,y)半径为10的圆渐变</span></span><br><span class="line">      <span class="keyword">let</span> gradient = context.<span class="title function_">createRadialGradient</span>(x, y, <span class="number">0</span>, x, y, <span class="number">10</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0</span>, <span class="string">&quot;#fff&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.3</span>, <span class="string">&quot;transparent&quot;</span>);</span><br><span class="line">      context.<span class="property">fillStyle</span> = gradient;</span><br><span class="line">      <span class="comment">// 设置透明度</span></span><br><span class="line">      context.<span class="property">globalAlpha</span> = alpha;</span><br><span class="line">      context.<span class="title function_">beginPath</span>();</span><br><span class="line">      <span class="comment">// 画圆填充</span></span><br><span class="line">      context.<span class="title function_">arc</span>(x, y, <span class="number">10</span>, <span class="number">0</span>, <span class="title class_">Math</span>.<span class="property">PI</span> * <span class="number">2</span>);</span><br><span class="line">      context.<span class="title function_">fill</span>();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 生成num个星星的数组</span></span><br><span class="line">    <span class="keyword">const</span> generateRandomStars = (</span><br><span class="line">      <span class="attr">num</span>: <span class="built_in">number</span></span><br><span class="line">    ): &#123;</span><br><span class="line">      <span class="attr">x</span>: <span class="built_in">number</span>;</span><br><span class="line">      <span class="attr">y</span>: <span class="built_in">number</span>;</span><br><span class="line">      <span class="attr">alpha</span>: <span class="built_in">number</span>;</span><br><span class="line">    &#125;[] =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> stars = [];</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> x = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">width</span>;</span><br><span class="line">        <span class="comment">// 0.6对应制作背景的渐变色</span></span><br><span class="line">        <span class="keyword">const</span> y = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">height</span> * <span class="number">0.6</span>;</span><br><span class="line">        <span class="keyword">const</span> alpha = <span class="title class_">Math</span>.<span class="title function_">random</span>();</span><br><span class="line">        stars.<span class="title function_">push</span>(&#123; x, y, alpha &#125;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> stars;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 视窗更新，重新生成stars数组</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">updateCanvasSize</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">      canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line">      starsRef.<span class="property">current</span> = <span class="title function_">generateRandomStars</span>(<span class="title class_">Math</span>.<span class="title function_">max</span>(canvas.<span class="property">width</span> / <span class="number">10</span>, <span class="number">20</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 动画渲染函数</span></span><br><span class="line">    <span class="keyword">const</span> animateStars = (): <span class="function"><span class="params">void</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 清空canvas</span></span><br><span class="line">      context.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line">      context.<span class="property">globalAlpha</span> = <span class="number">1</span>;</span><br><span class="line">      <span class="title function_">drawBackground</span>();</span><br><span class="line"></span><br><span class="line">      starsRef.<span class="property">current</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params">star</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">drawShootingStar</span>(star.<span class="property">x</span>, star.<span class="property">y</span>, star.<span class="property">alpha</span>);</span><br><span class="line">        <span class="comment">// 闪烁效果</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &lt; <span class="number">0.1</span> &amp;&amp; star.<span class="property">alpha</span> &lt; <span class="number">0.9</span>) &#123;</span><br><span class="line">          star.<span class="property">alpha</span> += <span class="number">0.1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &gt; <span class="number">0.9</span> &amp;&amp; star.<span class="property">alpha</span> &gt; <span class="number">0.1</span>) &#123;</span><br><span class="line">          star.<span class="property">alpha</span> -= <span class="number">0.1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="comment">// 动画API</span></span><br><span class="line">      <span class="title function_">requestAnimationFrame</span>(animateStars);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">updateCanvasSize</span>();</span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, updateCanvasSize);</span><br><span class="line"></span><br><span class="line">    <span class="title function_">animateStars</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;resize&quot;</span>, updateCanvasSize);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">canvas</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">ref</span>=<span class="string">&#123;canvasRef&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">width</span>=<span class="string">&#123;window.innerWidth&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">height</span>=<span class="string">&#123;window.innerHeight&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      // <span class="attr">背景沉底</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">position:</span> &quot;<span class="attr">absolute</span>&quot;, <span class="attr">zIndex:</span> <span class="attr">-2</span> &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    /&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">CanvasStar</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>渐变星空背景的效果图如下：</p>
-<img src="/posts/30460/image-20231118191540055.png" class="" title="image-20231118191540055">
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>HTML5</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-        <tag>HTML5</tag>
-        <tag>Canvas</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Chrome调试技巧</title>
     <url>/posts/30786/</url>
     <content><![CDATA[<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>commond+w</code>：关闭当前页面</p>
@@ -114,6 +58,62 @@
       <tags>
         <tag>前端</tag>
         <tag>Chrome</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Canvas学习</title>
+    <url>/posts/30460/</url>
+    <content><![CDATA[<p>Canvas是HTML5提供的一种绘图API，它可以通过JavaScript在网页上绘制图形、图像和动画。</p>
+<p>Canvas提供了一个类似画布的区域，可以在其中动态绘制图形。</p>
+<span id="more"></span>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h3 id="CanvasRenderingContext2D-arc"><a href="#CanvasRenderingContext2D-arc" class="headerlink" title="CanvasRenderingContext2D.arc()"></a>CanvasRenderingContext2D.arc()</h3><p>绘制圆弧路径的方法</p>
+<p><code>void ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);</code></p>
+<p><strong>参数</strong></p>
+<p><em>x</em>：圆弧中心的x坐标</p>
+<p><em>y</em>：圆弧中心的y坐标</p>
+<p>radius：圆弧的半径</p>
+<p>startAngle：圆弧的起始点，单位弧度</p>
+<p>endAngle：圆弧的终点，单位弧度</p>
+<p>anticlockwise：true为逆时针，false为顺时针</p>
+<p><strong>示例</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;canvas&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">ctx.<span class="title function_">beginPath</span>();</span><br><span class="line">ctx.<span class="title function_">arc</span>(<span class="number">100</span>, <span class="number">75</span>, <span class="number">50</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="title class_">Math</span>.<span class="property">PI</span>);</span><br><span class="line">ctx.<span class="title function_">stroke</span>();</span><br></pre></td></tr></table></figure>
+<h3 id="CanvasRenderingContext2D-createLinearGradient"><a href="#CanvasRenderingContext2D-createLinearGradient" class="headerlink" title="CanvasRenderingContext2D.createLinearGradient()"></a>CanvasRenderingContext2D.createLinearGradient()</h3><p>创建线性的渐变对象，渐变可用于填充矩形、圆形、线条、文本等。</p>
+<p><code>CanvasGradient ctx.createLinearGradient(x0, y0, x1, y1);</code></p>
+<p><strong>参数</strong></p>
+<p><em>x0</em>： 渐变开始点的 x 坐标</p>
+<p><em>y0</em>：渐变开始点的 y 坐标</p>
+<p><em>x1</em>：渐变结束点的 x 坐标</p>
+<p><em>y1</em>：渐变结束点的 y 坐标</p>
+<p><strong>返回值</strong></p>
+<p>CanvasGradient，据指定线路初始化的线性 <code>CanvasGradient</code> 对象。</p>
+<h3 id="CanvasRenderingContext2D-createRadialGradient"><a href="#CanvasRenderingContext2D-createRadialGradient" class="headerlink" title="CanvasRenderingContext2D.createRadialGradient()"></a>CanvasRenderingContext2D.createRadialGradient()</h3><p>创建放射性渐变对象。</p>
+<p><code>CanvasGradient ctx.createRadialGradient(x0, y0, r0, x1, y1, r1);</code></p>
+<p><strong>参数</strong></p>
+<p><em>x0</em>：开始圆形的 x 轴坐标。</p>
+<p><em>y0</em>：开始圆形的 y 轴坐标。</p>
+<p><em>r0</em>：开始圆形的半径。</p>
+<p><em>x1</em>：结束圆形的 x 轴坐标。</p>
+<p><em>y1</em>：结束圆形的 y 轴坐标。</p>
+<p><em>r1</em>：结束圆形的半径</p>
+<h3 id="CanvasGradient"><a href="#CanvasGradient" class="headerlink" title="CanvasGradient"></a>CanvasGradient</h3><p>描述渐变的不透明对象，通过<code>CanvasRenderingContext2D.createLinearGradient()</code>或<code>CanvasRenderingContext2D.createRadialGradient()</code> 的返回值得到。</p>
+<p><strong>方法</strong></p>
+<p><strong><code>CanvasGradient.addColorStop(offset,color)</code></strong></p>
+<p>指定到偏移的渐变色。</p>
+<p><strong>参数</strong></p>
+<p><em>offset</em>：<code>0</code>到<code>1</code>之间的值，超出范围将抛出<code>INDEX_SIZE_ERR</code>错误</p>
+<p><em>color</em>：CSS 颜色值，若颜色值不能被解析为有效的 CSS 颜色值，将抛出<code>SYNTAX_ERR</code>错误。</p>
+<h2 id="Canvas创建渐变色星空背景"><a href="#Canvas创建渐变色星空背景" class="headerlink" title="Canvas创建渐变色星空背景"></a>Canvas创建渐变色星空背景</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRef, useEffect &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">CanvasStar</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> canvasRef = useRef&lt;<span class="title class_">HTMLCanvasElement</span> | <span class="literal">null</span>&gt;(<span class="literal">null</span>);</span><br><span class="line">  <span class="comment">// x：星星的x坐标 y：星星的y坐标 alpha：透明度</span></span><br><span class="line">  <span class="keyword">const</span> starsRef = useRef&lt;&#123; <span class="attr">x</span>: <span class="built_in">number</span>; <span class="attr">y</span>: <span class="built_in">number</span>; <span class="attr">alpha</span>: <span class="built_in">number</span> &#125;[]&gt;([]);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> canvas = canvasRef.<span class="property">current</span>;</span><br><span class="line">    <span class="keyword">if</span> (!canvas) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> context = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (!context) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">		<span class="comment">// 制作渐变色背景</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">drawBackground</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="comment">// 从(canvas.width / 2, 0)到(canvas.width / 2, canvas.height)的线性渐变对象</span></span><br><span class="line">      <span class="keyword">const</span> gradient = context.<span class="title function_">createLinearGradient</span>(</span><br><span class="line">        canvas.<span class="property">width</span> / <span class="number">2</span>,</span><br><span class="line">        <span class="number">0</span>,</span><br><span class="line">        canvas.<span class="property">width</span> / <span class="number">2</span>,</span><br><span class="line">        canvas.<span class="property">height</span></span><br><span class="line">      );</span><br><span class="line">      <span class="comment">// 为渐变颜色对象添加百分比颜色渐变断点</span></span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.1</span>, <span class="string">&quot;#1b2947&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.6</span>, <span class="string">&quot;#75517d&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">1</span>, <span class="string">&quot;#e96f92&quot;</span>);</span><br><span class="line">			<span class="comment">// 填充canvas</span></span><br><span class="line">      context.<span class="property">fillStyle</span> = gradient;</span><br><span class="line">      context.<span class="title function_">fillRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 制作一个星星</span></span><br><span class="line">    <span class="keyword">const</span> drawShootingStar = (<span class="attr">x</span>: <span class="built_in">number</span>, <span class="attr">y</span>: <span class="built_in">number</span>, <span class="attr">alpha</span>: <span class="built_in">number</span>): <span class="function"><span class="params">void</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 生成放射渐变对象，(x,y)半径为0的圆至(x,y)半径为10的圆渐变</span></span><br><span class="line">      <span class="keyword">let</span> gradient = context.<span class="title function_">createRadialGradient</span>(x, y, <span class="number">0</span>, x, y, <span class="number">10</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0</span>, <span class="string">&quot;#fff&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.3</span>, <span class="string">&quot;transparent&quot;</span>);</span><br><span class="line">      context.<span class="property">fillStyle</span> = gradient;</span><br><span class="line">      <span class="comment">// 设置透明度</span></span><br><span class="line">      context.<span class="property">globalAlpha</span> = alpha;</span><br><span class="line">      context.<span class="title function_">beginPath</span>();</span><br><span class="line">      <span class="comment">// 画圆填充</span></span><br><span class="line">      context.<span class="title function_">arc</span>(x, y, <span class="number">10</span>, <span class="number">0</span>, <span class="title class_">Math</span>.<span class="property">PI</span> * <span class="number">2</span>);</span><br><span class="line">      context.<span class="title function_">fill</span>();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 生成num个星星的数组</span></span><br><span class="line">    <span class="keyword">const</span> generateRandomStars = (</span><br><span class="line">      <span class="attr">num</span>: <span class="built_in">number</span></span><br><span class="line">    ): &#123;</span><br><span class="line">      <span class="attr">x</span>: <span class="built_in">number</span>;</span><br><span class="line">      <span class="attr">y</span>: <span class="built_in">number</span>;</span><br><span class="line">      <span class="attr">alpha</span>: <span class="built_in">number</span>;</span><br><span class="line">    &#125;[] =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> stars = [];</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> x = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">width</span>;</span><br><span class="line">        <span class="comment">// 0.6对应制作背景的渐变色</span></span><br><span class="line">        <span class="keyword">const</span> y = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">height</span> * <span class="number">0.6</span>;</span><br><span class="line">        <span class="keyword">const</span> alpha = <span class="title class_">Math</span>.<span class="title function_">random</span>();</span><br><span class="line">        stars.<span class="title function_">push</span>(&#123; x, y, alpha &#125;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> stars;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 视窗更新，重新生成stars数组</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">updateCanvasSize</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">      canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line">      starsRef.<span class="property">current</span> = <span class="title function_">generateRandomStars</span>(<span class="title class_">Math</span>.<span class="title function_">max</span>(canvas.<span class="property">width</span> / <span class="number">10</span>, <span class="number">20</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 动画渲染函数</span></span><br><span class="line">    <span class="keyword">const</span> animateStars = (): <span class="function"><span class="params">void</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 清空canvas</span></span><br><span class="line">      context.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line">      context.<span class="property">globalAlpha</span> = <span class="number">1</span>;</span><br><span class="line">      <span class="title function_">drawBackground</span>();</span><br><span class="line"></span><br><span class="line">      starsRef.<span class="property">current</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params">star</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">drawShootingStar</span>(star.<span class="property">x</span>, star.<span class="property">y</span>, star.<span class="property">alpha</span>);</span><br><span class="line">        <span class="comment">// 闪烁效果</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &lt; <span class="number">0.1</span> &amp;&amp; star.<span class="property">alpha</span> &lt; <span class="number">0.9</span>) &#123;</span><br><span class="line">          star.<span class="property">alpha</span> += <span class="number">0.1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &gt; <span class="number">0.9</span> &amp;&amp; star.<span class="property">alpha</span> &gt; <span class="number">0.1</span>) &#123;</span><br><span class="line">          star.<span class="property">alpha</span> -= <span class="number">0.1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="comment">// 动画API</span></span><br><span class="line">      <span class="title function_">requestAnimationFrame</span>(animateStars);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">updateCanvasSize</span>();</span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, updateCanvasSize);</span><br><span class="line"></span><br><span class="line">    <span class="title function_">animateStars</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;resize&quot;</span>, updateCanvasSize);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">canvas</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">ref</span>=<span class="string">&#123;canvasRef&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">width</span>=<span class="string">&#123;window.innerWidth&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">height</span>=<span class="string">&#123;window.innerHeight&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      // <span class="attr">背景沉底</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">position:</span> &quot;<span class="attr">absolute</span>&quot;, <span class="attr">zIndex:</span> <span class="attr">-2</span> &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    /&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">CanvasStar</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>渐变星空背景的效果图如下：</p>
+<img src="/posts/30460/image-20231118191540055.png" class="" title="image-20231118191540055">
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>HTML5</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>HTML5</tag>
+        <tag>Canvas</tag>
       </tags>
   </entry>
   <entry>
@@ -505,6 +505,33 @@
       </tags>
   </entry>
   <entry>
+    <title>JS脚本-网页剪贴板冗余复制信息去除</title>
+    <url>/posts/15286/</url>
+    <content><![CDATA[<p>在对网页的内容复制的时候，开发者往往对用户的剪贴板复制的内容进行一些限制，比如在知乎复制的时候，超过一定的文字复制内容，剪贴板会被自动添加以下内容：</p>
+<blockquote>
+<p>作者：xxx<br>链接：<a href="https://www.zhihu.com/question/xxx">https://www.zhihu.com/question/xxx</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p>本脚本可以对文字类内容的冗余信息进行去除，重写了复制监听函数，已测试可以通过大多数网站。</p>
+<p>该脚本的下载链接：<a href="https://greasyfork.org/zh-CN/scripts/475881-%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF%E5%8E%BB%E9%99%A4">剪贴板版权信息去除</a></p>
+<span id="more"></span>
+<p>这里在应用Bilibili阅读的时候，可以看到我们的脚本是挂载在document上的，而网页源代码对copy的监听是挂载在dom节点上的，copy事件默认从dom节点向上冒泡，直到document上</p>
+<img src="/posts/15286/image-20231214215800184.png" class="" title="image-20231214215800184">
+<p>打开网页源代码，发现在重写copy事件的时候，bilibili使用<code>t.stopProgagation()</code>将进一步冒泡取消掉了，所以我们的copy监听事件在冒泡中不会被触发</p>
+<img src="/posts/15286/image-20231214215827871.png" class="" title="image-20231214215827871">
+<p>使用相同的思路，我们设置在捕获过程中对copy事件进行触发，然后使用<code>e.stopPropagation();</code>阻断后续copy事件的冒泡即可，<code>document.addEventListener</code>中第三个参数是useCapture，即为捕获阶段触发，同时我们使用<code>e.stopPropagation()</code>进行事件的进一步捕获。</p>
+<p>完整代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">getCopiedContent</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> selection = <span class="variable language_">window</span>.<span class="title function_">getSelection</span>();</span><br><span class="line">    <span class="keyword">const</span> range = selection.<span class="title function_">getRangeAt</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">const</span> container = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">    container.<span class="title function_">appendChild</span>(range.<span class="title function_">cloneContents</span>());</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">text</span>: range.<span class="title function_">toString</span>(),</span><br><span class="line">      <span class="attr">html</span>: container.<span class="property">innerHTML</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(</span><br><span class="line">    <span class="string">&quot;copy&quot;</span>,</span><br><span class="line">    <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> copiedContent = <span class="title function_">getCopiedContent</span>();</span><br><span class="line">      <span class="keyword">if</span> (copiedContent.<span class="property">text</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> clipboardData = e.<span class="property">clipboardData</span> || <span class="variable language_">window</span>.<span class="property">clipboardData</span>;</span><br><span class="line">        clipboardData.<span class="title function_">setData</span>(<span class="string">&quot;text/plain&quot;</span>, copiedContent.<span class="property">text</span>);</span><br><span class="line">        clipboardData.<span class="title function_">setData</span>(<span class="string">&quot;text/html&quot;</span>, copiedContent.<span class="property">html</span>);</span><br><span class="line">        e.<span class="title function_">preventDefault</span>();</span><br><span class="line">        e.<span class="title function_">stopPropagation</span>();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="literal">true</span></span><br><span class="line">  );</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>脚本</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Latex写作</title>
     <url>/posts/33233/</url>
     <content><![CDATA[<span id="more"></span>
@@ -554,33 +581,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JS脚本-网页剪贴板冗余复制信息去除</title>
-    <url>/posts/15286/</url>
-    <content><![CDATA[<p>在对网页的内容复制的时候，开发者往往对用户的剪贴板复制的内容进行一些限制，比如在知乎复制的时候，超过一定的文字复制内容，剪贴板会被自动添加以下内容：</p>
-<blockquote>
-<p>作者：xxx<br>链接：<a href="https://www.zhihu.com/question/xxx">https://www.zhihu.com/question/xxx</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-</blockquote>
-<p>本脚本可以对文字类内容的冗余信息进行去除，重写了复制监听函数，已测试可以通过大多数网站。</p>
-<p>该脚本的下载链接：<a href="https://greasyfork.org/zh-CN/scripts/475881-%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF%E5%8E%BB%E9%99%A4">剪贴板版权信息去除</a></p>
-<span id="more"></span>
-<p>这里在应用Bilibili阅读的时候，可以看到我们的脚本是挂载在document上的，而网页源代码对copy的监听是挂载在dom节点上的，copy事件默认从dom节点向上冒泡，直到document上</p>
-<img src="/posts/15286/image-20231214215800184.png" class="" title="image-20231214215800184">
-<p>打开网页源代码，发现在重写copy事件的时候，bilibili使用<code>t.stopProgagation()</code>将进一步冒泡取消掉了，所以我们的copy监听事件在冒泡中不会被触发</p>
-<img src="/posts/15286/image-20231214215827871.png" class="" title="image-20231214215827871">
-<p>使用相同的思路，我们设置在捕获过程中对copy事件进行触发，然后使用<code>e.stopPropagation();</code>阻断后续copy事件的冒泡即可，<code>document.addEventListener</code>中第三个参数是useCapture，即为捕获阶段触发，同时我们使用<code>e.stopPropagation()</code>进行事件的进一步捕获。</p>
-<p>完整代码：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">getCopiedContent</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> selection = <span class="variable language_">window</span>.<span class="title function_">getSelection</span>();</span><br><span class="line">    <span class="keyword">const</span> range = selection.<span class="title function_">getRangeAt</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">const</span> container = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">    container.<span class="title function_">appendChild</span>(range.<span class="title function_">cloneContents</span>());</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">text</span>: range.<span class="title function_">toString</span>(),</span><br><span class="line">      <span class="attr">html</span>: container.<span class="property">innerHTML</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(</span><br><span class="line">    <span class="string">&quot;copy&quot;</span>,</span><br><span class="line">    <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> copiedContent = <span class="title function_">getCopiedContent</span>();</span><br><span class="line">      <span class="keyword">if</span> (copiedContent.<span class="property">text</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> clipboardData = e.<span class="property">clipboardData</span> || <span class="variable language_">window</span>.<span class="property">clipboardData</span>;</span><br><span class="line">        clipboardData.<span class="title function_">setData</span>(<span class="string">&quot;text/plain&quot;</span>, copiedContent.<span class="property">text</span>);</span><br><span class="line">        clipboardData.<span class="title function_">setData</span>(<span class="string">&quot;text/html&quot;</span>, copiedContent.<span class="property">html</span>);</span><br><span class="line">        e.<span class="title function_">preventDefault</span>();</span><br><span class="line">        e.<span class="title function_">stopPropagation</span>();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="literal">true</span></span><br><span class="line">  );</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>前端</category>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>脚本</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mac操作</title>
     <url>/posts/51317/</url>
     <content><![CDATA[<p>记录Mac常用操作</p>
@@ -594,6 +594,34 @@
       </categories>
       <tags>
         <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Word参考文献连续引用</title>
+    <url>/posts/37449/</url>
+    <content><![CDATA[<p>Word中实现连续多个参考文献的引用，如xxx<sup><a href="#xxx">[1-4]</a></sup></p>
+<span id="more"></span>
+<ol>
+<li><p>首先将参考文献自动编号</p>
+<img src="/posts/37449/image-20231220202721738.png" class="" title="image-20231220202721738">
+</li>
+<li><p>光标移到需要引用的位置，选择【引用】-【交叉引用】，插入需要引用文献编号的首位和末位，然后点击【开始】选择$X^2$</p>
+<img src="/posts/37449/image-20231220203157006.png" class="" title="image-20231220203157006">
+</li>
+<li><p>选中右键选择<strong>切换域代码</strong>，得到下面的代码</p>
+<figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153957510</span> \<span class="variable">r</span> \<span class="variable">h</span>  \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153996683</span> \<span class="variable">r</span> \<span class="variable">h</span>  \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>修改上面的代码如下，右键选择<strong>更新域</strong>即可实现</p>
+<figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153957510</span> \<span class="variable">r</span> \<span class="variable">h</span> \<span class="type">#</span><span class="string">&quot;[0&quot;</span> \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span><span class="operator">-</span><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153996683</span> \<span class="variable">r</span> \<span class="variable">h</span> \<span class="type">#</span><span class="string">&quot;0]&quot;</span> \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<img src="/posts/37449/image-20231220203700207.png" class="" title="image-20231220203700207">
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Word</category>
+      </categories>
+      <tags>
+        <tag>Word</tag>
+        <tag>参考文献</tag>
       </tags>
   </entry>
   <entry>
@@ -656,34 +684,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Word参考文献连续引用</title>
-    <url>/posts/37449/</url>
-    <content><![CDATA[<p>Word中实现连续多个参考文献的引用，如xxx<sup><a href="#xxx">[1-4]</a></sup></p>
-<span id="more"></span>
-<ol>
-<li><p>首先将参考文献自动编号</p>
-<img src="/posts/37449/image-20231220202721738.png" class="" title="image-20231220202721738">
-</li>
-<li><p>光标移到需要引用的位置，选择【引用】-【交叉引用】，插入需要引用文献编号的首位和末位，然后点击【开始】选择$X^2$</p>
-<img src="/posts/37449/image-20231220203157006.png" class="" title="image-20231220203157006">
-</li>
-<li><p>选中右键选择<strong>切换域代码</strong>，得到下面的代码</p>
-<figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153957510</span> \<span class="variable">r</span> \<span class="variable">h</span>  \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153996683</span> \<span class="variable">r</span> \<span class="variable">h</span>  \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>修改上面的代码如下，右键选择<strong>更新域</strong>即可实现</p>
-<figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153957510</span> \<span class="variable">r</span> \<span class="variable">h</span> \<span class="type">#</span><span class="string">&quot;[0&quot;</span> \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span><span class="operator">-</span><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153996683</span> \<span class="variable">r</span> \<span class="variable">h</span> \<span class="type">#</span><span class="string">&quot;0]&quot;</span> \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<img src="/posts/37449/image-20231220203700207.png" class="" title="image-20231220203700207">
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Word</category>
-      </categories>
-      <tags>
-        <tag>Word</tag>
-        <tag>参考文献</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>iPad/iPhone快捷指令自动切换vpn</title>
     <url>/posts/38894/</url>
     <content><![CDATA[<p>在使用iPad或者iPhone的软件与服务中，有些软件需要使用VPN，有些软件需要暂时关闭VPN能实现更快的响应速度。发现了一个之前没有使用过的应用叫 <strong>快捷指令</strong> 可以有效解决全部手动打开/关闭VPN的问题。</p>
@@ -703,21 +703,6 @@
       <tags>
         <tag>快捷指令</tag>
         <tag>vpn</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>typora添加参考文献</title>
-    <url>/posts/29479/</url>
-    <content><![CDATA[<p>MarkDown兼容HTML的语法，根据HTML中参考文献引用的方法，实现如下：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">This is a test sentence.<span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#ref1&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line">……</span><br><span class="line">Reference</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;ref1&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;black&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>Typora</category>
-      </categories>
-      <tags>
-        <tag>参考文献</tag>
-        <tag>Typora</tag>
       </tags>
   </entry>
   <entry>
@@ -774,6 +759,90 @@
       </tags>
   </entry>
   <entry>
+    <title>typora添加参考文献</title>
+    <url>/posts/29479/</url>
+    <content><![CDATA[<p>MarkDown兼容HTML的语法，根据HTML中参考文献引用的方法，实现如下：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">This is a test sentence.<span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#ref1&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line">……</span><br><span class="line">Reference</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;ref1&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;black&quot;</span>&gt;</span>[1]<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>Typora</category>
+      </categories>
+      <tags>
+        <tag>参考文献</tag>
+        <tag>Typora</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端基础</title>
+    <url>/posts/48395/</url>
+    <content><![CDATA[<span id="more"></span>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ol>
+<li><h5 id="arr-includes"><a href="#arr-includes" class="headerlink" title="arr.includes()"></a>arr.includes()</h5><p>判断一个数组是否包含一个指定的值，如果是返回 true，否则false</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">arr.<span class="title function_">includes</span>(searchElement)</span><br><span class="line">arr.<span class="title function_">includes</span>(searchElement, fromIndex)<span class="comment">//fromIndex 从该索引处进行查找，如果为负值，则按升序从 array.length + fromIndex 的索引开始搜索</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="arr-slice"><a href="#arr-slice" class="headerlink" title="arr.slice()"></a>arr.slice()</h5><p>slice() 方法可从已有的数组中返回选定的元素。</p>
+<p>slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。</p>
+<p><strong>注意：</strong> slice() 方法不会改变原始数组</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">arr.<span class="title function_">slice</span>()</span><br><span class="line">arr.<span class="title function_">slice</span>(start)</span><br><span class="line">arr.<span class="title function_">slice</span>(start, end)</span><br><span class="line"><span class="comment">//start和end是数组的索引（可为负数） 从第start开始截取到end（不包含）结束</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><h5 id="str-lastIndexOf"><a href="#str-lastIndexOf" class="headerlink" title="str.lastIndexOf()"></a>str.lastIndexOf()</h5><p>搜索该字符串并返回指定子字符串最后一次出现的索引，如果找到了 <code>searchString</code>，则返回最后一次出现的索引，否则返回 <code>-1</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">str.<span class="title function_">lastIndexOf</span>(searchString)</span><br><span class="line">str.<span class="title function_">lastIndexOf</span>(searchString, position)<span class="comment">//返回指定子字符串在小于或等于 position 的位置中的最后一次出现的索引, 默认为 +Infinity</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="Map对象"><a href="#Map对象" class="headerlink" title="Map对象"></a>Map对象</h5><h6 id="Map"><a href="#Map" class="headerlink" title="Map()"></a>Map()</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>(iterable)<span class="comment">//iterable是键值对数组或者其他可迭代对象，</span></span><br><span class="line"><span class="comment">//eg：const myMap = new Map([[1, &quot;one&quot;],[2, &quot;two&quot;],[3, &quot;three&quot;]]);</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>JavaScript 位运算符</strong></p>
+<p>判断<code>n</code>是否是2的整数次幂可以采用<code>(n &amp; (n - 1)) == 0</code></p>
+<p>| &amp;    | AND          | 如果两位都是 1 则设置每位为 1                            |<br>| —— | —————— | ———————————————————————————— |<br>| |   | OR           | 如果两位之一为 1 则设置每位为 1                          |<br>| ^    | XOR          | 如果两位只有一位为 1 则设置每位为 1                      |<br>| ~    | NOT          | 反转所有位                                               |<br>| &lt;&lt;   | 零填充左位移 | 通过从右推入零向左位移，并使最左边的位脱落。             |<br>| &gt;&gt;   | 有符号右位移 | 通过从左推入最左位的拷贝来向右位移，并使最右边的位脱落。 |<br>| &gt;&gt;&gt;  | 零填充右位移 | 通过从左推入零来向右位移，并使最右边的位脱落。           |</p>
+</li>
+</ol>
+<h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><ol>
+<li><h5 id="var、let、const-的差异？"><a href="#var、let、const-的差异？" class="headerlink" title="var、let、const 的差异？"></a>var、let、const 的差异？</h5><p>Var、let、const都可以用作变量的声明。</p>
+<p>var声明的变量会添加到全局对象中，可以使用全局对象进行访问，let和const不能。</p>
+<p>var声明的变量存在变量提升，在声明之前可以访问不会报错，let和const声明的变量存在暂时性死区，不能提前访问。</p>
+<p>let和const是块级作用域，不可以在一个作用域内重复声明，var是函数作用域。</p>
+<p>const声明的常量不可以修改，引用类型不能修改指针。</p>
+</li>
+<li><h5 id="for-in和for-of的区别"><a href="#for-in和for-of的区别" class="headerlink" title="for in和for of的区别"></a><strong>for in和for of</strong>的区别</h5><p>两者都是遍历的方法，for in用于遍历索引，for of用于遍历元素值。</p>
+<p>for in多用于遍历对象，因为for in在遍历数组的索引的时候，索引的值为字符串类型，同时也会遍历数组的所有可枚举属性，包括原型上的方法和属性，这通常不是我们想要的。</p>
+<p>for of用遍历数/数组对象/字符串/<code>map</code>/<code>set</code>等拥有迭代器对象（<code>iterator</code>）的集合，但是不能遍历对象，因为没有迭代器对象。</p>
+</li>
+<li></li>
+</ol>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>动态规划通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。适用于有重叠子问题和最优子结构性质的问题，并且记录所有子问题的结果。动态规划有自底向上和自顶向下两种解决问题的方式。自顶向下即记忆化递归，自底向上就是递推。一旦一个子问题的求解得到结果，以后的计算过程就不会修改它，这样的特点叫做无后效性，求解问题的过程形成了一张有向无环图。</p>
+<p>bfs中每一层要用新的变量保存</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>查看Github仓库占用的存储空间</title>
+    <url>/posts/6295/</url>
+    <content><![CDATA[<ol>
+<li><p>登录Github首页，点击账户的setting</p>
+<span id="more"></span>
+<img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213">
+</li>
+<li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p>
+<img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358">
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>密码学概念</title>
     <url>/posts/37170/</url>
     <content><![CDATA[<h2 id="盲签名"><a href="#盲签名" class="headerlink" title="盲签名"></a>盲签名</h2><p>1982年被Chaum介绍</p>
@@ -822,6 +891,29 @@
       </categories>
       <tags>
         <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬虫红线</title>
+    <url>/posts/45344/</url>
+    <content><![CDATA[<h2 id="禁止"><a href="#禁止" class="headerlink" title="禁止"></a>禁止</h2><ol>
+<li>个人隐私数据</li>
+<li>收费的视频文本音乐等并售卖开网站</li>
+<li>同行竞争不遵守robots协议</li>
+<li>国家政府网站</li>
+<li>多线程爬把对方网站爬崩了</li>
+<li>公开破解加密网站（仅供学习可以）</li>
+</ol>
+<h2 id="可以爬取"><a href="#可以爬取" class="headerlink" title="可以爬取"></a>可以爬取</h2><ol>
+<li>遵循robots协议</li>
+<li>网站公开数据和接口返回的无加密数据</li>
+</ol>
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -935,49 +1027,6 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="格的基本域"><a href="#�
       <tags>
         <tag>密码学</tag>
         <tag>格</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬虫红线</title>
-    <url>/posts/45344/</url>
-    <content><![CDATA[<h2 id="禁止"><a href="#禁止" class="headerlink" title="禁止"></a>禁止</h2><ol>
-<li>个人隐私数据</li>
-<li>收费的视频文本音乐等并售卖开网站</li>
-<li>同行竞争不遵守robots协议</li>
-<li>国家政府网站</li>
-<li>多线程爬把对方网站爬崩了</li>
-<li>公开破解加密网站（仅供学习可以）</li>
-</ol>
-<h2 id="可以爬取"><a href="#可以爬取" class="headerlink" title="可以爬取"></a>可以爬取</h2><ol>
-<li>遵循robots协议</li>
-<li>网站公开数据和接口返回的无加密数据</li>
-</ol>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>查看Github仓库占用的存储空间</title>
-    <url>/posts/6295/</url>
-    <content><![CDATA[<ol>
-<li><p>登录Github首页，点击账户的setting</p>
-<span id="more"></span>
-<img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213">
-</li>
-<li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p>
-<img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358">
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
 </search>

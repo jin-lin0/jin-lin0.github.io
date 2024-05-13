@@ -40,6 +40,34 @@
   </entry>
   
   <entry>
+    <title>前端基础</title>
+    <link href="http://example.com/posts/48395/"/>
+    <id>http://example.com/posts/48395/</id>
+    <published>2024-03-28T12:08:02.000Z</published>
+    <updated>2024-05-13T17:01:40.675Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ol><li><h5 id="arr-includes"><a href="#arr-includes" class="headerlink" title="arr.includes()"></a>arr.includes()</h5><p>判断一个数组是否包含一个指定的值，如果是返回 true，否则false</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">includes</span>(searchElement)</span><br><span class="line">arr.<span class="title function_">includes</span>(searchElement, fromIndex)<span class="comment">//fromIndex 从该索引处进行查找，如果为负值，则按升序从 array.length + fromIndex 的索引开始搜索</span></span><br></pre></td></tr></table></figure></li><li><h5 id="arr-slice"><a href="#arr-slice" class="headerlink" title="arr.slice()"></a>arr.slice()</h5><p>slice() 方法可从已有的数组中返回选定的元素。</p><p>slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。</p><p><strong>注意：</strong> slice() 方法不会改变原始数组</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">slice</span>()</span><br><span class="line">arr.<span class="title function_">slice</span>(start)</span><br><span class="line">arr.<span class="title function_">slice</span>(start, end)</span><br><span class="line"><span class="comment">//start和end是数组的索引（可为负数） 从第start开始截取到end（不包含）结束</span></span><br></pre></td></tr></table></figure></li></ol><ol><li><h5 id="str-lastIndexOf"><a href="#str-lastIndexOf" class="headerlink" title="str.lastIndexOf()"></a>str.lastIndexOf()</h5><p>搜索该字符串并返回指定子字符串最后一次出现的索引，如果找到了 <code>searchString</code>，则返回最后一次出现的索引，否则返回 <code>-1</code>。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.<span class="title function_">lastIndexOf</span>(searchString)</span><br><span class="line">str.<span class="title function_">lastIndexOf</span>(searchString, position)<span class="comment">//返回指定子字符串在小于或等于 position 的位置中的最后一次出现的索引, 默认为 +Infinity</span></span><br></pre></td></tr></table></figure></li><li><h5 id="Map对象"><a href="#Map对象" class="headerlink" title="Map对象"></a>Map对象</h5><h6 id="Map"><a href="#Map" class="headerlink" title="Map()"></a>Map()</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>(iterable)<span class="comment">//iterable是键值对数组或者其他可迭代对象，</span></span><br><span class="line"><span class="comment">//eg：const myMap = new Map([[1, &quot;one&quot;],[2, &quot;two&quot;],[3, &quot;three&quot;]]);</span></span><br></pre></td></tr></table></figure></li><li><p><strong>JavaScript 位运算符</strong></p><p>判断<code>n</code>是否是2的整数次幂可以采用<code>(n &amp; (n - 1)) == 0</code></p><p>| &amp;    | AND          | 如果两位都是 1 则设置每位为 1                            |<br>| —— | —————— | ———————————————————————————— |<br>| |   | OR           | 如果两位之一为 1 则设置每位为 1                          |<br>| ^    | XOR          | 如果两位只有一位为 1 则设置每位为 1                      |<br>| ~    | NOT          | 反转所有位                                               |<br>| &lt;&lt;   | 零填充左位移 | 通过从右推入零向左位移，并使最左边的位脱落。             |<br>| &gt;&gt;   | 有符号右位移 | 通过从左推入最左位的拷贝来向右位移，并使最右边的位脱落。 |<br>| &gt;&gt;&gt;  | 零填充右位移 | 通过从左推入零来向右位移，并使最右边的位脱落。           |</p></li></ol><h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><ol><li><h5 id="var、let、const-的差异？"><a href="#var、let、const-的差异？" class="headerlink" title="var、let、const 的差异？"></a>var、let、const 的差异？</h5><p>Var、let、const都可以用作变量的声明。</p><p>var声明的变量会添加到全局对象中，可以使用全局对象进行访问，let和const不能。</p><p>var声明的变量存在变量提升，在声明之前可以访问不会报错，let和const声明的变量存在暂时性死区，不能提前访问。</p><p>let和const是块级作用域，不可以在一个作用域内重复声明，var是函数作用域。</p><p>const声明的常量不可以修改，引用类型不能修改指针。</p></li><li><h5 id="for-in和for-of的区别"><a href="#for-in和for-of的区别" class="headerlink" title="for in和for of的区别"></a><strong>for in和for of</strong>的区别</h5><p>两者都是遍历的方法，for in用于遍历索引，for of用于遍历元素值。</p><p>for in多用于遍历对象，因为for in在遍历数组的索引的时候，索引的值为字符串类型，同时也会遍历数组的所有可枚举属性，包括原型上的方法和属性，这通常不是我们想要的。</p><p>for of用遍历数/数组对象/字符串/<code>map</code>/<code>set</code>等拥有迭代器对象（<code>iterator</code>）的集合，但是不能遍历对象，因为没有迭代器对象。</p></li><li></li></ol><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>动态规划通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。适用于有重叠子问题和最优子结构性质的问题，并且记录所有子问题的结果。动态规划有自底向上和自顶向下两种解决问题的方式。自顶向下即记忆化递归，自底向上就是递推。一旦一个子问题的求解得到结果，以后的计算过程就不会修改它，这样的特点叫做无后效性，求解问题的过程形成了一张有向无环图。</p><p>bfs中每一层要用新的变量保存</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;h2 id=&quot;API&quot;&gt;&lt;a href=&quot;#API&quot; class=&quot;headerlink&quot; title=&quot;API&quot;&gt;&lt;/a&gt;API&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;h5 id=&quot;arr-includes&quot;&gt;&lt;a href=&quot;#arr-</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="面试" scheme="http://example.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mac操作</title>
     <link href="http://example.com/posts/51317/"/>
     <id>http://example.com/posts/51317/</id>
