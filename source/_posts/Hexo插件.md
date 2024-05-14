@@ -56,7 +56,8 @@ mathjax: true
    ```sh
    npm install hexo-image-link --save
    ```
-
+   
+7. typora中的图片在进行缩放的时候，会自动转为html格式，此时img的src不会发生自动转换，针对这种情况，暂时的解决办法是将图片上传到图床，把图片链接变为绝对路径，作者使用的图床是[SMMS](https://sm.ms/)
 
 ## Hexo-Next支持数学公式
 
