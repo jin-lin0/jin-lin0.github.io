@@ -30,7 +30,7 @@
 <meta property="og:description" content="记录前端知识">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-28T12:08:02.000Z">
-<meta property="article:modified_time" content="2024-06-02T11:44:20.483Z">
+<meta property="article:modified_time" content="2024-06-08T04:58:25.565Z">
 <meta property="article:author" content="HJL">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="面试">
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-02 19:44:20" itemprop="dateModified" datetime="2024-06-02T19:44:20+08:00">2024-06-02</time>
+                <time title="修改时间：2024-06-08 12:58:25" itemprop="dateModified" datetime="2024-06-08T12:58:25+08:00">2024-06-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -254,7 +254,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -275,48 +275,72 @@
       
         <p>记录前端知识</p>
 <span id="more"></span>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ol>
-<li><h5 id="arr-includes"><a href="#arr-includes" class="headerlink" title="arr.includes()"></a>arr.includes()</h5><p>判断一个数组是否包含一个指定的值，如果是返回 true，否则false</p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h5 id="arr-includes"><a href="#arr-includes" class="headerlink" title="arr.includes()"></a>arr.includes()</h5><p>判断一个数组是否包含一个指定的值，如果是返回 true，否则false</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">includes</span>(searchElement)</span><br><span class="line">arr.<span class="title function_">includes</span>(searchElement, fromIndex)<span class="comment">//fromIndex 从该索引处进行查找，如果为负值，则按升序从 array.length + fromIndex 的索引开始搜索</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h5 id="arr-slice"><a href="#arr-slice" class="headerlink" title="arr.slice()"></a>arr.slice()</h5><p>slice() 方法可从已有的数组中返回选定的元素。</p>
+<h5 id="arr-slice"><a href="#arr-slice" class="headerlink" title="arr.slice()"></a>arr.slice()</h5><p>slice() 方法可从已有的数组中返回选定的元素。</p>
 <p>slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。</p>
 <p><strong>注意：</strong> slice() 方法不会改变原始数组</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">slice</span>()</span><br><span class="line">arr.<span class="title function_">slice</span>(start)</span><br><span class="line">arr.<span class="title function_">slice</span>(start, end)</span><br><span class="line"><span class="comment">//start和end是数组的索引（可为负数） 从第start开始截取到end（不包含）结束</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><h5 id="str-lastIndexOf"><a href="#str-lastIndexOf" class="headerlink" title="str.lastIndexOf()"></a>str.lastIndexOf()</h5><p>搜索该字符串并返回指定子字符串最后一次出现的索引，如果找到了 <code>searchString</code>，则返回最后一次出现的索引，否则返回 <code>-1</code>。</p>
+<h5 id="str-lastIndexOf"><a href="#str-lastIndexOf" class="headerlink" title="str.lastIndexOf()"></a>str.lastIndexOf()</h5><p>搜索该字符串并返回指定子字符串最后一次出现的索引，如果找到了 <code>searchString</code>，则返回最后一次出现的索引，否则返回 <code>-1</code>。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.<span class="title function_">lastIndexOf</span>(searchString)</span><br><span class="line">str.<span class="title function_">lastIndexOf</span>(searchString, position)<span class="comment">//返回指定子字符串在小于或等于 position 的位置中的最后一次出现的索引, 默认为 +Infinity</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h5 id="str-padStart"><a href="#str-padStart" class="headerlink" title="str.padStart()"></a>str.padStart()</h5><p>用另一个字符串填充当前字符串（如果需要会重复填充），直到达到给定的长度。填充是从当前字符串的开头开始的。</p>
+<h5 id="str-padStart"><a href="#str-padStart" class="headerlink" title="str.padStart()"></a>str.padStart()</h5><p>用另一个字符串填充当前字符串（如果需要会重复填充），直到达到给定的长度。填充是从当前字符串的开头开始的。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">padStart</span>(targetLength)</span><br><span class="line"><span class="title function_">padStart</span>(targetLength, padString)</span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">10</span>); <span class="comment">// &quot;       abc&quot;</span></span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">10</span>, <span class="string">&quot;foo&quot;</span>); <span class="comment">// &quot;foofoofabc&quot;</span></span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">6</span>, <span class="string">&quot;123465&quot;</span>); <span class="comment">// &quot;123abc&quot;</span></span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">1</span>); <span class="comment">// &quot;abc&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><h5 id="Map对象"><a href="#Map对象" class="headerlink" title="Map对象"></a>Map对象</h5><h6 id="Map"><a href="#Map" class="headerlink" title="Map()"></a>Map()</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>(iterable)<span class="comment">//iterable是键值对数组或者其他可迭代对象，</span></span><br><span class="line"><span class="comment">//eg：const myMap = new Map([[1, &quot;one&quot;],[2, &quot;two&quot;],[3, &quot;three&quot;]]);</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>JavaScript 位运算符</strong></p>
-<p>判断<code>n</code>是否是2的整数次幂可以采用<code>(n &amp; (n - 1)) == 0</code></p>
-<p>| &amp;    | AND          | 如果两位都是 1 则设置每位为 1                            |<br>| —— | —————— | ———————————————————————————— |<br>| |   | OR           | 如果两位之一为 1 则设置每位为 1                          |<br>| ^    | XOR          | 如果两位只有一位为 1 则设置每位为 1                      |<br>| ~    | NOT          | 反转所有位                                               |<br>| &lt;&lt;   | 零填充左位移 | 通过从右推入零向左位移，并使最左边的位脱落。             |<br>| &gt;&gt;   | 有符号右位移 | 通过从左推入最左位的拷贝来向右位移，并使最右边的位脱落。 |<br>| &gt;&gt;&gt;  | 零填充右位移 | 通过从左推入零来向右位移，并使最右边的位脱落。           |</p>
-</li>
-</ol>
-<h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><ol>
-<li><h5 id="var、let、const-的差异？"><a href="#var、let、const-的差异？" class="headerlink" title="var、let、const 的差异？"></a>var、let、const 的差异？</h5><p>Var、let、const都可以用作变量的声明。</p>
+<h5 id="Map对象"><a href="#Map对象" class="headerlink" title="Map对象"></a>Map对象</h5><h6 id="Map"><a href="#Map" class="headerlink" title="Map()"></a>Map()</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>(iterable)<span class="comment">//iterable是键值对数组或者其他可迭代对象，</span></span><br><span class="line"><span class="comment">//eg：const myMap = new Map([[1, &quot;one&quot;],[2, &quot;two&quot;],[3, &quot;three&quot;]]);</span></span><br></pre></td></tr></table></figure>
+<h5 id="JavaScript-位运算符"><a href="#JavaScript-位运算符" class="headerlink" title="JavaScript 位运算符"></a><strong>JavaScript 位运算符</strong></h5><p>判断<code>n</code>是否是2的整数次幂可以采用<code>(n &amp; (n - 1)) == 0</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>&amp;</th>
+<th>AND</th>
+<th>如果两位都是 1 则设置每位为 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td></td>
+<td>OR</td>
+<td>如果两位之一为 1 则设置每位为 1</td>
+</tr>
+<tr>
+<td>^</td>
+<td>XOR</td>
+<td>如果两位只有一位为 1 则设置每位为 1</td>
+</tr>
+<tr>
+<td>~</td>
+<td>NOT</td>
+<td>反转所有位</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>零填充左位移</td>
+<td>通过从右推入零向左位移，并使最左边的位脱落。</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>有符号右位移</td>
+<td>通过从左推入最左位的拷贝来向右位移，并使最右边的位脱落。</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>零填充右位移</td>
+<td>通过从左推入零来向右位移，并使最右边的位脱落。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h5 id="text-transform"><a href="#text-transform" class="headerlink" title="text-transform"></a>text-transform</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">text-transform</span>: none; // 阻止大小写被转换</span><br><span class="line"><span class="attribute">text-transform</span>: capitalize; // 单词首字母大写</span><br><span class="line"><span class="attribute">text-transform</span>: uppercase; // 全部大写</span><br><span class="line"><span class="attribute">text-transform</span>: lowercase; // 全部小写</span><br><span class="line"><span class="attribute">text-transform</span>: full-width; // 强制将字符写在正方形内，实现与中文对齐 firefox || safari</span><br></pre></td></tr></table></figure>
+<h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><h5 id="var、let、const-的差异？"><a href="#var、let、const-的差异？" class="headerlink" title="var、let、const 的差异？"></a>var、let、const 的差异？</h5><p>Var、let、const都可以用作变量的声明。</p>
 <p>var声明的变量会添加到全局对象中，可以使用全局对象进行访问，let和const不能。</p>
 <p>var声明的变量存在变量提升，在声明之前可以访问不会报错，let和const声明的变量存在暂时性死区，不能提前访问。</p>
 <p>let和const是块级作用域，不可以在一个作用域内重复声明，var是函数作用域。</p>
 <p>const声明的常量不可以修改，引用类型不能修改指针。</p>
-</li>
-<li><h5 id="for-in和for-of的区别"><a href="#for-in和for-of的区别" class="headerlink" title="for in和for of的区别"></a><strong>for in和for of</strong>的区别</h5><p>两者都是遍历的方法，for in用于遍历索引，for of用于遍历元素值。</p>
+<h5 id="for-in和for-of的区别"><a href="#for-in和for-of的区别" class="headerlink" title="for in和for of的区别"></a><strong>for in和for of</strong>的区别</h5><p>两者都是遍历的方法，for in用于遍历索引，for of用于遍历元素值。</p>
 <p>for in多用于遍历对象，因为for in在遍历数组的索引的时候，索引的值为字符串类型，同时也会遍历数组的所有可枚举属性，包括原型上的方法和属性，这通常不是我们想要的。</p>
 <p>for of用遍历数/数组对象/字符串/<code>map</code>/<code>set</code>等拥有迭代器对象（<code>iterator</code>）的集合，但是不能遍历对象，因为没有迭代器对象。</p>
-</li>
-<li><p>虚拟滚动技术如何实现的</p>
-</li>
-<li></li>
-</ol>
-<h2 id="调试技巧"><a href="#调试技巧" class="headerlink" title="调试技巧"></a>调试技巧</h2><p>vscode中三层以上的对象无法在控制台输出，采用<code>console.dir(obj, &#123; depth: null &#125;);</code>的格式输出即可</p>
+<h5 id="虚拟滚动技术如何实现"><a href="#虚拟滚动技术如何实现" class="headerlink" title="虚拟滚动技术如何实现"></a>虚拟滚动技术如何实现</h5><h2 id="调试技巧"><a href="#调试技巧" class="headerlink" title="调试技巧"></a>调试技巧</h2><p>vscode中三层以上的对象无法在控制台输出，采用<code>console.dir(obj, &#123; depth: null &#125;);</code>的格式输出即可</p>
 <h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><p><strong>组件</strong>：大驼峰</p>
 <p><strong>文件夹</strong>：小写单词并用-连接</p>
 <p><strong>js文件</strong>：小写单词并用-连接（类文件：大驼峰）</p>
@@ -332,16 +356,12 @@
 </li>
 <li></li>
 </ol>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="Storybook"><a href="#Storybook" class="headerlink" title="Storybook"></a>Storybook</h3><ol>
-<li><p><strong>storybook的doc中类型不显示</strong></p>
-<p>组件tsx文件中ts类型要写在传参后面，eg：</p>
+<h2 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h2><p><strong>双竖杠与双问号的区别</strong>：双竖杠||，只要前面的值转为布尔值为false时，就取后面，否则取前面，如undefined、null、false、空字符串和数值0</p>
+<p>而双问号则为：前面的值为null、undefined，则取后面的值，否则都取前面的值。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h4 id="Storybook"><a href="#Storybook" class="headerlink" title="Storybook"></a>Storybook</h4><h5 id="storybook的doc中类型不显示"><a href="#storybook的doc中类型不显示" class="headerlink" title="storybook的doc中类型不显示"></a><strong>storybook的doc中类型不显示</strong></h5><p>组件tsx文件中ts类型要写在传参后面，eg：</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">Button</span> = (<span class="params">&#123;</span></span><br><span class="line"><span class="params">  primary = <span class="literal">false</span>,</span></span><br><span class="line"><span class="params">  size = <span class="string">&#x27;medium&#x27;</span>,</span></span><br><span class="line"><span class="params">  backgroundColor,</span></span><br><span class="line"><span class="params">  label,</span></span><br><span class="line"><span class="params">  hoverOpacity = <span class="number">0.8</span>,</span></span><br><span class="line"><span class="params">  ...props</span></span><br><span class="line"><span class="params">&#125;: ButtonProps</span>) =&gt; &#123;...</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>storybook在vercel下部署配置vercel.json</strong></p>
-<p>指定build的指令和文件输出的目录</p>
+<h5 id="storybook在vercel下部署配置vercel-json"><a href="#storybook在vercel下部署配置vercel-json" class="headerlink" title="storybook在vercel下部署配置vercel.json"></a><strong>storybook在vercel下部署配置vercel.json</strong></h5><p>指定build的指令和文件输出的目录</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;$schema&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://openapi.vercel.sh/vercel.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;buildCommand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run build-storybook&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devCommand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run storybook&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;installCommand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm install&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;framework&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;outputDirectory&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./storybook-static&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
 
     </div>
 
@@ -442,7 +462,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-number">1.</span> <span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#arr-includes"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">arr.includes()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#arr-slice"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">arr.slice()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#str-lastIndexOf"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">str.lastIndexOf()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#str-padStart"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">str.padStart()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Map%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">Map对象</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Map"><span class="nav-number">1.0.0.5.1.</span> <span class="nav-text">Map()</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E7%AD%94"><span class="nav-number">2.</span> <span class="nav-text">问答</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#var%E3%80%81let%E3%80%81const-%E7%9A%84%E5%B7%AE%E5%BC%82%EF%BC%9F"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">var、let、const 的差异？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-in%E5%92%8Cfor-of%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">for in和for of的区别</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7"><span class="nav-number">3.</span> <span class="nav-text">调试技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="nav-number">4.</span> <span class="nav-text">命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%8B%E6%92%95"><span class="nav-number">5.1.</span> <span class="nav-text">手撕</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Storybook"><span class="nav-number">6.1.</span> <span class="nav-text">Storybook</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-number">1.</span> <span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#arr-includes"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">arr.includes()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#arr-slice"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">arr.slice()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#str-lastIndexOf"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">str.lastIndexOf()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#str-padStart"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">str.padStart()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Map%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">Map对象</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Map"><span class="nav-number">1.0.0.5.1.</span> <span class="nav-text">Map()</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript-%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">JavaScript 位运算符</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#text-transform"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">text-transform</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E7%AD%94"><span class="nav-number">3.</span> <span class="nav-text">问答</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#var%E3%80%81let%E3%80%81const-%E7%9A%84%E5%B7%AE%E5%BC%82%EF%BC%9F"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">var、let、const 的差异？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-in%E5%92%8Cfor-of%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">for in和for of的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%BB%9A%E5%8A%A8%E6%8A%80%E6%9C%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">虚拟滚动技术如何实现</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7"><span class="nav-number">4.</span> <span class="nav-text">调试技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="nav-number">5.</span> <span class="nav-text">命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%8B%E6%92%95"><span class="nav-number">6.1.</span> <span class="nav-text">手撕</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Typescript"><span class="nav-number">7.</span> <span class="nav-text">Typescript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">8.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Storybook"><span class="nav-number">8.0.1.</span> <span class="nav-text">Storybook</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#storybook%E7%9A%84doc%E4%B8%AD%E7%B1%BB%E5%9E%8B%E4%B8%8D%E6%98%BE%E7%A4%BA"><span class="nav-number">8.0.1.1.</span> <span class="nav-text">storybook的doc中类型不显示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#storybook%E5%9C%A8vercel%E4%B8%8B%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AEvercel-json"><span class="nav-number">8.0.1.2.</span> <span class="nav-text">storybook在vercel下部署配置vercel.json</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -465,7 +485,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -515,7 +535,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:11</span>
+    <span title="站点阅读时长">1:12</span>
 </div>
     <script type="text/javascript" color="0,0,255" opacity='0.5' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 

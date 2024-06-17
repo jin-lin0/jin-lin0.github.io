@@ -29,25 +29,12 @@
 <meta property="og:site_name" content="MY BLOG">
 <meta property="og:description" content="Hexo中插入图片 安装图片插件hexo-renderer-marked 1npm install hexo-renderer-marked --save">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231105183542790.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231105190138006.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231105190158984.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231106144206651.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231106144314768.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231106144420271.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231106144714996.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231106152216919.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231106183321197.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231106183408365.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231109041241369.png">
-<meta property="og:image" content="http://example.com/posts/62790/image-20231109041357565.png">
 <meta property="article:published_time" content="2023-11-05T10:25:21.000Z">
-<meta property="article:modified_time" content="2024-04-25T02:52:45.293Z">
+<meta property="article:modified_time" content="2024-06-03T12:32:26.482Z">
 <meta property="article:author" content="HJL">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="插件">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/posts/62790/image-20231105183542790.png">
 
 <link rel="canonical" href="http://example.com/posts/62790/">
 
@@ -242,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-04-25 10:52:45" itemprop="dateModified" datetime="2024-04-25T10:52:45+08:00">2024-04-25</time>
+                <time title="修改时间：2024-06-03 20:32:26" itemprop="dateModified" datetime="2024-06-03T20:32:26+08:00">2024-06-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +254,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.9k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -292,20 +279,20 @@
 <span id="more"></span>
 </li>
 <li><p><strong>根目录</strong>的<code>_config.yml</code>文件中配置：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span> <span class="string">//</span> <span class="string">这个考虑再三还是关上了，开启后会默认创建同名文件夹，但不是每个文档都有图片，笔者建议是false，导入图片的时候typora也会提示自动创建文件夹</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建文章，此时会在<code>source/_posts</code>生成同名文件夹，放置文章资源</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">&quot;xxx&quot;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>配置Typora</p>
 <p>打开typora的偏好设置，点击图像，更改为如下设置</p>
-<img src="/posts/62790/image-20231105183542790.png" class="" title="image-20231105183542790">
+
 </li>
 <li><p>图片引入</p>
 <p><strong>注意</strong>：在typora中图片引入的格式：（引入第六步的插件以后，typora图片格式的文字不能显示了）</p>
-<img src="/posts/62790/image-20231105190138006.png" class="" title="image-20231105190138006">
+
 <p>在hexo中图片引入的格式：</p>
-<img src="/posts/62790/image-20231105190158984.png" class="" title="image-20231105190158984">
+
 </li>
 <li><p>安装插件<code>hexo-image-link</code>解决typora与hexo路径不一致问题，这样在typora和hexo都可以显示图片了</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-image-link --save</span><br></pre></td></tr></table></figure>
@@ -362,13 +349,13 @@
 </ol>
 <h2 id="Hexo文章添加评论"><a href="#Hexo文章添加评论" class="headerlink" title="Hexo文章添加评论"></a>Hexo文章添加评论</h2><ol>
 <li><p>登录Github，点击右侧头像，点击<strong>Setting</strong>选项</p>
-<img src="/posts/62790/image-20231106144206651.png" class="" title="image-20231106144206651">
+
 </li>
 <li><p>左侧菜单选择<strong>Developer setting</strong>，进入开发者页面</p>
-<img src="/posts/62790/image-20231106144314768.png" class="" title="image-20231106144314768">
+
 </li>
 <li><p>选择OAuth创建应用</p>
-<img src="/posts/62790/image-20231106144420271.png" class="" title="image-20231106144420271">
+
 </li>
 <li><p>设置应用的相关信息</p>
 <ul>
@@ -376,7 +363,7 @@
 <li>Homepage URL 博客主页</li>
 <li>Authorization callback URL 授权回调页面（同 Homepage URL）</li>
 </ul>
-<img src="/posts/62790/image-20231106144714996.png" class="" title="image-20231106144714996">
+
 </li>
 </ol>
 <ol>
@@ -397,7 +384,7 @@
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Github登录后访问文章，即可自动初始化gitalk的issues，成功添加后效果如下：</p>
-<img src="/posts/62790/image-20231106152216919.png" class="" title="image-20231106152216919">
+
 </li>
 </ol>
 <h2 id="Hexo字数统计与阅读时长"><a href="#Hexo字数统计与阅读时长" class="headerlink" title="Hexo字数统计与阅读时长"></a>Hexo字数统计与阅读时长</h2><ol>
@@ -424,16 +411,16 @@
 </ol>
 <h2 id="Hexo中插入背景音乐"><a href="#Hexo中插入背景音乐" class="headerlink" title="Hexo中插入背景音乐"></a>Hexo中插入背景音乐</h2><ol>
 <li><p>网易云音乐中点击生成外链链接</p>
-<img src="/posts/62790/image-20231106183321197.png" class="" title="image-20231106183321197">
+
 </li>
 <li><p>复制外链iframe到<code>/next/layout/macro/sidebar.swig</code>中即可</p>
-<img src="/posts/62790/image-20231106183408365.png" class="" title="image-20231106183408365">
+
 </li>
 <li><p>生成我的音乐自定义的歌单的外链播放器需要先分享到自己的动态</p>
-<img src="/posts/62790/image-20231109041241369.png" class="" title="image-20231109041241369">
+
 </li>
 <li><p>点进分享的动态，点击生成外链播放器就可以了</p>
-<img src="/posts/62790/image-20231109041357565.png" class="" title="image-20231109041357565">
+
 </li>
 </ol>
 <h2 id="Hexo中隐藏文章"><a href="#Hexo中隐藏文章" class="headerlink" title="Hexo中隐藏文章"></a>Hexo中隐藏文章</h2><ol>
@@ -581,7 +568,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -631,7 +618,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:11</span>
+    <span title="站点阅读时长">1:12</span>
 </div>
     <script type="text/javascript" color="0,0,255" opacity='0.5' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 

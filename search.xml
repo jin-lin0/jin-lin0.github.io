@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Git</title>
-    <url>/posts/6295/</url>
-    <content><![CDATA[<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="查看Github仓库占用的存储空间"><a href="#查看Github仓库占用的存储空间" class="headerlink" title="查看Github仓库占用的存储空间"></a>查看Github仓库占用的存储空间</h3><ol>
-<li><p>登录Github首页，点击账户的setting</p>
-<span id="more"></span>
-<img src="/posts/6295/image-20231106133638213.png" class="" title="image-20231106133638213">
-</li>
-<li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p>
-<img src="/posts/6295/image-20231106133806358.png" class="" title="image-20231106133806358">
-</li>
-</ol>
-<h3 id="Github中的readme中生成目录结构"><a href="#Github中的readme中生成目录结构" class="headerlink" title="Github中的readme中生成目录结构"></a>Github中的readme中生成目录结构</h3><p><strong>Mac</strong>    安装 tree 指令： brew install tree；</p>
-<p>执行 <code>tree [folder-name]</code></p>
-<h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin main:master --force // 本地main分支强制覆盖远程master分支全部代码</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Canvas学习</title>
     <url>/posts/30460/</url>
     <content><![CDATA[<p>Canvas是HTML5提供的一种绘图API，它可以通过JavaScript在网页上绘制图形、图像和动画。</p>
@@ -67,7 +44,7 @@
 <p><em>color</em>：CSS 颜色值，若颜色值不能被解析为有效的 CSS 颜色值，将抛出<code>SYNTAX_ERR</code>错误。</p>
 <h2 id="Canvas创建渐变色星空背景"><a href="#Canvas创建渐变色星空背景" class="headerlink" title="Canvas创建渐变色星空背景"></a>Canvas创建渐变色星空背景</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRef, useEffect &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">CanvasStar</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> canvasRef = useRef&lt;<span class="title class_">HTMLCanvasElement</span> | <span class="literal">null</span>&gt;(<span class="literal">null</span>);</span><br><span class="line">  <span class="comment">// x：星星的x坐标 y：星星的y坐标 alpha：透明度</span></span><br><span class="line">  <span class="keyword">const</span> starsRef = useRef&lt;&#123; <span class="attr">x</span>: <span class="built_in">number</span>; <span class="attr">y</span>: <span class="built_in">number</span>; <span class="attr">alpha</span>: <span class="built_in">number</span> &#125;[]&gt;([]);</span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> canvas = canvasRef.<span class="property">current</span>;</span><br><span class="line">    <span class="keyword">if</span> (!canvas) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> context = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (!context) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">		<span class="comment">// 制作渐变色背景</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">drawBackground</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      <span class="comment">// 从(canvas.width / 2, 0)到(canvas.width / 2, canvas.height)的线性渐变对象</span></span><br><span class="line">      <span class="keyword">const</span> gradient = context.<span class="title function_">createLinearGradient</span>(</span><br><span class="line">        canvas.<span class="property">width</span> / <span class="number">2</span>,</span><br><span class="line">        <span class="number">0</span>,</span><br><span class="line">        canvas.<span class="property">width</span> / <span class="number">2</span>,</span><br><span class="line">        canvas.<span class="property">height</span></span><br><span class="line">      );</span><br><span class="line">      <span class="comment">// 为渐变颜色对象添加百分比颜色渐变断点</span></span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.1</span>, <span class="string">&quot;#1b2947&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.6</span>, <span class="string">&quot;#75517d&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">1</span>, <span class="string">&quot;#e96f92&quot;</span>);</span><br><span class="line">			<span class="comment">// 填充canvas</span></span><br><span class="line">      context.<span class="property">fillStyle</span> = gradient;</span><br><span class="line">      context.<span class="title function_">fillRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 制作一个星星</span></span><br><span class="line">    <span class="keyword">const</span> drawShootingStar = (<span class="attr">x</span>: <span class="built_in">number</span>, <span class="attr">y</span>: <span class="built_in">number</span>, <span class="attr">alpha</span>: <span class="built_in">number</span>): <span class="function"><span class="params">void</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 生成放射渐变对象，(x,y)半径为0的圆至(x,y)半径为10的圆渐变</span></span><br><span class="line">      <span class="keyword">let</span> gradient = context.<span class="title function_">createRadialGradient</span>(x, y, <span class="number">0</span>, x, y, <span class="number">10</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0</span>, <span class="string">&quot;#fff&quot;</span>);</span><br><span class="line">      gradient.<span class="title function_">addColorStop</span>(<span class="number">0.3</span>, <span class="string">&quot;transparent&quot;</span>);</span><br><span class="line">      context.<span class="property">fillStyle</span> = gradient;</span><br><span class="line">      <span class="comment">// 设置透明度</span></span><br><span class="line">      context.<span class="property">globalAlpha</span> = alpha;</span><br><span class="line">      context.<span class="title function_">beginPath</span>();</span><br><span class="line">      <span class="comment">// 画圆填充</span></span><br><span class="line">      context.<span class="title function_">arc</span>(x, y, <span class="number">10</span>, <span class="number">0</span>, <span class="title class_">Math</span>.<span class="property">PI</span> * <span class="number">2</span>);</span><br><span class="line">      context.<span class="title function_">fill</span>();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 生成num个星星的数组</span></span><br><span class="line">    <span class="keyword">const</span> generateRandomStars = (</span><br><span class="line">      <span class="attr">num</span>: <span class="built_in">number</span></span><br><span class="line">    ): &#123;</span><br><span class="line">      <span class="attr">x</span>: <span class="built_in">number</span>;</span><br><span class="line">      <span class="attr">y</span>: <span class="built_in">number</span>;</span><br><span class="line">      <span class="attr">alpha</span>: <span class="built_in">number</span>;</span><br><span class="line">    &#125;[] =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> stars = [];</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> x = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">width</span>;</span><br><span class="line">        <span class="comment">// 0.6对应制作背景的渐变色</span></span><br><span class="line">        <span class="keyword">const</span> y = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">height</span> * <span class="number">0.6</span>;</span><br><span class="line">        <span class="keyword">const</span> alpha = <span class="title class_">Math</span>.<span class="title function_">random</span>();</span><br><span class="line">        stars.<span class="title function_">push</span>(&#123; x, y, alpha &#125;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> stars;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 视窗更新，重新生成stars数组</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">updateCanvasSize</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">      canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line">      starsRef.<span class="property">current</span> = <span class="title function_">generateRandomStars</span>(<span class="title class_">Math</span>.<span class="title function_">max</span>(canvas.<span class="property">width</span> / <span class="number">10</span>, <span class="number">20</span>));</span><br><span class="line">    &#125;;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 动画渲染函数</span></span><br><span class="line">    <span class="keyword">const</span> animateStars = (): <span class="function"><span class="params">void</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 清空canvas</span></span><br><span class="line">      context.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line">      context.<span class="property">globalAlpha</span> = <span class="number">1</span>;</span><br><span class="line">      <span class="title function_">drawBackground</span>();</span><br><span class="line"></span><br><span class="line">      starsRef.<span class="property">current</span>.<span class="title function_">forEach</span>(<span class="function">(<span class="params">star</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="title function_">drawShootingStar</span>(star.<span class="property">x</span>, star.<span class="property">y</span>, star.<span class="property">alpha</span>);</span><br><span class="line">        <span class="comment">// 闪烁效果</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &lt; <span class="number">0.1</span> &amp;&amp; star.<span class="property">alpha</span> &lt; <span class="number">0.9</span>) &#123;</span><br><span class="line">          star.<span class="property">alpha</span> += <span class="number">0.1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &gt; <span class="number">0.9</span> &amp;&amp; star.<span class="property">alpha</span> &gt; <span class="number">0.1</span>) &#123;</span><br><span class="line">          star.<span class="property">alpha</span> -= <span class="number">0.1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      <span class="comment">// 动画API</span></span><br><span class="line">      <span class="title function_">requestAnimationFrame</span>(animateStars);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">updateCanvasSize</span>();</span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, updateCanvasSize);</span><br><span class="line"></span><br><span class="line">    <span class="title function_">animateStars</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">window</span>.<span class="title function_">removeEventListener</span>(<span class="string">&quot;resize&quot;</span>, updateCanvasSize);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">canvas</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">ref</span>=<span class="string">&#123;canvasRef&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">width</span>=<span class="string">&#123;window.innerWidth&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">height</span>=<span class="string">&#123;window.innerHeight&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      // <span class="attr">背景沉底</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">position:</span> &quot;<span class="attr">absolute</span>&quot;, <span class="attr">zIndex:</span> <span class="attr">-2</span> &#125;&#125;</span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    /&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">CanvasStar</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>渐变星空背景的效果图如下：</p>
-<img src="/posts/30460/image-20231118191540055.png" class="" title="image-20231118191540055">
+
 ]]></content>
       <categories>
         <category>前端</category>
@@ -104,8 +81,8 @@
 <p><script type="math/tex">` `$$$：$代表document.querySelector</script>代表document.querySelectorAll</p>
 <p><code>点击小眼睛</code>：实时监控表达式的值</p>
 <p><code>$x</code>：获取xPath的值</p>
-<img src="/posts/30786/image-20231113041726258.png" class="" title="image-20231113041726258">
-<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><img src="/posts/30786/image-20231121010637995.png" class="" title="image-20231121010637995">
+
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2>
 <p>断点调试的五个按钮：</p>
 <ol>
 <li>恢复执行。运行到下个断点 </li>
@@ -116,7 +93,7 @@
 </ol>
 <p>三个小圆点：可选源代码全局搜索选项，</p>
 <p>DOM断点在元素面板选中元素右键也可操作。</p>
-<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><img src="/posts/30786/image-20231113151138380.png" class="" title="image-20231113151138380">
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2>
 <ol>
 <li>开始抓取网络请求</li>
 <li>清除抓取记录</li>
@@ -127,7 +104,7 @@
 <li>慢速网络模拟</li>
 <li>过滤面板，按住commond可以同时选取多个过滤，过滤器中可以设置多个规则，scheme/set-cookie-domain/status-code等</li>
 </ol>
-<img src="/posts/30786/image-20231113154413153.png" class="" title="image-20231113154413153">
+
 <p>在网络请求列表中，点击启动器可以定位到源代码。按住shift可以看到该请求的依赖者</p>
 ]]></content>
       <categories>
@@ -140,23 +117,210 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo博客增加Google收录</title>
-    <url>/posts/29809/</url>
-    <content><![CDATA[<h2 id="查看是否收录"><a href="#查看是否收录" class="headerlink" title="查看是否收录"></a>查看是否收录</h2><p>在Google的搜索栏中搜索：<code>site:https://xxxx.github.io</code>，如果是尝试使用Google Search Console，则未收录。</p>
+    <title>Git</title>
+    <url>/posts/6295/</url>
+    <content><![CDATA[<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="查看Github仓库占用的存储空间"><a href="#查看Github仓库占用的存储空间" class="headerlink" title="查看Github仓库占用的存储空间"></a>查看Github仓库占用的存储空间</h3><ol>
+<li><p>登录Github首页，点击账户的setting</p>
 <span id="more"></span>
-<h2 id="提交申请"><a href="#提交申请" class="headerlink" title="提交申请"></a>提交申请</h2><p>使用Google账号登入<a href="https://search.google.com/search-console/about?hl=zh-CN">Search Console</a>，点击网址前缀添加：</p>
-<img src="/posts/29809/image-20231121011634101.png" class="" title="image-20231121011634101">
-<p>下载HTML文件，放置到根目录source目录中</p>
-<img src="/posts/29809/image-20231121011515612.png" class="" title="image-20231121011515612">
-<p>修改HTML文件，添加以下代码后保存上传</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>进入设置页面，点击Repositories，即可看到各个仓库占用的存储。(单个文件仓库1个G以下应该都是没有问题的，单文件限制100m，大于100m的文件需要用git-lfs)</p>
+
+</li>
+</ol>
+<h3 id="Github中的readme中生成目录结构"><a href="#Github中的readme中生成目录结构" class="headerlink" title="Github中的readme中生成目录结构"></a>Github中的readme中生成目录结构</h3><p><strong>Mac</strong>    安装 tree 指令： brew install tree；</p>
+<p>执行 <code>tree [folder-name]</code></p>
+<h2 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin main:master --force // 本地main分支强制覆盖远程master分支全部代码</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo插件</title>
+    <url>/posts/62790/</url>
+    <content><![CDATA[<h2 id="Hexo中插入图片"><a href="#Hexo中插入图片" class="headerlink" title="Hexo中插入图片"></a>Hexo中插入图片</h2><ol>
+<li><p>安装图片插件<code>hexo-renderer-marked</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+</li>
+<li><p><strong>根目录</strong>的<code>_config.yml</code>文件中配置：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span> <span class="string">//</span> <span class="string">这个考虑再三还是关上了，开启后会默认创建同名文件夹，但不是每个文档都有图片，笔者建议是false，导入图片的时候typora也会提示自动创建文件夹</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建文章，此时会在<code>source/_posts</code>生成同名文件夹，放置文章资源</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;xxx&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置Typora</p>
+<p>打开typora的偏好设置，点击图像，更改为如下设置</p>
+
+</li>
+<li><p>图片引入</p>
+<p><strong>注意</strong>：在typora中图片引入的格式：（引入第六步的插件以后，typora图片格式的文字不能显示了）</p>
+
+<p>在hexo中图片引入的格式：</p>
+
+</li>
+<li><p>安装插件<code>hexo-image-link</code>解决typora与hexo路径不一致问题，这样在typora和hexo都可以显示图片了</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-image-link --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>typora中的图片在进行缩放的时候，会自动转为html格式，此时img的src不会发生自动转换，针对这种情况，暂时的解决办法是将图片上传到图床，把图片链接变为绝对路径，作者使用的图床是<a href="https://sm.ms/">SMMS</a></p>
+</li>
+</ol>
+<h2 id="Hexo-Next支持数学公式"><a href="#Hexo-Next支持数学公式" class="headerlink" title="Hexo-Next支持数学公式"></a>Hexo-Next支持数学公式</h2><ol>
+<li><p>卸载原有渲染器<code>hexo-renderer-marked</code>，安装<code>hexo-renderer-kramed</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-kramed</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置Next的<code>_config.yml</code>文件</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (true) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in Front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># See: https://mhchem.github.io/MathJax-mhchem/</span></span><br><span class="line">    <span class="attr">mhchem:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.</span></span><br><span class="line">  <span class="attr">katex:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex</span></span><br><span class="line">    <span class="attr">copy_tex:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解决语义冲突</p>
+<p>取消反斜杠<code>\\</code>和下划线<code>_</code>的转义，<code>/node_modules/kramed/lib/rules/inline.js</code>修改如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="attr">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>, <span class="comment">//第11行</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line"><span class="attr">em</span>: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>, <span class="comment">//第20行</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：em中对下划线进行了转义，但是对latex中的<code>*</code>没有处理，所以latex中<code>*</code>需要全部用<code>\ast</code>代替。</p>
+</li>
+<li><p>在需要使用LaTeX渲染的博文中，在文章的Front-matter里打开mathjax开关：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用</p>
+<ul>
+<li><p>行内公式</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span>lim<span class="built_in">_</span>&#123;1<span class="keyword">\to</span>+<span class="keyword">\infty</span>&#125;P(|<span class="keyword">\sum</span><span class="built_in">_</span>i<span class="built_in">^</span>nX<span class="built_in">_</span>i-<span class="keyword">\mu</span>|&lt;<span class="keyword">\epsilon</span>)=1, i=1,...,n<span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+<p>$lim_{1\to+\infty}P(|\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$</p>
+</li>
+<li><p>行间公式</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span>lim<span class="built_in">_</span>&#123;1<span class="keyword">\to</span>+<span class="keyword">\infty</span>&#125;P(|<span class="keyword">\sum</span><span class="built_in">_</span>i<span class="built_in">^</span>nX<span class="built_in">_</span>i-<span class="keyword">\mu</span>|&lt;<span class="keyword">\epsilon</span>)=1, i=1,...,n<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">lim_{1\to+\infty}P(|\sum_i^nX_i-\mu|<\epsilon)=1, i=1,...,n</script></li>
+<li><p>公式编号</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;align&#125;</span><br><span class="line">a+b<span class="keyword">\\</span></span><br><span class="line">b+c<span class="keyword">\\</span></span><br><span class="line">a+c<span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>&#123;align&#125;</span><br><span class="line"><span class="keyword">\label</span>(52)</span><br></pre></td></tr></table></figure>
+<p>\begin{align}<br>a+b\\<br>b+c\\<br>a+c\\<br>\end{align}</p>
+</li>
+</ul>
+</li>
+<li><p>搭配typora</p>
+<p><code>偏好设置</code> $\Rightarrow$ <code>MarkDown</code> $\Rightarrow$ <code>内联公式开启</code> $\Rightarrow$ <code>重启Typora</code></p>
+<p>点击段落，公式块可以输入公式</p>
+</li>
+</ol>
+<h2 id="Hexo生成唯一永久文章链接"><a href="#Hexo生成唯一永久文章链接" class="headerlink" title="Hexo生成唯一永久文章链接"></a>Hexo生成唯一永久文章链接</h2><p>hexo的文章链接默认的生成规则是：<code>:year/:month/:day/:title</code>，标题如果是中文，会变得特别冗长。同时修改标题后文章链接会发生变化，URL层级深，不利于SEO，因此安装如下插件。</p>
+<ol>
+<li><p>安装<code>hexo-abbrlink</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm i hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改<strong>根目录</strong>的<code>_config.yml</code>配置：(<code>posts/</code>可以舍去)</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清除hexo缓存</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Hexo文章添加评论"><a href="#Hexo文章添加评论" class="headerlink" title="Hexo文章添加评论"></a>Hexo文章添加评论</h2><ol>
+<li><p>登录Github，点击右侧头像，点击<strong>Setting</strong>选项</p>
+
+</li>
+<li><p>左侧菜单选择<strong>Developer setting</strong>，进入开发者页面</p>
+
+</li>
+<li><p>选择OAuth创建应用</p>
+
+</li>
+<li><p>设置应用的相关信息</p>
+<ul>
+<li>Application name 应用名称</li>
+<li>Homepage URL 博客主页</li>
+<li>Authorization callback URL 授权回调页面（同 Homepage URL）</li>
+</ul>
+
+</li>
+</ol>
+<ol>
+<li><p>保存 <strong>Client ID</strong> 和 <strong>Client secrets</strong></p>
+</li>
+<li><p>配置主题<code>_config.yml</code>文件</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="string">jin-lin0</span> <span class="comment"># GitHub repo owner</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">jin-lin0.github.io</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="string">xxx</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="string">xxx</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="string">jin-lin0</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置<code>enable</code>为<code>true</code></li>
+<li><code>github_id</code>填入<code>github</code>帐号</li>
+<li><code>repo</code>填入<code>github</code>仓库名（<strong>仓库名不是仓库地址</strong>），评论以<code>issues</code>形式保存在该仓库下</li>
+<li><code>client_id</code>填入注册生成的值</li>
+<li><code>client_secret</code>填入注册生成的值</li>
+<li><code>admin_user</code>填入<code>github</code>帐号，初始化评论账户</li>
+</ul>
+</li>
+<li><p>隐藏评论功能，在front matter中添加：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Github登录后访问文章，即可自动初始化gitalk的issues，成功添加后效果如下：</p>
+
+</li>
+</ol>
+<h2 id="Hexo字数统计与阅读时长"><a href="#Hexo字数统计与阅读时长" class="headerlink" title="Hexo字数统计与阅读时长"></a>Hexo字数统计与阅读时长</h2><ol>
+<li><p><strong>根目录</strong>安装插件<code>hexo-symbols-count-time</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>根目录</strong>配置<code>_config.yml</code>，如果中文较多<code>awl</code>采用2，否则默认即可</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">300</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
+<p><code>symbols</code>：字数统计</p>
+<p><code>time</code>：时间统计</p>
+<p><code>total_symbols</code>：总字数统计</p>
+<p><code>total_time</code>：总时间统计</p>
+<p><code>exclude_codeblock</code>：排除代码块计算</p>
+</li>
+<li><p><strong>主题</strong>配置<code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p><code>separated_meta</code>：是否和发表时间不在一行</p>
+<p><code>item_text_post</code>：文章前面是否显示文字描述（本文字数，统计时长）</p>
+<p><code>item_text_total</code>：页面底部显示站点总字数，总时长</p>
+</li>
+<li><p>清除hexo缓存</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Hexo中插入背景音乐"><a href="#Hexo中插入背景音乐" class="headerlink" title="Hexo中插入背景音乐"></a>Hexo中插入背景音乐</h2><ol>
+<li><p>网易云音乐中点击生成外链链接</p>
+
+</li>
+<li><p>复制外链iframe到<code>/next/layout/macro/sidebar.swig</code>中即可</p>
+
+</li>
+<li><p>生成我的音乐自定义的歌单的外链播放器需要先分享到自己的动态</p>
+
+</li>
+<li><p>点进分享的动态，点击生成外链播放器就可以了</p>
+
+</li>
+</ol>
+<h2 id="Hexo中隐藏文章"><a href="#Hexo中隐藏文章" class="headerlink" title="Hexo中隐藏文章"></a>Hexo中隐藏文章</h2><ol>
+<li><p><strong>根目录</strong>安装插件<code>hexo-hide-posts</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-hide-posts --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>根目录</strong>添加配置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo-hide-posts</span></span><br><span class="line"><span class="attr">hide_posts:</span></span><br><span class="line">	<span class="comment"># font-matter中的过滤关键字</span></span><br><span class="line">  <span class="attr">filter:</span> <span class="string">hidden</span></span><br><span class="line">  <span class="comment"># 指定你想要传递隐藏文章的位置，比如让所有隐藏文章在存档页面可见</span></span><br><span class="line">  <span class="comment"># 常见的位置有：index, tag, category, archive, sitemap, feed, etc.</span></span><br><span class="line">  <span class="comment"># 留空则默认全部隐藏</span></span><br><span class="line">  <span class="attr">public_generators:</span> []</span><br><span class="line">  <span class="comment"># 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录</span></span><br><span class="line">  <span class="attr">noindex:</span> <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文章的<code>Font-Matter</code>中添加<code>hidden: true</code>即可隐藏，但仍可通过链接访问</p>
+</li>
+<li><p>控制台输入<code>hexo hidden:list</code>可以查看隐藏的文章列表</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span>: _posts/实用网站收集.md</span><br><span class="line">slug: 实用网站收集</span><br><span class="line">title: 实用网站收集</span><br><span class="line"><span class="built_in">date</span>: Mon Nov 06 2023 01:56:45 GMT+0800</span><br><span class="line">updated: Sun Nov 19 2023 00:51:06 GMT+0800</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Hexo配置canvas-nest背景"><a href="#Hexo配置canvas-nest背景" class="headerlink" title="Hexo配置canvas-nest背景"></a>Hexo配置canvas-nest背景</h2><ol>
+<li><p>在<code>hexo/source/_data</code>目录下新建文件<code>footer.swig</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.canvas_nest %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">color</span>=<span class="string">&quot;0,0,255&quot;</span> <span class="attr">opacity</span>=<span class="string">&#x27;0.5&#x27;</span> <span class="attr">zIndex</span>=<span class="string">&quot;-2&quot;</span> <span class="attr">count</span>=<span class="string">&quot;50&quot;</span> <span class="attr">src</span>=<span class="string">&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>主题配置文件开启自定义footer.swig，同时配置<code>canvas_nest</code>开启</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="attr">footer:</span> <span class="string">source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">canvas_nest:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -198,6 +362,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo博客增加Google收录</title>
+    <url>/posts/29809/</url>
+    <content><![CDATA[<h2 id="查看是否收录"><a href="#查看是否收录" class="headerlink" title="查看是否收录"></a>查看是否收录</h2><p>在Google的搜索栏中搜索：<code>site:https://xxxx.github.io</code>，如果是尝试使用Google Search Console，则未收录。</p>
+<span id="more"></span>
+<h2 id="提交申请"><a href="#提交申请" class="headerlink" title="提交申请"></a>提交申请</h2><p>使用Google账号登入<a href="https://search.google.com/search-console/about?hl=zh-CN">Search Console</a>，点击网址前缀添加：</p>
+
+<p>下载HTML文件，放置到根目录source目录中</p>
+
+<p>修改HTML文件，添加以下代码后保存上传</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh deploy.sh</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo搭建站点</title>
     <url>/posts/26676/</url>
     <content><![CDATA[<h1 id="Hexo搭建站点"><a href="#Hexo搭建站点" class="headerlink" title="Hexo搭建站点"></a>Hexo搭建站点</h1><p><a href="https://hexo.io/index.html">hexo官方网站</a></p>
@@ -215,7 +399,7 @@
 <li><p>启动项目</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>显示如下界面，浏览器打开 <code>http://localhost:4000/</code>查看博客站点</p>
-<img src="/posts/26676/image-20231105181105552.png" class="" title="image-20231105181105552"></li>
+</li>
 <li><p>编译部署项目</p>
 <p>修改根目录的 <code>_config.yml</code>文件，修改Deployment部分为新建仓库的地址，修改分支为master</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&quot;git&quot;</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&quot;git@github.com:xxx/xxx.github.io.git&quot;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
@@ -344,250 +528,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JS油猴脚本</title>
-    <url>/posts/15286/</url>
-    <content><![CDATA[<h2 id="JS油猴脚本"><a href="#JS油猴脚本" class="headerlink" title="JS油猴脚本"></a>JS油猴脚本</h2><h2 id="脚本猫crontab表达式"><a href="#脚本猫crontab表达式" class="headerlink" title="脚本猫crontab表达式"></a>脚本猫crontab表达式</h2><p><a href="https://tool.lu/crontab/">crontab在线</a>，脚本猫的定时脚本需要crontab表达式设置触发器时机</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">* * * * * <span class="comment">// 五个*分别代表分（0-59）、小时（0-23）、日期（1-31）、月（1-12）、周几（0-7）</span></span><br><span class="line"><span class="number">0</span> * * * * <span class="comment">// 0代表所有分为0的时候执行，即每小时0分执行</span></span><br><span class="line"><span class="number">0</span> *<span class="regexp">/12 * * * /</span><span class="regexp">/ */</span><span class="number">12</span>代表所有小时除以<span class="number">12</span>是整数时候执行，<span class="number">0</span>代表分为<span class="number">0</span>时候执行，即每<span class="number">12</span>小时执行一次</span><br></pre></td></tr></table></figure>
-<h3 id="网页剪贴板冗余复制信息去除"><a href="#网页剪贴板冗余复制信息去除" class="headerlink" title="网页剪贴板冗余复制信息去除"></a>网页剪贴板冗余复制信息去除</h3><p>在对网页的内容复制的时候，开发者往往对用户的剪贴板复制的内容进行一些限制，比如在知乎复制的时候，超过一定的文字复制内容，剪贴板会被自动添加以下内容：</p>
-<blockquote>
-<p>作者：xxx<br>链接：<a href="https://www.zhihu.com/question/xxx">https://www.zhihu.com/question/xxx</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-</blockquote>
-<p>本脚本可以对文字类内容的冗余信息进行去除，重写了复制监听函数，已测试可以通过大多数网站。</p>
-<p>该脚本的下载链接：<a href="https://greasyfork.org/zh-CN/scripts/475881-%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF%E5%8E%BB%E9%99%A4">剪贴板版权信息去除</a></p>
-<span id="more"></span>
-<p>这里在应用Bilibili阅读的时候，可以看到我们的脚本是挂载在document上的，而网页源代码对copy的监听是挂载在dom节点上的，copy事件默认从dom节点向上冒泡，直到document上</p>
-<img src="/posts/15286/image-20231214215800184.png" class="" title="image-20231214215800184">
-<p>打开网页源代码，发现在重写copy事件的时候，bilibili使用<code>t.stopProgagation()</code>将进一步冒泡取消掉了，所以我们的copy监听事件在冒泡中不会被触发</p>
-<img src="/posts/15286/image-20231214215827871.png" class="" title="image-20231214215827871">
-<p>使用相同的思路，我们设置在捕获过程中对copy事件进行触发，然后使用<code>e.stopPropagation();</code>阻断后续copy事件的冒泡即可，<code>document.addEventListener</code>中第三个参数是useCapture，即为捕获阶段触发，同时我们使用<code>e.stopPropagation()</code>进行事件的进一步捕获。</p>
-<p>完整代码：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">getCopiedContent</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> selection = <span class="variable language_">window</span>.<span class="title function_">getSelection</span>();</span><br><span class="line">    <span class="keyword">const</span> range = selection.<span class="title function_">getRangeAt</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">const</span> container = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">    container.<span class="title function_">appendChild</span>(range.<span class="title function_">cloneContents</span>());</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">text</span>: range.<span class="title function_">toString</span>(),</span><br><span class="line">      <span class="attr">html</span>: container.<span class="property">innerHTML</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(</span><br><span class="line">    <span class="string">&quot;copy&quot;</span>,</span><br><span class="line">    <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> copiedContent = <span class="title function_">getCopiedContent</span>();</span><br><span class="line">      <span class="keyword">if</span> (copiedContent.<span class="property">text</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> clipboardData = e.<span class="property">clipboardData</span> || <span class="variable language_">window</span>.<span class="property">clipboardData</span>;</span><br><span class="line">        clipboardData.<span class="title function_">setData</span>(<span class="string">&quot;text/plain&quot;</span>, copiedContent.<span class="property">text</span>);</span><br><span class="line">        clipboardData.<span class="title function_">setData</span>(<span class="string">&quot;text/html&quot;</span>, copiedContent.<span class="property">html</span>);</span><br><span class="line">        e.<span class="title function_">preventDefault</span>();</span><br><span class="line">        e.<span class="title function_">stopPropagation</span>();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="literal">true</span></span><br><span class="line">  );</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3>]]></content>
-      <categories>
-        <category>前端</category>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>脚本</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo插件</title>
-    <url>/posts/62790/</url>
-    <content><![CDATA[<h2 id="Hexo中插入图片"><a href="#Hexo中插入图片" class="headerlink" title="Hexo中插入图片"></a>Hexo中插入图片</h2><ol>
-<li><p>安装图片插件<code>hexo-renderer-marked</code></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-</li>
-<li><p><strong>根目录</strong>的<code>_config.yml</code>文件中配置：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建文章，此时会在<code>source/_posts</code>生成同名文件夹，放置文章资源</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;xxx&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置Typora</p>
-<p>打开typora的偏好设置，点击图像，更改为如下设置</p>
-<img src="/posts/62790/image-20231105183542790.png" class="" title="image-20231105183542790">
-</li>
-<li><p>图片引入</p>
-<p><strong>注意</strong>：在typora中图片引入的格式：（引入第六步的插件以后，typora图片格式的文字不能显示了）</p>
-<img src="/posts/62790/image-20231105190138006.png" class="" title="image-20231105190138006">
-<p>在hexo中图片引入的格式：</p>
-<img src="/posts/62790/image-20231105190158984.png" class="" title="image-20231105190158984">
-</li>
-<li><p>安装插件<code>hexo-image-link</code>解决typora与hexo路径不一致问题，这样在typora和hexo都可以显示图片了</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-image-link --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>typora中的图片在进行缩放的时候，会自动转为html格式，此时img的src不会发生自动转换，针对这种情况，暂时的解决办法是将图片上传到图床，把图片链接变为绝对路径，作者使用的图床是<a href="https://sm.ms/">SMMS</a></p>
-</li>
-</ol>
-<h2 id="Hexo-Next支持数学公式"><a href="#Hexo-Next支持数学公式" class="headerlink" title="Hexo-Next支持数学公式"></a>Hexo-Next支持数学公式</h2><ol>
-<li><p>卸载原有渲染器<code>hexo-renderer-marked</code>，安装<code>hexo-renderer-kramed</code></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-kramed</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置Next的<code>_config.yml</code>文件</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="comment"># Default (true) will load mathjax / katex script on demand.</span></span><br><span class="line">  <span class="comment"># That is it only render those page which has `mathjax: true` in Front-matter.</span></span><br><span class="line">  <span class="comment"># If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># See: https://mhchem.github.io/MathJax-mhchem/</span></span><br><span class="line">    <span class="attr">mhchem:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.</span></span><br><span class="line">  <span class="attr">katex:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex</span></span><br><span class="line">    <span class="attr">copy_tex:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解决语义冲突</p>
-<p>取消反斜杠<code>\\</code>和下划线<code>_</code>的转义，<code>/node_modules/kramed/lib/rules/inline.js</code>修改如下：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="attr">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>, <span class="comment">//第11行</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br><span class="line"><span class="attr">em</span>: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>, <span class="comment">//第20行</span></span><br></pre></td></tr></table></figure>
-<p><strong>注意</strong>：em中对下划线进行了转义，但是对latex中的<code>*</code>没有处理，所以latex中<code>*</code>需要全部用<code>\ast</code>代替。</p>
-</li>
-<li><p>在需要使用LaTeX渲染的博文中，在文章的Front-matter里打开mathjax开关：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用</p>
-<ul>
-<li><p>行内公式</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span>lim<span class="built_in">_</span>&#123;1<span class="keyword">\to</span>+<span class="keyword">\infty</span>&#125;P(|<span class="keyword">\sum</span><span class="built_in">_</span>i<span class="built_in">^</span>nX<span class="built_in">_</span>i-<span class="keyword">\mu</span>|&lt;<span class="keyword">\epsilon</span>)=1, i=1,...,n<span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-<p>$lim_{1\to+\infty}P(|\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$</p>
-</li>
-<li><p>行间公式</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="built_in">$</span><span class="built_in">$</span>lim<span class="built_in">_</span>&#123;1<span class="keyword">\to</span>+<span class="keyword">\infty</span>&#125;P(|<span class="keyword">\sum</span><span class="built_in">_</span>i<span class="built_in">^</span>nX<span class="built_in">_</span>i-<span class="keyword">\mu</span>|&lt;<span class="keyword">\epsilon</span>)=1, i=1,...,n<span class="built_in">$</span><span class="built_in">$</span></span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">lim_{1\to+\infty}P(|\sum_i^nX_i-\mu|<\epsilon)=1, i=1,...,n</script></li>
-<li><p>公式编号</p>
-<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;align&#125;</span><br><span class="line">a+b<span class="keyword">\\</span></span><br><span class="line">b+c<span class="keyword">\\</span></span><br><span class="line">a+c<span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>&#123;align&#125;</span><br><span class="line"><span class="keyword">\label</span>(52)</span><br></pre></td></tr></table></figure>
-<p>\begin{align}<br>a+b\\<br>b+c\\<br>a+c\\<br>\end{align}</p>
-</li>
-</ul>
-</li>
-<li><p>搭配typora</p>
-<p><code>偏好设置</code> $\Rightarrow$ <code>MarkDown</code> $\Rightarrow$ <code>内联公式开启</code> $\Rightarrow$ <code>重启Typora</code></p>
-<p>点击段落，公式块可以输入公式</p>
-</li>
-</ol>
-<h2 id="Hexo生成唯一永久文章链接"><a href="#Hexo生成唯一永久文章链接" class="headerlink" title="Hexo生成唯一永久文章链接"></a>Hexo生成唯一永久文章链接</h2><p>hexo的文章链接默认的生成规则是：<code>:year/:month/:day/:title</code>，标题如果是中文，会变得特别冗长。同时修改标题后文章链接会发生变化，URL层级深，不利于SEO，因此安装如下插件。</p>
-<ol>
-<li><p>安装<code>hexo-abbrlink</code></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm i hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改<strong>根目录</strong>的<code>_config.yml</code>配置：(<code>posts/</code>可以舍去)</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>清除hexo缓存</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="Hexo文章添加评论"><a href="#Hexo文章添加评论" class="headerlink" title="Hexo文章添加评论"></a>Hexo文章添加评论</h2><ol>
-<li><p>登录Github，点击右侧头像，点击<strong>Setting</strong>选项</p>
-<img src="/posts/62790/image-20231106144206651.png" class="" title="image-20231106144206651">
-</li>
-<li><p>左侧菜单选择<strong>Developer setting</strong>，进入开发者页面</p>
-<img src="/posts/62790/image-20231106144314768.png" class="" title="image-20231106144314768">
-</li>
-<li><p>选择OAuth创建应用</p>
-<img src="/posts/62790/image-20231106144420271.png" class="" title="image-20231106144420271">
-</li>
-<li><p>设置应用的相关信息</p>
-<ul>
-<li>Application name 应用名称</li>
-<li>Homepage URL 博客主页</li>
-<li>Authorization callback URL 授权回调页面（同 Homepage URL）</li>
-</ul>
-<img src="/posts/62790/image-20231106144714996.png" class="" title="image-20231106144714996">
-</li>
-</ol>
-<ol>
-<li><p>保存 <strong>Client ID</strong> 和 <strong>Client secrets</strong></p>
-</li>
-<li><p>配置主题<code>_config.yml</code>文件</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">github_id:</span> <span class="string">jin-lin0</span> <span class="comment"># GitHub repo owner</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">jin-lin0.github.io</span> <span class="comment"># Repository name to store issues</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="string">xxx</span> <span class="comment"># GitHub Application Client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="string">xxx</span> <span class="comment"># GitHub Application Client Secret</span></span><br><span class="line">  <span class="attr">admin_user:</span> <span class="string">jin-lin0</span> <span class="comment"># GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span></span><br><span class="line">  <span class="attr">distraction_free_mode:</span> <span class="literal">true</span> <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">  <span class="comment"># Gitalk&#x27;s display language depends on user&#x27;s browser or system environment</span></span><br><span class="line">  <span class="comment"># If you want everyone visiting your site to see a uniform language, you can set a force language value</span></span><br><span class="line">  <span class="comment"># Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span></span><br><span class="line">  <span class="attr">language:</span> <span class="string">zh-CN</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>设置<code>enable</code>为<code>true</code></li>
-<li><code>github_id</code>填入<code>github</code>帐号</li>
-<li><code>repo</code>填入<code>github</code>仓库名（<strong>仓库名不是仓库地址</strong>），评论以<code>issues</code>形式保存在该仓库下</li>
-<li><code>client_id</code>填入注册生成的值</li>
-<li><code>client_secret</code>填入注册生成的值</li>
-<li><code>admin_user</code>填入<code>github</code>帐号，初始化评论账户</li>
-</ul>
-</li>
-<li><p>隐藏评论功能，在front matter中添加：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Github登录后访问文章，即可自动初始化gitalk的issues，成功添加后效果如下：</p>
-<img src="/posts/62790/image-20231106152216919.png" class="" title="image-20231106152216919">
-</li>
-</ol>
-<h2 id="Hexo字数统计与阅读时长"><a href="#Hexo字数统计与阅读时长" class="headerlink" title="Hexo字数统计与阅读时长"></a>Hexo字数统计与阅读时长</h2><ol>
-<li><p><strong>根目录</strong>安装插件<code>hexo-symbols-count-time</code></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>根目录</strong>配置<code>_config.yml</code>，如果中文较多<code>awl</code>采用2，否则默认即可</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">time:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_symbols:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">total_time:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">exclude_codeblock:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">300</span></span><br><span class="line">  <span class="attr">suffix:</span> <span class="string">&quot;mins.&quot;</span></span><br></pre></td></tr></table></figure>
-<p><code>symbols</code>：字数统计</p>
-<p><code>time</code>：时间统计</p>
-<p><code>total_symbols</code>：总字数统计</p>
-<p><code>total_time</code>：总时间统计</p>
-<p><code>exclude_codeblock</code>：排除代码块计算</p>
-</li>
-<li><p><strong>主题</strong>配置<code>_config.yml</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><code>separated_meta</code>：是否和发表时间不在一行</p>
-<p><code>item_text_post</code>：文章前面是否显示文字描述（本文字数，统计时长）</p>
-<p><code>item_text_total</code>：页面底部显示站点总字数，总时长</p>
-</li>
-<li><p>清除hexo缓存</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="Hexo中插入背景音乐"><a href="#Hexo中插入背景音乐" class="headerlink" title="Hexo中插入背景音乐"></a>Hexo中插入背景音乐</h2><ol>
-<li><p>网易云音乐中点击生成外链链接</p>
-<img src="/posts/62790/image-20231106183321197.png" class="" title="image-20231106183321197">
-</li>
-<li><p>复制外链iframe到<code>/next/layout/macro/sidebar.swig</code>中即可</p>
-<img src="/posts/62790/image-20231106183408365.png" class="" title="image-20231106183408365">
-</li>
-<li><p>生成我的音乐自定义的歌单的外链播放器需要先分享到自己的动态</p>
-<img src="/posts/62790/image-20231109041241369.png" class="" title="image-20231109041241369">
-</li>
-<li><p>点进分享的动态，点击生成外链播放器就可以了</p>
-<img src="/posts/62790/image-20231109041357565.png" class="" title="image-20231109041357565">
-</li>
-</ol>
-<h2 id="Hexo中隐藏文章"><a href="#Hexo中隐藏文章" class="headerlink" title="Hexo中隐藏文章"></a>Hexo中隐藏文章</h2><ol>
-<li><p><strong>根目录</strong>安装插件<code>hexo-hide-posts</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-hide-posts --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>根目录</strong>添加配置</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo-hide-posts</span></span><br><span class="line"><span class="attr">hide_posts:</span></span><br><span class="line">	<span class="comment"># font-matter中的过滤关键字</span></span><br><span class="line">  <span class="attr">filter:</span> <span class="string">hidden</span></span><br><span class="line">  <span class="comment"># 指定你想要传递隐藏文章的位置，比如让所有隐藏文章在存档页面可见</span></span><br><span class="line">  <span class="comment"># 常见的位置有：index, tag, category, archive, sitemap, feed, etc.</span></span><br><span class="line">  <span class="comment"># 留空则默认全部隐藏</span></span><br><span class="line">  <span class="attr">public_generators:</span> []</span><br><span class="line">  <span class="comment"># 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录</span></span><br><span class="line">  <span class="attr">noindex:</span> <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>文章的<code>Font-Matter</code>中添加<code>hidden: true</code>即可隐藏，但仍可通过链接访问</p>
-</li>
-<li><p>控制台输入<code>hexo hidden:list</code>可以查看隐藏的文章列表</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span>: _posts/实用网站收集.md</span><br><span class="line">slug: 实用网站收集</span><br><span class="line">title: 实用网站收集</span><br><span class="line"><span class="built_in">date</span>: Mon Nov 06 2023 01:56:45 GMT+0800</span><br><span class="line">updated: Sun Nov 19 2023 00:51:06 GMT+0800</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="Hexo配置canvas-nest背景"><a href="#Hexo配置canvas-nest背景" class="headerlink" title="Hexo配置canvas-nest背景"></a>Hexo配置canvas-nest背景</h2><ol>
-<li><p>在<code>hexo/source/_data</code>目录下新建文件<code>footer.swig</code></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;%- if theme.canvas_nest %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">color</span>=<span class="string">&quot;0,0,255&quot;</span> <span class="attr">opacity</span>=<span class="string">&#x27;0.5&#x27;</span> <span class="attr">zIndex</span>=<span class="string">&quot;-2&quot;</span> <span class="attr">count</span>=<span class="string">&quot;50&quot;</span> <span class="attr">src</span>=<span class="string">&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>主题配置文件开启自定义footer.swig，同时配置<code>canvas_nest</code>开启</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="attr">footer:</span> <span class="string">source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">canvas_nest:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac or iPhone or iPad</title>
-    <url>/posts/51317/</url>
-    <content><![CDATA[<p>记录Mac/iPhone/iPad实用操作</p>
-<span id="more"></span>
-<h3 id="Mac快速复制文件夹路径"><a href="#Mac快速复制文件夹路径" class="headerlink" title="Mac快速复制文件夹路径"></a>Mac快速复制文件夹路径</h3><p>选中文件夹，使用option + command + c复制文件夹路径， 然后command+v 粘贴即可</p>
-<h3 id="Mac随航功能和通用控制冲突"><a href="#Mac随航功能和通用控制冲突" class="headerlink" title="Mac随航功能和通用控制冲突"></a>Mac随航功能和通用控制冲突</h3><p>前往“系统偏好设置”&gt;“显示器”&gt;“通用控制”，然后取消勾选“拖过屏幕边缘来连接附近的 Mac 或 iPad”以及“自动重新连接附近的任何Mac 或 iPad”选项以防止在你不需要的情况下自动启用通用控制功能。后续如需要使用通用控制功能，可以从“显示器”设置或者控制中心中手动连接设备。</p>
-<p><img src="https://discussionschinese.apple.com/content/attachment/ae7a071c-93a0-45cd-8393-8625a61c3931" alt="img"></p>
-<h3 id="iphone网页创建桌面快捷方式"><a href="#iphone网页创建桌面快捷方式" class="headerlink" title="iphone网页创建桌面快捷方式"></a>iphone网页创建桌面快捷方式</h3><p>点击分享-&gt;添加到主屏幕</p>
-<h3 id="iPad-iPhone快捷指令自动切换vpn"><a href="#iPad-iPhone快捷指令自动切换vpn" class="headerlink" title="iPad/iPhone快捷指令自动切换vpn"></a>iPad/iPhone快捷指令自动切换vpn</h3><p>在使用iPad或者iPhone的软件与服务中，有些软件需要使用VPN，有些软件需要暂时关闭VPN能实现更快的响应速度。发现了一个之前没有使用过的应用叫 <strong>快捷指令</strong> 可以有效解决全部手动打开/关闭VPN的问题。</p>
-<h4 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h4><ol>
-<li><p>打开手机的快捷指令软件，打开自动化，点击创建个人自动化</p>
-<p><img src="https://s2.loli.net/2024/04/25/nyk2SiF3eE6lj8c.jpg" alt="auto-quick instructions.jpeg" style="zoom:25%;" /></p>
-</li>
-<li><p>选择当启用app的时候执行连接/断开连接VPN即可，然后关闭运行前询问，点击执行（ps：iphone没有找到设定vpn选项）</p>
-<img src="/posts/51317/IMG_0161-4014638.PNG" class="" title="IMG_0161">
-</li>
-</ol>
-<h3 id="微信输入法"><a href="#微信输入法" class="headerlink" title="微信输入法"></a>微信输入法</h3><p>全角输出英文样式：ｓｊ半角输出英文：sj</p>
-<p>切换快捷键：<code>shift</code>+<code>option</code>+<code>H</code></p>
-<h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h4><p><code>npm view xxx versions</code> 查看所有版本</p>
-<h5 id="更新brew时报错unknown-or-unsupported-macOS-version-dunno-MacOSVersionError"><a href="#更新brew时报错unknown-or-unsupported-macOS-version-dunno-MacOSVersionError" class="headerlink" title="更新brew时报错unknown or unsupported macOS version: :dunno (MacOSVersionError)"></a>更新brew时报错unknown or unsupported macOS version: :dunno (MacOSVersionError)</h5><p>使用<code>brew update-reset</code></p>
-<h5 id="在vs-code中打开zsh终端报错-zshrc-source-107-no-such-file-or-directory-bash-profile"><a href="#在vs-code中打开zsh终端报错-zshrc-source-107-no-such-file-or-directory-bash-profile" class="headerlink" title="在vs code中打开zsh终端报错.zshrc:source:107: no such file or directory: .bash_profile"></a>在vs code中打开zsh终端报错.zshrc:source:107: no such file or directory: .bash_profile</h5><p>mac终端没有报错但是在vscode终端报错导致环境变量不可用，排查了很久才终于发现是.zshrc中写的不规范，首先<code>open -e .zshrc</code>打开配置文件将<code>source .bash_profile</code> 改为<code>source~/.bash_profile</code></p>
-]]></content>
-      <categories>
-        <category>Mac</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JS逆向</title>
     <url>/posts/32357/</url>
     <content><![CDATA[<h2 id="反爬虫"><a href="#反爬虫" class="headerlink" title="反爬虫"></a>反爬虫</h2><p>限制爬虫程序访问服务器资源和获取数据的行为，包括不限于请求限制、拒绝响应、客户端身份验证、文本混淆、动态渲染。</p>
@@ -639,6 +579,125 @@
       <tags>
         <tag>JS</tag>
         <tag>逆向</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS油猴脚本</title>
+    <url>/posts/15286/</url>
+    <content><![CDATA[<h2 id="JS油猴脚本"><a href="#JS油猴脚本" class="headerlink" title="JS油猴脚本"></a>JS油猴脚本</h2><h2 id="脚本猫crontab表达式"><a href="#脚本猫crontab表达式" class="headerlink" title="脚本猫crontab表达式"></a>脚本猫crontab表达式</h2><p><a href="https://tool.lu/crontab/">crontab在线</a>，脚本猫的定时脚本需要crontab表达式设置触发器时机</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">* * * * * <span class="comment">// 五个*分别代表分（0-59）、小时（0-23）、日期（1-31）、月（1-12）、周几（0-7）</span></span><br><span class="line"><span class="number">0</span> * * * * <span class="comment">// 0代表所有分为0的时候执行，即每小时0分执行</span></span><br><span class="line"><span class="number">0</span> *<span class="regexp">/12 * * * /</span><span class="regexp">/ */</span><span class="number">12</span>代表所有小时除以<span class="number">12</span>是整数时候执行，<span class="number">0</span>代表分为<span class="number">0</span>时候执行，即每<span class="number">12</span>小时执行一次</span><br></pre></td></tr></table></figure>
+<h3 id="网页剪贴板冗余复制信息去除"><a href="#网页剪贴板冗余复制信息去除" class="headerlink" title="网页剪贴板冗余复制信息去除"></a>网页剪贴板冗余复制信息去除</h3><p>在对网页的内容复制的时候，开发者往往对用户的剪贴板复制的内容进行一些限制，比如在知乎复制的时候，超过一定的文字复制内容，剪贴板会被自动添加以下内容：</p>
+<blockquote>
+<p>作者：xxx<br>链接：<a href="https://www.zhihu.com/question/xxx">https://www.zhihu.com/question/xxx</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p>本脚本可以对文字类内容的冗余信息进行去除，重写了复制监听函数，已测试可以通过大多数网站。</p>
+<p>该脚本的下载链接：<a href="https://greasyfork.org/zh-CN/scripts/475881-%E5%89%AA%E8%B4%B4%E6%9D%BF%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF%E5%8E%BB%E9%99%A4">剪贴板版权信息去除</a></p>
+<span id="more"></span>
+<p>这里在应用Bilibili阅读的时候，可以看到我们的脚本是挂载在document上的，而网页源代码对copy的监听是挂载在dom节点上的，copy事件默认从dom节点向上冒泡，直到document上</p>
+
+<p>打开网页源代码，发现在重写copy事件的时候，bilibili使用<code>t.stopProgagation()</code>将进一步冒泡取消掉了，所以我们的copy监听事件在冒泡中不会被触发</p>
+
+<p>使用相同的思路，我们设置在捕获过程中对copy事件进行触发，然后使用<code>e.stopPropagation();</code>阻断后续copy事件的冒泡即可，<code>document.addEventListener</code>中第三个参数是useCapture，即为捕获阶段触发，同时我们使用<code>e.stopPropagation()</code>进行事件的进一步捕获。</p>
+<p>完整代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">getCopiedContent</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> selection = <span class="variable language_">window</span>.<span class="title function_">getSelection</span>();</span><br><span class="line">    <span class="keyword">const</span> range = selection.<span class="title function_">getRangeAt</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">const</span> container = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">    container.<span class="title function_">appendChild</span>(range.<span class="title function_">cloneContents</span>());</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">text</span>: range.<span class="title function_">toString</span>(),</span><br><span class="line">      <span class="attr">html</span>: container.<span class="property">innerHTML</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(</span><br><span class="line">    <span class="string">&quot;copy&quot;</span>,</span><br><span class="line">    <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> copiedContent = <span class="title function_">getCopiedContent</span>();</span><br><span class="line">      <span class="keyword">if</span> (copiedContent.<span class="property">text</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> clipboardData = e.<span class="property">clipboardData</span> || <span class="variable language_">window</span>.<span class="property">clipboardData</span>;</span><br><span class="line">        clipboardData.<span class="title function_">setData</span>(<span class="string">&quot;text/plain&quot;</span>, copiedContent.<span class="property">text</span>);</span><br><span class="line">        clipboardData.<span class="title function_">setData</span>(<span class="string">&quot;text/html&quot;</span>, copiedContent.<span class="property">html</span>);</span><br><span class="line">        e.<span class="title function_">preventDefault</span>();</span><br><span class="line">        e.<span class="title function_">stopPropagation</span>();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="literal">true</span></span><br><span class="line">  );</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3>]]></content>
+      <categories>
+        <category>前端</category>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>脚本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac or iPhone or iPad</title>
+    <url>/posts/51317/</url>
+    <content><![CDATA[<p>记录Mac/iPhone/iPad实用操作</p>
+<span id="more"></span>
+<h3 id="Mac快速复制文件夹路径"><a href="#Mac快速复制文件夹路径" class="headerlink" title="Mac快速复制文件夹路径"></a>Mac快速复制文件夹路径</h3><p>选中文件夹，使用option + command + c复制文件夹路径， 然后command+v 粘贴即可</p>
+<h3 id="Mac随航功能和通用控制冲突"><a href="#Mac随航功能和通用控制冲突" class="headerlink" title="Mac随航功能和通用控制冲突"></a>Mac随航功能和通用控制冲突</h3><p>前往“系统偏好设置”&gt;“显示器”&gt;“通用控制”，然后取消勾选“拖过屏幕边缘来连接附近的 Mac 或 iPad”以及“自动重新连接附近的任何Mac 或 iPad”选项以防止在你不需要的情况下自动启用通用控制功能。后续如需要使用通用控制功能，可以从“显示器”设置或者控制中心中手动连接设备。</p>
+<p><img src="https://discussionschinese.apple.com/content/attachment/ae7a071c-93a0-45cd-8393-8625a61c3931" alt="img"></p>
+<h3 id="iphone网页创建桌面快捷方式"><a href="#iphone网页创建桌面快捷方式" class="headerlink" title="iphone网页创建桌面快捷方式"></a>iphone网页创建桌面快捷方式</h3><p>点击分享-&gt;添加到主屏幕</p>
+<h3 id="iPad-iPhone快捷指令自动切换vpn"><a href="#iPad-iPhone快捷指令自动切换vpn" class="headerlink" title="iPad/iPhone快捷指令自动切换vpn"></a>iPad/iPhone快捷指令自动切换vpn</h3><p>在使用iPad或者iPhone的软件与服务中，有些软件需要使用VPN，有些软件需要暂时关闭VPN能实现更快的响应速度。发现了一个之前没有使用过的应用叫 <strong>快捷指令</strong> 可以有效解决全部手动打开/关闭VPN的问题。</p>
+<h4 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h4><ol>
+<li><p>打开手机的快捷指令软件，打开自动化，点击创建个人自动化</p>
+<p><img src="https://s2.loli.net/2024/04/25/nyk2SiF3eE6lj8c.jpg" alt="auto-quick instructions.jpeg" style="zoom:25%;" /></p>
+</li>
+<li><p>选择当启用app的时候执行连接/断开连接VPN即可，然后关闭运行前询问，点击执行（ps：iphone没有找到设定vpn选项）</p>
+
+</li>
+</ol>
+<h3 id="微信输入法"><a href="#微信输入法" class="headerlink" title="微信输入法"></a>微信输入法</h3><p>全角输出英文样式：ｓｊ半角输出英文：sj</p>
+<p>切换快捷键：<code>shift</code>+<code>option</code>+<code>H</code></p>
+<h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h4><p><code>npm view xxx versions</code> 查看所有版本</p>
+<h5 id="更新brew时报错unknown-or-unsupported-macOS-version-dunno-MacOSVersionError"><a href="#更新brew时报错unknown-or-unsupported-macOS-version-dunno-MacOSVersionError" class="headerlink" title="更新brew时报错unknown or unsupported macOS version: :dunno (MacOSVersionError)"></a>更新brew时报错unknown or unsupported macOS version: :dunno (MacOSVersionError)</h5><p>使用<code>brew update-reset</code></p>
+<h5 id="在vs-code中打开zsh终端报错-zshrc-source-107-no-such-file-or-directory-bash-profile"><a href="#在vs-code中打开zsh终端报错-zshrc-source-107-no-such-file-or-directory-bash-profile" class="headerlink" title="在vs code中打开zsh终端报错.zshrc:source:107: no such file or directory: .bash_profile"></a>在vs code中打开zsh终端报错.zshrc:source:107: no such file or directory: .bash_profile</h5><p>mac终端没有报错但是在vscode终端报错导致环境变量不可用，排查了很久才终于发现是.zshrc中写的不规范，首先<code>open -e .zshrc</code>打开配置文件将<code>source .bash_profile</code> 改为<code>source~/.bash_profile</code></p>
+]]></content>
+      <categories>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Zotero插件</title>
+    <url>/posts/35335/</url>
+    <content><![CDATA[<h2 id="茉莉花插件"><a href="#茉莉花插件" class="headerlink" title="茉莉花插件"></a><a href="https://github.com/l0o0/jasminum?tab=readme-ov-file">茉莉花插件</a></h2><p><a href="https://github.com/l0o0/jasminum?tab=readme-ov-file">茉莉花插件</a>是一个star超过4.3k的zotero中文插件，支持：</p>
+<ol>
+<li>中文期刊附件（PDF/CAJ）的元数据抓取，支持添加PDF/CAJ时自动抓取元数据功能</li>
+<li>集成 Zotero 中文社区转换器的下载与更新功能</li>
+<li>为知网学位论文PDF添加章节书签（依赖于PDFtk）</li>
+<li>更新中文文献引用次数，核心期刊信息</li>
+<li>合并/拆分姓，名，识别文献条目语言，下载知网附件，统一日期格式等</li>
+</ol>
+<span id="more"></span>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li><p>安装PDFtk</p>
+<p><a href="https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/pdftk_server-2.02-mac_osx-10.11-setup.pkg">点我[Intel MacOS(&gt;10.15)]&gt;</a>下载</p>
+</li>
+<li><p>下载xpi文件</p>
+<p>下载最新的<a href="https://github.com/l0o0/jasminum/releases/latest">xpi</a>文件（Firefox浏览器用户记住右键另存为），打开 Zotero -&gt; 工具 -&gt; 插件 -&gt; 右上小齿轮图标 -&gt; Install Add-on From File … -&gt; 选择下载好的xpi文件。</p>
+</li>
+<li><p>更新Zotero Connect</p>
+<p>右键选择浏览器插件的Zotero Connect插件，选择选项-&gt;Advanced-&gt;Update Translators可以抓取知网的full text了</p>
+
+</li>
+<li><p>重启Zotero</p>
+</li>
+</ol>
+<h2 id="Zotero-shortdoi"><a href="#Zotero-shortdoi" class="headerlink" title="Zotero-shortdoi"></a><a href="https://github.com/bwiernik/zotero-shortdoi">Zotero-shortdoi</a></h2><p>使用CrossRef API自动获取期刊文章的doi并使用<a href="http://shortdoi.org/">http://shortdoi.org</a>查找短 DOI 名称，支持</p>
+<ol>
+<li>获取短DOI：对于所选项目，查找短DOI（替换存储的DOI，如果有）并标记无效DOI。</li>
+<li>获取长 DOI：对于所选项目，查找完整 DOI（替换存储的 DOI，如果有）并标记无效 DOI。</li>
+<li>验证和清理 DOI：对于选定的项目，查找完整的 DOI（替换存储的 DOI，如果有），验证存储的 DOI 是否有效，并标记无效的 DOI。<ul>
+<li>此功能还会从 DOI 字段中删除不必要的前缀（例如<code>doi:</code>、或发布商 URL 前缀）。<code>https://doi.org/</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><ol>
+<li><p><a href="https://github.com/bwiernik/zotero-shortdoi/releases/latest">下载并导入xpi文件</a></p>
+</li>
+<li><p>修改sci-hub为默认pdf解释器</p>
+<ul>
+<li><p>编辑——首选项——高级——设置编辑器</p>
+</li>
+<li><p>点击I accept the risk！搜索extensions.zotero.findPDFs.resolvers</p>
+</li>
+<li><p>修改值为：</p>
+</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Sci-Hub&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;method&quot;</span><span class="punctuation">:</span><span class="string">&quot;GET&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span><span class="string">&quot;https://sci-hub.se/&#123;doi&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;mode&quot;</span><span class="punctuation">:</span><span class="string">&quot;html&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;selector&quot;</span><span class="punctuation">:</span><span class="string">&quot;#pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;attribute&quot;</span><span class="punctuation">:</span><span class="string">&quot;src&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;automatic&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>zotero</category>
+      </categories>
+      <tags>
+        <tag>插件</tag>
+        <tag>zotero</tag>
       </tags>
   </entry>
   <entry>
@@ -712,65 +771,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Zotero插件</title>
-    <url>/posts/35335/</url>
-    <content><![CDATA[<h2 id="茉莉花插件"><a href="#茉莉花插件" class="headerlink" title="茉莉花插件"></a><a href="https://github.com/l0o0/jasminum?tab=readme-ov-file">茉莉花插件</a></h2><p><a href="https://github.com/l0o0/jasminum?tab=readme-ov-file">茉莉花插件</a>是一个star超过4.3k的zotero中文插件，支持：</p>
-<ol>
-<li>中文期刊附件（PDF/CAJ）的元数据抓取，支持添加PDF/CAJ时自动抓取元数据功能</li>
-<li>集成 Zotero 中文社区转换器的下载与更新功能</li>
-<li>为知网学位论文PDF添加章节书签（依赖于PDFtk）</li>
-<li>更新中文文献引用次数，核心期刊信息</li>
-<li>合并/拆分姓，名，识别文献条目语言，下载知网附件，统一日期格式等</li>
-</ol>
-<span id="more"></span>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
-<li><p>安装PDFtk</p>
-<p><a href="https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/pdftk_server-2.02-mac_osx-10.11-setup.pkg">点我[Intel MacOS(&gt;10.15)]&gt;</a>下载</p>
-</li>
-<li><p>下载xpi文件</p>
-<p>下载最新的<a href="https://github.com/l0o0/jasminum/releases/latest">xpi</a>文件（Firefox浏览器用户记住右键另存为），打开 Zotero -&gt; 工具 -&gt; 插件 -&gt; 右上小齿轮图标 -&gt; Install Add-on From File … -&gt; 选择下载好的xpi文件。</p>
-</li>
-<li><p>更新Zotero Connect</p>
-<p>右键选择浏览器插件的Zotero Connect插件，选择选项-&gt;Advanced-&gt;Update Translators可以抓取知网的full text了</p>
-<img src="/posts/35335/image-20240110195046701.png" class="" title="image-20240110195046701">
-</li>
-<li><p>重启Zotero</p>
-</li>
-</ol>
-<h2 id="Zotero-shortdoi"><a href="#Zotero-shortdoi" class="headerlink" title="Zotero-shortdoi"></a><a href="https://github.com/bwiernik/zotero-shortdoi">Zotero-shortdoi</a></h2><p>使用CrossRef API自动获取期刊文章的doi并使用<a href="http://shortdoi.org/">http://shortdoi.org</a>查找短 DOI 名称，支持</p>
-<ol>
-<li>获取短DOI：对于所选项目，查找短DOI（替换存储的DOI，如果有）并标记无效DOI。</li>
-<li>获取长 DOI：对于所选项目，查找完整 DOI（替换存储的 DOI，如果有）并标记无效 DOI。</li>
-<li>验证和清理 DOI：对于选定的项目，查找完整的 DOI（替换存储的 DOI，如果有），验证存储的 DOI 是否有效，并标记无效的 DOI。<ul>
-<li>此功能还会从 DOI 字段中删除不必要的前缀（例如<code>doi:</code>、或发布商 URL 前缀）。<code>https://doi.org/</code></li>
-</ul>
-</li>
-</ol>
-<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><ol>
-<li><p><a href="https://github.com/bwiernik/zotero-shortdoi/releases/latest">下载并导入xpi文件</a></p>
-</li>
-<li><p>修改sci-hub为默认pdf解释器</p>
-<ul>
-<li><p>编辑——首选项——高级——设置编辑器</p>
-</li>
-<li><p>点击I accept the risk！搜索extensions.zotero.findPDFs.resolvers</p>
-</li>
-<li><p>修改值为：</p>
-</li>
-</ul>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;Sci-Hub&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;method&quot;</span><span class="punctuation">:</span><span class="string">&quot;GET&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span><span class="string">&quot;https://sci-hub.se/&#123;doi&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;mode&quot;</span><span class="punctuation">:</span><span class="string">&quot;html&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;selector&quot;</span><span class="punctuation">:</span><span class="string">&quot;#pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;attribute&quot;</span><span class="punctuation">:</span><span class="string">&quot;src&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;automatic&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>zotero</category>
-      </categories>
-      <tags>
-        <tag>插件</tag>
-        <tag>zotero</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>chatgpt话术</title>
     <url>/posts/14789/</url>
     <content><![CDATA[<p>chatgpt话术</p>
@@ -791,16 +791,16 @@
 <span id="more"></span>
 <ol>
 <li><p>首先将参考文献自动编号</p>
-<img src="/posts/37449/image-20231220202721738.png" class="" title="image-20231220202721738">
+
 </li>
 <li><p>光标移到需要引用的位置，选择【引用】-【交叉引用】，插入需要引用文献编号的首位和末位，然后点击【开始】选择$X^2$</p>
-<img src="/posts/37449/image-20231220203157006.png" class="" title="image-20231220203157006">
+
 </li>
 <li><p>选中右键选择<strong>切换域代码</strong>，得到下面的代码</p>
 <figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153957510</span> \<span class="variable">r</span> \<span class="variable">h</span>  \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153996683</span> \<span class="variable">r</span> \<span class="variable">h</span>  \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>修改上面的代码如下，右键选择<strong>更新域</strong>即可实现</p>
 <figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153957510</span> \<span class="variable">r</span> \<span class="variable">h</span> \<span class="type">#</span><span class="string">&quot;[0&quot;</span> \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span><span class="operator">-</span><span class="punctuation">&#123;</span><span class="variable">REF</span> <span class="type">_Ref153996683</span> \<span class="variable">r</span> \<span class="variable">h</span> \<span class="type">#</span><span class="string">&quot;0]&quot;</span> \<span class="operator">*</span> <span class="variable">MERGEFORMAT</span> <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<img src="/posts/37449/image-20231220203700207.png" class="" title="image-20231220203700207">
+
 </li>
 </ol>
 ]]></content>
@@ -810,6 +810,107 @@
       <tags>
         <tag>Word</tag>
         <tag>参考文献</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端基础</title>
+    <url>/posts/48395/</url>
+    <content><![CDATA[<p>记录前端知识</p>
+<span id="more"></span>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><h5 id="arr-includes"><a href="#arr-includes" class="headerlink" title="arr.includes()"></a>arr.includes()</h5><p>判断一个数组是否包含一个指定的值，如果是返回 true，否则false</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">arr.<span class="title function_">includes</span>(searchElement)</span><br><span class="line">arr.<span class="title function_">includes</span>(searchElement, fromIndex)<span class="comment">//fromIndex 从该索引处进行查找，如果为负值，则按升序从 array.length + fromIndex 的索引开始搜索</span></span><br></pre></td></tr></table></figure>
+<h5 id="arr-slice"><a href="#arr-slice" class="headerlink" title="arr.slice()"></a>arr.slice()</h5><p>slice() 方法可从已有的数组中返回选定的元素。</p>
+<p>slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。</p>
+<p><strong>注意：</strong> slice() 方法不会改变原始数组</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">arr.<span class="title function_">slice</span>()</span><br><span class="line">arr.<span class="title function_">slice</span>(start)</span><br><span class="line">arr.<span class="title function_">slice</span>(start, end)</span><br><span class="line"><span class="comment">//start和end是数组的索引（可为负数） 从第start开始截取到end（不包含）结束</span></span><br></pre></td></tr></table></figure>
+<h5 id="str-lastIndexOf"><a href="#str-lastIndexOf" class="headerlink" title="str.lastIndexOf()"></a>str.lastIndexOf()</h5><p>搜索该字符串并返回指定子字符串最后一次出现的索引，如果找到了 <code>searchString</code>，则返回最后一次出现的索引，否则返回 <code>-1</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">str.<span class="title function_">lastIndexOf</span>(searchString)</span><br><span class="line">str.<span class="title function_">lastIndexOf</span>(searchString, position)<span class="comment">//返回指定子字符串在小于或等于 position 的位置中的最后一次出现的索引, 默认为 +Infinity</span></span><br></pre></td></tr></table></figure>
+<h5 id="str-padStart"><a href="#str-padStart" class="headerlink" title="str.padStart()"></a>str.padStart()</h5><p>用另一个字符串填充当前字符串（如果需要会重复填充），直到达到给定的长度。填充是从当前字符串的开头开始的。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">padStart</span>(targetLength)</span><br><span class="line"><span class="title function_">padStart</span>(targetLength, padString)</span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">10</span>); <span class="comment">// &quot;       abc&quot;</span></span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">10</span>, <span class="string">&quot;foo&quot;</span>); <span class="comment">// &quot;foofoofabc&quot;</span></span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">6</span>, <span class="string">&quot;123465&quot;</span>); <span class="comment">// &quot;123abc&quot;</span></span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">1</span>); <span class="comment">// &quot;abc&quot;</span></span><br></pre></td></tr></table></figure>
+<h5 id="Map对象"><a href="#Map对象" class="headerlink" title="Map对象"></a>Map对象</h5><h6 id="Map"><a href="#Map" class="headerlink" title="Map()"></a>Map()</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>(iterable)<span class="comment">//iterable是键值对数组或者其他可迭代对象，</span></span><br><span class="line"><span class="comment">//eg：const myMap = new Map([[1, &quot;one&quot;],[2, &quot;two&quot;],[3, &quot;three&quot;]]);</span></span><br></pre></td></tr></table></figure>
+<h5 id="JavaScript-位运算符"><a href="#JavaScript-位运算符" class="headerlink" title="JavaScript 位运算符"></a><strong>JavaScript 位运算符</strong></h5><p>判断<code>n</code>是否是2的整数次幂可以采用<code>(n &amp; (n - 1)) == 0</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>&amp;</th>
+<th>AND</th>
+<th>如果两位都是 1 则设置每位为 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td></td>
+<td>OR</td>
+<td>如果两位之一为 1 则设置每位为 1</td>
+</tr>
+<tr>
+<td>^</td>
+<td>XOR</td>
+<td>如果两位只有一位为 1 则设置每位为 1</td>
+</tr>
+<tr>
+<td>~</td>
+<td>NOT</td>
+<td>反转所有位</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>零填充左位移</td>
+<td>通过从右推入零向左位移，并使最左边的位脱落。</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>有符号右位移</td>
+<td>通过从左推入最左位的拷贝来向右位移，并使最右边的位脱落。</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>零填充右位移</td>
+<td>通过从左推入零来向右位移，并使最右边的位脱落。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h5 id="text-transform"><a href="#text-transform" class="headerlink" title="text-transform"></a>text-transform</h5><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">text-transform</span>: none; // 阻止大小写被转换</span><br><span class="line"><span class="attribute">text-transform</span>: capitalize; // 单词首字母大写</span><br><span class="line"><span class="attribute">text-transform</span>: uppercase; // 全部大写</span><br><span class="line"><span class="attribute">text-transform</span>: lowercase; // 全部小写</span><br><span class="line"><span class="attribute">text-transform</span>: full-width; // 强制将字符写在正方形内，实现与中文对齐 firefox || safari</span><br></pre></td></tr></table></figure>
+<h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><h5 id="var、let、const-的差异？"><a href="#var、let、const-的差异？" class="headerlink" title="var、let、const 的差异？"></a>var、let、const 的差异？</h5><p>Var、let、const都可以用作变量的声明。</p>
+<p>var声明的变量会添加到全局对象中，可以使用全局对象进行访问，let和const不能。</p>
+<p>var声明的变量存在变量提升，在声明之前可以访问不会报错，let和const声明的变量存在暂时性死区，不能提前访问。</p>
+<p>let和const是块级作用域，不可以在一个作用域内重复声明，var是函数作用域。</p>
+<p>const声明的常量不可以修改，引用类型不能修改指针。</p>
+<h5 id="for-in和for-of的区别"><a href="#for-in和for-of的区别" class="headerlink" title="for in和for of的区别"></a><strong>for in和for of</strong>的区别</h5><p>两者都是遍历的方法，for in用于遍历索引，for of用于遍历元素值。</p>
+<p>for in多用于遍历对象，因为for in在遍历数组的索引的时候，索引的值为字符串类型，同时也会遍历数组的所有可枚举属性，包括原型上的方法和属性，这通常不是我们想要的。</p>
+<p>for of用遍历数/数组对象/字符串/<code>map</code>/<code>set</code>等拥有迭代器对象（<code>iterator</code>）的集合，但是不能遍历对象，因为没有迭代器对象。</p>
+<h5 id="虚拟滚动技术如何实现"><a href="#虚拟滚动技术如何实现" class="headerlink" title="虚拟滚动技术如何实现"></a>虚拟滚动技术如何实现</h5><h2 id="调试技巧"><a href="#调试技巧" class="headerlink" title="调试技巧"></a>调试技巧</h2><p>vscode中三层以上的对象无法在控制台输出，采用<code>console.dir(obj, &#123; depth: null &#125;);</code>的格式输出即可</p>
+<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><p><strong>组件</strong>：大驼峰</p>
+<p><strong>文件夹</strong>：小写单词并用-连接</p>
+<p><strong>js文件</strong>：小写单词并用-连接（类文件：大驼峰）</p>
+<p><strong>变量</strong>：小驼峰 类型+对象描述</p>
+<p><strong>函数</strong>：小驼峰 （构造函数：大驼峰）前缀使用动词描述</p>
+<p><strong>常量</strong>：大写</p>
+<p><strong>私有属性</strong>：_前缀加公共属性/函数的命名方式</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>动态规划通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。适用于有重叠子问题和最优子结构性质的问题，并且记录所有子问题的结果。动态规划有自底向上和自顶向下两种解决问题的方式。自顶向下即记忆化递归，自底向上就是递推。一旦一个子问题的求解得到结果，以后的计算过程就不会修改它，这样的特点叫做无后效性，求解问题的过程形成了一张有向无环图。</p>
+<p>bfs中每一层要用新的变量保存</p>
+<h3 id="手撕"><a href="#手撕" class="headerlink" title="手撕"></a>手撕</h3><ol>
+<li><p>给定形如 a.b.c.d 的字符串，构造一个对象如下: { a:{ b:{ c:{ d:null } } } }</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">constructObj</span> = (<span class="params">str</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> str.<span class="title function_">split</span>(<span class="string">&#x27;.&#x27;</span>).<span class="title function_">reduceRight</span>(<span class="function">(<span class="params">acc, key</span>) =&gt;</span> (&#123; [key]: acc &#125;), <span class="literal">null</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">constructObj</span>(<span class="string">&#x27;a.b.c.d&#x27;</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ol>
+<h2 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h2><p><strong>双竖杠与双问号的区别</strong>：双竖杠||，只要前面的值转为布尔值为false时，就取后面，否则取前面，如undefined、null、false、空字符串和数值0</p>
+<p>而双问号则为：前面的值为null、undefined，则取后面的值，否则都取前面的值。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h4 id="Storybook"><a href="#Storybook" class="headerlink" title="Storybook"></a>Storybook</h4><h5 id="storybook的doc中类型不显示"><a href="#storybook的doc中类型不显示" class="headerlink" title="storybook的doc中类型不显示"></a><strong>storybook的doc中类型不显示</strong></h5><p>组件tsx文件中ts类型要写在传参后面，eg：</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">Button</span> = (<span class="params">&#123;</span></span><br><span class="line"><span class="params">  primary = <span class="literal">false</span>,</span></span><br><span class="line"><span class="params">  size = <span class="string">&#x27;medium&#x27;</span>,</span></span><br><span class="line"><span class="params">  backgroundColor,</span></span><br><span class="line"><span class="params">  label,</span></span><br><span class="line"><span class="params">  hoverOpacity = <span class="number">0.8</span>,</span></span><br><span class="line"><span class="params">  ...props</span></span><br><span class="line"><span class="params">&#125;: ButtonProps</span>) =&gt; &#123;...</span><br></pre></td></tr></table></figure>
+<h5 id="storybook在vercel下部署配置vercel-json"><a href="#storybook在vercel下部署配置vercel-json" class="headerlink" title="storybook在vercel下部署配置vercel.json"></a><strong>storybook在vercel下部署配置vercel.json</strong></h5><p>指定build的指令和文件输出的目录</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;$schema&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://openapi.vercel.sh/vercel.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;buildCommand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run build-storybook&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devCommand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run storybook&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;installCommand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm install&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;framework&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;outputDirectory&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./storybook-static&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -828,84 +929,27 @@
       </tags>
   </entry>
   <entry>
-    <title>前端基础</title>
-    <url>/posts/48395/</url>
-    <content><![CDATA[<p>记录前端知识</p>
+    <title>接口测试</title>
+    <url>/posts/25505/</url>
+    <content><![CDATA[<h2 id="Postman"><a href="#Postman" class="headerlink" title="Postman"></a>Postman</h2><p>一款好用的API/接口功能测试工具</p>
 <span id="more"></span>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ol>
-<li><h5 id="arr-includes"><a href="#arr-includes" class="headerlink" title="arr.includes()"></a>arr.includes()</h5><p>判断一个数组是否包含一个指定的值，如果是返回 true，否则false</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">arr.<span class="title function_">includes</span>(searchElement)</span><br><span class="line">arr.<span class="title function_">includes</span>(searchElement, fromIndex)<span class="comment">//fromIndex 从该索引处进行查找，如果为负值，则按升序从 array.length + fromIndex 的索引开始搜索</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h5 id="arr-slice"><a href="#arr-slice" class="headerlink" title="arr.slice()"></a>arr.slice()</h5><p>slice() 方法可从已有的数组中返回选定的元素。</p>
-<p>slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。</p>
-<p><strong>注意：</strong> slice() 方法不会改变原始数组</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">arr.<span class="title function_">slice</span>()</span><br><span class="line">arr.<span class="title function_">slice</span>(start)</span><br><span class="line">arr.<span class="title function_">slice</span>(start, end)</span><br><span class="line"><span class="comment">//start和end是数组的索引（可为负数） 从第start开始截取到end（不包含）结束</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><h5 id="str-lastIndexOf"><a href="#str-lastIndexOf" class="headerlink" title="str.lastIndexOf()"></a>str.lastIndexOf()</h5><p>搜索该字符串并返回指定子字符串最后一次出现的索引，如果找到了 <code>searchString</code>，则返回最后一次出现的索引，否则返回 <code>-1</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">str.<span class="title function_">lastIndexOf</span>(searchString)</span><br><span class="line">str.<span class="title function_">lastIndexOf</span>(searchString, position)<span class="comment">//返回指定子字符串在小于或等于 position 的位置中的最后一次出现的索引, 默认为 +Infinity</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><h5 id="str-padStart"><a href="#str-padStart" class="headerlink" title="str.padStart()"></a>str.padStart()</h5><p>用另一个字符串填充当前字符串（如果需要会重复填充），直到达到给定的长度。填充是从当前字符串的开头开始的。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">padStart</span>(targetLength)</span><br><span class="line"><span class="title function_">padStart</span>(targetLength, padString)</span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">10</span>); <span class="comment">// &quot;       abc&quot;</span></span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">10</span>, <span class="string">&quot;foo&quot;</span>); <span class="comment">// &quot;foofoofabc&quot;</span></span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">6</span>, <span class="string">&quot;123465&quot;</span>); <span class="comment">// &quot;123abc&quot;</span></span><br><span class="line"><span class="string">&quot;abc&quot;</span>.<span class="title function_">padStart</span>(<span class="number">1</span>); <span class="comment">// &quot;abc&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><h5 id="Map对象"><a href="#Map对象" class="headerlink" title="Map对象"></a>Map对象</h5><h6 id="Map"><a href="#Map" class="headerlink" title="Map()"></a>Map()</h6><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Map</span>(iterable)<span class="comment">//iterable是键值对数组或者其他可迭代对象，</span></span><br><span class="line"><span class="comment">//eg：const myMap = new Map([[1, &quot;one&quot;],[2, &quot;two&quot;],[3, &quot;three&quot;]]);</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>JavaScript 位运算符</strong></p>
-<p>判断<code>n</code>是否是2的整数次幂可以采用<code>(n &amp; (n - 1)) == 0</code></p>
-<p>| &amp;    | AND          | 如果两位都是 1 则设置每位为 1                            |<br>| —— | —————— | ———————————————————————————— |<br>| |   | OR           | 如果两位之一为 1 则设置每位为 1                          |<br>| ^    | XOR          | 如果两位只有一位为 1 则设置每位为 1                      |<br>| ~    | NOT          | 反转所有位                                               |<br>| &lt;&lt;   | 零填充左位移 | 通过从右推入零向左位移，并使最左边的位脱落。             |<br>| &gt;&gt;   | 有符号右位移 | 通过从左推入最左位的拷贝来向右位移，并使最右边的位脱落。 |<br>| &gt;&gt;&gt;  | 零填充右位移 | 通过从左推入零来向右位移，并使最右边的位脱落。           |</p>
-</li>
-</ol>
-<h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><ol>
-<li><h5 id="var、let、const-的差异？"><a href="#var、let、const-的差异？" class="headerlink" title="var、let、const 的差异？"></a>var、let、const 的差异？</h5><p>Var、let、const都可以用作变量的声明。</p>
-<p>var声明的变量会添加到全局对象中，可以使用全局对象进行访问，let和const不能。</p>
-<p>var声明的变量存在变量提升，在声明之前可以访问不会报错，let和const声明的变量存在暂时性死区，不能提前访问。</p>
-<p>let和const是块级作用域，不可以在一个作用域内重复声明，var是函数作用域。</p>
-<p>const声明的常量不可以修改，引用类型不能修改指针。</p>
-</li>
-<li><h5 id="for-in和for-of的区别"><a href="#for-in和for-of的区别" class="headerlink" title="for in和for of的区别"></a><strong>for in和for of</strong>的区别</h5><p>两者都是遍历的方法，for in用于遍历索引，for of用于遍历元素值。</p>
-<p>for in多用于遍历对象，因为for in在遍历数组的索引的时候，索引的值为字符串类型，同时也会遍历数组的所有可枚举属性，包括原型上的方法和属性，这通常不是我们想要的。</p>
-<p>for of用遍历数/数组对象/字符串/<code>map</code>/<code>set</code>等拥有迭代器对象（<code>iterator</code>）的集合，但是不能遍历对象，因为没有迭代器对象。</p>
-</li>
-<li><p>虚拟滚动技术如何实现的</p>
-</li>
-<li></li>
-</ol>
-<h2 id="调试技巧"><a href="#调试技巧" class="headerlink" title="调试技巧"></a>调试技巧</h2><p>vscode中三层以上的对象无法在控制台输出，采用<code>console.dir(obj, &#123; depth: null &#125;);</code>的格式输出即可</p>
-<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><p><strong>组件</strong>：大驼峰</p>
-<p><strong>文件夹</strong>：小写单词并用-连接</p>
-<p><strong>js文件</strong>：小写单词并用-连接（类文件：大驼峰）</p>
-<p><strong>变量</strong>：小驼峰 类型+对象描述</p>
-<p><strong>函数</strong>：小驼峰 （构造函数：大驼峰）前缀使用动词描述</p>
-<p><strong>常量</strong>：大写</p>
-<p><strong>私有属性</strong>：_前缀加公共属性/函数的命名方式</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>动态规划通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。适用于有重叠子问题和最优子结构性质的问题，并且记录所有子问题的结果。动态规划有自底向上和自顶向下两种解决问题的方式。自顶向下即记忆化递归，自底向上就是递推。一旦一个子问题的求解得到结果，以后的计算过程就不会修改它，这样的特点叫做无后效性，求解问题的过程形成了一张有向无环图。</p>
-<p>bfs中每一层要用新的变量保存</p>
-<h3 id="手撕"><a href="#手撕" class="headerlink" title="手撕"></a>手撕</h3><ol>
-<li><p>给定形如 a.b.c.d 的字符串，构造一个对象如下: { a:{ b:{ c:{ d:null } } } }</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">constructObj</span> = (<span class="params">str</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> str.<span class="title function_">split</span>(<span class="string">&#x27;.&#x27;</span>).<span class="title function_">reduceRight</span>(<span class="function">(<span class="params">acc, key</span>) =&gt;</span> (&#123; [key]: acc &#125;), <span class="literal">null</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">constructObj</span>(<span class="string">&#x27;a.b.c.d&#x27;</span>));</span><br></pre></td></tr></table></figure>
-</li>
-<li></li>
-</ol>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="Storybook"><a href="#Storybook" class="headerlink" title="Storybook"></a>Storybook</h3><ol>
-<li><p><strong>storybook的doc中类型不显示</strong></p>
-<p>组件tsx文件中ts类型要写在传参后面，eg：</p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">Button</span> = (<span class="params">&#123;</span></span><br><span class="line"><span class="params">  primary = <span class="literal">false</span>,</span></span><br><span class="line"><span class="params">  size = <span class="string">&#x27;medium&#x27;</span>,</span></span><br><span class="line"><span class="params">  backgroundColor,</span></span><br><span class="line"><span class="params">  label,</span></span><br><span class="line"><span class="params">  hoverOpacity = <span class="number">0.8</span>,</span></span><br><span class="line"><span class="params">  ...props</span></span><br><span class="line"><span class="params">&#125;: ButtonProps</span>) =&gt; &#123;...</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>storybook在vercel下部署配置vercel.json</strong></p>
-<p>指定build的指令和文件输出的目录</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;$schema&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://openapi.vercel.sh/vercel.json&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;buildCommand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run build-storybook&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;devCommand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm run storybook&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;installCommand&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm install&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;framework&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;outputDirectory&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./storybook-static&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><p><a href="https://www.postman.com/postman/workspace/postman-answers/request/9215231-91c3d1db-da28-4e33-a739-39ab87958c2f?tab=configurations">collection示例</a></p>
+<p><strong>Pre-request Script</strong>：请求发送到服务端之前运行一次，用于设置环境变量或者发送异步请求。</p>
+<p><strong>Postbot</strong>：AI机器人，每个月免费提问50次</p>
+
+<h3 id="Monitor"><a href="#Monitor" class="headerlink" title="Monitor"></a>Monitor</h3><p>基于云端的监控服务，每月1000个请求免费额度，可以实现自动化的定时任务</p>
+
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p><strong>pm.execution.setNextRequest()</strong></p>
+<p>指定运行的下一个请求，仅在您运行集合时使用。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="property">execution</span>.<span class="title function_">setNextRequest</span>(<span class="string">&quot;request_name&quot;</span>) </span><br><span class="line"><span class="comment">// 重复执行100次注册</span></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">    pm.<span class="property">execution</span>.<span class="title function_">setNextRequest</span>(<span class="string">&quot;注册&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line">pm.<span class="property">execution</span>.<span class="title function_">setNextRequest</span>(<span class="literal">null</span>);<span class="comment">// 停止</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>前端</category>
+        <category>测试</category>
       </categories>
       <tags>
-        <tag>前端</tag>
-        <tag>面试</tag>
+        <tag>接口</tag>
+        <tag>测试</tag>
+        <tag>自动化</tag>
       </tags>
   </entry>
   <entry>
@@ -962,30 +1006,6 @@
       </tags>
   </entry>
   <entry>
-    <title>接口测试</title>
-    <url>/posts/25505/</url>
-    <content><![CDATA[<h2 id="Postman"><a href="#Postman" class="headerlink" title="Postman"></a>Postman</h2><p>一款好用的API/接口功能测试工具</p>
-<span id="more"></span>
-<h3 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h3><p><a href="https://www.postman.com/postman/workspace/postman-answers/request/9215231-91c3d1db-da28-4e33-a739-39ab87958c2f?tab=configurations">collection示例</a></p>
-<p><strong>Pre-request Script</strong>：请求发送到服务端之前运行一次，用于设置环境变量或者发送异步请求。</p>
-<p><strong>Postbot</strong>：AI机器人，每个月免费提问50次</p>
-<img src="/posts/25505/image-20240524164950519.png" class="" title="image-20240524164950519">
-<h3 id="Monitor"><a href="#Monitor" class="headerlink" title="Monitor"></a>Monitor</h3><p>基于云端的监控服务，每月1000个请求免费额度，可以实现自动化的定时任务</p>
-<img src="/posts/25505/image-20240524203859586.png" class="" title="image-20240524203859586">
-<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p><strong>pm.execution.setNextRequest()</strong></p>
-<p>指定运行的下一个请求，仅在您运行集合时使用。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">pm.<span class="property">execution</span>.<span class="title function_">setNextRequest</span>(<span class="string">&quot;request_name&quot;</span>) </span><br><span class="line"><span class="comment">// 重复执行100次注册</span></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(i);</span><br><span class="line">    pm.<span class="property">execution</span>.<span class="title function_">setNextRequest</span>(<span class="string">&quot;注册&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line">pm.<span class="property">execution</span>.<span class="title function_">setNextRequest</span>(<span class="literal">null</span>);<span class="comment">// 停止</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>接口</tag>
-        <tag>测试</tag>
-        <tag>自动化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爬虫红线</title>
     <url>/posts/45344/</url>
     <content><![CDATA[<h2 id="禁止"><a href="#禁止" class="headerlink" title="禁止"></a>禁止</h2><ol>
@@ -1007,32 +1027,6 @@
       <tags>
         <tag>爬虫</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>网站部署与运维</title>
-    <url>/posts/22782/</url>
-    <content><![CDATA[<span id="more"></span>
-<h2 id="更改DNS解析到Cloudflare，配置vercel国内域名"><a href="#更改DNS解析到Cloudflare，配置vercel国内域名" class="headerlink" title="更改DNS解析到Cloudflare，配置vercel国内域名"></a>更改DNS解析到Cloudflare，配置vercel国内域名</h2><ol>
-<li><p>搜索<a href="https://wanwang.aliyun.com/domain">阿里云域名</a>并购买一个域名</p>
-</li>
-<li><p>创建域名信息模板并实名认证，需要身份证照片</p>
-</li>
-<li><p>快速注册域名，接受手机验证码即可</p>
-</li>
-<li><p>准备好域名后，加入cloudflare website 选择免费计划，点继续到看到nameservers</p>
-</li>
-<li><p><a href="https://dc.console.aliyun.com/">域名列表页面</a>点击管理，修改DNS，更新DNS服务器名称为Cloudflare提供的、等待邮件</p>
-<p><img src="https://s2.loli.net/2024/05/29/hHQZPoWjAy5TRrJ.png" alt="image.png" style="zoom:50%;" /></p>
-</li>
-<li><p>在Cloudflare添加A记录进行解析，如果要设置不同的子域，替换www，A记录是映射域名与ip，CNAME是映射域名与其他域名</p>
-<p><img src="https://s2.loli.net/2024/05/29/cfNKomYIFHiRaZb.png" alt="image.png"></p>
-<p><img src="https://s2.loli.net/2024/05/29/XP7kn45aHYKfomT.png" alt="image.png" style="zoom: 50%;" /></p>
-</li>
-<li><p>进入vercel的settings，domains添加你设置的子域名</p>
-<p><img src="https://s2.loli.net/2024/05/29/YzLR9sink3fwvDN.png" alt="image.png"></p>
-</li>
-</ol>
-]]></content>
   </entry>
   <entry>
     <title>格密码基础</title>
@@ -1117,7 +1111,7 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="格的基本域"><a href="#�
 <h3 id="双边非齐次小整数解问题（Bi-ISIS）"><a href="#双边非齐次小整数解问题（Bi-ISIS）" class="headerlink" title="双边非齐次小整数解问题（Bi-ISIS）"></a>双边非齐次小整数解问题（Bi-ISIS）</h3><p>给定一个矩阵$A\in\mathbb Z_q^{m\times m}$，选取两个随机向量$u_1,u_2\in\mathbb Z_q^m$，寻找两个非零整数向量$z,y\in \mathbb Z^m$，且$|z|,|y|\leq\beta$，满足$Az=u_1\in\mathbb Z_q^m$和$y^TA={u_2}^T\in\mathbb Z_q^{1\times m}$，其中$\beta$表示一个正实数</p>
 <h3 id="计算型双边非齐次小整数解问题（CBi-ISIS）"><a href="#计算型双边非齐次小整数解问题（CBi-ISIS）" class="headerlink" title="计算型双边非齐次小整数解问题（CBi-ISIS）"></a>计算型双边非齐次小整数解问题（CBi-ISIS）</h3><p>给定元组$(A\in\mathbb Z_q^{m\times m},Az,y^TA)$，其中向量$z,y\in\mathbb Z^m$且$|z|,|y|\leq\beta$，$\beta$表示一个正实数，计算$y^TAz$</p>
 <h3 id="环小整数解问题（RSIS）"><a href="#环小整数解问题（RSIS）" class="headerlink" title="环小整数解问题（RSIS）"></a>环小整数解问题（RSIS）</h3><p>给定整数 $m$、$n$、$q,\mathcal{R}$ 表示多项式环，$R_{q}$ 表示系数模 $q$ 的多项式环，随机选择矩阵 $A\in\mathbb{R}_q^{n\times m}$ 和一个阈值参数 $\beta$, 求解一个非零向量 $z\in\mathbb{R}^m$, 满足 $Az= 0$ mod $q$ 且$|z|\leq\beta.$</p>
-<h3 id="一次性非齐次小整数解问题（one-more-ISIS）"><a href="#一次性非齐次小整数解问题（one-more-ISIS）" class="headerlink" title="一次性非齐次小整数解问题（one-more ISIS）"></a>一次性非齐次小整数解问题（one-more ISIS）</h3><img src="/posts/46633/image-20240505172614420.png" class="" title="image-20240505172614420">
+<h3 id="一次性非齐次小整数解问题（one-more-ISIS）"><a href="#一次性非齐次小整数解问题（one-more-ISIS）" class="headerlink" title="一次性非齐次小整数解问题（one-more ISIS）"></a>一次性非齐次小整数解问题（one-more ISIS）</h3>
 <h2 id="格上抽样算法"><a href="#格上抽样算法" class="headerlink" title="格上抽样算法"></a>格上抽样算法</h2><p><strong>TrapGen(1^n)<sup><a href="#Aja99">[Aja99,AP11]</a></sup></strong>: 给定任意素数$q=poly(n)$，和任意$m\geq 6n\lg q $，存在概率性多项式算法$TrapGen(1^n)$，输入$1^n$，输出一对矩阵$(A\in\mathbb Z_q^{n\times m},B\in\mathbb Z^{m\times m})$，其中$A$在$Z_q^{n\times m}$是均匀分布的，$B$是$\Lambda_q^{\perp}(A)$的一个格基同时以极大的概率满足$|B| \leq O(n\log q)$和$|\tilde{B}| \leq O(\sqrt{n\log q})$</p>
 <p><strong>SamplePre(A,T,u,s)</strong>:输入矩阵$A\in\mathbb Z_q^{n\times m}$,$\Lambda_q^{\perp}(A)$的短陷门基$T$，目标值$u\in\mathbb Z_q^n$和高斯参数$s\geq ||\tilde T||\omega\sqrt{\log m}$，输出向量$e\in\mathbb Z_q^n$其统计分布接近于$D_{\Lambda_{q}^{u}(A),s}$</p>
 <p><strong>SampleMat(A,T,s,U)</strong>：给定矩阵$A\in\mathbb Z_q^{n\times m}$，,$\Lambda_q^{\perp}(A)$的短陷门基$T$，$U\in\mathbb Z_q^n$是一个随机矩阵，高斯参数s，存在多项式时间算法输出矩阵$S\in\mathbb Z^{m\times k}$满足$AS=U\ mod\ q$并且$||S||\leq s\sqrt m$</p>
@@ -1146,5 +1140,31 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="格的基本域"><a href="#�
         <tag>密码学</tag>
         <tag>格</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>网站部署与运维</title>
+    <url>/posts/22782/</url>
+    <content><![CDATA[<span id="more"></span>
+<h2 id="更改DNS解析到Cloudflare，配置vercel国内域名"><a href="#更改DNS解析到Cloudflare，配置vercel国内域名" class="headerlink" title="更改DNS解析到Cloudflare，配置vercel国内域名"></a>更改DNS解析到Cloudflare，配置vercel国内域名</h2><ol>
+<li><p>搜索<a href="https://wanwang.aliyun.com/domain">阿里云域名</a>并购买一个域名</p>
+</li>
+<li><p>创建域名信息模板并实名认证，需要身份证照片</p>
+</li>
+<li><p>快速注册域名，接受手机验证码即可</p>
+</li>
+<li><p>准备好域名后，加入cloudflare website 选择免费计划，点继续到看到nameservers</p>
+</li>
+<li><p><a href="https://dc.console.aliyun.com/">域名列表页面</a>点击管理，修改DNS，更新DNS服务器名称为Cloudflare提供的、等待邮件</p>
+<p><img src="https://s2.loli.net/2024/05/29/hHQZPoWjAy5TRrJ.png" alt="image.png" style="zoom:50%;" /></p>
+</li>
+<li><p>在Cloudflare添加A记录进行解析，如果要设置不同的子域，替换www，A记录是映射域名与ip，CNAME是映射域名与其他域名</p>
+<p><img src="https://s2.loli.net/2024/05/29/cfNKomYIFHiRaZb.png" alt="image.png"></p>
+<p><img src="https://s2.loli.net/2024/05/29/XP7kn45aHYKfomT.png" alt="image.png" style="zoom: 50%;" /></p>
+</li>
+<li><p>进入vercel的settings，domains添加你设置的子域名</p>
+<p><img src="https://s2.loli.net/2024/05/29/YzLR9sink3fwvDN.png" alt="image.png"></p>
+</li>
+</ol>
+]]></content>
   </entry>
 </search>

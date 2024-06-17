@@ -29,14 +29,12 @@
 <meta property="og:site_name" content="MY BLOG">
 <meta property="og:description" content="格给定 $b_1,b_2,\dots,b_n\in \mathbb{R}^m$ 是$n$个线性无关的列向量，由它们生成的格被定义为：  \mathcal L(b_1,b_2,...,b_n)&#x3D;\left\{\sum{x_ib_i}|x_i∈\mathbb Z\right\}其中$b_1,b_2,…,b_n$称作格的基。如果我们定义矩阵$B$是$m\times n$的矩阵，其列为$b_1,b_2,\">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/posts/46633/image-20240505172614420.png">
 <meta property="article:published_time" content="2023-11-13T17:30:53.000Z">
 <meta property="article:modified_time" content="2024-05-05T09:26:52.317Z">
 <meta property="article:author" content="HJL">
 <meta property="article:tag" content="密码学">
 <meta property="article:tag" content="格">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/posts/46633/image-20240505172614420.png">
 
 <link rel="canonical" href="http://example.com/posts/46633/">
 
@@ -359,7 +357,7 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="格的基本域"><a href="#�
 <h3 id="双边非齐次小整数解问题（Bi-ISIS）"><a href="#双边非齐次小整数解问题（Bi-ISIS）" class="headerlink" title="双边非齐次小整数解问题（Bi-ISIS）"></a>双边非齐次小整数解问题（Bi-ISIS）</h3><p>给定一个矩阵$A\in\mathbb Z_q^{m\times m}$，选取两个随机向量$u_1,u_2\in\mathbb Z_q^m$，寻找两个非零整数向量$z,y\in \mathbb Z^m$，且$|z|,|y|\leq\beta$，满足$Az=u_1\in\mathbb Z_q^m$和$y^TA={u_2}^T\in\mathbb Z_q^{1\times m}$，其中$\beta$表示一个正实数</p>
 <h3 id="计算型双边非齐次小整数解问题（CBi-ISIS）"><a href="#计算型双边非齐次小整数解问题（CBi-ISIS）" class="headerlink" title="计算型双边非齐次小整数解问题（CBi-ISIS）"></a>计算型双边非齐次小整数解问题（CBi-ISIS）</h3><p>给定元组$(A\in\mathbb Z_q^{m\times m},Az,y^TA)$，其中向量$z,y\in\mathbb Z^m$且$|z|,|y|\leq\beta$，$\beta$表示一个正实数，计算$y^TAz$</p>
 <h3 id="环小整数解问题（RSIS）"><a href="#环小整数解问题（RSIS）" class="headerlink" title="环小整数解问题（RSIS）"></a>环小整数解问题（RSIS）</h3><p>给定整数 $m$、$n$、$q,\mathcal{R}$ 表示多项式环，$R_{q}$ 表示系数模 $q$ 的多项式环，随机选择矩阵 $A\in\mathbb{R}_q^{n\times m}$ 和一个阈值参数 $\beta$, 求解一个非零向量 $z\in\mathbb{R}^m$, 满足 $Az= 0$ mod $q$ 且$|z|\leq\beta.$</p>
-<h3 id="一次性非齐次小整数解问题（one-more-ISIS）"><a href="#一次性非齐次小整数解问题（one-more-ISIS）" class="headerlink" title="一次性非齐次小整数解问题（one-more ISIS）"></a>一次性非齐次小整数解问题（one-more ISIS）</h3><img src="/posts/46633/image-20240505172614420.png" class="" title="image-20240505172614420">
+<h3 id="一次性非齐次小整数解问题（one-more-ISIS）"><a href="#一次性非齐次小整数解问题（one-more-ISIS）" class="headerlink" title="一次性非齐次小整数解问题（one-more ISIS）"></a>一次性非齐次小整数解问题（one-more ISIS）</h3>
 <h2 id="格上抽样算法"><a href="#格上抽样算法" class="headerlink" title="格上抽样算法"></a>格上抽样算法</h2><p><strong>TrapGen(1^n)<sup><a href="#Aja99">[Aja99,AP11]</a></sup></strong>: 给定任意素数$q=poly(n)$，和任意$m\geq 6n\lg q $，存在概率性多项式算法$TrapGen(1^n)$，输入$1^n$，输出一对矩阵$(A\in\mathbb Z_q^{n\times m},B\in\mathbb Z^{m\times m})$，其中$A$在$Z_q^{n\times m}$是均匀分布的，$B$是$\Lambda_q^{\perp}(A)$的一个格基同时以极大的概率满足$|B| \leq O(n\log q)$和$|\tilde{B}| \leq O(\sqrt{n\log q})$</p>
 <p><strong>SamplePre(A,T,u,s)</strong>:输入矩阵$A\in\mathbb Z_q^{n\times m}$,$\Lambda_q^{\perp}(A)$的短陷门基$T$，目标值$u\in\mathbb Z_q^n$和高斯参数$s\geq ||\tilde T||\omega\sqrt{\log m}$，输出向量$e\in\mathbb Z_q^n$其统计分布接近于$D_{\Lambda_{q}^{u}(A),s}$</p>
 <p><strong>SampleMat(A,T,s,U)</strong>：给定矩阵$A\in\mathbb Z_q^{n\times m}$，,$\Lambda_q^{\perp}(A)$的短陷门基$T$，$U\in\mathbb Z_q^n$是一个随机矩阵，高斯参数s，存在多项式时间算法输出矩阵$S\in\mathbb Z^{m\times k}$满足$AS=U\ mod\ q$并且$||S||\leq s\sqrt m$</p>
@@ -502,7 +500,7 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="格的基本域"><a href="#�
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -552,7 +550,7 @@ det(\mathcal L(B))=\sqrt{det(B^TB)}</script><h2 id="格的基本域"><a href="#�
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:11</span>
+    <span title="站点阅读时长">1:12</span>
 </div>
     <script type="text/javascript" color="0,0,255" opacity='0.5' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
