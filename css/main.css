@@ -1199,7 +1199,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e4b511;
+  background: #ffff21;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2359,7 +2359,6 @@ mjx-container + br {
 }
 .highlight-container .fa-angle-down:before {
   content: "\f107";
-  margin-left: 0.5em;
 }
 .highlight-container .js_unfold_code_btn,
 .highlight-container .js_retract_code_btn {

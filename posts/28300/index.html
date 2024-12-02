@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#222">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="面试面试官你好，我叫xxx，目前是电子科技大学软件工程专业的一名研究生，将于明年毕业。在本科和研究生阶段，我主修了计算机网络、数据结构、算法设计与分析等课程，并取得了良好的成绩。在实习经历方面，曾在字节担任过一段时间的前端开发实习生，参与了需求评审、技术方案设计，并承担了商家任务调度平台、818大促活动等多个项目前端开发任务。除此之外，我还开发了个人基于React的前端组件库，使用styled-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔试&amp;面试知识">
+<meta property="og:url" content="http://example.com/posts/28300/index.html">
+<meta property="og:site_name" content="MY BLOG">
+<meta property="og:description" content="面试面试官你好，我叫xxx，目前是电子科技大学软件工程专业的一名研究生，将于明年毕业。在本科和研究生阶段，我主修了计算机网络、数据结构、算法设计与分析等课程，并取得了良好的成绩。在实习经历方面，曾在字节担任过一段时间的前端开发实习生，参与了需求评审、技术方案设计，并承担了商家任务调度平台、818大促活动等多个项目前端开发任务。除此之外，我还开发了个人基于React的前端组件库，使用styled-">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-23T14:11:10.000Z">
+<meta property="article:modified_time" content="2024-11-28T12:03:00.345Z">
+<meta property="article:author" content="HJL">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="笔试">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/posts/28300/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>笔试&面试知识 | MY BLOG</title><meta name="robots" content="noindex">
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="MY BLOG" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MY BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        
+            
+  <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/28300/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="HJL">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MY BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          笔试&面试知识
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-09-23 22:11:10" itemprop="dateCreated datePublished" datetime="2024-09-23T22:11:10+08:00">2024-09-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-11-28 20:03:00" itemprop="dateModified" datetime="2024-11-28T20:03:00+08:00">2024-11-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>18k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>30 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <span id="more"></span>
+<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><p>面试官你好，我叫xxx，目前是电子科技大学软件工程专业的一名研究生，将于明年毕业。在本科和研究生阶段，我主修了计算机网络、数据结构、算法设计与分析等课程，并取得了良好的成绩。在实习经历方面，曾在字节担任过一段时间的前端开发实习生，参与了需求评审、技术方案设计，并承担了商家任务调度平台、818大促活动等多个项目前端开发任务。除此之外，我还开发了个人基于React的前端组件库，使用styled-components和storybook增强项目的可复用性和可维护性。对前端开发的学习很有兴趣，希望可以找到一份前端开发工程师的工作。</p>
+<ol>
+<li><h5 id="var、let、const差别"><a href="#var、let、const差别" class="headerlink" title="var、let、const差别"></a>var、let、const差别</h5><p>Var、let、const都可以用作变量的声明。</p>
+<p>var声明的变量会添加到全局对象中，可以使用全局对象进行访问，let和const不能。</p>
+<p>var声明的变量存在变量提升，在声明之前可以访问不会报错，let和const声明的变量存在暂时性死区，不能提前访问。</p>
+<p>let和const是块级作用域，不可以在一个作用域内重复声明，var是函数作用域。</p>
+<p>const声明的常量不可以修改，引用类型不能修改指针。</p>
+</li>
+<li><h5 id="for-in和for-of的区别"><a href="#for-in和for-of的区别" class="headerlink" title="for in和for of的区别"></a>for in和for of的区别</h5><p>两者都是遍历的方法，for in用于遍历索引，for of用于遍历元素值。</p>
+<p>for in多用于遍历对象，因为for in在遍历数组的索引的时候，索引的值为字符串类型，同时也会遍历数组的所有可枚举属性，包括原型上的方法和属性，这通常不是我们想要的。</p>
+<p>for of用遍历数/数组对象/字符串/<code>map</code>/<code>set</code>等拥有迭代器对象（<code>iterator</code>）的集合，但是不能遍历对象，因为没有迭代器对象。</p>
+</li>
+<li><h5 id="延迟加载js的方法"><a href="#延迟加载js的方法" class="headerlink" title="延迟加载js的方法"></a>延迟加载js的方法</h5><p>defer属性</p>
+<p>async属性</p>
+<p>动态创建DOM</p>
+<p>setTimeout延迟加载脚本</p>
+<p>script放到底部加载</p>
+</li>
+<li><p><strong>盒子模型</strong></p>
+<p>一个盒子由四部分组成，margin、border、padding、content</p>
+<p>分为两种盒子模型，标准盒子模型（默认）和怪异盒子模型</p>
+<p>标准盒子模型的宽高为content的宽高，box-sizing为content-box</p>
+<p>怪异盒子模型的宽高包括padding和border，box-sizing为border-box</p>
+</li>
+<li><p><strong>React Fiber</strong></p>
+<p>Fiber叫做纤程，意思是比线程还要纤细的一个过程，可以对渲染实现更加精细的控制。是React16新架构下的虚拟DOM。Fiber可以把一个渲染任务分解为多个渲染函数，而不是一次性完成，把每一个分割的很细的任务视作执行单元，React会检查还剩多少时间，没有时间会将控制权交出去，中间可以返回主线程或者执行其他任务，实现了增量渲染。</p>
+<h3 id="React-Fiber-的核心原理"><a href="#React-Fiber-的核心原理" class="headerlink" title="React Fiber 的核心原理"></a>React Fiber 的核心原理</h3><h5 id="1-可中断的更新过程"><a href="#1-可中断的更新过程" class="headerlink" title="1. 可中断的更新过程"></a>1. <strong>可中断的更新过程</strong></h5><p>在 React Fiber 之前，React 使用的协调（Reconciliation）机制是同步的，即一次渲染和更新操作会从头到尾执行完，无法中断。这对于小规模更新是可以接受的，但在大型应用中，可能会导致界面卡顿或丢失响应。React Fiber 通过将渲染任务拆分成更小的单元，并允许任务在必要时中断，从而解决了这一问题。</p>
+<ul>
+<li><strong>工作单元（Work Unit）</strong>：在 Fiber 中，React 会将更新任务分割为多个小的工作单元（单位任务），每个单元代表一个 React 元素或组件的更新。</li>
+<li><strong>任务的分割与调度</strong>：这些小任务可以被逐个执行，渲染过程不再是不可分割的整体。这使得 React 能够在处理复杂渲染任务时，将这些任务拆分为更小的可中断的工作单元，在必要时暂停当前任务，转而处理更高优先级的任务（如用户交互）。</li>
+</ul>
+<h5 id="2-优先级调度"><a href="#2-优先级调度" class="headerlink" title="2. 优先级调度"></a>2. <strong>优先级调度</strong></h5><p>React Fiber 的另一个关键特性是<strong>优先级调度</strong>。不同类型的更新具有不同的优先级，例如：</p>
+<ul>
+<li>用户输入（如点击或打字）通常是高优先级的。</li>
+<li>数据获取或不影响界面流畅性的渲染更新则可以被认为是低优先级的。</li>
+</ul>
+<p>React Fiber 通过引入一个调度器，使得 React 能够根据任务的紧急程度分配不同的优先级。任务的执行顺序不再是简单的“先来先服务”，而是根据优先级动态调整。这样，React 可以在必要时中断低优先级任务，优先处理用户交互等高优先级任务。</p>
+<h5 id="3-双缓冲机制"><a href="#3-双缓冲机制" class="headerlink" title="3. 双缓冲机制"></a>3. <strong>双缓冲机制</strong></h5><p>React Fiber 使用了一种<strong>双缓冲</strong>（Double Buffering）机制来处理更新工作。它在内存中维护两个 Fiber 树：</p>
+<ul>
+<li><strong>current tree（当前树）</strong>：当前正在显示的界面对应的 Fiber 树。</li>
+<li><strong>workInProgress tree（工作树）</strong>：正在进行更新的 Fiber 树。</li>
+</ul>
+<p>当 React 处理一个更新时，它会在 <code>workInProgress tree</code> 中进行操作，而不影响 <code>current tree</code>。一旦 <code>workInProgress tree</code> 完成了所有更新，React 会将它与 <code>current tree</code> 交换，界面更新才会被应用。这种方式使得整个渲染过程更加平滑，减少了不必要的重绘和性能开销。</p>
+<h5 id="4-增量渲染"><a href="#4-增量渲染" class="headerlink" title="4. 增量渲染"></a>4. <strong>增量渲染</strong></h5><p>由于 Fiber 允许任务被拆分和中断，React 能够<strong>增量渲染</strong>界面。即便一次更新需要修改大量组件，React 也可以逐步地完成渲染，而不是一次性完成。这样可以避免在一次大的更新中卡顿或丢失响应。</p>
+<h5 id="Fiber-数据结构"><a href="#Fiber-数据结构" class="headerlink" title="Fiber 数据结构"></a>Fiber 数据结构</h5><p>React Fiber 的核心数据结构是<strong>Fiber 节点</strong>，它表示每个组件对应的工作单元。每个 Fiber 节点包含了与组件实例、状态、DOM 节点等相关的详细信息。</p>
+<p>Fiber 节点是一个链表结构，链表的设计便于在 Fiber 树中遍历和更新。每个 Fiber 节点有以下几个重要的字段：</p>
+<ul>
+<li><strong>type</strong>：组件的类型，指向 React 组件类、函数组件或原生 DOM 元素。</li>
+<li><strong>child</strong>：指向当前节点的子节点。</li>
+<li><strong>sibling</strong>：指向当前节点的下一个兄弟节点。</li>
+<li><strong>return</strong>：指向当前节点的父节点。</li>
+<li><strong>stateNode</strong>：保存当前组件的状态或 DOM 引用。</li>
+</ul>
+<p>这种链表结构使得 Fiber 树可以高效地遍历和更新，并且可以在中断时恢复之前的操作。</p>
+<h5 id="Fiber-的工作流程"><a href="#Fiber-的工作流程" class="headerlink" title="Fiber 的工作流程"></a>Fiber 的工作流程</h5><p>React Fiber 的渲染过程分为两个阶段：</p>
+<ol>
+<li>Reconciliation 阶段（调和阶段）<ul>
+<li>该阶段是逐步遍历 Fiber 树，计算哪些节点需要更新、删除或创建。</li>
+<li>这一阶段是<strong>增量可中断</strong>的，可以被暂停以处理更高优先级的任务。</li>
+</ul>
+</li>
+<li>Commit 阶段<ul>
+<li>当 Reconciliation 阶段完成后，React 会进入提交阶段，将计算好的更新应用到真实的 DOM。</li>
+<li>该阶段是<strong>不可中断</strong>的，因为它直接影响用户界面的更新。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li></li>
+</ol>
+<h2 id="笔试"><a href="#笔试" class="headerlink" title="笔试"></a>笔试</h2><ol>
+<li><p>实现逻辑地址到物理地址的转换三种方式：</p>
+<p>绝对装入 (适用于单道程序)<br> 编译时产生绝对地址，即逻辑地址直接就是物理地址<br> 一次性将全部进程数据装入内存，装入后物理地址不在改变</p>
+<p>可重定位装入 (静态重定位)<br> 装入时将逻辑地址转换为物理地址<br> 例如:逻辑地址为0~5000,内存中从10000开始有空闲区,则逻辑地址0-5000中每个地址均加10000获得物理地址．即逻辑地址加一个偏移，之后物理地址不在改变<br> 一次性将全部进程数据装入内存，装入后物理地址不在改变</p>
+<p>动态运行时装入 (动态重定位)<br> 运行时将逻辑地址转换为物理地址，需设置重定位寄存器<br> 以重定位寄存器中的值作为物理地址的起点然后加上逻辑地址得到物理地址<br> 程序运行前只装入部分代码，运行期间根据需要动态申请分配内存</p>
+</li>
+<li><p><strong>适配器模式与桥接模式的区别和联系</strong></p>
+<p>   适配器模式和桥接模式都是间接引用对象，因此可以使系统更灵活，在实现上都涉及从自身以外的一个接口向被引用的对象发出请求。</p>
+<p>   两种模式的区别在于使用场合的不同，适配器模式主要解决两个已经有接口间的匹配问题，这种情况下被适配的接口的实现往往是一个黑匣子。我们不想，也不能修改这个接口及其实现。同时也不可能控制其演化，只要相关的对象能与系统定义的接口协同工作即可。适配器模式经常被用在与第三方产品的功能集成上，采用该模式适应新类型的增加的方式是开发针对这个类型的适配器</p>
+<p>桥接模式则不同，参与桥接的接口是稳定的，用户可以扩展和修改桥接中的类，但是不能改变接口。桥接模式通过接口继承实现或者类继承实现功能扩展</p>
+</li>
+<li><p>IP地址划分</p>
+<ul>
+<li>A类地址：<code>1.0.0.1～126.255.255.254</code></li>
+<li>B类地址：<code>128.0.0.1～191.255.255.254</code></li>
+<li>C类地址：<code>192.168.0.0～192.168.255.255</code></li>
+<li>D类地址：<code>224.0.0.1～239.255.255.254</code></li>
+<li>E类地址：<code>240.0.0.1～255.255.255.254</code></li>
+</ul>
+</li>
+<li><p>文法</p>
+<p>描述语言语法结构的形式规则，四元组<code>G=&#123;VN,VT,P,S&#125;</code></p>
+<p>VN:非终结符；VT：终结符；P：产生式集合；S：文法的开始符号</p>
+<p>终结符：小写字母、运算符、标点符号、数字、粗体字符串</p>
+<p>非终结符：大写字母、字母S、小写斜体的名字、代表程序构造的大写字母</p>
+</li>
+<li><p>中间语言</p>
+<p>中间语言(中间代码)是一种面向语法，易于翻译成目标程序和源程序的等效内部表示代码。其可理解性及易于生成目标代码的程度介于源语言和目标语言之间。常用的中间语言有逆波兰表示、四元式、三元式和树表示等。对于中间语言，要求其不但与机器无关，而且有利于代码生成。</p>
+</li>
+<li><p>parseInt中如果第一个参数字符不是指定 <code>radix</code> 参数中的数字，它将忽略该字符以及所有后续字符，并返回到该点为止已解析的整数值。<code>parseInt</code> 将数字截断为整数值。允许前导和尾随空格。比如<code>parseInt(&quot;10+15&quot;,2)</code></p>
+</li>
+<li><p>构造函数如果返回值是引用类型则直接返回，如果是基本类型或没有显式返回，则返回创建的实例对象</p>
+</li>
+</ol>
+<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><ol>
+<li><p>在商家任务调度系统的前端开发中，我遇到的最大难点是<strong>任务列表展示的性能优化</strong>。由于用户任务量可能非常庞大，前端需要高效渲染和管理大量的任务数据。如果不加以优化，一次性加载过多的数据会导致页面渲染缓慢，用户体验变差，尤其是在任务列表分页加载和任务状态频繁更新的情况下，保持流畅的用户体验是一个挑战。</p>
+<p><strong>为了解决这个问题，我采取了以下几项措施：</strong></p>
+<ol>
+<li><strong>虚拟列表（Virtual Scrolling）</strong><br>由于任务数据量巨大，我采用了虚拟列表技术，使页面只渲染当前视窗内可见的数据，而非一次性加载所有任务。这种方式大大减少了DOM元素的数量，避免了浏览器渲染瓶颈，显著提升了页面性能和响应速度。用户在滚动页面时，数据会动态加载，保证了在任务量较大时也能保持流畅的操作体验。</li>
+<li><strong>任务状态的精准管理</strong><br>商家任务通常有多种状态，例如待处理、进行中和已完成，前端需要实时地展示这些状态变化。我使用了Redux管理全局状态，通过Redux的<strong>中间件（middleware）\</strong>处理异步操作，确保在任务状态变化时，前端能够及时响应并更新UI。与此同时，我还使用了*<em>React的memoization技术*</em>（如<code>useMemo</code>、<code>useCallback</code>），避免了不必要的组件重新渲染，进一步提高了渲染效率。</li>
+<li><strong>数据交互优化</strong><br>为了确保任务数据与后端的同步，我使用了<strong>乐观更新</strong>策略。在用户操作如创建或更新任务时，前端会立即更新UI，而不是等待后端响应，优化了用户操作的响应速度。在后台，我通过WebSocket实现与后端的实时通信，确保任务数据和状态的变化能够在前端立即反映，而不需要频繁轮询API，这也降低了服务器压力。</li>
+</ol>
+<p>通过这些技术手段，我不仅解决了大数据量下的渲染性能问题，还保证了任务状态更新的实时性和用户体验的流畅性。系统上线后，任务管理界面即使在高并发情况下依然能够保持良好的性能，用户反馈也十分积极。</p>
+</li>
+<li><p>虚拟列表相关</p>
+<ul>
+<li><p>如何实现</p>
+<p>具体的实现方式是基于<strong>React</strong>，通过控制可视区域内的DOM渲染来实现按需加载。我使用了以下几个核心技术点：</p>
+<ol>
+<li><strong>可视窗口计算</strong>：首先，通过监听<code>scroll</code>事件，动态计算用户当前所处的滚动位置和可视区域范围。每次滚动时，系统会根据用户的当前位置，确定只渲染可视区域内的任务项，其余部分则不渲染，或者只占位不加载实际内容。</li>
+<li><strong>高度估算和定位</strong>：在虚拟列表中，为了准确显示滚动位置并确保用户滚动时列表流畅，我对每个任务项的高度进行了预估或设置为固定高度。如果任务项高度不固定，会实时计算实际高度，并动态调整滚动范围。通过这种方式，确保用户可以平滑地滚动到指定位置，且任务项能够正确显示。</li>
+<li><strong>React框架支持</strong>：我使用了<code>react-window</code>和<code>react-virtualized</code>等成熟的虚拟列表库，这些库已经封装了核心的虚拟滚动逻辑，并提供了高效的渲染和滚动机制。我选择<code>react-window</code>主要是因为其体积小、性能高，更适合我们这个项目中需要处理大量数据的场景。</li>
+</ol>
+</li>
+<li><p>快速滚动情况处理</p>
+<p>在虚拟列表中，会遇到用户需要跳转到指定任务或特定位置的情况，而虚拟滚动依赖于视窗内的数据渲染。如果直接滚动到目标位置，可能会出现页面加载延迟，影响体验。</p>
+<p>为了解决这个问题，我采取了<strong>分段加载</strong>和<strong>索引预计算</strong>的方式：</p>
+<ol>
+<li><strong>分段加载</strong>：我们可以将任务列表按页或分段缓存，用户在跳转时先加载目标位置附近的数据，确保用户在跳转后不会有明显的等待时间。</li>
+<li><strong>索引预计算</strong>：我会预计算每个任务的高度或大致范围，以便快速确定目标任务的渲染位置，从而避免滚动过程中的卡顿。</li>
+</ol>
+<p>此外，通过监听用户的快速滚动行为，提前加载目标附近的数据，确保在用户到达目标位置前数据已经准备好，提升体验流畅度。</p>
+<h3 id="难点分析"><a href="#难点分析" class="headerlink" title="难点分析"></a><strong>难点分析</strong></h3><h4 id="1-1-高并发性能优化"><a href="#1-1-高并发性能优化" class="headerlink" title="1.1 高并发性能优化"></a>1.1 <strong>高并发性能优化</strong></h4><p>由于大促活动页在短时间内会吸引大量用户访问，因此页面的性能优化至关重要。在面对高并发访问时，前端需要确保页面响应迅速、加载流畅。这涉及到多个层面的优化：</p>
+<ul>
+<li><strong>懒加载与资源压缩</strong>：通过懒加载图片、按需加载模块，减少初始页面加载时间。使用 Webpack 进行代码分割，减少打包文件的体积，并对 JavaScript、CSS 等进行压缩和混淆。</li>
+<li><strong>CDN 加速</strong>：利用内容分发网络（CDN）缓存静态资源（如图片、JS、CSS 文件），提高用户从服务器获取资源的速度，降低服务器压力。</li>
+<li><strong>异步数据请求与骨架屏</strong>：在请求数据时，使用异步加载策略，避免页面首次加载时被阻塞。同时，使用骨架屏技术，使页面在内容未完全加载时依旧展示友好的 UI，提升用户体验。</li>
+</ul>
+<h4 id="1-2-跨端适配"><a href="#1-2-跨端适配" class="headerlink" title="1.2 跨端适配"></a>1.2 <strong>跨端适配</strong></h4><p>由于大促活动页通常需要兼顾移动端和 PC 端的用户访问，跨端适配是一个重要挑战。尤其是针对不同尺寸和分辨率的设备，保证页面布局和交互的一致性和适应性。</p>
+<ul>
+<li><strong>响应式设计</strong>：使用 <code>flexbox</code> 或 <code>grid</code> 等布局方式进行响应式设计，结合媒体查询根据不同设备调整布局和样式。</li>
+<li><strong>Viewport 配置与动态适配</strong>：移动端需要合理设置 <code>viewport</code>，并通过 JS 动态调整页面的字体大小和布局，以适应不同的屏幕尺寸。</li>
+</ul>
+<h4 id="1-3-复杂的交互效果"><a href="#1-3-复杂的交互效果" class="headerlink" title="1.3 复杂的交互效果"></a>1.3 <strong>复杂的交互效果</strong></h4><p>大促活动页为了吸引用户，通常会涉及到复杂的动画效果和互动设计，如限时抢购倒计时、滚动特效、滑动切换等。这对性能和开发调试提出了更高的要求：</p>
+<ul>
+<li><strong>CSS 动画与性能优化</strong>：通过使用 <code>transform</code> 和 <code>opacity</code> 等属性进行硬件加速的 CSS 动画，避免使用导致回流和重绘的属性（如 <code>top</code>、<code>left</code> 等）。</li>
+<li><strong>节流与防抖</strong>：在复杂的滚动、点击等交互事件中，使用节流与防抖技术减少对 DOM 的频繁操作，提升性能。</li>
+</ul>
+<h4 id="1-4-数据埋点与分析"><a href="#1-4-数据埋点与分析" class="headerlink" title="1.4 数据埋点与分析"></a>1.4 <strong>数据埋点与分析</strong></h4><p>活动页通常需要进行用户行为跟踪、点击统计等数据埋点，帮助产品团队分析用户行为，优化后续活动设计。埋点需要精准，且对性能的影响要尽量小。</p>
+<ul>
+<li><strong>无侵入式埋点</strong>：通过事件委托等方式，实现对特定区域或元素的点击、浏览等行为的监听，而不是在每个元素上绑定事件。</li>
+<li><strong>数据打点与上报优化</strong>：结合数据上报的节流机制，避免过于频繁的上报请求对页面性能造成负面影响。</li>
+</ul>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3></li>
+</ul>
+</li>
+</ol>
+<h3 id="QS"><a href="#QS" class="headerlink" title="QS"></a>QS</h3><h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><h5 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h5><p>层叠性：CSS样式的叠加，遵循就近原则</p>
+<p>继承性：书写CSS样式，子标签继承父标签的某些样式</p>
+<p>优先级：继承样式权重为0，权重相同时候，遵循就近原则</p>
+<h5 id="垂直水平居中的方式"><a href="#垂直水平居中的方式" class="headerlink" title="垂直水平居中的方式"></a>垂直水平居中的方式</h5><ol>
+<li><p>flex布局</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.outer</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center; <span class="comment">/* 水平居中 */</span></span><br><span class="line">  <span class="attribute">align-items</span>: center; <span class="comment">/* 垂直居中 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>grid布局</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.outer &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.inner &#123;</span><br><span class="line">  justify-self: center; /* 水平居中 */</span><br><span class="line">  align-self: center; /* 垂直居中 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>父元素display:table-cell;vertical-align:center</p>
+</li>
+<li><p>子绝父相</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.outer</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inner</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.outer</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inner</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="built_in">calc</span>(<span class="number">50%</span> - <span class="number">50px</span>);</span><br><span class="line">  <span class="attribute">top</span>: <span class="built_in">calc</span>(<span class="number">50%</span> - <span class="number">50px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.outer</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inner</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: -<span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.outer</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.inner</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="block、inline和inline-block的区别"><a href="#block、inline和inline-block的区别" class="headerlink" title="block、inline和inline-block的区别"></a>block、inline和inline-block的区别</h5><p>块级元素拥有自己的宽高，可以自定义weight和height，独占一行</p>
+<p>行内元素不可以设置宽高，可以与其他行内元素位于同一行，特别注意，img为行内元素，但是可替代元素可以设置宽高</p>
+<p>行内块可以一行放置多个行内块元素，可以自由设置高度和宽度</p>
+<p>inline元素只能设定左右margin、padding，上下的是不起作用的</p>
+<h5 id="position属性的值包括什么"><a href="#position属性的值包括什么" class="headerlink" title="position属性的值包括什么"></a>position属性的值包括什么</h5><p>static、absolute、relative、fixed、sticky</p>
+<h5 id="重绘和重排"><a href="#重绘和重排" class="headerlink" title="重绘和重排"></a>重绘和重排</h5><h5 id="Flex实现112布局"><a href="#Flex实现112布局" class="headerlink" title="Flex实现112布局"></a>Flex实现112布局</h5><h5 id="CSS隐藏元素的三种方式"><a href="#CSS隐藏元素的三种方式" class="headerlink" title="CSS隐藏元素的三种方式"></a>CSS隐藏元素的三种方式</h5><ol>
+<li><code>display: none;</code>：完全移除元素，不占据任何空间。</li>
+<li><code>visibility: hidden;</code>：元素不可见，但仍占据空间，不可点击。</li>
+<li><code>opacity: 0;</code>：元素不可见，但仍然在文档流中，可以点击。</li>
+</ol>
+<h5 id="css绘制一个半圆"><a href="#css绘制一个半圆" class="headerlink" title="css绘制一个半圆"></a>css绘制一个半圆</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#half_circle1</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">100px</span> <span class="number">100px</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="CSS硬件加速的属性有什么？"><a href="#CSS硬件加速的属性有什么？" class="headerlink" title="CSS硬件加速的属性有什么？"></a>CSS硬件加速的属性有什么？</h5><p>transform opacity filter will-change 创建独立层，脱离了文档流</p>
+<h4 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h4><h5 id="手写bind、apply、call"><a href="#手写bind、apply、call" class="headerlink" title="手写bind、apply、call"></a>手写bind、apply、call</h5><h5 id="JS的数据类型有哪些？判断数据类型的方法？"><a href="#JS的数据类型有哪些？判断数据类型的方法？" class="headerlink" title="JS的数据类型有哪些？判断数据类型的方法？"></a>JS的数据类型有哪些？判断数据类型的方法？</h5><p>基本数据类型包括Number、String、Boolean、Null、Undefined、Symbol、BigInt</p>
+<p>引用数据类型包括Object</p>
+<p>判断数据类型的方法有typeof、instanceof、Object.prototype.toString.call()</p>
+<h5 id="和-的区别"><a href="#和-的区别" class="headerlink" title="==和===的区别"></a>==和===的区别</h5><p>==叫做相等运算符，===叫做严格运算符</p>
+<p>==在比较相同类型的数据，与严格运算符完全一致</p>
+<p>比较不同数据类型的时候，原始类型会转为数值进行比较、对象与原始类型进行比较时，对象会转为原始类型的值进行比较。undefined和null与其他类型的值比较的时候，结果都为false，它们互相比较的时候，结果为true。</p>
+<h5 id="JS判断整数"><a href="#JS判断整数" class="headerlink" title="JS判断整数"></a>JS判断整数</h5><ol>
+<li>取余数运算符但需要判断是数字</li>
+<li>Number.isIntege()</li>
+<li>使用Math.round、Math.ceil、Math.floor判断，整数取整后还是自己</li>
+<li>parseInt取整后还是自己判断</li>
+<li>位运算判断(obj | 0) === obj，但是只能处理32位以内的</li>
+</ol>
+<h5 id="js获取DOM元素的方法"><a href="#js获取DOM元素的方法" class="headerlink" title="js获取DOM元素的方法"></a>js获取DOM元素的方法</h5><ol>
+<li>document.getElementById(“domId”)</li>
+<li>document.getElementsByName(“domName”)</li>
+<li>document.getElementsByTagName(“tagName”)</li>
+<li>document.getElementsByClassName(“classNames”)</li>
+<li>document.querySelectorAll(“selector”)</li>
+</ol>
+<h5 id="js执行上下文"><a href="#js执行上下文" class="headerlink" title="js执行上下文"></a>js执行上下文</h5><p>分为三种：</p>
+<p>全局执行上下文：任何不在函数内部的代码都在全局执行上下文中，会创建全局windows对象，并将this指向全局对象，一个程序只会有一个全局执行上下文</p>
+<p>函数执行上下文：函数被调用的时候创建</p>
+<p>Eval函数执行上下文：eval函数内部的执行上下文，不常用</p>
+<h5 id="map和weakmap的区别"><a href="#map和weakmap的区别" class="headerlink" title="map和weakmap的区别"></a>map和weakmap的区别</h5><p>map可以使用任意类型的值作为键，weakmap使用对象的引用作为键</p>
+<p>weakmap里无引用的对象，会被垃圾回收机制自动清除集合。</p>
+<p>map有内置的迭代器，可以使用for of遍历，weakmap不可以。</p>
+<h5 id="原型链？判断原型的方法？"><a href="#原型链？判断原型的方法？" class="headerlink" title="原型链？判断原型的方法？"></a>原型链？判断原型的方法？</h5><p>原型链是实现对象继承的一种机制，每个对象有一个内部属性，执行它的原型对象。访问对象某个属性的时候，如果该属性不存在于对象自身，js会沿着原型链向上寻找，直到null。每个对象都有一个 <code>[[Prototype]]</code>，可以通过 <code>__proto__</code> 来访问，现代浏览器中也可以通过 <code>Object.getPrototypeOf()</code> 方法来获取对象的原型。每个构造函数（如 <code>function</code>、<code>Array</code> 等）都有一个 <code>prototype</code> 属性，这个属性指向一个对象，这个对象就是由该构造函数创建的所有实例的原型对象.</p>
+<p>判断原型的方法有</p>
+<ol>
+<li>instanceof运算符，在跨不同的JS环境比如不同的iframe里面可能会失效</li>
+<li>isPrototypeOf 不依赖于构造函数更加灵活</li>
+<li>Object.getPrototypeOf 直接访问和比较对象的原型</li>
+</ol>
+<h5 id="闭包？"><a href="#闭包？" class="headerlink" title="闭包？"></a>闭包？</h5><p>闭包是由捆绑起来（封闭的）的函数和函数周围状态（<strong>词法环境</strong>）的引用组合而成。闭包可以使函数访问它的外部作用域。由于闭包会保留对外部作用域的引用，如果这些引用没有得到及时释放，可能会导致内存无法被垃圾回收机制回收，引起内存泄露。</p>
+<p>解决内存泄露的方法：闭包函数执行完后，手动解除对外部变量的引用，比如设置为null。避免在循环函数中创建闭包。注意闭包函数引用外部变量的生命周期，避免长时间对外部变量的引用。</p>
+<h5 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h5><ol>
+<li>[…new Set(arr)] </li>
+<li>arr.filter((value, index) =&gt; arr.indexOf(value) === index);</li>
+<li>arr.sort().filter((value, index, self) =&gt; {        return index === 0 || value !== self[index - 1];    });</li>
+</ol>
+<h5 id="this指向问题？"><a href="#this指向问题？" class="headerlink" title="this指向问题？"></a>this指向问题？</h5><p>function里面的this在使用new调用时，指向调用者。没有明确调用者的时候，默认指向window。对象里面的this指向对象自己，箭头函数不会创建this，所以它指向定义时外层作用域的this。</p>
+<h5 id="箭头函数与普通函数的区别？"><a href="#箭头函数与普通函数的区别？" class="headerlink" title="箭头函数与普通函数的区别？"></a>箭头函数与普通函数的区别？</h5><ol>
+<li>语法更加简洁、清晰</li>
+<li>箭头函数不会创建自己的this</li>
+<li>箭头函数继承而来的this指向永远不变</li>
+<li>.call()/.apply()/.bind()无法改变箭头函数中this的指向</li>
+<li>箭头函数不能作为构造函数使用</li>
+<li>箭头函数没有自己的arguments</li>
+<li>箭头函数没有原型prototype</li>
+<li>箭头函数不能用作Generator函数，不能使用yeild关键字</li>
+</ol>
+<h5 id="二维数组去重"><a href="#二维数组去重" class="headerlink" title="二维数组去重"></a>二维数组去重</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> aa = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>]]</span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">aa.<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span> =&gt;</span> obj[item] = item);</span><br><span class="line">aa = <span class="title class_">Object</span>.<span class="title function_">values</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(aa);</span><br></pre></td></tr></table></figure>
+<h5 id="如何理解JS的异步"><a href="#如何理解JS的异步" class="headerlink" title="如何理解JS的异步"></a>如何理解JS的异步</h5><p>JS是一门单线程语言，这是因为它运行在浏览器的渲染主线程中，渲染主线程只存在一个。渲染主线程承担着诸多的工作，渲染页面、执行JS都在其中运行。如果采用同步的方式，极有可能导致主线程产生阻塞，从而导致消息队列中的其他任务无法得到执行。这样会导致繁忙的主线程消耗时间，页面无法及时更新，造成页面卡死。浏览器采用异步的方式，当例如计时、网络、事件监听等任务中，主线程将任务交给其他线程去处理，自身立即结束任务的执行，转而执行后续代码，当其他线程完成时，会将事先传递的回调函数包装成任务，加入到消息队列的末尾，等待主线程调度执行。</p>
+<h5 id="JS的计时器能够准确计时么？"><a href="#JS的计时器能够准确计时么？" class="headerlink" title="JS的计时器能够准确计时么？"></a>JS的计时器能够准确计时么？</h5><p>计算机硬件没有原子钟，不能做到精确计时</p>
+<p>JS计时器最终调用的是操作系统的函数，本身就存在少量偏差</p>
+<p>根据W3C标准，浏览器计时器嵌套超过五层，会带有最少4ms的延时</p>
+<p>事件循环的影响，计时器的回调函数只能在主线程空闲时运行</p>
+<h4 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h4><h5 id="输入URL之后发生了什么"><a href="#输入URL之后发生了什么" class="headerlink" title="输入URL之后发生了什么"></a>输入URL之后发生了什么</h5><p>DNS解析。客户端输入URL后，会有一个递归查找的过程，从浏览器的缓存中查找，本地hosts文件查找，从本地DNS解析器缓存查找，本地DNS服务器查找。本地域名服务器向根域名服务器发起请求，根域名服务器返回顶级域名服务器地址。本地域名服务器向顶级域名服务器发起请求，获得权威域名服务器的地址。本地域名服务器向权威域名服务器发起请求，获得了域名对应的IP地址。</p>
+<p>建立TCP连接。首先判断是不是https，如果是https，在http上多了一层处理加密信息的模块。进行三次握手：第一次握手，客户端发送请求报文段，SYN置为1，seq为x，客户端进入SYN_SEND状态，等待服务端确认，第二次握手服务端收到SYN后进行确认，设置ack为x+1，发送SYN请求信息，SYN位置为1，seq为y，服务端进入SYN_RECV状态。第三次握手，客户端接收到服务器的SYN+ACK报文段，将ack设置为y+1，向服务端发送ack。客户端和服务端进入了ESTABLISHED状态。</p>
+<p>服务器处理请求，返回响应结果。服务器解析请求头，如果头部有缓存的相关信息，比如if-none-match和if-modified-since字段，验证缓存是否有效，有效返回304状态码。</p>
+<p>关闭TCP连接。四次挥手，第一次挥手设置seq=x和ack，向主机2发送FIN报文段，主机1进入FIN_WAIT_1状态，表示没有数据要发送给主机2了。第二次挥手主机2接收到FIN，向主机1返回ack为x+1，进入FIN_WAIT_2状态。第三次挥手，主机2发送FIN报文段，进入LAST_ACK状态。第四次挥手主机1向主机2发送ACK报文段，主机1进入TIME_WAIT状态，主机2收到ACK后关闭连接，主机1等待2MSL后没有收到回复关闭连接。</p>
+<p>浏览器渲染。分为构建DOM树、样式计算、布局、分层、栅格化、显示阶段。渲染进程将HTML转换为DOM树，渲染引擎将CSS样式表转换为浏览器可以理解的styleSheets，计算出DOM节点的样式。创建布局树，计算元素的布局信息。对布局树进行分层，生成分层树。为每个图层绘制列表，提交到合成线程，合成线程将图层分图块，栅格化将图块转化为位图。合成线程发送绘制图块的命令给浏览器进程。浏览器进程根据指令生成页面，显示到显示器。</p>
+<h5 id="强缓存和协商缓存"><a href="#强缓存和协商缓存" class="headerlink" title="强缓存和协商缓存"></a>强缓存和协商缓存</h5><p>强缓存浏览器不会向服务器发送请求，直接从本地缓存中读取文件并返回状态码200</p>
+<p>协商缓存会向服务器发送请求，服务器根据请求的请求头判断是否命中缓存，如果命中，返回状态码304，并带上新的response header通知浏览器从缓存读取资源</p>
+<p>强缓存头：Expires：过期时间 Catche-Control 设置max-age 设置缓存的时长（优先级高于Expires）</p>
+<p>协商缓存头：Last-Modified/If-Modified-Since和Etag/If-None-Match</p>
+<p>Last-Modified是服务器向浏览器发送的最后的修改时间，Etag：服务器生成的前端缓存验证的标识</p>
+<h5 id="针对css、js、html以及接口缓存等分别采用什么具体的缓存策略"><a href="#针对css、js、html以及接口缓存等分别采用什么具体的缓存策略" class="headerlink" title="针对css、js、html以及接口缓存等分别采用什么具体的缓存策略"></a>针对css、js、html以及接口缓存等分别采用什么具体的缓存策略</h5><p>html：动态内容，频繁更新，采用短期强缓存或者是协商缓存</p>
+<p>css：变化不频繁，长期强缓存，css文件名添加hash值或者版本号，文件变更的时候获取最新资源</p>
+<p>js：与css类似，长期强缓存+文件名，或者使用协商缓存</p>
+<p>接口缓存：实时性较高不缓存，Cache-control：no-cache或者no-store，get请求可以缓存，post请求通常不缓存。</p>
+<h5 id="前端强制不使用缓存的方法"><a href="#前端强制不使用缓存的方法" class="headerlink" title="前端强制不使用缓存的方法"></a>前端强制不使用缓存的方法</h5><ol>
+<li>设置请求的HTTP头，请求头加入Cache-Control:no-cache或者Cache-Control：no-store来强制客户端不使用缓存。no-cache会强制浏览器与服务器进行协商缓存检查，no-store完全禁用缓存。</li>
+<li>URL添加动态参数，URL添加动态查询参数比如时间戳来避免缓存</li>
+<li>浏览器的开发者工具下面勾选Disable Cache</li>
+</ol>
+<h5 id="浏览器读缓存的策略，读取顺序？"><a href="#浏览器读缓存的策略，读取顺序？" class="headerlink" title="浏览器读缓存的策略，读取顺序？"></a>浏览器读缓存的策略，读取顺序？</h5><p>根据缓存的存储位置和缓存的有效性决定，常见的读缓存的的存储策略包括Memory Cache、Disk Cache、Push Cache、Service Worker Cache</p>
+<p>Memory Cache是临时存储在内存中，用于当前页面生命周期的资源缓存，Disk Cache磁盘缓存存储在本地硬盘上，存储时间更长，Service Worker Cache离线缓存，需要额外编写sevice worker脚本，可以拦截网络请求为其提供缓存的资源。push cache 推送缓存http2使用，允许服务器在客户端发起请求之前将资源推送到客户端，生命周期为会话期间。</p>
+<p>顺序：Memory Cache、Service Worker Cache、Disk Cache、Push Cache</p>
+<h5 id="cookie的属性"><a href="#cookie的属性" class="headerlink" title="cookie的属性"></a>cookie的属性</h5><p>name=value 键值对</p>
+<p>Expires/Max-Age：控制过期时间</p>
+<p>domain：cookie适用的域名</p>
+<p>Path：cookie适用的路径</p>
+<p>secure：只能通过https传输</p>
+<p>httponly：cookie只能被http请求，不可以被js脚本访问，防止xss攻击</p>
+<p>SameSite：是否禁止跨站请求发送，防止CSRF攻击</p>
+<h5 id="cookie的SameSite有几种模式"><a href="#cookie的SameSite有几种模式" class="headerlink" title="cookie的SameSite有几种模式"></a>cookie的SameSite有几种模式</h5><p>strict：完全禁止第三方cookie，只有网页url与目标请求一致才会带上cookie</p>
+<p>lax：除了导航到目标网址的get请求外不带cookie</p>
+<p>none：必须同时设置secure属性，生效为默认值lax</p>
+<h5 id="判断ip是不是内网ip"><a href="#判断ip是不是内网ip" class="headerlink" title="判断ip是不是内网ip"></a>判断ip是不是内网ip</h5><p>内网ip范围：</p>
+<p>10.X.X.X<br>192.168.X.X<br>172.16.X.X-172.31.X.X</p>
+<h5 id="HTTP2-0的特性"><a href="#HTTP2-0的特性" class="headerlink" title="HTTP2.0的特性"></a>HTTP2.0的特性</h5><p>二进制分帧：HTTP1.x的解析是基于文本，基于文本协议的格式解析天然存在缺陷，文本的表现形式多样，采用二进制，实现方便且健壮。</p>
+<p>多路复用：即连接共享，每一个request都是有连接共享机制的，一个request对应一个id，一个连接可以有多个request id，接收方可以根据request id将request归属到不同的服务器请求里。</p>
+<p>header压缩：通讯双方各自cache一份header fields表，避免了header的重复传输，减少了传输大小</p>
+<p>服务端推送</p>
+<h5 id="HTTP3-0"><a href="#HTTP3-0" class="headerlink" title="HTTP3.0"></a>HTTP3.0</h5><p>基于UDP的QUIC协议，无队友堵塞，保证每个数据包的正确性，每个数据包会有一个唯一标识，当某个stream的一个数据包丢失，这个stream的其他数据包即使到达了HTTP也不会被读取，直到QUIC重传丢失的数据。</p>
+<p>QUIC连接建立更快，握手过程只需要确认双方的连接ID即可。</p>
+<p>支持连接迁移：不使用IP和端口来确定连接，而是通过连接ID来标记通信两端。</p>
+<h5 id="http和https区别"><a href="#http和https区别" class="headerlink" title="http和https区别"></a>http和https区别</h5><ol>
+<li>http默认端口80，https默认端口443</li>
+<li>http明文传输，安全性差，https加密传输</li>
+<li>https需要到CA申请证书</li>
+<li>http响应速度快，三次握手交换三个包，https还要加上ssl握手的9个包</li>
+<li>https是建立在SSL/TLS上面的HTTP协议，更加耗费服务器资源</li>
+</ol>
+<h5 id="get-post的区别"><a href="#get-post的区别" class="headerlink" title="get post的区别"></a>get post的区别</h5><ol>
+<li>get回退无害，post会再次提交请求</li>
+<li>get请求会被浏览器主动catche，post不会</li>
+<li>get只支持url编码，post支持多种编码方式</li>
+<li>get请求在url传送的参数有长度限制，post没有</li>
+<li>get接受ASCII字符，POST没有限制</li>
+<li>get更加不安全，参数通过url传递，post放在request body中</li>
+</ol>
+<h5 id="CSRF攻击"><a href="#CSRF攻击" class="headerlink" title="CSRF攻击"></a>CSRF攻击</h5><p>跨站请求伪造是恶意站点程序通过已认证的用户的浏览器在受信任站点上执行的非正常操作。</p>
+<p>防范的方式主要有：1.不使用cookie，使用localstorage 2. Cookie设置SameSite，当前源与cookie源相同的时候才发送cookie 3. 使用CSRF token，属于额外的token，一次性用完失效。4.检查Referrer字段确保请求的来源，依赖浏览器的安全性</p>
+<h5 id="async和defer"><a href="#async和defer" class="headerlink" title="async和defer"></a>async和defer</h5><p>script标签的两个属性</p>
+<p>defer告诉浏览器不要等待脚本，浏览器会继续处理HTML，构建DOM，脚本在后台加载，DOM完全构建之后，DOMContentLoaded事情触发之前执行，同时defer脚本会保持脚本的相对顺序。</p>
+<p>async脚本会在后台加载完立即执行，不会保持脚本的相对顺序。</p>
+<h5 id="http状态码"><a href="#http状态码" class="headerlink" title="http状态码"></a>http状态码</h5><p>201 created 资源创建成功</p>
+<p>204 No content 服务器不会发送响应体</p>
+<p>206 Partial Content 客户端指定Range范围请求头，服务端返回部分资源</p>
+<p>301 重定向url 永久转移</p>
+<p>302 重定向url 暂时转移</p>
+<p>304 没有修改，使用缓存的内容</p>
+<p>307 临时重定向 不指定客户端的请求方法</p>
+<p>401 无权限</p>
+<p>403 服务端拒绝请求</p>
+<p>404 未找到</p>
+<p>501 服务器不支持请求方法</p>
+<p>502 错误网关</p>
+<p>504 服务器到网关的请求超时</p>
+<p>505不支持请求的http版本</p>
+<h5 id="应用层协议包括什么，默认的端口号是什么？"><a href="#应用层协议包括什么，默认的端口号是什么？" class="headerlink" title="应用层协议包括什么，默认的端口号是什么？"></a>应用层协议包括什么，默认的端口号是什么？</h5><p>HTTP 80 HTTPS 443 FTP 21 POP3 110 IMAP 143 DNS 53 DHCP 67/68 SSH 22</p>
+<h5 id="v8的垃圾回收策略"><a href="#v8的垃圾回收策略" class="headerlink" title="v8的垃圾回收策略"></a>v8的垃圾回收策略</h5><p>分代垃圾回收机制，年轻代存储新创建的对象，通常较小，老年代存储多次垃圾回收依然存在的对象。新生代采用复制算法，将内存复制为两个相等的区域，垃圾回收开始的时候从根对象开始，将存活的对象复制到To空间，然后清空From空间。老生代采用标记清除法，从根节点开始标记所有可达对象，然后清除未被标记的节点。</p>
+<h5 id="进程和线程？多线程可能发生什么问题？"><a href="#进程和线程？多线程可能发生什么问题？" class="headerlink" title="进程和线程？多线程可能发生什么问题？"></a>进程和线程？多线程可能发生什么问题？</h5><p>进程是操作系统的资源分配的基本单位，程序中运行的实例，每个进程都有独立的内存空间和系统资源，包括代码、数据、堆栈等信息。进程之间相互独立，创建和管理比线程复杂。</p>
+<p>线程是进程的执行单元，一个进程包含多个线程，线程共享进程的内存和资源，每个线程有自己的栈和寄存器。线程之间共享数据，通信更加高效，线程的创建和管理更为轻量。</p>
+<p>可能发生死锁问题，发生死锁需要满足互斥、占有并等待、不可剥夺、循环等待条件</p>
+<h5 id="进程的通信方式"><a href="#进程的通信方式" class="headerlink" title="进程的通信方式"></a>进程的通信方式</h5><p>匿名管道通信：管道是一种半双工的通信方式，只能有数据单向流动，只能在具有亲缘关系的进程间使用，进程的亲缘关系通常指父子进程。</p>
+<p>管道通信、消息队列、信号量、套接字</p>
+<h5 id="线程间同步方式"><a href="#线程间同步方式" class="headerlink" title="线程间同步方式"></a>线程间同步方式</h5><p>互斥锁、条件变量、读写锁</p>
+<h5 id="线程同步的方式"><a href="#线程同步的方式" class="headerlink" title="线程同步的方式"></a>线程同步的方式</h5><p>互斥锁：一旦获取，就会上锁，且只能由该线程解锁，期间，其他线程无法获取</p>
+<p>条件变量：当线程在等待某些满足条件时使线程进入睡眠状态，一旦条件满足，就唤醒，这样不会占用宝贵的互斥对象锁，实现高效</p>
+<p>读写锁：适用于对数据结构的读操作次数多于写操作次数的场合。</p>
+<p>信号量：信号量允许多个线程同时进入临界区</p>
+<h5 id="浏览器的线程有哪些"><a href="#浏览器的线程有哪些" class="headerlink" title="浏览器的线程有哪些"></a>浏览器的线程有哪些</h5><ol>
+<li>GUI渲染线程。与JS线程互斥，负责渲染浏览器界面，解析HTML、CSS，构建DOM树和RenderObject树，布局和绘制。</li>
+<li>JS引擎线程。JS内核，处理JS脚本程序，运行代码。</li>
+<li>事件触发线程。控制事件循环，执行setTimeout等任务，添加到事件线程队列等待JS引擎处理。</li>
+<li>定时触发器线程。setInterval与setTimeout所在线程，触发定时。</li>
+<li>异步http请求线程。在XMLHttpRequest在连接后是通过浏览器新开一个线程请求</li>
+</ol>
+<h4 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h4><h5 id="tree-shaking的原理"><a href="#tree-shaking的原理" class="headerlink" title="tree-shaking的原理"></a>tree-shaking的原理</h5><p>去除冗余的代码，程序从入口文件出发，扫描所有的模块依赖，以及模块的子依赖，将它们链接起来生成一个抽象语法树，随后运行所有代码，查看哪些代码是用到过的，打好标记。前提是模块需要采用ES6的语法，Tree shaking依赖ES6的静态语法，export和import。</p>
+<h5 id="webpack打包过程"><a href="#webpack打包过程" class="headerlink" title="webpack打包过程"></a>webpack打包过程</h5><p>webpack会根据webpack.config.js去解析配置文件，找到入口文件后递归地解析项目中的依赖关系，然后递归解析所有的依赖模块，使用加载器loader来解析不同类型的文件。</p>
+<h5 id="webpack的loader和plugin区别"><a href="#webpack的loader和plugin区别" class="headerlink" title="webpack的loader和plugin区别"></a>webpack的loader和plugin区别</h5><p>webpack本身只能处理.js和.json文件，loader可以让webpack去处理其他种类的文件，将这些文件转换为模组，让应用程序可以使用，添加到依赖图中。可以在webpack.config.js中去指定loader在module.rules中指定匹配的文件使用一个loader或者多个loader，执行顺序为从右到左。</p>
+<p>plugin用来拓展webpack的功能，webpack的生命周期各个环节会提供钩子，开发者可以在生命周期节点通过plugin拓展webpack的功能。使用plugin时候，一般通过require引入需要的plugin，然后new 实例化后添加到plugin数组中。</p>
+<h5 id="webpack构建优化"><a href="#webpack构建优化" class="headerlink" title="webpack构建优化"></a>webpack构建优化</h5><p><strong>打包体积优化</strong></p>
+<p>代码分割：将代码按需加载，而不是将所有代码都打包成一个文件</p>
+<p>Tree shaking：剔除无用的代码，分析代码依赖图，只打包用到的代码</p>
+<p>按需加载第三方的库：比如引入 <code>lodash</code> 时，可以使用 <code>lodash-es</code> 或按需加载单个模块，而不是整个库。</p>
+<p><strong>资源优化</strong></p>
+<p>CDN加速</p>
+<p>图片压缩</p>
+<p><strong>缓存优化</strong></p>
+<p>文件指纹：为静态资源文件添加文件哈希，通过 <code>webpack</code> 的 <code>contenthash</code> 功能，确保文件名变化能够触发浏览器的缓存更新</p>
+<p><strong>减少JS执行时间</strong></p>
+<p>代码压缩：使用 Terser 等工具进行代码压缩，减少文件体积。可以通过 <code>terser-webpack-plugin</code> 插件进行压缩。</p>
+<p>使用合适的 polyfill：只为目标浏览器加载必要的 polyfill，避免引入不必要的代码。可以借助 <code>@babel/preset-env</code> 配合 <code>core-js</code> 实现按需引入。</p>
+<h5 id="webpack分包策略"><a href="#webpack分包策略" class="headerlink" title="webpack分包策略"></a>webpack分包策略</h5><ol>
+<li>根据业务不同配置多个打包入口，输出多个打包结果；</li>
+<li>结合 ES Modules 的动态导入（Dynamic Imports）特性，按需加载模块</li>
+</ol>
+<h5 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h5><p>FP：表示渲染出第一个像素点</p>
+<p>FCP：表示渲染出第一个内容</p>
+<p>LCP：最大内容渲染时间。</p>
+<p>FMP：首次渲染有意义的内容的时间</p>
+<h4 id="DOM-BOM"><a href="#DOM-BOM" class="headerlink" title="DOM/BOM"></a>DOM/BOM</h4><h5 id="事件委托？target和currTarget区别？"><a href="#事件委托？target和currTarget区别？" class="headerlink" title="事件委托？target和currTarget区别？"></a>事件委托？target和currTarget区别？</h5><p>不为每个子节点单独设置事件监听器，利用事件冒泡机制，事件绑定在父元素上，子元素触发事件冒泡到父元素，父元素通过判断event.target执行相应的逻辑。可以大大减少DOM操作次数，提高性能。target指向最深层的元素，用户实际点击的元素。currentTarget指向事件监听器绑定的元素。</p>
+<h4 id="React"><a href="#React" class="headerlink" title="React"></a>React</h4><h5 id="react中element和component的区别"><a href="#react中element和component的区别" class="headerlink" title="react中element和component的区别"></a>react中element和component的区别</h5><p>元素是构成React的基本块，描述用户界面某个部分的对象，元素是不可变的，一旦创建无法更改。组件是指可以复用的UI组件，可以是类组件或者是函数组件，接受props，返回一个React元素。</p>
+<h5 id="判断链表有环的方法"><a href="#判断链表有环的方法" class="headerlink" title="判断链表有环的方法"></a>判断链表有环的方法</h5><p>快慢指针、哈希表法</p>
+<h5 id="useEffect和useLayoutEffect的区别"><a href="#useEffect和useLayoutEffect的区别" class="headerlink" title="useEffect和useLayoutEffect的区别"></a>useEffect和useLayoutEffect的区别</h5><p>useEffect是渲染之后执行</p>
+<p>useLayoutEffect是渲染之前执行</p>
+<h5 id="react-fiber怎么实现的，哪个api判断主线程空闲，怎么知道浏览器空闲？react用哪个api实现调度"><a href="#react-fiber怎么实现的，哪个api判断主线程空闲，怎么知道浏览器空闲？react用哪个api实现调度" class="headerlink" title="react fiber怎么实现的，哪个api判断主线程空闲，怎么知道浏览器空闲？react用哪个api实现调度"></a>react fiber怎么实现的，哪个api判断主线程空闲，怎么知道浏览器空闲？react用哪个api实现调度</h5><p>React Fiber 是通过以下几个方面来优化渲染性能的：</p>
+<ul>
+<li><strong>时间分片</strong>：Fiber 将渲染任务拆分成多个小单元，每次只执行一部分渲染任务，并且在主线程有空闲的时候再继续执行。这使得渲染过程不会一次性阻塞用户交互。</li>
+<li><strong>优先级调度</strong>：Fiber 能为不同的更新赋予不同的优先级，比如用户输入、动画等高优先级任务会优先处理，非关键任务（如低优先级的数据更新）则可以延迟处理。</li>
+<li><strong>任务的可中断性</strong>：在传统 React 中，渲染是不可中断的，而在 Fiber 中，渲染任务可以被中断并且稍后恢复，从而提升响应性。</li>
+</ul>
+<p>Fiber 实现了一个<strong>双缓冲机制</strong>，也就是工作中的 Fiber 和当前的 Fiber 树（已渲染的 DOM 状态）。更新的时候，React 会构建工作中的 Fiber 树（也就是新 Fiber 树），并在合适的时候切换到新的树，从而将变化应用到 DOM 上。</p>
+<p>React 使用了 <code>requestIdleCallback</code> API 来判断主线程何时空闲。在浏览器没有原生支持 <code>requestIdleCallback</code> 的情况下，React 使用了基于时间片的调度算法，使用类似 <code>setTimeout</code> 或 <code>MessageChannel</code> 来模拟空闲时间，定期检查并分配空闲时间给任务。</p>
+<p><code>MessageChannel</code> 可以创建一个简单的事件循环，并且拥有较好的跨浏览器兼容性和性能表现，允许在两个不同的上下文之间创建一个消息通道，能够异步执行任务，且比 <code>setTimeout</code> 的执行延迟更低</p>
+<h5 id="React-18新特性"><a href="#React-18新特性" class="headerlink" title="React 18新特性"></a>React 18新特性</h5><ol>
+<li>并发渲染模式</li>
+<li>setState自动批处理</li>
+<li>flushsync可以推出批量更新</li>
+<li>React18的组件可以返回undefined</li>
+<li>Suspense组件不再跨越边界</li>
+<li>useId，useTransition</li>
+</ol>
+<h4 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h4><h5 id="ts的编译器叫什么"><a href="#ts的编译器叫什么" class="headerlink" title="ts的编译器叫什么"></a>ts的编译器叫什么</h5><p>tsc是官方的命令行编译器</p>
+<h5 id="泛型是什么？"><a href="#泛型是什么？" class="headerlink" title="泛型是什么？"></a>泛型是什么？</h5><p>定义函数、接口或者类的时候不预先指定具体的类型，而是在使用的时候在指定具体类型。</p>
+<h4 id="智力题"><a href="#智力题" class="headerlink" title="智力题"></a>智力题</h4><h5 id="一个赛场中有5条赛道，现在有25匹马，在没有定时器的前提下最少跑多少圈可以角逐出前三名？前四名？前五名？"><a href="#一个赛场中有5条赛道，现在有25匹马，在没有定时器的前提下最少跑多少圈可以角逐出前三名？前四名？前五名？" class="headerlink" title="一个赛场中有5条赛道，现在有25匹马，在没有定时器的前提下最少跑多少圈可以角逐出前三名？前四名？前五名？"></a>一个赛场中有5条赛道，现在有25匹马，在没有定时器的前提下最少跑多少圈可以角逐出前三名？前四名？前五名？</h5><p>7、8、8/9</p>
+<h5 id="设有12个外表一模一样的小球，其中11个重量完全相同，被称为好球，1个重量比好球重一点或者轻一点，被称为坏球。现在给你一架天平，请用天平称3次，把这个坏球找出来，还要知道它到底是轻的还是重的"><a href="#设有12个外表一模一样的小球，其中11个重量完全相同，被称为好球，1个重量比好球重一点或者轻一点，被称为坏球。现在给你一架天平，请用天平称3次，把这个坏球找出来，还要知道它到底是轻的还是重的" class="headerlink" title="设有12个外表一模一样的小球，其中11个重量完全相同，被称为好球，1个重量比好球重一点或者轻一点，被称为坏球。现在给你一架天平，请用天平称3次，把这个坏球找出来，还要知道它到底是轻的还是重的"></a>设有12个外表一模一样的小球，其中11个重量完全相同，被称为好球，1个重量比好球重一点或者轻一点，被称为坏球。现在给你一架天平，请用天平称3次，把这个坏球找出来，还要知道它到底是轻的还是重的</h5><p>首先我们把小球分成A、B、C三组。其中每组各有4个小球。 第一次使用天平时我们把A组和B组分别放在天平的左右两边。我们用 AAAA | BBBB 来表示。这时，我们会有三种可能的结果：</p>
+<p>AAAA = BBBB，两端平衡。这意味着坏球是一个C球。 此时，我们可以这样称：AAA |  CCC。即用3个好球和3个可能的坏球进行比较。有三种可能的结果：<br>AAA = CCC，则意味着坏球在剩下的那个C球中。我们只要把它与任意一个好球放到天平两边称就可以知道这个C球是重球还是坏球；<br>AAA &lt; CCC，即左轻右重，这意味着坏球一定在右边这3个C球中并且一定是重球。我们只要拿出其中任意两个C球放到天平两边，那边低哪个C球就是坏球；如果两边平衡则剩下的那个C球就是坏球，且一定是重球；<br>AAA &gt; CCC，即左重右轻，这意味着坏球一定在右边这3个C球中并且一定是轻球。我们用类似的方法只用一次天平同样可以找出这个轻球。这里我们有定理：如果有3个球，且知道坏球是重的还是轻的，则用天平称一次就能找出坏球。<br>AAAA &lt; BBBB，左轻右重。这意味着坏球如果是轻球，那它一定是个A球；如果它是个重球，则它一定是个B球。C球当然都是好球啦。我们把天平右边3个B球拿到一边去，只留下1个B球。然后从天平左边拿3个A球放倒右边。再拿3个C球（C球都是好球）放在天平左边，即：ACCC | AAAB 。这样我们会得到3个可能的结果。<br>ACCC = AAAB，则意味着拿下来的3个B球中有一个是坏球且一定是重球。根据上面定理，我们再用一次天平就能从这个3个B球中找到这个重球！<br>ACCC &lt; AAAB，这意味着坏球要么是左边的那个唯一的A球，要么是右边的那个唯一B球，其他的A球和B球统统都是好球。我们用天平再称一次A与一个好球就能判断A和B中哪个是坏球且能知道它是重的还是轻的；<br>ACCC &gt; AAAB，这意味着天平右边的3个A球中一定有一个坏球，且一定是轻球。根据上面定理，我们再称一次天平就能从这3个A球中找到这个轻球！<br>AAAA &gt; BBBB，这种情况是AAAA &lt; BBBB的对称情形，只需把上面讨论中的A换成B，B换成A就能解决。</p>
+<!-- flag of hidden posts -->
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="HJL 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+              <a href="/tags/%E7%AC%94%E8%AF%95/" rel="tag"># 笔试</a>
+          </div>
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">面试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#var%E3%80%81let%E3%80%81const%E5%B7%AE%E5%88%AB"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">var、let、const差别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-in%E5%92%8Cfor-of%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">for in和for of的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BDjs%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">延迟加载js的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Fiber-%E7%9A%84%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">React Fiber 的核心原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E5%8F%AF%E4%B8%AD%E6%96%AD%E7%9A%84%E6%9B%B4%E6%96%B0%E8%BF%87%E7%A8%8B"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1. 可中断的更新过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2. 优先级调度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E5%8F%8C%E7%BC%93%E5%86%B2%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3. 双缓冲机制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E5%A2%9E%E9%87%8F%E6%B8%B2%E6%9F%93"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4. 增量渲染</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Fiber-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.0.5.</span> <span class="nav-text">Fiber 数据结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Fiber-%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">1.1.0.6.</span> <span class="nav-text">Fiber 的工作流程</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%94%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">笔试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.</span> <span class="nav-text">项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%BE%E7%82%B9%E5%88%86%E6%9E%90"><span class="nav-number">3.1.</span> <span class="nav-text">难点分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E9%AB%98%E5%B9%B6%E5%8F%91%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.1 高并发性能优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E8%B7%A8%E7%AB%AF%E9%80%82%E9%85%8D"><span class="nav-number">3.1.2.</span> <span class="nav-text">1.2 跨端适配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-%E5%A4%8D%E6%9D%82%E7%9A%84%E4%BA%A4%E4%BA%92%E6%95%88%E6%9E%9C"><span class="nav-number">3.1.3.</span> <span class="nav-text">1.3 复杂的交互效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-%E6%95%B0%E6%8D%AE%E5%9F%8B%E7%82%B9%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">3.1.4.</span> <span class="nav-text">1.4 数据埋点与分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">3.2.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QS"><span class="nav-number">3.3.</span> <span class="nav-text">QS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS"><span class="nav-number">3.3.1.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">CSS三大特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">垂直水平居中的方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#block%E3%80%81inline%E5%92%8Cinline-block%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.3.1.3.</span> <span class="nav-text">block、inline和inline-block的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#position%E5%B1%9E%E6%80%A7%E7%9A%84%E5%80%BC%E5%8C%85%E6%8B%AC%E4%BB%80%E4%B9%88"><span class="nav-number">3.3.1.4.</span> <span class="nav-text">position属性的值包括什么</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%87%8D%E7%BB%98%E5%92%8C%E9%87%8D%E6%8E%92"><span class="nav-number">3.3.1.5.</span> <span class="nav-text">重绘和重排</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Flex%E5%AE%9E%E7%8E%B0112%E5%B8%83%E5%B1%80"><span class="nav-number">3.3.1.6.</span> <span class="nav-text">Flex实现112布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">3.3.1.7.</span> <span class="nav-text">CSS隐藏元素的三种方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#css%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E5%8D%8A%E5%9C%86"><span class="nav-number">3.3.1.8.</span> <span class="nav-text">css绘制一个半圆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F%E7%9A%84%E5%B1%9E%E6%80%A7%E6%9C%89%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">3.3.1.9.</span> <span class="nav-text">CSS硬件加速的属性有什么？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS"><span class="nav-number">3.3.2.</span> <span class="nav-text">JS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%8B%E5%86%99bind%E3%80%81apply%E3%80%81call"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">手写bind、apply、call</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JS%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">JS的数据类型有哪些？判断数据类型的方法？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JS%E5%88%A4%E6%96%AD%E6%95%B4%E6%95%B0"><span class="nav-number">3.3.2.4.</span> <span class="nav-text">JS判断整数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#js%E8%8E%B7%E5%8F%96DOM%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">3.3.2.5.</span> <span class="nav-text">js获取DOM元素的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#js%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">3.3.2.6.</span> <span class="nav-text">js执行上下文</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#map%E5%92%8Cweakmap%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.3.2.7.</span> <span class="nav-text">map和weakmap的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%9F%E5%88%A4%E6%96%AD%E5%8E%9F%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="nav-number">3.3.2.8.</span> <span class="nav-text">原型链？判断原型的方法？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%EF%BC%9F"><span class="nav-number">3.3.2.9.</span> <span class="nav-text">闭包？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D"><span class="nav-number">3.3.2.10.</span> <span class="nav-text">数组去重</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#this%E6%8C%87%E5%90%91%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">3.3.2.11.</span> <span class="nav-text">this指向问题？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E4%B8%8E%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">3.3.2.12.</span> <span class="nav-text">箭头函数与普通函数的区别？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D"><span class="nav-number">3.3.2.13.</span> <span class="nav-text">二维数组去重</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3JS%E7%9A%84%E5%BC%82%E6%AD%A5"><span class="nav-number">3.3.2.14.</span> <span class="nav-text">如何理解JS的异步</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JS%E7%9A%84%E8%AE%A1%E6%97%B6%E5%99%A8%E8%83%BD%E5%A4%9F%E5%87%86%E7%A1%AE%E8%AE%A1%E6%97%B6%E4%B9%88%EF%BC%9F"><span class="nav-number">3.3.2.15.</span> <span class="nav-text">JS的计时器能够准确计时么？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">3.3.3.</span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BE%93%E5%85%A5URL%E4%B9%8B%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88"><span class="nav-number">3.3.3.1.</span> <span class="nav-text">输入URL之后发生了什么</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%BA%E7%BC%93%E5%AD%98%E5%92%8C%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98"><span class="nav-number">3.3.3.2.</span> <span class="nav-text">强缓存和协商缓存</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%92%88%E5%AF%B9css%E3%80%81js%E3%80%81html%E4%BB%A5%E5%8F%8A%E6%8E%A5%E5%8F%A3%E7%BC%93%E5%AD%98%E7%AD%89%E5%88%86%E5%88%AB%E9%87%87%E7%94%A8%E4%BB%80%E4%B9%88%E5%85%B7%E4%BD%93%E7%9A%84%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5"><span class="nav-number">3.3.3.3.</span> <span class="nav-text">针对css、js、html以及接口缓存等分别采用什么具体的缓存策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E5%BC%BA%E5%88%B6%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">3.3.3.4.</span> <span class="nav-text">前端强制不使用缓存的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%BB%E7%BC%93%E5%AD%98%E7%9A%84%E7%AD%96%E7%95%A5%EF%BC%8C%E8%AF%BB%E5%8F%96%E9%A1%BA%E5%BA%8F%EF%BC%9F"><span class="nav-number">3.3.3.5.</span> <span class="nav-text">浏览器读缓存的策略，读取顺序？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cookie%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">3.3.3.6.</span> <span class="nav-text">cookie的属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cookie%E7%9A%84SameSite%E6%9C%89%E5%87%A0%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.3.3.7.</span> <span class="nav-text">cookie的SameSite有几种模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%A4%E6%96%ADip%E6%98%AF%E4%B8%8D%E6%98%AF%E5%86%85%E7%BD%91ip"><span class="nav-number">3.3.3.8.</span> <span class="nav-text">判断ip是不是内网ip</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTTP2-0%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">3.3.3.9.</span> <span class="nav-text">HTTP2.0的特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTTP3-0"><span class="nav-number">3.3.3.10.</span> <span class="nav-text">HTTP3.0</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#http%E5%92%8Chttps%E5%8C%BA%E5%88%AB"><span class="nav-number">3.3.3.11.</span> <span class="nav-text">http和https区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#get-post%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.3.3.12.</span> <span class="nav-text">get post的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSRF%E6%94%BB%E5%87%BB"><span class="nav-number">3.3.3.13.</span> <span class="nav-text">CSRF攻击</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#async%E5%92%8Cdefer"><span class="nav-number">3.3.3.14.</span> <span class="nav-text">async和defer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#http%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">3.3.3.15.</span> <span class="nav-text">http状态码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E5%8C%85%E6%8B%AC%E4%BB%80%E4%B9%88%EF%BC%8C%E9%BB%98%E8%AE%A4%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%8F%B7%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">3.3.3.16.</span> <span class="nav-text">应用层协议包括什么，默认的端口号是什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v8%E7%9A%84%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AD%96%E7%95%A5"><span class="nav-number">3.3.3.17.</span> <span class="nav-text">v8的垃圾回收策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%EF%BC%9F%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8F%AF%E8%83%BD%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">3.3.3.18.</span> <span class="nav-text">进程和线程？多线程可能发生什么问题？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-number">3.3.3.19.</span> <span class="nav-text">进程的通信方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E9%97%B4%E5%90%8C%E6%AD%A5%E6%96%B9%E5%BC%8F"><span class="nav-number">3.3.3.20.</span> <span class="nav-text">线程间同步方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">3.3.3.21.</span> <span class="nav-text">线程同步的方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-number">3.3.3.22.</span> <span class="nav-text">浏览器的线程有哪些</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Webpack"><span class="nav-number">3.3.4.</span> <span class="nav-text">Webpack</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#tree-shaking%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">3.3.4.1.</span> <span class="nav-text">tree-shaking的原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#webpack%E6%89%93%E5%8C%85%E8%BF%87%E7%A8%8B"><span class="nav-number">3.3.4.2.</span> <span class="nav-text">webpack打包过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#webpack%E7%9A%84loader%E5%92%8Cplugin%E5%8C%BA%E5%88%AB"><span class="nav-number">3.3.4.3.</span> <span class="nav-text">webpack的loader和plugin区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#webpack%E6%9E%84%E5%BB%BA%E4%BC%98%E5%8C%96"><span class="nav-number">3.3.4.4.</span> <span class="nav-text">webpack构建优化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#webpack%E5%88%86%E5%8C%85%E7%AD%96%E7%95%A5"><span class="nav-number">3.3.4.5.</span> <span class="nav-text">webpack分包策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">3.3.4.6.</span> <span class="nav-text">性能指标</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM-BOM"><span class="nav-number">3.3.5.</span> <span class="nav-text">DOM&#x2F;BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%EF%BC%9Ftarget%E5%92%8CcurrTarget%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">3.3.5.1.</span> <span class="nav-text">事件委托？target和currTarget区别？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React"><span class="nav-number">3.3.6.</span> <span class="nav-text">React</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#react%E4%B8%ADelement%E5%92%8Ccomponent%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.3.6.1.</span> <span class="nav-text">react中element和component的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E6%9C%89%E7%8E%AF%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">3.3.6.2.</span> <span class="nav-text">判断链表有环的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#useEffect%E5%92%8CuseLayoutEffect%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.3.6.3.</span> <span class="nav-text">useEffect和useLayoutEffect的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#react-fiber%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%8C%E5%93%AA%E4%B8%AAapi%E5%88%A4%E6%96%AD%E4%B8%BB%E7%BA%BF%E7%A8%8B%E7%A9%BA%E9%97%B2%EF%BC%8C%E6%80%8E%E4%B9%88%E7%9F%A5%E9%81%93%E6%B5%8F%E8%A7%88%E5%99%A8%E7%A9%BA%E9%97%B2%EF%BC%9Freact%E7%94%A8%E5%93%AA%E4%B8%AAapi%E5%AE%9E%E7%8E%B0%E8%B0%83%E5%BA%A6"><span class="nav-number">3.3.6.4.</span> <span class="nav-text">react fiber怎么实现的，哪个api判断主线程空闲，怎么知道浏览器空闲？react用哪个api实现调度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#React-18%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">3.3.6.5.</span> <span class="nav-text">React 18新特性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Typescript"><span class="nav-number">3.3.7.</span> <span class="nav-text">Typescript</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ts%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E5%8F%AB%E4%BB%80%E4%B9%88"><span class="nav-number">3.3.7.1.</span> <span class="nav-text">ts的编译器叫什么</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">3.3.7.2.</span> <span class="nav-text">泛型是什么？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%99%BA%E5%8A%9B%E9%A2%98"><span class="nav-number">3.3.8.</span> <span class="nav-text">智力题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E8%B5%9B%E5%9C%BA%E4%B8%AD%E6%9C%895%E6%9D%A1%E8%B5%9B%E9%81%93%EF%BC%8C%E7%8E%B0%E5%9C%A8%E6%9C%8925%E5%8C%B9%E9%A9%AC%EF%BC%8C%E5%9C%A8%E6%B2%A1%E6%9C%89%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9A%84%E5%89%8D%E6%8F%90%E4%B8%8B%E6%9C%80%E5%B0%91%E8%B7%91%E5%A4%9A%E5%B0%91%E5%9C%88%E5%8F%AF%E4%BB%A5%E8%A7%92%E9%80%90%E5%87%BA%E5%89%8D%E4%B8%89%E5%90%8D%EF%BC%9F%E5%89%8D%E5%9B%9B%E5%90%8D%EF%BC%9F%E5%89%8D%E4%BA%94%E5%90%8D%EF%BC%9F"><span class="nav-number">3.3.8.1.</span> <span class="nav-text">一个赛场中有5条赛道，现在有25匹马，在没有定时器的前提下最少跑多少圈可以角逐出前三名？前四名？前五名？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E6%9C%8912%E4%B8%AA%E5%A4%96%E8%A1%A8%E4%B8%80%E6%A8%A1%E4%B8%80%E6%A0%B7%E7%9A%84%E5%B0%8F%E7%90%83%EF%BC%8C%E5%85%B6%E4%B8%AD11%E4%B8%AA%E9%87%8D%E9%87%8F%E5%AE%8C%E5%85%A8%E7%9B%B8%E5%90%8C%EF%BC%8C%E8%A2%AB%E7%A7%B0%E4%B8%BA%E5%A5%BD%E7%90%83%EF%BC%8C1%E4%B8%AA%E9%87%8D%E9%87%8F%E6%AF%94%E5%A5%BD%E7%90%83%E9%87%8D%E4%B8%80%E7%82%B9%E6%88%96%E8%80%85%E8%BD%BB%E4%B8%80%E7%82%B9%EF%BC%8C%E8%A2%AB%E7%A7%B0%E4%B8%BA%E5%9D%8F%E7%90%83%E3%80%82%E7%8E%B0%E5%9C%A8%E7%BB%99%E4%BD%A0%E4%B8%80%E6%9E%B6%E5%A4%A9%E5%B9%B3%EF%BC%8C%E8%AF%B7%E7%94%A8%E5%A4%A9%E5%B9%B3%E7%A7%B03%E6%AC%A1%EF%BC%8C%E6%8A%8A%E8%BF%99%E4%B8%AA%E5%9D%8F%E7%90%83%E6%89%BE%E5%87%BA%E6%9D%A5%EF%BC%8C%E8%BF%98%E8%A6%81%E7%9F%A5%E9%81%93%E5%AE%83%E5%88%B0%E5%BA%95%E6%98%AF%E8%BD%BB%E7%9A%84%E8%BF%98%E6%98%AF%E9%87%8D%E7%9A%84"><span class="nav-number">3.3.8.2.</span> <span class="nav-text">设有12个外表一模一样的小球，其中11个重量完全相同，被称为好球，1个重量比好球重一点或者轻一点，被称为坏球。现在给你一架天平，请用天平称3次，把这个坏球找出来，还要知道它到底是轻的还是重的</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="HJL"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">HJL</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=8849928185&auto=0&height=32"></iframe>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HJL</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:24</span>
+</div>
+    <script type="text/javascript" color="0,0,255" opacity='0.5' zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+<script src="/js/code-unfold.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'cb0ea98061963b47013a',
+      clientSecret: 'de74585857144b26bd22e877cfd82555e75f535d',
+      repo        : 'jin-lin0.github.io',
+      owner       : 'jin-lin0',
+      admin       : ['jin-lin0'],
+      id          : '3c6a5ddfb3d0d3aac5d6b35d68b2524e',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>
